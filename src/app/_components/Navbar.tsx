@@ -1,5 +1,4 @@
 'use client'
-
 import React from 'react'
 import {
   Navbar,
@@ -8,8 +7,20 @@ import {
   NavbarItem,
 } from '@nextui-org/react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function CustomNavbar() {
+  const redirectPathName = ({ locale }: { locale: string }) => {
+    const pathName = usePathname()
+
+    if (!pathName.trim()) return '/'
+
+    const segments = pathName.split('/')
+    segments[1] = locale
+
+    return segments.join('/')
+  }
+
   return (
     <Navbar>
       <NavbarBrand>
