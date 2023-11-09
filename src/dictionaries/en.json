@@ -1,0 +1,18 @@
+{
+  "main": {
+    "title": "Bassholding",
+    "description": "Bassholding description"
+  },
+  "about": {
+    "title": "About us",
+    "description": "About us description"
+  },
+  "menu": {
+    "main": "Home",
+    "about": "About",
+    "career": "Career",
+    "direction": "Direction",
+    "news": "News",
+    "contact": "Contact us"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "main": {
+    "title": "Bassholding",
+    "description": "Bassholding описание"
+  },
+  "about": {
+    "title": "О нас",
+    "description": "О нас описание"
+  },
+  "menu": {
+    "main": "Главная",
+    "about": "О нас",
+    "career": "Карьера",
+    "direction": "Направления",
+    "news": "Новости",
+    "contact": "Связаться с нами"
+  }
+}
