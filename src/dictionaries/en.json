@@ -7,7 +7,7 @@
     "title": "About us",
     "description": "About us description"
   },
-  "menu": {
+  "navbar": {
     "main": "Home",
     "about": "About",
     "career": "Career",

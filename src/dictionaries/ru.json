@@ -7,7 +7,7 @@
     "title": "О нас",
     "description": "О нас описание"
   },
-  "menu": {
+  "navbar": {
     "main": "Главная",
     "about": "О нас",
     "career": "Карьера",
