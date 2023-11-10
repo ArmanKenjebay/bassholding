@@ -13,6 +13,7 @@ import Link from 'next-intl/link'
 import { usePathname, useRouter } from 'next-intl/client'
 import React, { ChangeEvent } from 'react'
 import bassholdingLogo from '@/app/asset/bassholding-navbar-logo.svg'
+import NavigationLink from '@/app/[locale]/_components/NavigationLink'
 
 export default function CustomNavbar({
   params: { dictionary, locale },
@@ -43,9 +44,13 @@ export default function CustomNavbar({
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link href="/about" lang={locale}>
+          <NavigationLink href="/about" lang={locale}>
             {dictionary.about}
-          </Link>
+          </NavigationLink>
+
+          {/*<Link href="/about" lang={locale}>*/}
+          {/*  {dictionary.about}*/}
+          {/*</Link>*/}
         </NavbarItem>
 
         <NavbarItem>

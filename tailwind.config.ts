@@ -10,6 +10,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        ['primary-gold']: '#F2BD54',
+      },
       fontFamily: {
         gilroy: [`var(--font-gilroy)`, 'sans-serif'],
       },
