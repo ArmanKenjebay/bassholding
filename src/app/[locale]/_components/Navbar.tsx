@@ -14,8 +14,6 @@ export default async function CustomNavbar({
 }: {
   params: { locale: string; dictionary: { [key: string]: any } }
 }) {
-  console.log(locale)
-
   return (
     <Navbar>
       <NavbarBrand></NavbarBrand>
