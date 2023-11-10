@@ -48,7 +48,7 @@ export default function CustomNavbar({
             alt={''}
             width={274}
             height={53}
-            className="pointer-events-none"
+            className="pointer-events-none lg:w-[274px] md:w-[180px] sm:w-[145px] w-[104px]"
             priority
           />
         </Link>
