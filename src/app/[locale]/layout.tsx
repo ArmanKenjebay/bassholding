@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import { ReactNode } from 'react'
 import { Providers } from '@/app/[locale]/providers'
@@ -6,7 +6,23 @@ import CustomNavbar from '@/app/[locale]/_components/Navbar'
 import { i18n, Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 
-const inter = Inter({ subsets: ['latin'] })
+const gilroy = localFont({
+  variable: '--font-gilroy',
+  src: [
+    {
+      path: '../../../public/fonts/Gilroy-Regular.woff2',
+    },
+    {
+      path: '../../../public/fonts/Gilroy-Bold.woff2',
+    },
+    {
+      path: '../../../public/fonts/Gilroy-RegularItalic.woff2',
+    },
+    {
+      path: '../../../public/fonts/Gilroy-SemiBold.woff2',
+    },
+  ],
+})
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ locale }))
@@ -32,7 +48,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="dark">
-      <body className={`${inter.className}`}>
+      <body className={`${gilroy.variable} font-gilroy`}>
         <Providers>
           <CustomNavbar params={{ dictionary: navDic, locale }} />
           {children}
