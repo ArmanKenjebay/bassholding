@@ -14,6 +14,11 @@ import { usePathname, useRouter } from 'next-intl/client'
 import React, { ChangeEvent } from 'react'
 import bassholdingLogo from '@/app/asset/bassholding-navbar-logo.svg'
 import NavigationLink from '@/app/[locale]/_components/NavigationLink'
+import {
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarMenuToggle,
+} from '@nextui-org/navbar'
 
 export default function CustomNavbar({
   params: { dictionary, locale },
@@ -23,12 +28,19 @@ export default function CustomNavbar({
   const router = useRouter()
   const pathName = usePathname()
 
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+
   const handleSelectionChange = (e: ChangeEvent<HTMLSelectElement>) => {
     router.replace(pathName, { locale: e.target.value })
   }
 
   return (
-    <Navbar className="py-2" position="sticky">
+    <Navbar
+      shouldHideOnScroll
+      position="sticky"
+      onMenuOpenChange={setIsMenuOpen}
+      className="py-2"
+    >
       <NavbarBrand>
         <Link href="/" lang={locale}>
           <Image
@@ -42,23 +54,23 @@ export default function CustomNavbar({
         </Link>
       </NavbarBrand>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
+      <NavbarContent className="flex gap-4" justify="center">
+        <NavbarItem className="sm:block hidden">
           <NavigationLink href="/about" lang={locale}>
             {dictionary.about}
           </NavigationLink>
         </NavbarItem>
-        <NavbarItem>
+        <NavbarItem className="sm:block hidden">
           <NavigationLink href="/direction" lang={locale}>
             {dictionary.direction}
           </NavigationLink>
         </NavbarItem>
-        <NavbarItem>
+        <NavbarItem className="sm:block hidden">
           <NavigationLink href="/news" lang={locale}>
             {dictionary.news}
           </NavigationLink>
         </NavbarItem>
-        <NavbarItem>
+        <NavbarItem className="sm:block hidden">
           <NavigationLink href="/career" lang={locale}>
             {dictionary.career}
           </NavigationLink>
@@ -81,6 +93,34 @@ export default function CustomNavbar({
             </SelectItem>
           </Select>
         </NavbarItem>
+
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          className="sm:hidden"
+        />
+
+        <NavbarMenu>
+          <NavbarMenuItem>
+            <NavigationLink href="/about" lang={locale}>
+              {dictionary.about}
+            </NavigationLink>
+          </NavbarMenuItem>
+          <NavbarMenuItem>
+            <NavigationLink href="/direction" lang={locale}>
+              {dictionary.direction}
+            </NavigationLink>
+          </NavbarMenuItem>
+          <NavbarMenuItem>
+            <NavigationLink href="/news" lang={locale}>
+              {dictionary.news}
+            </NavigationLink>
+          </NavbarMenuItem>
+          <NavbarMenuItem>
+            <NavigationLink href="/career" lang={locale}>
+              {dictionary.career}
+            </NavigationLink>
+          </NavbarMenuItem>
+        </NavbarMenu>
       </NavbarContent>
     </Navbar>
   )
