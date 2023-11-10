@@ -7,6 +7,18 @@
     "title": "About us",
     "description": "About us description"
   },
+  "career": {
+    "title": "Career",
+    "description": "Career us description"
+  },
+  "direction": {
+    "title": "Direction",
+    "description": "Direction us description"
+  },
+  "news": {
+    "title": "News",
+    "description": "News us description"
+  },
   "navbar": {
     "main": "Home",
     "about": "About",

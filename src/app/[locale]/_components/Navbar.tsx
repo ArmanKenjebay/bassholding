@@ -47,10 +47,21 @@ export default function CustomNavbar({
           <NavigationLink href="/about" lang={locale}>
             {dictionary.about}
           </NavigationLink>
-
-          {/*<Link href="/about" lang={locale}>*/}
-          {/*  {dictionary.about}*/}
-          {/*</Link>*/}
+        </NavbarItem>
+        <NavbarItem>
+          <NavigationLink href="/direction" lang={locale}>
+            {dictionary.direction}
+          </NavigationLink>
+        </NavbarItem>
+        <NavbarItem>
+          <NavigationLink href="/news" lang={locale}>
+            {dictionary.news}
+          </NavigationLink>
+        </NavbarItem>
+        <NavbarItem>
+          <NavigationLink href="/career" lang={locale}>
+            {dictionary.career}
+          </NavigationLink>
         </NavbarItem>
 
         <NavbarItem>

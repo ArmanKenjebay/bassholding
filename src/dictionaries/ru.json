@@ -7,6 +7,18 @@
     "title": "О нас",
     "description": "О нас описание"
   },
+  "career": {
+    "title": "Карьера",
+    "description": "Карьера описание"
+  },
+  "direction": {
+    "title": "Направления",
+    "description": "Направления описание"
+  },
+  "news": {
+    "title": "Новости",
+    "description": "Новости описание"
+  },
   "navbar": {
     "main": "Главная",
     "about": "О нас",
