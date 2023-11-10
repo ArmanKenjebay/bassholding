@@ -39,7 +39,11 @@ export default function CustomNavbar({
       shouldHideOnScroll
       position="sticky"
       onMenuOpenChange={setIsMenuOpen}
-      className="py-2"
+      className=""
+      classNames={{
+        base: 'pt-3',
+        wrapper: 'justify-between px-5 w-full max-w-full',
+      }}
     >
       <NavbarBrand>
         <Link href="/" lang={locale}>
@@ -80,7 +84,7 @@ export default function CustomNavbar({
           <Select
             aria-label="Choose language"
             size="sm"
-            className="w-[72px] bg-transparent text-white"
+            className="min-w-[72px] bg-transparent text-white"
             variant="bordered"
             onChange={handleSelectionChange}
             selectedKeys={[locale]}
