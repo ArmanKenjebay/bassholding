@@ -16,10 +16,10 @@ export default function NavigationLink({
     <Link
       aria-current={isActive ? 'page' : undefined}
       href={href}
-      className={`duration-200 ease-in-out ${
+      className={`${
         isActive &&
         'text-primary-gold underline-offset-8 underline hover:opacity-90'
-      } hover:text-primary-gold`}
+      } hover:text-primary-gold hover:underline-offset-8 hover:underline duration-200 ease-in-out `}
       {...rest}
     />
   )

@@ -80,7 +80,7 @@ export default function CustomNavbar({
           <Select
             aria-label="Choose language"
             size="sm"
-            className="w-[80px]"
+            className="w-[72px] bg-transparent text-white"
             variant="bordered"
             onChange={handleSelectionChange}
             selectedKeys={[locale]}
