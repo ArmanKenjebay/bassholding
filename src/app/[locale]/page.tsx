@@ -9,7 +9,7 @@ export default async function Home({
   const dictionary = await getDictionary(locale)
 
   return (
-    <main className="flex flex-col h-full">
+    <section className="flex flex-col h-full">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate et
       officia repudiandae veniam voluptatibus. Accusamus accusantium aliquam,
       animi, aperiam architecto atque aut commodi cumque, distinctio esse eum
@@ -117,6 +117,6 @@ export default async function Home({
       amet commodi cupiditate debitis dignissimos fuga in inventore ipsa ipsam
       modi nam nisi nostrum, optio porro possimus, quaerat quasi quibusdam quod,
       tempora tempore ut?
-    </main>
+    </section>
   )
 }

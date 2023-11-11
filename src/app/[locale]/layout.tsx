@@ -52,7 +52,21 @@ export default async function RootLayout({
       <body className={`${gilroy.variable} font-gilroy`}>
         <Providers>
           <CustomNavbar params={{ dictionary: navDic, locale }} />
-          {children}
+          <main className="w-full">{children}</main>
+          <footer className="w-full bg-black py-2">
+            <div className="flex justify-between px-5">
+              <div className="flex flex-col">
+                <span>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Labore, voluptatum.
+                </span>
+                <span>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Labore, voluptatum.
+                </span>
+              </div>
+            </div>
+          </footer>
         </Providers>
       </body>
     </html>

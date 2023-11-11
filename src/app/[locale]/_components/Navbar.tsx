@@ -10,8 +10,8 @@ import {
 } from '@nextui-org/react'
 import Image from 'next/image'
 import Link from 'next-intl/link'
-import { usePathname, useRouter } from 'next-intl/client'
 import React, { ChangeEvent } from 'react'
+import { usePathname, useRouter } from 'next-intl/client'
 import bassholdingLogo from '@/app/asset/bassholding-navbar-logo.svg'
 import NavigationLink from '@/app/[locale]/_components/NavigationLink'
 import {

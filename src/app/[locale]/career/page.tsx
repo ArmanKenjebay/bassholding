@@ -18,10 +18,10 @@ export default async function Career({
   const dictionary = await getDictionary(locale)
 
   return (
-    <main className="flex flex-col">
+    <section className="flex flex-col">
       <h3>About page</h3>
       <p>Current locale: {locale}</p>
       This text is rendered on the server: {dictionary.about.title}
-    </main>
+    </section>
   )
 }
