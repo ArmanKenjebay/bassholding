@@ -40,7 +40,6 @@ export default function CustomNavbar({
       shouldHideOnScroll
       position="sticky"
       onMenuOpenChange={setIsMenuOpen}
-      className=""
       classNames={{
         base: 'pt-3',
         wrapper: 'justify-between px-5',
