@@ -36,13 +36,14 @@ export default function CustomNavbar({
 
   return (
     <Navbar
+      maxWidth="2xl"
       shouldHideOnScroll
       position="sticky"
       onMenuOpenChange={setIsMenuOpen}
       className=""
       classNames={{
         base: 'pt-3',
-        wrapper: 'justify-between px-5 w-full max-w-full',
+        wrapper: 'justify-between px-5',
       }}
     >
       <NavbarBrand>
