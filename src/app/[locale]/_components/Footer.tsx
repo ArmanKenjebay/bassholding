@@ -33,33 +33,34 @@ export default function Footer({
             href="/about"
             lang={locale}
           >
-            {dictionary.about}
+            {dictionary.navbar.about}
           </Link>
           <Link
             className="hover:text-primary-gold duration-200 ease-in-out"
             href="/direction"
             lang={locale}
           >
-            {dictionary.direction}
+            {dictionary.navbar.direction}
           </Link>
           <Link
             className="hover:text-primary-gold duration-200 ease-in-out"
             href="/news"
             lang={locale}
           >
-            {dictionary.news}
+            {dictionary.navbar.news}
           </Link>
           <Link
             className="hover:text-primary-gold duration-200 ease-in-out"
             href="/career"
             lang={locale}
           >
-            {dictionary.career}
+            {dictionary.navbar.career}
           </Link>
         </div>
         <div className="flex flex-col gap-y-3">
-          {links.map(({ name, link }) => (
+          {links.map(({ name, link }, index) => (
             <a
+              key={index + 'link'}
               className="hover:text-primary-gold duration-200 ease-in-out"
               href={link}
               target="_blank"
@@ -70,13 +71,13 @@ export default function Footer({
         </div>
       </div>
       <div className="flex flex-col items-end justify-end text-end">
-        <span>Мы находимся по адресу: </span>
+        <span>{dictionary.contact.footer_text}</span>
         <a
           className="hover:text-primary-gold duration-200 ease-in-out"
           href="https://maps.app.goo.gl/YB7soxRrB8FxhmRu8"
           target="_blank"
         >
-          Кабанбай Батыра 11/5, БЦ Нурлы Орда, 12 этаж
+          {dictionary.contact.address}
         </a>
         <a
           className="hover:text-primary-gold duration-200 ease-in-out"

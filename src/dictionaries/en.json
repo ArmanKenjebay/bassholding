@@ -26,5 +26,10 @@
     "direction": "Direction",
     "news": "News",
     "contact": "Contact us"
+  },
+  "contact": {
+    "btn_text": "Contact us",
+    "footer_text": "We are located at:",
+    "address": "ave. Kabanbay Batyr 11/5, Astana 020000"
   }
 }

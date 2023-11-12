@@ -46,15 +46,24 @@ export default async function RootLayout({
   params: { locale: Locale }
 }) {
   const dictionary = await getDictionary(locale)
-  const navDic = dictionary.navbar
 
   return (
     <html lang={locale} className="dark">
       <body className={`${gilroy.variable} font-gilroy`}>
         <Providers>
-          <CustomNavbar params={{ dictionary: navDic, locale }} />
+          <CustomNavbar
+            params={{ dictionary: { ...dictionary.navbar }, locale }}
+          />
           <main className="w-full">{children}</main>
-          <Footer params={{ dictionary: navDic, locale }} />
+          <Footer
+            params={{
+              dictionary: {
+                navbar: dictionary.navbar,
+                contact: dictionary.contact,
+              },
+              locale,
+            }}
+          />
         </Providers>
       </body>
     </html>
