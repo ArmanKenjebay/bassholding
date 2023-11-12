@@ -1,7 +1,6 @@
 import localFont from 'next/font/local'
 import './globals.css'
 import { ReactNode } from 'react'
-import { Providers } from '@/app/[locale]/providers'
 import CustomNavbar from '@/app/[locale]/_components/Navbar'
 import { i18n, Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
@@ -50,21 +49,19 @@ export default async function RootLayout({
   return (
     <html lang={locale} className="dark">
       <body className={`${gilroy.variable} font-gilroy`}>
-        <Providers>
-          <CustomNavbar
-            params={{ dictionary: { ...dictionary.navbar }, locale }}
-          />
-          <main className="w-full">{children}</main>
-          <Footer
-            params={{
-              dictionary: {
-                navbar: dictionary.navbar,
-                contact: dictionary.contact,
-              },
-              locale,
-            }}
-          />
-        </Providers>
+        <CustomNavbar
+          params={{ dictionary: { ...dictionary.navbar }, locale }}
+        />
+        <main className="w-full">{children}</main>
+        <Footer
+          params={{
+            dictionary: {
+              navbar: dictionary.navbar,
+              contact: dictionary.contact,
+            },
+            locale,
+          }}
+        />
       </body>
     </html>
   )

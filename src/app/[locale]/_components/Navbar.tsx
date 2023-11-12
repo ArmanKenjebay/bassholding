@@ -30,6 +30,10 @@ export default function CustomNavbar({
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const handleMenu = (isOpen: boolean) => {
+    console.log('isOpen', isOpen)
+  }
+
   const handleSelectionChange = (e: ChangeEvent<HTMLSelectElement>) => {
     router.replace(pathName, { locale: e.target.value })
   }
@@ -42,90 +46,77 @@ export default function CustomNavbar({
       onMenuOpenChange={setIsMenuOpen}
       classNames={{
         base: 'pt-3',
-        wrapper: 'justify-between px-5',
+        wrapper: 'px-5',
       }}
     >
-      <NavbarBrand>
-        <Link href="/" lang={locale}>
-          <Image
-            src={bassholdingLogo}
-            alt={''}
-            width={274}
-            height={53}
-            className="pointer-events-none lg:w-[274px] md:w-[180px] sm:w-[145px] w-[104px]"
-            priority
-          />
-        </Link>
-      </NavbarBrand>
+      <Link href="/" lang={locale}>
+        <Image
+          src={bassholdingLogo}
+          alt={''}
+          width={274}
+          height={53}
+          className="pointer-events-none w-[274px]"
+          priority
+        />
+      </Link>
 
-      <NavbarContent className="flex gap-4" justify="center">
-        <NavbarItem className="sm:block hidden">
+      <NavigationLink href="/about" lang={locale}>
+        {dictionary.about}
+      </NavigationLink>
+
+      <NavigationLink href="/direction" lang={locale}>
+        {dictionary.direction}
+      </NavigationLink>
+      <NavigationLink href="/news" lang={locale}>
+        {dictionary.news}
+      </NavigationLink>
+      <NavigationLink href="/career" lang={locale}>
+        {dictionary.career}
+      </NavigationLink>
+
+      <Select
+        aria-label="Choose language"
+        size="sm"
+        className="min-w-[72px] bg-transparent text-white"
+        variant="bordered"
+        onChange={handleSelectionChange}
+        selectedKeys={[locale]}
+      >
+        <SelectItem key="en" lang="en" value="en">
+          EN
+        </SelectItem>
+        <SelectItem key="ru" lang="ru" value="ru">
+          RU
+        </SelectItem>
+      </Select>
+
+      <NavbarMenuToggle
+        onChange={handleMenu}
+        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+        className="sm:hidden"
+      />
+      <NavbarMenu className="pt-5">
+        <NavbarMenuItem>
           <NavigationLink href="/about" lang={locale}>
             {dictionary.about}
           </NavigationLink>
-        </NavbarItem>
-        <NavbarItem className="sm:block hidden">
+        </NavbarMenuItem>
+        <NavbarMenuItem>
           <NavigationLink href="/direction" lang={locale}>
             {dictionary.direction}
           </NavigationLink>
-        </NavbarItem>
-        <NavbarItem className="sm:block hidden">
+        </NavbarMenuItem>
+        <NavbarMenuItem>
           <NavigationLink href="/news" lang={locale}>
             {dictionary.news}
           </NavigationLink>
-        </NavbarItem>
-        <NavbarItem className="sm:block hidden">
+        </NavbarMenuItem>
+        <NavbarMenuItem>
           <NavigationLink href="/career" lang={locale}>
             {dictionary.career}
           </NavigationLink>
-        </NavbarItem>
-
-        <NavbarItem>
-          <Select
-            aria-label="Choose language"
-            size="sm"
-            className="min-w-[72px] bg-transparent text-white"
-            variant="bordered"
-            onChange={handleSelectionChange}
-            selectedKeys={[locale]}
-          >
-            <SelectItem key="en" lang="en" value="en">
-              EN
-            </SelectItem>
-            <SelectItem key="ru" lang="ru" value="ru">
-              RU
-            </SelectItem>
-          </Select>
-        </NavbarItem>
-
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className="sm:hidden"
-        />
-
-        <NavbarMenu>
-          <NavbarMenuItem>
-            <NavigationLink href="/about" lang={locale}>
-              {dictionary.about}
-            </NavigationLink>
-          </NavbarMenuItem>
-          <NavbarMenuItem>
-            <NavigationLink href="/direction" lang={locale}>
-              {dictionary.direction}
-            </NavigationLink>
-          </NavbarMenuItem>
-          <NavbarMenuItem>
-            <NavigationLink href="/news" lang={locale}>
-              {dictionary.news}
-            </NavigationLink>
-          </NavbarMenuItem>
-          <NavbarMenuItem>
-            <NavigationLink href="/career" lang={locale}>
-              {dictionary.career}
-            </NavigationLink>
-          </NavbarMenuItem>
-        </NavbarMenu>
-      </NavbarContent>
+        </NavbarMenuItem>
+      </NavbarMenu>
     </Navbar>
   )
 }
