@@ -1,13 +1,6 @@
 'use client'
 
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  Select,
-  SelectItem,
-} from '@nextui-org/react'
+import { Navbar, Select, SelectItem } from '@nextui-org/react'
 import Image from 'next/image'
 import Link from 'next-intl/link'
 import { ChangeEvent, useState } from 'react'
@@ -40,62 +33,84 @@ export default function CustomNavbar({
 
   return (
     <Navbar
+      isBlurred={false}
       maxWidth="2xl"
-      shouldHideOnScroll
-      position="sticky"
       onMenuOpenChange={setIsMenuOpen}
       classNames={{
-        base: 'pt-3',
+        base: 'pt-3 absolute top-0 bg-transparent',
         wrapper: 'px-5',
       }}
     >
-      <Link href="/" lang={locale}>
-        <Image
-          src={bassholdingLogo}
-          alt={''}
-          width={274}
-          height={53}
-          className="pointer-events-none w-[274px]"
-          priority
-        />
-      </Link>
-
-      <NavigationLink href="/about" lang={locale}>
-        {dictionary.about}
-      </NavigationLink>
-
-      <NavigationLink href="/direction" lang={locale}>
-        {dictionary.direction}
-      </NavigationLink>
-      <NavigationLink href="/news" lang={locale}>
-        {dictionary.news}
-      </NavigationLink>
-      <NavigationLink href="/career" lang={locale}>
-        {dictionary.career}
-      </NavigationLink>
-
-      <Select
-        aria-label="Choose language"
-        size="sm"
-        className="min-w-[72px] bg-transparent text-white"
-        variant="bordered"
-        onChange={handleSelectionChange}
-        selectedKeys={[locale]}
-      >
-        <SelectItem key="en" lang="en" value="en">
-          EN
-        </SelectItem>
-        <SelectItem key="ru" lang="ru" value="ru">
-          RU
-        </SelectItem>
-      </Select>
+      <div className="flex gap-x-10 w-full items-center justify-between">
+        <div className="flex">
+          <Link href="/" lang={locale}>
+            <Image
+              src={bassholdingLogo}
+              alt={''}
+              width={274}
+              height={53}
+              className="pointer-events-none h-auto lg:w-[274px] md:w-[245px] sm:w-[150px] w-[120px]"
+              priority
+            />
+          </Link>
+        </div>
+        <div className="sm:flex hidden flex-1 justify-start">
+          <div className="flex gap-x-5">
+            <NavigationLink
+              className="lg:text-base md:text-sm text-xs"
+              href="/about"
+              lang={locale}
+            >
+              {dictionary.about}
+            </NavigationLink>
+            <NavigationLink
+              className="lg:text-base md:text-sm text-xs"
+              href="/direction"
+              lang={locale}
+            >
+              {dictionary.direction}
+            </NavigationLink>
+            <NavigationLink
+              className="lg:text-base md:text-sm text-xs"
+              href="/news"
+              lang={locale}
+            >
+              {dictionary.news}
+            </NavigationLink>
+            <NavigationLink
+              className="lg:text-base md:text-sm text-xs"
+              href="/career"
+              lang={locale}
+            >
+              {dictionary.career}
+            </NavigationLink>
+          </div>
+        </div>
+        <div className="flex">
+          <Select
+            aria-label="Choose language"
+            size="sm"
+            className="min-w-[72px] bg-transparent text-white"
+            variant="bordered"
+            onChange={handleSelectionChange}
+            selectedKeys={[locale]}
+          >
+            <SelectItem key="en" lang="en" value="en">
+              EN
+            </SelectItem>
+            <SelectItem key="ru" lang="ru" value="ru">
+              RU
+            </SelectItem>
+          </Select>
+        </div>
+      </div>
 
       <NavbarMenuToggle
         onChange={handleMenu}
         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         className="sm:hidden"
       />
-      <NavbarMenu className="pt-5">
+      <NavbarMenu className="pt-5 bg-opacity-75">
         <NavbarMenuItem>
           <NavigationLink href="/about" lang={locale}>
             {dictionary.about}
