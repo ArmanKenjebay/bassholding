@@ -19,7 +19,7 @@ export default function NavigationLink({
       className={`${
         isActive &&
         'text-primary-gold underline-offset-8 underline hover:opacity-90'
-      } hover:text-primary-gold duration-200 ease-in-out `}
+      } hover:text-primary-gold duration-200 ease-in-out`}
       {...rest}
     />
   )

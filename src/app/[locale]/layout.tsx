@@ -5,6 +5,7 @@ import { Providers } from '@/app/[locale]/providers'
 import CustomNavbar from '@/app/[locale]/_components/Navbar'
 import { i18n, Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
+import Footer from '@/app/[locale]/_components/Footer'
 
 const gilroy = localFont({
   variable: '--font-gilroy',
@@ -53,20 +54,7 @@ export default async function RootLayout({
         <Providers>
           <CustomNavbar params={{ dictionary: navDic, locale }} />
           <main className="w-full">{children}</main>
-          <footer className="w-full bg-black py-2">
-            <div className="flex justify-between px-5">
-              <div className="flex flex-col">
-                <span>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Labore, voluptatum.
-                </span>
-                <span>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Labore, voluptatum.
-                </span>
-              </div>
-            </div>
-          </footer>
+          <Footer params={{ dictionary: navDic, locale }} />
         </Providers>
       </body>
     </html>
