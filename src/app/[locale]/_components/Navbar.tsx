@@ -10,7 +10,7 @@ import {
 } from '@nextui-org/react'
 import Image from 'next/image'
 import Link from 'next-intl/link'
-import React, { ChangeEvent } from 'react'
+import { ChangeEvent, useState } from 'react'
 import { usePathname, useRouter } from 'next-intl/client'
 import bassholdingLogo from '@/app/asset/bassholding-navbar-logo.svg'
 import NavigationLink from '@/app/[locale]/_components/NavigationLink'
@@ -28,7 +28,7 @@ export default function CustomNavbar({
   const router = useRouter()
   const pathName = usePathname()
 
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const handleSelectionChange = (e: ChangeEvent<HTMLSelectElement>) => {
     router.replace(pathName, { locale: e.target.value })
