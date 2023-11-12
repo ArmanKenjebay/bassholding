@@ -26,31 +26,31 @@ export default function Footer({
 
   return (
     <footer className="flex gap-y-3 sm:flex-row flex-col justify-between py-2 px-5">
-      <div className="grid gap-x-20 gap-y-3 sm:grid-cols-2 grid-cols-1">
+      <div className="flex sm:gap-x-20 gap-x-10">
         <div className="flex flex-col gap-y-3">
           <Link
-            className="hover:text-primary-gold duration-200 ease-in-out"
+            className="hover:text-primary-gold duration-200 ease-in-out sm:text-sm text-xs"
             href="/about"
             lang={locale}
           >
             {dictionary.navbar.about}
           </Link>
           <Link
-            className="hover:text-primary-gold duration-200 ease-in-out"
+            className="hover:text-primary-gold duration-200 ease-in-out sm:text-sm text-xs"
             href="/direction"
             lang={locale}
           >
             {dictionary.navbar.direction}
           </Link>
           <Link
-            className="hover:text-primary-gold duration-200 ease-in-out"
+            className="hover:text-primary-gold duration-200 ease-in-out sm:text-sm text-xs"
             href="/news"
             lang={locale}
           >
             {dictionary.navbar.news}
           </Link>
           <Link
-            className="hover:text-primary-gold duration-200 ease-in-out"
+            className="hover:text-primary-gold duration-200 ease-in-out sm:text-sm text-xs"
             href="/career"
             lang={locale}
           >
@@ -61,7 +61,7 @@ export default function Footer({
           {links.map(({ name, link }, index) => (
             <a
               key={index + 'link'}
-              className="hover:text-primary-gold duration-200 ease-in-out"
+              className="hover:text-primary-gold duration-200 ease-in-out sm:text-sm text-xs"
               href={link}
               target="_blank"
             >
@@ -71,22 +71,24 @@ export default function Footer({
         </div>
       </div>
       <div className="flex flex-col items-end justify-end text-end">
-        <span>{dictionary.contact.footer_text}</span>
+        <span className="sm:text-sm text-xs">
+          {dictionary.contact.footer_text}
+        </span>
         <a
-          className="hover:text-primary-gold duration-200 ease-in-out"
+          className="hover:text-primary-gold duration-200 ease-in-out sm:text-sm text-xs"
           href="https://maps.app.goo.gl/YB7soxRrB8FxhmRu8"
           target="_blank"
         >
           {dictionary.contact.address}
         </a>
         <a
-          className="hover:text-primary-gold duration-200 ease-in-out"
+          className="hover:text-primary-gold duration-200 ease-in-out sm:text-sm text-xs"
           href="tel:+771722783788"
         >
           +7 (7172) 278 37 88
         </a>
         <a
-          className="hover:text-primary-gold duration-200 ease-in-out"
+          className="hover:text-primary-gold duration-200 ease-in-out sm:text-sm text-xs"
           href="mailto:info@bassholding.kz"
         >
           info@bassholding.kz
