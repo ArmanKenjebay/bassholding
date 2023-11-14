@@ -53,6 +53,8 @@ export default async function Home({
     },
   ]
 
+  // @ts-ignore
+  // @ts-ignore
   return (
     <section className="flex flex-col w-full h-full">
       <div className="flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-10 mb-5">
