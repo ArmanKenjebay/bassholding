@@ -98,7 +98,7 @@ export default async function About({
               alt={'about'}
               className="filter brightness-50 object-contain"
             />
-            <span className="w-3/4 absolute lg:bottom-20 bottom-5 left-3 font-gilroy xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg">
+            <span className="w-3/4 tracking-widest absolute lg:bottom-20 bottom-5 left-3 font-gilroy xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg">
               люди - наша главная ценность и источник силы холдинга.
             </span>
           </div>
@@ -106,7 +106,7 @@ export default async function About({
         <div className="sm:px-5 px-2 sm:mb-10 mb-5">
           <div className="flex flex-col sm:w-3/4 w-full">
             <span className="text-xl">Наши ценности</span>
-            <span className="text-xs">
+            <span className="text-xs tracking-widest">
               Наши ценности и принципы тесно соприкасаются с целями ООН в
               области устойчивого развития
             </span>
@@ -134,9 +134,9 @@ export default async function About({
 
         <div className="sm:px-5 px-2 sm:mb-10 mb-5">
           <div className="grid gap-3 grid-cols-2 md:grid-cols-4">
-            <div className="col-span-2 md:col-span-2 flex flex-col gap-y-3">
-              <span className="text-white text-2xl">Наша команда</span>
-              <span className="text-primary-gold text-xl">
+            <div className="col-span-2 md:col-span-2 flex justify-center flex-col gap-y-3">
+              <span className="text-white text-4xl">Наша команда</span>
+              <span className="text-primary-gold text-4xl tracking-widest">
                 Команда, в которой каждый вносит свой вклад, способна перемещать
                 горы
               </span>

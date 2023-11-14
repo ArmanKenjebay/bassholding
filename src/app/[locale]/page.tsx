@@ -4,7 +4,6 @@ import { StaticImageData } from 'next/image'
 import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 import { Divider } from '@nextui-org/divider'
-import Image from 'next/image'
 
 import news1 from '@/../public/news1.jpg'
 import homeImg from '@/../public/home-page.jpg'
