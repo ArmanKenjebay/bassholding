@@ -10,7 +10,7 @@ import homeCard1 from '@/../public/home-card1.jpg'
 import homeCard2 from '@/../public/home-card2.jpg'
 import homeCard3 from '@/../public/home-card3.jpg'
 import homeCard4 from '@/../public/home-card4.jpg'
-import Cards from '@/app/[locale]/_components/Cards'
+import CustomCard from '@/app/[locale]/_components/CustomCard'
 import Marquee from '@/app/[locale]/_components/Marquee'
 
 type TCard = {
@@ -117,7 +117,13 @@ export default async function Home({
       <div className="sm:px-5 px-2 sm:mb-10 mb-5">
         <div className="flex sm:flex-row flex-col">
           {cards.map((card, index) => (
-            <Cards key={card.title} {...card} className="app-img-box" />
+            <CustomCard
+              key={card.title}
+              {...card}
+              isFirst={index === 0}
+              className="app-img-box"
+              classNameImage="filter brightness-50 ease-in-out duration-200 scale-150 -translate-y-6 object-cover grayscale hover:scale-110 hover:grayscale-0 hover:brightness-[.8]"
+            />
           ))}
         </div>
       </div>

@@ -3,8 +3,8 @@ export default function NextArrow({
   width,
   height,
 }: {
-  width?: number
-  height?: number
+  width?: string
+  height?: string
   fillColor?: string
 }) {
   return (
