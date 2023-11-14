@@ -7,7 +7,7 @@ import homeCard2 from '../../../../public/home-card2.jpg'
 import homeCard3 from '../../../../public/home-card3.jpg'
 import homeCard4 from '../../../../public/home-card4.jpg'
 
-export async function generateMetadata(params: any) {
+export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.locale)
 
   return {

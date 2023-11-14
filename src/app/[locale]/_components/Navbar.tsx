@@ -23,9 +23,7 @@ export default function CustomNavbar({
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const handleMenu = (isOpen: boolean) => {
-    console.log('isOpen', isOpen)
-  }
+  const handleMenu = (isOpen: boolean) => {}
 
   const handleSelectionChange = (e: ChangeEvent<HTMLSelectElement>) => {
     router.replace(pathName, { locale: e.target.value })

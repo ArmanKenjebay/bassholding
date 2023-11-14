@@ -28,7 +28,7 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ locale }))
 }
 
-export async function generateMetadata({ params }: { [key: string]: any }) {
+export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.locale)
 
   return {

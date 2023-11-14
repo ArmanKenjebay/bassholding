@@ -1,7 +1,7 @@
 import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 
-export async function generateMetadata(params: any) {
+export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.locale)
 
   return {
