@@ -31,13 +31,13 @@ export default async function Home({
     {
       image: homeCard1,
       title: 'MINING',
-      desc: 'mining.context',
+      desc: 'mining',
       chips: ['subsoil_use', 'gold_mining'],
     },
     {
       image: homeCard2,
       title: 'HR TECH',
-      desc: 'hr_tech.context',
+      desc: 'hr_tech',
       chips: ['HR TECH', 'профориентация', 'оценка кадров'],
     },
     {

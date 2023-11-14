@@ -60,14 +60,16 @@ export default function CustomCard({
         alt="Bassholding card"
       />
 
-      <CardFooter className="pointer-events-none absolute z-10 bottom-0">
-        <div className="relative flex flex-col w-full">
+      <CardFooter className="pointer-events-none absolute z-10 bottom-0 flex flex-col w-full">
+        <div className="relative flex flex-col w-full sm:h-32">
           <span className="tracking-wider text-2xl">{title}</span>
-          <span className="text-sm">{desc}</span>
-          <Button className="bg-white text-black" size="sm">
-            {dictionary.button['find-out-more']}
-          </Button>
+          <span className="text-sm h-10 overflow-hidden">
+            {dictionary['card_direction'][desc] ?? desc}
+          </span>
         </div>
+        <Button className="bg-white text-black flex w-full" size="sm">
+          {dictionary.button['find-out-more']}
+        </Button>
       </CardFooter>
     </Card>
   )
