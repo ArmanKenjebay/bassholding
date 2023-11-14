@@ -92,22 +92,22 @@ export default async function Home({
       </div>
 
       <div className="sm:mb-10 mb-5">
-        <marquee className="app-marquee py-5">
-          <div className="flex gap-x-10 text-black xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base">
-            <span>HR TECH</span>
-            <span>FINTECH</span>
-            <span>ENERGY</span>
-            <span>MINING</span>
-            <span>HR TECH</span>
-            <span>FINTECH</span>
-            <span>ENERGY</span>
-            <span>MINING</span>
-            <span>HR TECH</span>
-            <span>FINTECH</span>
-            <span>ENERGY</span>
-            <span>MINING</span>
-          </div>
-        </marquee>
+        {/*<marquee className="app-marquee py-5">*/}
+        {/*  <div className="flex gap-x-10 text-black xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base">*/}
+        {/*    <span>HR TECH</span>*/}
+        {/*    <span>FINTECH</span>*/}
+        {/*    <span>ENERGY</span>*/}
+        {/*    <span>MINING</span>*/}
+        {/*    <span>HR TECH</span>*/}
+        {/*    <span>FINTECH</span>*/}
+        {/*    <span>ENERGY</span>*/}
+        {/*    <span>MINING</span>*/}
+        {/*    <span>HR TECH</span>*/}
+        {/*    <span>FINTECH</span>*/}
+        {/*    <span>ENERGY</span>*/}
+        {/*    <span>MINING</span>*/}
+        {/*  </div>*/}
+        {/*</marquee>*/}
       </div>
 
       <div className="flex flex-wrap gap-x-4 gap-y-6 sm:px-5 px-2 sm:mb-10 mb-5">
