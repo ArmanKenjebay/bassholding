@@ -3,7 +3,6 @@ import { getDictionary } from '@/get-dictionary'
 import homeImg from '@/../public/home-page.jpg'
 import homeImg2 from '@/../public/home-page-2.jpg'
 import { Image } from '@nextui-org/image'
-import NextImage from 'next/image'
 
 export default async function Home({
   params: { locale },
@@ -13,36 +12,37 @@ export default async function Home({
   const dictionary = await getDictionary(locale)
 
   return (
-    <section className="flex flex-col w-full h-full">
-      <div className="flex sm:flex-row flex-col-reverse gap-y-3 sm:justify-end justify-center">
-        <div className="w-2/3 flex flex-col justify-end items-start">
-          <div className="ml-10 w-[447px] h-[111px] overflow-hidden rounded-[99px]">
+    <section className="w-full h-full">
+      <div className="flex justify-between sm:flex-row flex-col-reverse gap-y-5">
+        <div className="sm:px-0 px-2 flex flex-col gap-y-3 justify-end lg:pb-32 md:pb-0 sm:pb-0 sm:ml-5">
+          <Image
+            className="xl:w-[447px] lg:w-[370px] md:w-[340px] sm:w-[280px] w-[210px]"
+            src={homeImg2.src}
+            width={447}
+            height={111}
+            radius="full"
+          />
+          <div className="flex flex-col gap-y-1">
+            <span className="text-2xl tracking-widest">BASS HOLDING</span>
+            <span className="opacity-70 tracking-wide">
+              {dictionary.main['text-under-photo']}
+            </span>
+          </div>
+        </div>
+        <div className="flex xl:w-[570px] lg:w-[370px] md:w-[310px] sm:w-[270px] w-full">
+          <div className="sm:h-full h-[294px] overflow-hidden relative">
+            <span className="absolute pl-2 z-50 lg:bottom-28 md:bottom-24 sm:bottom-16 bottom-10 lg:text-3xl md:text-xl text-xl">
+              {dictionary.main['text-photo'].split('.').map((text) => (
+                <span className="block">{text}</span>
+              ))}
+            </span>
+
             <Image
-              priority
-              as={NextImage}
-              width={447}
-              height={111}
+              src={homeImg.src}
               radius="none"
-              src={`${homeImg2.src}`}
-              alt="bassholding"
+              className="filter brightness-75 z-10 object-cover"
             />
           </div>
-          <span className="text-2xl">BASS HOLDING</span>
-          <span className="text-base">
-            Группа компаний, осуществляющая инвестиционную деятельность в разных
-            секторах экономики.
-          </span>
-        </div>
-        <div className="sm:w-1/3 w-full">
-          <Image
-            priority
-            as={NextImage}
-            width={670}
-            height={942}
-            radius="none"
-            src={`${homeImg.src}`}
-            alt="bassholding"
-          />
         </div>
       </div>
     </section>

@@ -1,7 +1,9 @@
 {
   "main": {
     "title": "Bassholding",
-    "description": "Bassholding описание"
+    "description": "Bassholding описание",
+    "text-photo": "СТРОИМ,.РАЗВИВАЕМ,.ВДОХНОВЛЯЕМ.",
+    "text-under-photo": "Группа компаний, осуществляющая инвестиционную деятельность в разных секторах экономики."
   },
   "about": {
     "title": "О нас",
@@ -27,7 +29,6 @@
     "news": "Новости",
     "contact": "Связаться с нами"
   },
-
   "contact": {
     "btn_text": "Связаться с нами",
     "footer_text": "Мы находимся по адресу:",

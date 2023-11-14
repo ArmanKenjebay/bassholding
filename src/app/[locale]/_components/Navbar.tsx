@@ -33,11 +33,12 @@ export default function CustomNavbar({
 
   return (
     <Navbar
+      shouldHideOnScroll
       isBlurred={false}
       maxWidth="2xl"
       onMenuOpenChange={setIsMenuOpen}
       classNames={{
-        base: 'pt-3 absolute top-0 bg-transparent',
+        base: 'pt-3 bg-transparent absolute',
         wrapper: 'px-5',
       }}
     >
@@ -57,28 +58,28 @@ export default function CustomNavbar({
         <div className="sm:flex hidden flex-1 justify-start">
           <div className="flex gap-x-5">
             <NavigationLink
-              className="lg:text-base md:text-sm text-xs"
+              className="xl:text-2xl lg:text-lg md:text-sm text-xs"
               href="/about"
               lang={locale}
             >
               {dictionary.about}
             </NavigationLink>
             <NavigationLink
-              className="lg:text-base md:text-sm text-xs"
+              className="xl:text-2xl lg:text-lg md:text-sm text-xs"
               href="/direction"
               lang={locale}
             >
               {dictionary.direction}
             </NavigationLink>
             <NavigationLink
-              className="lg:text-base md:text-sm text-xs"
+              className="xl:text-2xl lg:text-lg md:text-sm text-xs"
               href="/news"
               lang={locale}
             >
               {dictionary.news}
             </NavigationLink>
             <NavigationLink
-              className="lg:text-base md:text-sm text-xs"
+              className="xl:text-2xl lg:text-lg md:text-sm text-xs"
               href="/career"
               lang={locale}
             >
@@ -110,7 +111,7 @@ export default function CustomNavbar({
         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         className="sm:hidden"
       />
-      <NavbarMenu className="pt-5 bg-opacity-75">
+      <NavbarMenu className="pt-5 bg-opacity-50 z-50">
         <NavbarMenuItem>
           <NavigationLink href="/about" lang={locale}>
             {dictionary.about}

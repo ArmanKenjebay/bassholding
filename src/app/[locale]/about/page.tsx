@@ -19,9 +19,11 @@ export default async function About({
 
   return (
     <section className="flex flex-col">
-      <h3>About page</h3>
-      <p>Current locale: {locale}</p>
-      This text is rendered on the server: {dictionary.about.title}
+      <div className="mt-20">
+        <h3>About page</h3>
+        <p>Current locale: {locale}</p>
+        This text is rendered on the server: {dictionary.about.title}
+      </div>
     </section>
   )
 }

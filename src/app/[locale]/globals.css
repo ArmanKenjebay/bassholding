@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --nav-height: 110px;
+  --photo-height: 942px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  position: relative;
+  box-sizing: border-box;
+}
+
+nav {
+  height: var(--nav-height);
+}

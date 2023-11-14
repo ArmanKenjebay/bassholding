@@ -52,7 +52,7 @@ export default async function RootLayout({
         <CustomNavbar
           params={{ dictionary: { ...dictionary.navbar }, locale }}
         />
-        <main className="w-full">{children}</main>
+        <main className="w-full h-full">{children}</main>
         <Footer
           params={{
             dictionary: {
