@@ -3,6 +3,7 @@ import { getDictionary } from '@/get-dictionary'
 import homeImg from '@/../public/home-page.jpg'
 import homeImg2 from '@/../public/home-page-2.jpg'
 import { Image } from '@nextui-org/image'
+import React from 'react'
 
 export default async function Home({
   params: { locale },
@@ -12,8 +13,8 @@ export default async function Home({
   const dictionary = await getDictionary(locale)
 
   return (
-    <section className="w-full h-full">
-      <div className="flex justify-between sm:flex-row flex-col-reverse gap-y-5">
+    <section className="flex flex-col w-full h-full">
+      <div className="flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-10 mb-5">
         <div className="sm:px-0 px-2 flex flex-col gap-y-3 justify-end lg:pb-32 md:pb-0 sm:pb-0 sm:ml-5">
           <Image
             className="xl:w-[447px] lg:w-[370px] md:w-[340px] sm:w-[280px] w-[210px]"
@@ -45,6 +46,30 @@ export default async function Home({
           </div>
         </div>
       </div>
+
+      <div className="sm:mb-10 mb-5">
+        <marquee className="app-marquee py-5">
+          <div className="flex gap-x-10 text-black xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base">
+            <span>HR TECH</span>
+            <span>FINTECH</span>
+            <span>ENERGY</span>
+            <span>MINING</span>
+            <span>HR TECH</span>
+            <span>FINTECH</span>
+            <span>ENERGY</span>
+            <span>MINING</span>
+            <span>HR TECH</span>
+            <span>FINTECH</span>
+            <span>ENERGY</span>
+            <span>MINING</span>
+          </div>
+        </marquee>
+      </div>
+
+      <div>asd</div>
+      <div>asd</div>
+      <div>asd</div>
+      <div>asd</div>
     </section>
   )
 }

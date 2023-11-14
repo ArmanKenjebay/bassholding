@@ -38,7 +38,7 @@ export default function CustomNavbar({
       maxWidth="2xl"
       onMenuOpenChange={setIsMenuOpen}
       classNames={{
-        base: 'pt-3 bg-transparent absolute',
+        base: 'pt-3 bg-transparent absolute top-0',
         wrapper: 'px-5',
       }}
     >
