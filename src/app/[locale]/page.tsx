@@ -110,16 +110,12 @@ export default async function Home({
         {/*</marquee>*/}
       </div>
 
-      <div className="flex flex-wrap gap-x-4 gap-y-6 sm:px-5 px-2 sm:mb-10 mb-5">
-        {cards.map((card, index) => (
-          <Cards
-            key={card.title}
-            {...card}
-            className={`ease-in-out duration-200 cursor-pointer max-w-[300px] ${
-              index === 0 ? 'flex-none' : 'flex-1'
-            }`}
-          />
-        ))}
+      <div className="sm:px-5 px-2 sm:mb-10 mb-5">
+        <div className="flex sm:flex-row flex-col">
+          {cards.map((card, index) => (
+            <Cards key={card.title} {...card} className="app-img-box" />
+          ))}
+        </div>
       </div>
     </section>
   )
