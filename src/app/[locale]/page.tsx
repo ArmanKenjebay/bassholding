@@ -31,13 +31,13 @@ export default async function Home({
     {
       image: homeCard1,
       title: 'MINING',
-      desc: 'золотодобывающая компания, имеющая 25-летний опыт деятельности на рынке драгоценных металлов',
-      chips: ['недропользование', 'добыча золота'],
+      desc: 'mining.context',
+      chips: ['subsoil_use', 'gold_mining'],
     },
     {
       image: homeCard2,
       title: 'HR TECH',
-      desc: 'диагностика компетенции',
+      desc: 'hr_tech.context',
       chips: ['HR TECH', 'профориентация', 'оценка кадров'],
     },
     {
@@ -54,9 +54,6 @@ export default async function Home({
     },
   ]
 
-  // @ts-ignore
-  // @ts-ignore
-  // @ts-ignore
   return (
     <section className="flex flex-col w-full h-full">
       <div className="flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-10 mb-5">
@@ -120,6 +117,7 @@ export default async function Home({
             <CustomCard
               key={card.title}
               {...card}
+              dictionary={dictionary}
               isFirst={index === 0}
               className="app-img-box"
               classNameImage="filter brightness-50 ease-in-out duration-200 scale-150 -translate-y-6 object-cover grayscale hover:scale-110 hover:grayscale-0 hover:brightness-[.8]"

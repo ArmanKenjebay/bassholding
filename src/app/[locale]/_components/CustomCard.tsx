@@ -5,12 +5,12 @@ import Image from 'next/image'
 import { StaticImageData } from 'next/image'
 import React, { HTMLAttributes } from 'react'
 import NextArrow from '@/../public/svgs/next-arrow'
-import { CardBody } from '@nextui-org/card'
 
 type Props = TCard & {
   className?: string | HTMLAttributes<any>
   classNameImage?: string | HTMLAttributes<any>
   isFirst: boolean
+  dictionary: any
 }
 
 type TCard = {
@@ -28,7 +28,9 @@ export default function CustomCard({
   chips,
   isFirst,
   className,
+  dictionary,
 }: Props) {
+  console.log(dictionary)
   return (
     <Card className={`${className ? className : ''}`}>
       <CardHeader className="absolute pointer-events-none z-10 top-1 justify-between items-start">
@@ -41,7 +43,7 @@ export default function CustomCard({
               color={isFirst ? 'warning' : ''}
               variant="bordered"
             >
-              <span>{chi}</span>
+              <span>{dictionary.chips[chi] ?? chi}</span>
             </Chip>
           ))}
         </div>
@@ -59,12 +61,13 @@ export default function CustomCard({
         alt="Bassholding card"
       />
 
-      <CardFooter className="pointer-events-none absolute z-10 bottom-10">
-        <div className="relative flex flex-col w-full h-28">
-          <span className="absolute top-0 z-20 tracking-wider text-2xl">
-            {title}
-          </span>
-          <span className="absolute h-8 bottom-0 z-10 text-sm">{desc}</span>
+      <CardFooter className="pointer-events-none absolute z-10 bottom-0">
+        <div className="relative flex flex-col w-full">
+          <span className="tracking-wider text-2xl">{title}</span>
+          <span className="text-sm">{desc}</span>
+          <Button className="bg-white text-black" size="sm">
+            {dictionary.button['find-out-more']}
+          </Button>
         </div>
       </CardFooter>
     </Card>

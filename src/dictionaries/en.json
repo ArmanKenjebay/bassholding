@@ -33,5 +33,23 @@
     "btn_text": "Contact us",
     "footer_text": "We are located at:",
     "address": "ave. Kabanbay Batyr 11/5, Astana 020000"
+  },
+  "card_direction": {
+    "mining": {
+      "context": "золотодобывающая компания, имеющая 25-летний опыт деятельности на рынке драгоценных металлов"
+    },
+    "hr_tech": {
+      "context": "диагностика компетенции"
+    }
+  },
+  "button": {
+    "find-out-more": "Узнать подробнее"
+  },
+  "chips": {
+    "subsoil_use": "недропользование",
+    "gold_mining": "добыча золота",
+    "hr_tech": "HR TECH",
+    "career_guidance": "профориентация",
+    "personnel assessment": "оценка кадров"
   }
 }
