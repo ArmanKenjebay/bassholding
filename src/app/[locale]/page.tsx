@@ -11,6 +11,7 @@ import homeCard2 from '@/../public/home-card2.jpg'
 import homeCard3 from '@/../public/home-card3.jpg'
 import homeCard4 from '@/../public/home-card4.jpg'
 import Cards from '@/app/[locale]/_components/Cards'
+import Marquee from '@/app/[locale]/_components/Marquee'
 
 type TCard = {
   image: StaticImageData
@@ -55,6 +56,7 @@ export default async function Home({
 
   // @ts-ignore
   // @ts-ignore
+  // @ts-ignore
   return (
     <section className="flex flex-col w-full h-full">
       <div className="flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-10 mb-5">
@@ -92,22 +94,22 @@ export default async function Home({
       </div>
 
       <div className="sm:mb-10 mb-5">
-        {/*<marquee className="app-marquee py-5">*/}
-        {/*  <div className="flex gap-x-10 text-black xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base">*/}
-        {/*    <span>HR TECH</span>*/}
-        {/*    <span>FINTECH</span>*/}
-        {/*    <span>ENERGY</span>*/}
-        {/*    <span>MINING</span>*/}
-        {/*    <span>HR TECH</span>*/}
-        {/*    <span>FINTECH</span>*/}
-        {/*    <span>ENERGY</span>*/}
-        {/*    <span>MINING</span>*/}
-        {/*    <span>HR TECH</span>*/}
-        {/*    <span>FINTECH</span>*/}
-        {/*    <span>ENERGY</span>*/}
-        {/*    <span>MINING</span>*/}
-        {/*  </div>*/}
-        {/*</marquee>*/}
+        <Marquee>
+          <div className="flex gap-x-10 text-black xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base">
+            <span>HR TECH</span>
+            <span>FINTECH</span>
+            <span>ENERGY</span>
+            <span>MINING</span>
+            <span>HR TECH</span>
+            <span>FINTECH</span>
+            <span>ENERGY</span>
+            <span>MINING</span>
+            <span>HR TECH</span>
+            <span>FINTECH</span>
+            <span>ENERGY</span>
+            <span>MINING</span>
+          </div>
+        </Marquee>
       </div>
 
       <div className="sm:px-5 px-2 sm:mb-10 mb-5">
