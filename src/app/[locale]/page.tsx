@@ -95,20 +95,22 @@ export default async function Home({
 
       <div className="sm:mb-10 mb-5">
         <Marquee>
-          <div className="flex gap-x-10 text-black xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base">
-            <span>HR TECH</span>
-            <span>FINTECH</span>
-            <span>ENERGY</span>
-            <span>MINING</span>
-            <span>HR TECH</span>
-            <span>FINTECH</span>
-            <span>ENERGY</span>
-            <span>MINING</span>
-            <span>HR TECH</span>
-            <span>FINTECH</span>
-            <span>ENERGY</span>
-            <span>MINING</span>
-          </div>
+          <span className="text-4xl mx-4">HR TECH</span>
+          <span className="text-4xl mx-4">FINTECH</span>
+          <span className="text-4xl mx-4">ENERGY</span>
+          <span className="text-4xl mx-4">MINING</span>
+          <span className="text-4xl mx-4">HR TECH</span>
+          <span className="text-4xl mx-4">FINTECH</span>
+          <span className="text-4xl mx-4">ENERGY</span>
+          <span className="text-4xl mx-4">MINING</span>
+          <span className="text-4xl mx-4">HR TECH</span>
+          <span className="text-4xl mx-4">FINTECH</span>
+          <span className="text-4xl mx-4">ENERGY</span>
+          <span className="text-4xl mx-4">MINING</span>
+          <span className="text-4xl mx-4">HR TECH</span>
+          <span className="text-4xl mx-4">FINTECH</span>
+          <span className="text-4xl mx-4">ENERGY</span>
+          <span className="text-4xl mx-4">MINING</span>
         </Marquee>
       </div>
 

@@ -5,7 +5,12 @@ type Props = {
 }
 export default function Marquee({ children }: Props) {
   return (
-    //@ts-ignore
-    <marquee className="app-marquee py-5">{children}</marquee>
+    <div className="relative flex overflow-x-hidden app-marquee text-black">
+      <div className="py-6 animate-marquee whitespace-nowrap">{children}</div>
+
+      <div className="absolute top-0 py-6 animate-marquee2 whitespace-nowrap">
+        {children}
+      </div>
+    </div>
   )
 }
