@@ -133,7 +133,7 @@ export default async function About({
         </div>
 
         <div className="sm:px-5 px-2 sm:mb-10 mb-5">
-          <div className="grid gap-3 grid-cols-2 md:grid-cols-4">
+          <div className="grid gap-x-3 sm:gap-y-10 gap-y-5 grid-cols-2 md:grid-cols-4">
             <div className="col-span-2 md:col-span-2 flex justify-center flex-col gap-y-3">
               <span className="text-white text-4xl">Наша команда</span>
               <span className="text-primary-gold text-4xl tracking-widest">

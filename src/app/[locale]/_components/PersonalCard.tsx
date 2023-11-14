@@ -7,8 +7,9 @@ type Props = {
 }
 export default function PersonalCard({ src, name, position }: Props) {
   return (
-    <div className="flex flex-col gap-y-3">
+    <div className="flex flex-col gap-y-1">
       <Image
+        quality={100}
         src={src}
         alt={name}
         className="md:w-[420px] md:h-[500px] w-[155px] h-[192px] object-cover object-center rounded-xl"
