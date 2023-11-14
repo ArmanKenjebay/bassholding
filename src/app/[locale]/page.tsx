@@ -1,9 +1,23 @@
+import React from 'react'
+import { Image } from '@nextui-org/image'
+import { StaticImageData } from 'next/image'
 import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
+
 import homeImg from '@/../public/home-page.jpg'
 import homeImg2 from '@/../public/home-page-2.jpg'
-import { Image } from '@nextui-org/image'
-import React from 'react'
+import homeCard1 from '@/../public/home-card1.jpg'
+import homeCard2 from '@/../public/home-card2.jpg'
+import homeCard3 from '@/../public/home-card3.jpg'
+import homeCard4 from '@/../public/home-card4.jpg'
+import Cards from '@/app/[locale]/_components/Cards'
+
+type TCard = {
+  image: StaticImageData
+  title: string
+  desc: string
+  chips: string[]
+}
 
 export default async function Home({
   params: { locale },
@@ -11,6 +25,33 @@ export default async function Home({
   params: { locale: Locale }
 }) {
   const dictionary = await getDictionary(locale)
+
+  const cards = [
+    {
+      image: homeCard1,
+      title: 'MINING',
+      desc: 'золотодобывающая компания, имеющая 25-летний опыт деятельности на рынке драгоценных металлов',
+      chips: ['недропользование', 'добыча золота'],
+    },
+    {
+      image: homeCard2,
+      title: 'HR TECH',
+      desc: 'диагностика компетенции',
+      chips: ['HR TECH', 'профориентация', 'оценка кадров'],
+    },
+    {
+      image: homeCard3,
+      title: 'SHIPPING',
+      desc: 'развитие речного порта и судоходства по реке Или',
+      chips: ['экология', 'транспорт'],
+    },
+    {
+      image: homeCard4,
+      title: 'FINTECH',
+      desc: 'реализация финтех проектов в Казахстане и за пределами',
+      chips: ['краудлендинг', 'факторинг'],
+    },
+  ]
 
   return (
     <section className="flex flex-col w-full h-full">
@@ -39,6 +80,7 @@ export default async function Home({
             </span>
 
             <Image
+              fetchPriority="high"
               src={homeImg.src}
               radius="none"
               className="filter brightness-75 z-10 object-cover"
@@ -66,10 +108,17 @@ export default async function Home({
         </marquee>
       </div>
 
-      <div>asd</div>
-      <div>asd</div>
-      <div>asd</div>
-      <div>asd</div>
+      <div className="flex flex-wrap gap-x-4 gap-y-6 sm:px-5 px-2 sm:mb-10 mb-5">
+        {cards.map((card, index) => (
+          <Cards
+            key={card.title}
+            {...card}
+            className={`ease-in-out duration-200 cursor-pointer max-w-[300px] ${
+              index === 0 ? 'flex-none' : 'flex-1'
+            }`}
+          />
+        ))}
+      </div>
     </section>
   )
 }
