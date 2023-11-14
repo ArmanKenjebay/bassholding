@@ -1,6 +1,7 @@
 import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
-import Image from 'next/image'
+import NextImage from 'next/image'
+import { Image } from '@nextui-org/image'
 import aboutImage from '@/../public/about.jpg'
 import ekoImage from '@/../public/eko.jpg'
 import inspiringImage from '@/../public/inspiring.jpg'
@@ -92,13 +93,15 @@ export default async function About({
         <div className="sm:px-5 px-2 sm:mb-10 mb-5">
           <div className="relative h-full w-full">
             <Image
-              src={aboutImage}
+              isBlurred
+              radius="none"
+              src={aboutImage.src}
               width={aboutImage.width}
               height={aboutImage.height}
               alt={'about'}
-              className="filter brightness-50 object-contain"
+              className="z-10 filter brightness-50 object-contain"
             />
-            <span className="w-3/4 tracking-widest absolute lg:bottom-20 bottom-5 left-3 font-gilroy xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg">
+            <span className="z-50 w-3/4 tracking-widest absolute lg:bottom-20 bottom-5 left-3 font-gilroy xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg">
               люди - наша главная ценность и источник силы холдинга.
             </span>
           </div>
@@ -117,7 +120,7 @@ export default async function About({
           <div className="h-full grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 md:gap-3 gap-1">
             {feels.map(({ title, image, classes }, index) => (
               <div className="relative xl:w-[300px] xl:h-[250px] lg:w-[200px] lg:h-[150px] w-[150px] h-[101px]">
-                <Image
+                <NextImage
                   src={image}
                   alt=""
                   className={`w-full h-full object-cover md:rounded-[50px] rounded-2xl filter brightness-[.65] ${
