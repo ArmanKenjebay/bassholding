@@ -30,7 +30,6 @@ export default function CustomCard({
   className,
   dictionary,
 }: Props) {
-  console.log(dictionary)
   return (
     <Card className={`${className ? className : ''}`}>
       <CardHeader className="absolute pointer-events-none z-10 top-1 justify-between items-start">
