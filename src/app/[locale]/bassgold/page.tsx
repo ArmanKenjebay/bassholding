@@ -6,7 +6,7 @@ export async function generateMetadata({ params }: any) {
 
   return {
     title: dictionary.direction.bassgold,
-    description: dictionary.bassgold.bassgold,
+    description: dictionary.direction.bassgold,
   }
 }
 
