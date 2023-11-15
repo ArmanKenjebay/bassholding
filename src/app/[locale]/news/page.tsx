@@ -82,7 +82,7 @@ export default async function News({
   return (
     <section className="flex flex-col w-full h-full">
       <div className="flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-10 mb-5">
-        <div className="flex flex-col sm:mt-20 py-5 sm:px-2 px-5 sm:static absolute z-50">
+        <div className="flex xl:text-3xl lg:text-2xl sm:text-xl flex-col sm:mt-20 py-5 sm:px-2 px-5 sm:static absolute z-50">
           <span>
             <span className="text-primary-gold">Наши новости и обновления</span>{' '}
             - это история нашего роста и развития.
