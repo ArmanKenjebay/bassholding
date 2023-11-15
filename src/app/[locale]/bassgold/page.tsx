@@ -17,5 +17,9 @@ export default async function BassGold({
 }) {
   const dictionary = await getDictionary(locale)
 
-  return <section className="flex flex-col w-full h-full"></section>
+  return (
+    <section className="flex flex-col w-full h-full">
+      <div className="mt-20">bassgold</div>
+    </section>
+  )
 }

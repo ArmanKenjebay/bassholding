@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { StaticImageData } from 'next/image'
 import React, { ComponentProps, HTMLAttributes } from 'react'
 import NextArrow from '@/../public/svgs/next-arrow'
+import { useRouter } from 'next-intl/client'
 
 type Props = TCard & {
   className?: string | HTMLAttributes<any>
@@ -17,6 +18,7 @@ type TCard = {
   title: string
   desc: string
   chips: string[]
+  link: string
 }
 
 export default function DirectionCard({
@@ -27,9 +29,20 @@ export default function DirectionCard({
   chips,
   className,
   dictionary,
+  link,
 }: Props) {
+  const router = useRouter()
+
+  const redirect = () => {
+    router.push(link)
+  }
+
   return (
-    <Card isPressable className={`${className ? className : ''}`}>
+    <Card
+      onClick={redirect}
+      isPressable
+      className={`${className ? className : ''}`}
+    >
       <CardHeader className="absolute pointer-events-none z-10 top-1 justify-between items-start">
         <div className=" flex overflow-x-auto scrollbar-hide gap-x-2 gap-y-3">
           {chips.map((chi) => (
@@ -64,7 +77,7 @@ export default function DirectionCard({
             {dictionary['card_direction'][desc] ?? desc}
           </span>
         </div>
-        <Button className="bg-white text-black flex w-full" size="sm">
+        <Button as="div" className="bg-white text-black flex w-full" size="sm">
           {dictionary.button['find-out-more']}
         </Button>
       </CardFooter>
