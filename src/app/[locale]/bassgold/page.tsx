@@ -39,7 +39,7 @@ export default async function BassGold({
       </div>
 
       <div className="sm:px-5 px-2 flex flex-col gap-3 md:flex-row sm:mb-10 mb-5">
-        <div className="flex flex-col p-3 rounded-lg bg-[#0E0D0D]">
+        <div className="flex flex-1 flex-col p-5 rounded-3xl bg-[#0E0D0D]">
           <span className="text-primary-gold tracking-widest">Ушоккы</span>
           <span className="text-sm mb-3">
             В активах компании имеется золоторудное месторождение Ушшокы,
@@ -49,7 +49,7 @@ export default async function BassGold({
 
           <span>Ключевые показатели за 2022 год:</span>
 
-          <ul className="list-disc px-5">
+          <ul className="list-disc text-sm px-5">
             <li>добыча золотосодержащей руды 37 372,3 тонн;</li>
             <li>среднее содержание золота в руде 4,8 гр/тонна;</li>
             <li>
@@ -59,7 +59,7 @@ export default async function BassGold({
           </ul>
         </div>
 
-        <div className="flex flex-col p-3 rounded-lg bg-[#0E0D0D]">
+        <div className="flex flex-1 flex-col p-5 rounded-3xl bg-[#0E0D0D]">
           <span className="text-primary-gold tracking-widest">Чинасыл-сай</span>
           <span className="text-sm mb-3">
             Для наращивания объема добычи и переработки твердых полезных
