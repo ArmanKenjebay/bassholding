@@ -8,13 +8,10 @@ import { Divider } from '@nextui-org/divider'
 import news1 from '@/../public/news1.jpg'
 import homeImg from '@/../public/home-page.jpg'
 import homeImg2 from '@/../public/home-page-2.jpg'
-import homeCard1 from '@/../public/home-card1.jpg'
-import homeCard2 from '@/../public/home-card2.jpg'
-import homeCard3 from '@/../public/home-card3.jpg'
-import homeCard4 from '@/../public/home-card4.jpg'
 import DirectionCard from '@/app/[locale]/_components/DirectionCard'
 import Marquee from '@/app/[locale]/_components/Marquee'
 import NewsLine from '@/app/[locale]/_components/NewsLine'
+import directionCards from '@/app/[locale]/_variables/DirectionCards'
 
 type TCard = {
   image: StaticImageData
@@ -30,36 +27,7 @@ export default async function Home({
 }) {
   const dictionary = await getDictionary(locale)
 
-  const cards = [
-    {
-      link: 'bassgold',
-      image: homeCard1,
-      title: 'MINING',
-      desc: 'mining',
-      chips: ['subsoil_use', 'gold_mining'],
-    },
-    {
-      link: 'bassgold',
-      image: homeCard2,
-      title: 'HR TECH',
-      desc: 'hr_tech',
-      chips: ['HR TECH', 'профориентация', 'оценка кадров'],
-    },
-    {
-      link: 'bassgold',
-      image: homeCard3,
-      title: 'SHIPPING',
-      desc: 'развитие речного порта и судоходства по реке Или',
-      chips: ['экология', 'транспорт'],
-    },
-    {
-      link: 'bassgold',
-      image: homeCard4,
-      title: 'FINTECH',
-      desc: 'реализация финтех проектов в Казахстане и за пределами',
-      chips: ['краудлендинг', 'факторинг'],
-    },
-  ]
+  const cards = [...directionCards]
 
   const news = [
     {

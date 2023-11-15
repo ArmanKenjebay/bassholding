@@ -26,6 +26,7 @@ export default async function BassGold({
           className="xl:h-[500px] lg:h-[350px] md:h-[300px] sm:h-[250px] h-[200px] brightness-75 object-cover object-center"
           width={1919}
           height={1098}
+          radius="none"
           src={bassgoldImage.src}
           alt="bassgold image"
         />
