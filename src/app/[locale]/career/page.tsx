@@ -101,7 +101,10 @@ export default async function Career({
         <div className="sm:px-5 px-2 sm:mb-10 mb-5">
           <div className="flex flex-col gap-y-14">
             {careers.map(({ text, image, content }) => (
-              <div className="flex lg:gap-x-20 md:gap-x-14 sm:gap-x-10 gap-y-3 sm:odd:flex-row sm:even:flex-row-reverse flex-col justify-between items-center">
+              <div
+                key={text}
+                className="flex lg:gap-x-20 md:gap-x-14 sm:gap-x-10 gap-y-3 sm:odd:flex-row sm:even:flex-row-reverse flex-col justify-between items-center"
+              >
                 <div className="relative aspect-video  w-full h-full">
                   <Image
                     src={image.src}
@@ -125,7 +128,7 @@ export default async function Career({
             {dictionary.career.open_positions}
           </span>
           {positions.map((n, index) => (
-            <div>
+            <div key={index}>
               {index < positions.length && (
                 <Divider className="my-2 bg-white" />
               )}

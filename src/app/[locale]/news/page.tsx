@@ -108,8 +108,11 @@ export default async function News({
 
       <div className="flex flex-col md:flex-row justify-between gap-y-10 gap-x-2 px-2 sm:px-5 sm:mb-10 mb-5">
         <div className="grid gap-3 md:grid-cols-2 grid-cols-1">
-          {news.map(({ image, chip, text }) => (
-            <div className="overflow-hidden flex-1 flex flex-col gap-2">
+          {news.map(({ image, chip, text }, index) => (
+            <div
+              key={index}
+              className="overflow-hidden flex-1 flex flex-col gap-2"
+            >
               <ImageNext
                 src={image.src}
                 alt={chip}
@@ -128,8 +131,8 @@ export default async function News({
             События холдинга
           </div>
 
-          {events.map(({ text, date }) => (
-            <div className="flex flex-col gap-y-1 mb-5">
+          {events.map(({ text, date }, index) => (
+            <div key={text + index} className="flex flex-col gap-y-1 mb-5">
               <span className="text-xl tracking-wider font-thin">{text}</span>
               <span className="text-sm opacity-70">{date}</span>
             </div>

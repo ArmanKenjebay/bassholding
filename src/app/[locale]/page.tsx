@@ -154,7 +154,7 @@ export default async function Home({
           {dictionary.news.title}
         </span>
         {news.map((n, index) => (
-          <div>
+          <div key={index}>
             {index < news.length && <Divider className="my-2 bg-white" />}
             <NewsLine {...n} />
           </div>

@@ -96,6 +96,7 @@ export default function CustomNavbar({
             variant="bordered"
             onChange={handleSelectionChange}
             selectedKeys={[locale]}
+            classNames={{}}
           >
             <SelectItem key="en" lang="en" value="en">
               EN

@@ -119,7 +119,10 @@ export default async function About({
         <div className="sm:px-5 px-2 sm:mb-10 mb-5">
           <div className="h-full grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 md:gap-3 gap-1">
             {feels.map(({ title, image, classes }, index) => (
-              <div className="relative xl:w-[300px] xl:h-[250px] lg:w-[200px] lg:h-[150px] w-[150px] h-[101px]">
+              <div
+                key={index}
+                className="relative xl:w-[300px] xl:h-[250px] lg:w-[200px] lg:h-[150px] w-[150px] h-[101px]"
+              >
                 <NextImage
                   src={image}
                   alt=""
@@ -145,7 +148,12 @@ export default async function About({
               </span>
             </div>
             {personals.map(({ name, position, src }) => (
-              <PersonalCard src={src} name={name} position={position} />
+              <PersonalCard
+                key={name}
+                src={src}
+                name={name}
+                position={position}
+              />
             ))}
           </div>
         </div>

@@ -34,8 +34,8 @@ export default function DirectionCard({
         <div className=" flex overflow-x-auto scrollbar-hide gap-x-2 gap-y-3">
           {chips.map((chi) => (
             <Chip
-              className="pointer-events-none border-white"
               key={chi}
+              className="pointer-events-none border-white"
               // @ts-ignored
               variant="bordered"
             >
