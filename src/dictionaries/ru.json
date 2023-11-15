@@ -16,7 +16,8 @@
   },
   "direction": {
     "title": "Направления",
-    "description": "Направления описание"
+    "description": "Направления описание",
+    "bassgold": "BassGold"
   },
   "news": {
     "title": "Новости",

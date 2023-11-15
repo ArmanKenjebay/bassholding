@@ -16,7 +16,8 @@
   },
   "direction": {
     "title": "Direction",
-    "description": "Direction us description"
+    "description": "Direction us description",
+    "bassgold": "BassGold"
   },
   "news": {
     "title": "News",
