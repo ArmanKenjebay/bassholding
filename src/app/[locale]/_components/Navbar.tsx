@@ -35,8 +35,11 @@ export default function CustomNavbar({
       isBlurred={false}
       maxWidth="2xl"
       onMenuOpenChange={setIsMenuOpen}
+      className={`ease-in-out duration-200 ${
+        isMenuOpen ? 'bg-black' : 'bg-transparent'
+      }`}
       classNames={{
-        base: 'pt-3 bg-transparent absolute top-0',
+        base: 'absolute top-0',
         wrapper: 'px-5',
       }}
     >
@@ -109,7 +112,7 @@ export default function CustomNavbar({
         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         className="sm:hidden"
       />
-      <NavbarMenu className="pt-5 bg-opacity-50 z-50">
+      <NavbarMenu className="pt-5 bg-black z-50">
         <NavbarMenuItem>
           <NavigationLink href="/about" lang={locale}>
             {dictionary.about}
