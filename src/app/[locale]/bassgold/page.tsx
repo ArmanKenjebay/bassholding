@@ -1,7 +1,7 @@
 import { getDictionary } from '@/get-dictionary'
 import { Locale } from '@/i18n-config'
-import bassgoldImage from '@/../public/bassgold-slider.jpg'
 import { Image } from '@nextui-org/image'
+import bassgoldImage from '@/../public/bassgold-slider.jpg'
 
 export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.locale)
@@ -38,7 +38,7 @@ export default async function BassGold({
         </div>
       </div>
 
-      <div className="sm:px-5 px-2 flex flex-col gap-3 md:flex-row sm:mb-10 mb-5">
+      <div className="relative z-50 sm:px-5 px-2 flex flex-col gap-3 md:flex-row sm:mb-10 mb-5">
         <div className="flex flex-1 flex-col p-5 rounded-3xl bg-[#0E0D0D]">
           <span className="text-primary-gold tracking-widest">Ушоккы</span>
           <span className="text-sm mb-3">
