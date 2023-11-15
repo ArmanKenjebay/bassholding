@@ -6,6 +6,8 @@ import homeCard1 from '../../../../public/home-card1.jpg'
 import homeCard2 from '../../../../public/home-card2.jpg'
 import homeCard3 from '../../../../public/home-card3.jpg'
 import homeCard4 from '../../../../public/home-card4.jpg'
+import { Divider } from '@nextui-org/divider'
+import NewsLine from '@/app/[locale]/_components/NewsLine'
 
 export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.locale)
@@ -53,7 +55,7 @@ export default async function Direction({
   return (
     <section className="flex flex-col w-full h-full">
       <div className="mt-20">
-        <div className="sm:px-10 px-5 py-3 flex justify-center items-center text-center sm:mb-10 mb-5">
+        <div className="sm:px-16 md:px-24 lg:px-32 xl:px-52 px-5 py-8 flex justify-center items-center text-center sm:mb-10 mb-5">
           <span className="lg:text-4xl md:text-3xl sm:text-2xl text-xl">
             <span className="text-primary-gold">Основная задача холдинга</span>{' '}
             - поднимать знамя Республики Казахстан в разных направлениях и на

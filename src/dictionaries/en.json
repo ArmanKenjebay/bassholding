@@ -11,7 +11,8 @@
   },
   "career": {
     "title": "Career",
-    "description": "Career us description"
+    "description": "Career us description",
+    "open_positions": "Open positions"
   },
   "direction": {
     "title": "Direction",

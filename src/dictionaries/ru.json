@@ -11,7 +11,8 @@
   },
   "career": {
     "title": "Карьера",
-    "description": "Карьера описание"
+    "description": "Карьера описание",
+    "open_positions": "Открытые позиции"
   },
   "direction": {
     "title": "Направления",

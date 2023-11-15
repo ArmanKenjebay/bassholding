@@ -5,7 +5,7 @@ import React, { ComponentProps } from 'react'
 type Props = {
   content: string
   chip: string
-  date: string
+  date?: string
 }
 export default function NewsLine({ content, chip, date }: Props) {
   return (
@@ -17,9 +17,11 @@ export default function NewsLine({ content, chip, date }: Props) {
         <Chip variant="bordered" color="warning">
           {chip}
         </Chip>
-        <div>
-          <span>{date}</span>
-        </div>
+        {date ?? (
+          <div>
+            <span>{date}</span>
+          </div>
+        )}
         <div>
           <NextArrow
             fillColor="#FFFF"

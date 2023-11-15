@@ -7,6 +7,9 @@ import careerImage1 from '@/../public/career1.jpg'
 import careerImage2 from '@/../public/career2.jpg'
 import careerImage3 from '@/../public/career3.jpg'
 import careerImage4 from '@/../public/career4.jpg'
+import { Divider } from '@nextui-org/divider'
+import NewsLine from '@/app/[locale]/_components/NewsLine'
+import React from 'react'
 
 export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.locale)
@@ -48,6 +51,21 @@ export default async function Career({
       content:
         'Мы поддерживаем профессиональное и личностное развитие наших сотрудников. У нас есть разнообразные программы для повышения квалификации, позволяющие вам развиваться в своей области и достигать новых высот.',
       image: careerImage4,
+    },
+  ]
+
+  const positions = [
+    {
+      content: 'Продакт менеджер',
+      chip: 'PINCODE',
+    },
+    {
+      content: 'Специалист по кадровому делопроизводству',
+      chip: 'BASS Holding',
+    },
+    {
+      content: 'Офис менеджер',
+      chip: 'BASS Holding',
     },
   ]
 
@@ -102,7 +120,19 @@ export default async function Career({
           </div>
         </div>
 
-        <div className="sm:px-5 px-2 sm:mb-10 mb-5"></div>
+        <div className="sm:px-5 px-2 sm:mb-10 mb-5">
+          <span className="lg:text-4xl md:text-3xl text-2xl">
+            {dictionary.career.open_positions}
+          </span>
+          {positions.map((n, index) => (
+            <div>
+              {index < positions.length && (
+                <Divider className="my-2 bg-white" />
+              )}
+              <NewsLine {...n} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )
