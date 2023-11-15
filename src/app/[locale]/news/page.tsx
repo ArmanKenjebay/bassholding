@@ -69,6 +69,14 @@ export default async function News({
       text: 'Число работников холдинга достигло круглой цифры.',
       date: '9/10/2023',
     },
+    {
+      text: 'Число работников холдинга достигло круглой цифры.',
+      date: '9/10/2023',
+    },
+    {
+      text: 'Число работников холдинга достигло круглой цифры.',
+      date: '9/10/2023',
+    },
   ]
 
   return (
@@ -115,8 +123,10 @@ export default async function News({
           ))}
         </div>
 
-        <div className="flex flex-col bg-[#272727] p-5 rounded-lg overflow-y-hidden">
-          <span className="text-xl mb-5 tracking-widest">События холдинга</span>
+        <div className="flex flex-col max-h-[600px] bg-[#272727] p-5 rounded-lg overflow-y-auto scrollbar-hide">
+          <div className="text-xl mb-5 w-full p-2 tracking-widest">
+            События холдинга
+          </div>
 
           {events.map(({ text, date }) => (
             <div className="flex flex-col gap-y-1 mb-5">
