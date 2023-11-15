@@ -3,6 +3,11 @@ import { getDictionary } from '@/get-dictionary'
 import newsImage from '@/../public/news.jpg'
 import { Image as ImageNext } from '@nextui-org/image'
 import React from 'react'
+import newsItem4 from '@/../public/news-item-1.jpg'
+import newsItem2 from '@/../public/news-item-2.jpg'
+import newsItem3 from '@/../public/news-item-3.jpg'
+import newsItem1 from '@/../public/news-item-4.jpg'
+import { Chip } from '@nextui-org/chip'
 
 export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.locale)
@@ -19,6 +24,52 @@ export default async function News({
   params: { locale: Locale }
 }) {
   const dictionary = await getDictionary(locale)
+
+  const news = [
+    {
+      image: newsItem1,
+      chip: 'социальная жизнь',
+      text: 'Надпись UMIT из 270 деревьев была высажена в Павлодарской области',
+    },
+    {
+      image: newsItem2,
+      chip: 'BASS GOLD',
+      text: 'Работников рудника Ушшокы наградили благодарственными...',
+    },
+    {
+      image: newsItem3,
+      chip: 'социальная жизнь',
+      text: 'BASS Gold выплатил купонное вознаграждение по облигациям первого...',
+    },
+    {
+      image: newsItem4,
+      chip: 'BASS GOLD',
+      text: 'BASS Gold сообщает о начале торгов облигациями на KASE',
+    },
+  ]
+
+  const events = [
+    {
+      text: 'Число работников холдинга достигло круглой цифры.',
+      date: '9/10/2023',
+    },
+    {
+      text: 'Число работников холдинга достигло круглой цифры.',
+      date: '9/10/2023',
+    },
+    {
+      text: 'Число работников холдинга достигло круглой цифры.',
+      date: '9/10/2023',
+    },
+    {
+      text: 'Число работников холдинга достигло круглой цифры.',
+      date: '9/10/2023',
+    },
+    {
+      text: 'Число работников холдинга достигло круглой цифры.',
+      date: '9/10/2023',
+    },
+  ]
 
   return (
     <section className="flex flex-col w-full h-full">
@@ -44,6 +95,35 @@ export default async function News({
               className="filter sm:brightness-75 brightness-[.3] z-10 object-cover"
             />
           </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row justify-between gap-y-10 gap-x-2 px-2 sm:px-5 sm:mb-10 mb-5">
+        <div className="grid gap-3 md:grid-cols-2 grid-cols-1">
+          {news.map(({ image, chip, text }) => (
+            <div className="overflow-hidden flex-1 flex flex-col gap-2">
+              <ImageNext
+                src={image.src}
+                alt={chip}
+                className="aspect-square sm:w-[280px] sm:h-[180px] w-[150px] h-[80px]"
+              />
+              <Chip variant="bordered" color="warning">
+                {chip}
+              </Chip>
+              <span>{text}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-col bg-[#272727] p-5 rounded-lg overflow-y-hidden">
+          <span className="text-xl mb-5 tracking-widest">События холдинга</span>
+
+          {events.map(({ text, date }) => (
+            <div className="flex flex-col gap-y-1 mb-5">
+              <span className="text-xl tracking-wider font-thin">{text}</span>
+              <span className="text-sm opacity-70">{date}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

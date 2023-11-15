@@ -11,15 +11,19 @@ const gilroy = localFont({
   src: [
     {
       path: '../../../public/fonts/Gilroy-Regular.woff2',
+      weight: '400',
     },
     {
       path: '../../../public/fonts/Gilroy-Bold.woff2',
+      weight: '500',
     },
     {
       path: '../../../public/fonts/Gilroy-RegularItalic.woff2',
+      weight: '100',
     },
     {
       path: '../../../public/fonts/Gilroy-SemiBold.woff2',
+      weight: '600',
     },
   ],
 })
