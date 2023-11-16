@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import { Image as ImageNext } from '@nextui-org/image'
 import { StaticImageData } from 'next/image'
 import { Locale } from '@/i18n-config'
@@ -115,7 +114,7 @@ export default async function Home({
               {...card}
               dictionary={dictionary}
               className="app-img-box"
-              classNameImage="filter brightness-50 ease-in-out duration-200 scale-150 -translate-y-6 object-cover grayscale hover:scale-110 hover:grayscale-0 hover:brightness-[.8]"
+              classNameImage="filter brightness-50 ease-in-out duration-200 scale-150 -translate-y-6 object-cover grayscale"
             />
           ))}
         </div>

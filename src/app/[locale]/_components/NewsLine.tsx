@@ -1,6 +1,5 @@
 import { Chip } from '@nextui-org/chip'
-import NextArrow from '@/../../public/svgs/next-arrow'
-import React, { ComponentProps } from 'react'
+import React from 'react'
 
 type Props = {
   content: string
@@ -9,7 +8,7 @@ type Props = {
 }
 export default function NewsLine({ content, chip, date }: Props) {
   return (
-    <div className="sm:py-5 py-3 flex sm:flex-row flex-col gap-y-2 justify-between">
+    <div className="group sm:py-5 py-3 flex sm:flex-row flex-col gap-y-2 justify-between">
       <div className="flex">
         <span className="text-sm">{content}</span>
       </div>
@@ -23,12 +22,12 @@ export default function NewsLine({ content, chip, date }: Props) {
           </div>
         )}
         <div>
-          <NextArrow
-            fillColor="#FFFF"
-            arrowColor="#000000"
-            width="30"
-            height="30"
-          />
+          <div
+            className={`rounded-[99px] min-w-[30px] min-h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 group-hover:bg-primary-gold group-hover:text-white`}
+          >
+            <span className={`block group-hover:hidden`}>&#8594;</span>
+            <span className={`hidden group-hover:block`}>&#8599;</span>
+          </div>
         </div>
       </div>
     </div>

@@ -33,5 +33,5 @@ main {
 }
 
 .app-img-box {
-  @apply lg:w-[363px] md:w-[284px] sm:w-[186px] w-full sm:h-[500px] h-[280px] m-1 transition-width duration-250 hover:cursor-pointer lg:hover:w-[668px] md:hover:w-[468px] sm:hover:w-[368px];
+  @apply lg:w-[363px] md:w-[284px] sm:w-[186px] w-full sm:h-[500px] h-[280px] m-1 transition-width duration-250 lg:hover:w-[668px] md:hover:w-[468px] sm:hover:w-[368px];
 }

@@ -1,10 +1,8 @@
 'use client'
 
 import { Button, Card, CardFooter, CardHeader, Chip } from '@nextui-org/react'
-import Image from 'next/image'
-import { StaticImageData } from 'next/image'
-import React, { ComponentProps, HTMLAttributes } from 'react'
-import NextArrow from '@/../public/svgs/next-arrow'
+import Image, { StaticImageData } from 'next/image'
+import React, { HTMLAttributes } from 'react'
 import { useRouter } from 'next-intl/client'
 
 type Props = TCard & {
@@ -38,26 +36,28 @@ export default function DirectionCard({
   }
 
   return (
-    <Card
-      onClick={redirect}
-      isPressable
-      className={`${className ? className : ''}`}
-    >
-      <CardHeader className="absolute pointer-events-none z-10 top-1 justify-between items-start">
-        <div className=" flex overflow-x-auto scrollbar-hide gap-x-2 gap-y-3">
+    <Card className={`${className ? className : ''} group`}>
+      <CardHeader className="absolute z-10 top-1 justify-between items-start">
+        <div className=" flex flex-wrap max-h-20 overflow-x-auto scrollbar-hide gap-x-2 gap-y-3">
           {chips.map((chi) => (
             <Chip
               key={chi}
-              className="pointer-events-none border-white"
+              className="border-white group-hover:border-primary-gold"
               // @ts-ignored
               variant="bordered"
             >
-              <span>{dictionary.chips[chi] ?? chi}</span>
+              <span className="group-hover:text-primary-gold">
+                {dictionary.chips[chi] ?? chi}
+              </span>
             </Chip>
           ))}
         </div>
-        <div>
-          <NextArrow width={'30'} height={'30'} />
+
+        <div
+          className={`rounded-[99px] min-w-[30px] min-h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 group-hover:bg-primary-gold group-hover:text-white`}
+        >
+          <span className={`block group-hover:hidden`}>&#8594;</span>
+          <span className={`hidden group-hover:block`}>&#8599;</span>
         </div>
       </CardHeader>
 
@@ -66,19 +66,31 @@ export default function DirectionCard({
         quality={100}
         width={668}
         height={774}
-        className={`z-0 w-full h-full  ${classNameImage ?? ''}`}
+        className={`group-hover:scale-110 group-hover:grayscale-0 group-hover:brightness-[.5] z-0 w-full h-full  ${
+          classNameImage ?? ''
+        }`}
         alt="Bassholding card"
       />
 
-      <CardFooter className="pointer-events-none absolute z-10 bottom-0 flex flex-col w-full">
+      <CardFooter className="absolute z-10 bottom-0 flex flex-col w-full text-left">
         <div className="relative flex flex-col w-full sm:h-32">
-          <span className="tracking-wider text-2xl">{title}</span>
-          <span className="text-sm h-10 overflow-hidden">
+          <span className="z-10 tracking-wider text-2xl lg:text-6xl truncate">
+            {title}
+          </span>
+          <span className="pointer-events-auto z-0 text-sm lg:text-2xl h-10 group-hover:h-full overflow-y-hidden">
             {dictionary['card_direction'][desc] ?? desc}
           </span>
         </div>
-        <Button as="div" className="bg-white text-black flex w-full" size="sm">
-          {dictionary.button['find-out-more']}
+        <Button
+          onClick={redirect}
+          as="div"
+          className="py-1 rounded-3xl outline-0 border-0 bg-white text-black transition-transform hover:scale-95 text-base xl:text-xl flex w-full"
+          size="sm"
+        >
+          <span className={`inline-block w-full text-center`}>
+            {dictionary.button['find-out-more']}
+          </span>
+          &#8594;
         </Button>
       </CardFooter>
     </Card>
