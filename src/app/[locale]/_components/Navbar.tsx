@@ -61,7 +61,7 @@ export default function CustomNavbar({
           </Link>
         </div>
         <div className="sm:flex hidden flex-1 justify-start">
-          <div className="flex gap-x-5">
+          <div className="flex sm:gap-x-8 md:gap-x-10 lg:gap-x-12 xl:gap-x-16 2xl:gap-x-20">
             <NavigationLink
               className="xl:text-2xl lg:text-lg md:text-sm text-xs"
               href="/about"
