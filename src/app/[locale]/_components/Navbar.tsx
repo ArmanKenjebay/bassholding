@@ -45,13 +45,17 @@ export default function CustomNavbar({
     >
       <div className="flex gap-x-10 w-full items-center justify-between">
         <div className="flex">
-          <Link href="/" lang={locale}>
+          <Link
+            href="/"
+            lang={locale}
+            className="w-[104px] h-[20px] lg:w-[273px] lg:h-[53px]"
+          >
             <Image
               src={bassholdingLogo}
               alt={''}
               width={274}
               height={53}
-              className="pointer-events-none h-auto lg:w-[274px] md:w-[245px] sm:w-[150px] w-[120px]"
+              className="pointer-events-none"
               priority
             />
           </Link>
