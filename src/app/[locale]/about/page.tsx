@@ -90,7 +90,7 @@ export default async function About({
   return (
     <section className="flex flex-col">
       <div className="mt-20">
-        <div className="sm:px-5 px-2 sm:mb-10 mb-5">
+        <div className="sm:px-5 px-2 mb-10">
           <div className="relative h-full w-full">
             <Image
               isBlurred
@@ -106,43 +106,45 @@ export default async function About({
             </span>
           </div>
         </div>
-        <div className="sm:px-5 px-2 sm:mb-10 mb-5">
+        <div className="sm:px-5 px-2 mb-10">
           <div className="flex flex-col sm:w-3/4 w-full">
-            <span className="text-xl">Наши ценности</span>
-            <span className="text-xs tracking-widest">
+            <span className="text-2xl tracking-widest mb-2">Наши ценности</span>
+            <span className="text-base">
               Наши ценности и принципы тесно соприкасаются с целями ООН в
               области устойчивого развития
             </span>
           </div>
         </div>
 
-        <div className="sm:px-5 px-2 sm:mb-10 mb-5">
-          <div className="h-full grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 md:gap-3 gap-1">
+        <div className="sm:px-5 px-2 mb-10">
+          <div className="h-full grid lg:grid-cols-4 grid-cols-2 gap-3">
             {feels.map(({ title, image, classes }, index) => (
               <div
                 key={index}
-                className="relative xl:w-[300px] xl:h-[250px] lg:w-[200px] lg:h-[150px] w-[150px] h-[101px]"
+                className="relative overflow-hidden h-[101px] sm:w-full md:h-[200px] xl:h-[287px]"
               >
+                <span className="z-10 absolute top-3/4 sm:top-[60%] block w-full h-full text-xs sm:text-base lg:text-xl xl:text-3xl tracking-widest text-center">
+                  {title}
+                </span>
                 <NextImage
                   src={image}
                   alt=""
-                  className={`w-full h-full object-cover md:rounded-[50px] rounded-2xl filter brightness-[.65] ${
+                  className={`w-full h-full object-cover md:rounded-[120px] rounded-3xl filter brightness-[.65] ${
                     classes ? classes : ''
                   }`}
                 />
-                <span className="absolute top-1/2 w-full h-full text-sm text-center">
-                  {title}
-                </span>
               </div>
             ))}
           </div>
         </div>
 
         <div className="sm:px-5 px-2 sm:mb-10 mb-5">
-          <div className="grid gap-x-3 sm:gap-y-10 gap-y-5 grid-cols-2 md:grid-cols-4">
-            <div className="col-span-2 md:col-span-2 flex justify-center flex-col gap-y-3">
-              <span className="text-white text-4xl">Наша команда</span>
-              <span className="text-primary-gold text-4xl tracking-widest">
+          <div className="grid gap-x-3 gap-y-5 sm:gap-y-10 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+            <div className="col-span-2 md:col-span-2 flex justify-center flex-col gap-y-3 ">
+              <span className="text-2xl tracking-widest mb-2 md:text-2xl lg:text-3xl xl:text-6xl">
+                Наша команда
+              </span>
+              <span className="text-primary-gold text-base tracking-widest md:text-2xl lg:text-3xl xl:text-6xl">
                 Команда, в которой каждый вносит свой вклад, способна перемещать
                 горы
               </span>
