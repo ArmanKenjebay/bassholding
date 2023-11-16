@@ -5,6 +5,7 @@ import CustomNavbar from '@/app/[locale]/_components/Navbar'
 import { i18n, Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 import Footer from '@/app/[locale]/_components/Footer'
+import { ScrollShadow } from '@nextui-org/scroll-shadow'
 
 const gilroy = localFont({
   variable: '--font-gilroy',
@@ -53,19 +54,25 @@ export default async function RootLayout({
   return (
     <html lang={locale} className="dark">
       <body className={`${gilroy.variable} font-gilroy`}>
-        <CustomNavbar
-          params={{ dictionary: { ...dictionary.navbar }, locale }}
-        />
-        <main>{children}</main>
-        <Footer
-          params={{
-            dictionary: {
-              navbar: dictionary.navbar,
-              contact: dictionary.contact,
-            },
-            locale,
-          }}
-        />
+        <ScrollShadow
+          size={40}
+          className="w-full h-full overflow-x-hidden"
+          hideScrollBar
+        >
+          <CustomNavbar
+            params={{ dictionary: { ...dictionary.navbar }, locale }}
+          />
+          <main>{children}</main>
+          <Footer
+            params={{
+              dictionary: {
+                navbar: dictionary.navbar,
+                contact: dictionary.contact,
+              },
+              locale,
+            }}
+          />
+        </ScrollShadow>
       </body>
     </html>
   )
