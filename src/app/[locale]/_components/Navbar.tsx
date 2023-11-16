@@ -63,28 +63,28 @@ export default function CustomNavbar({
         <div className="sm:flex hidden flex-1 justify-start">
           <div className="flex sm:gap-x-8 md:gap-x-10 lg:gap-x-12 xl:gap-x-16 2xl:gap-x-20">
             <NavigationLink
-              className="xl:text-2xl lg:text-lg md:text-sm text-xs"
+              className="xl:text-2xl lg:text-lg md:text-sm text-xs font-normal"
               href="/about"
               lang={locale}
             >
               {dictionary.about}
             </NavigationLink>
             <NavigationLink
-              className="xl:text-2xl lg:text-lg md:text-sm text-xs"
+              className="xl:text-2xl lg:text-lg md:text-sm text-xs font-normal"
               href="/direction"
               lang={locale}
             >
               {dictionary.direction}
             </NavigationLink>
             <NavigationLink
-              className="xl:text-2xl lg:text-lg md:text-sm text-xs"
+              className="xl:text-2xl lg:text-lg md:text-sm text-xs font-normal"
               href="/news"
               lang={locale}
             >
               {dictionary.news}
             </NavigationLink>
             <NavigationLink
-              className="xl:text-2xl lg:text-lg md:text-sm text-xs"
+              className="xl:text-2xl lg:text-lg md:text-sm text-xs font-normal"
               href="/career"
               lang={locale}
             >
