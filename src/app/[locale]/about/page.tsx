@@ -36,54 +36,69 @@ export default async function About({
   const dictionary = await getDictionary(locale)
 
   const feels = [
-    { title: 'ЭКОЛОГИЧНОСТЬ', image: ekoImage },
-    { title: 'ВОВЛЕЧЕННОСТЬ', image: inspiringImage },
-    { title: 'ТЕХНОЛОГИЧНОСТЬ', image: technologyImage },
-    { title: 'ЧЕСТНОСТЬ', image: trustImage, classes: 'grayscale' },
+    { title: dictionary.about.sustainability, image: ekoImage },
+    { title: dictionary.about.engagement, image: inspiringImage },
+    {
+      title: dictionary.about.technological_advancement,
+      image: technologyImage,
+    },
+    {
+      title: dictionary.about.sincerity,
+      image: trustImage,
+      classes: 'grayscale',
+    },
   ]
 
   const personals = [
-    { name: 'Чингиз Садвакасов', src: chingizImage, position: 'Учредитель' },
-    { name: 'Ерлан Тасбулатов', src: erlanImage, position: 'Учредитель' },
     {
-      name: 'Балсулу Тасбулатова',
+      name: dictionary.about.chingiz_sadvakassov,
+      src: chingizImage,
+      position: dictionary.about.founder,
+    },
+    {
+      name: dictionary.about.yerlan_tasbulatov,
+      src: erlanImage,
+      position: dictionary.about.founder,
+    },
+    {
+      name: dictionary.about.balsulu_tasbulatova,
       src: balsuluImage,
-      position: 'Руководитель HR и основатель Pincode',
+      position: dictionary.about.balsulu_tasbulatova_description,
     },
     {
-      name: 'Максим Ванюков',
+      name: dictionary.about.maxim_vanyukov,
       src: maxImage,
-      position: 'Руководитель отдела программирования',
+      position: dictionary.about.maxim_vanyukov_description,
     },
     {
-      name: 'Берик Канаев',
+      name: dictionary.about.berik_kanayev,
       src: berikImage,
-      position: 'Руководитель отдела финансов',
+      position: dictionary.about.berik_kanayev_description,
     },
     {
-      name: 'Бибигуль Мусатаева',
+      name: dictionary.about.bibigul_mussatayeva,
       src: bibigulImage,
-      position: 'Руководитель юридического отдела',
+      position: dictionary.about.bibigul_mussatayeva_description,
     },
     {
-      name: 'Алия Корабаева',
+      name: dictionary.about.aliya_korabayeva,
       src: aliaImage,
-      position: 'Руководитель отдела учет и аудит',
+      position: dictionary.about.aliya_korabayeva_description,
     },
     {
-      name: 'Алимжан Абишев',
+      name: dictionary.about.alimzhan_abishev,
       src: alimImage,
-      position: 'Руководитель отдела аналитики',
+      position: dictionary.about.alimzhan_abishev_description,
     },
     {
-      name: 'Шокан Айдар',
+      name: dictionary.about.shokan_aidar,
       src: shokanImage,
-      position: 'Руководитель отдела маркетинга',
+      position: dictionary.about.shokan_aidar_description,
     },
     {
-      name: 'Ермек Ильясов',
+      name: dictionary.about.yermek_ilyasov,
       src: ermekImage,
-      position: 'Руководитель отдела «MINING»',
+      position: dictionary.about.yermek_ilyasov_description,
     },
   ]
 
@@ -102,16 +117,17 @@ export default async function About({
               className="z-10 filter brightness-50 object-contain"
             />
             <span className="z-50 w-3/4 tracking-widest absolute lg:bottom-20 bottom-5 left-3 font-gilroy xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg">
-              люди - наша главная ценность и источник силы холдинга.
+              {dictionary.about.human_value}
             </span>
           </div>
         </div>
         <div className="sm:px-5 px-2 mb-10">
           <div className="flex flex-col sm:w-3/4 w-full">
-            <span className="text-2xl tracking-widest mb-2">Наши ценности</span>
+            <span className="text-2xl tracking-widest mb-2">
+              {dictionary.about.our_values}
+            </span>
             <span className="text-base">
-              Наши ценности и принципы тесно соприкасаются с целями ООН в
-              области устойчивого развития
+              {dictionary.about.our_values_principles}
             </span>
           </div>
         </div>
@@ -142,11 +158,10 @@ export default async function About({
           <div className="grid gap-x-3 gap-y-5 sm:gap-y-10 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
             <div className="col-span-2 md:col-span-2 flex justify-center flex-col gap-y-3 ">
               <span className="text-2xl tracking-widest mb-2 md:text-2xl lg:text-3xl xl:text-6xl">
-                Наша команда
+                {dictionary.about.our_team}
               </span>
               <span className="text-primary-gold text-base tracking-widest md:text-2xl lg:text-3xl xl:text-6xl">
-                Команда, в которой каждый вносит свой вклад, способна перемещать
-                горы
+                {dictionary.about.team_contribution}
               </span>
             </div>
             {personals.map(({ name, position, src }) => (
