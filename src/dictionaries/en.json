@@ -66,7 +66,9 @@
   },
   "card_direction": {
     "mining": "A gold extracting company with over 25 years of experience in the precious metals market",
-    "hr_tech": "Diagnostics of competencies"
+    "hr_tech": "Diagnostics of competencies",
+    "shipping_desc": "Development of the river port and shipping on the Ili river",
+    "fintech_desc": "A group of companies engaging in investments into various sectors of the economy"
   },
   "button": {
     "find-out-more": "Find out more"
@@ -76,7 +78,11 @@
     "gold_mining": "Gold extraction",
     "hr_tech": "HR TECH",
     "career_guidance": "Career orientation",
-    "personnel assessment": "Human capital assessment"
+    "personnel_assessment": "Human capital assessment",
+    "crowdlending": "crowdlending",
+    "factoring": "factoring",
+    "transport": "transport",
+    "ecology": "ecology"
   },
   "pincode": "Pincode",
   "bass-eco": "Bass Eco",

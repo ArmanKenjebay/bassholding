@@ -16,21 +16,21 @@ const directionCards = [
     image: homeCard2,
     title: 'HR TECH',
     desc: 'hr_tech',
-    chips: ['HR TECH', 'профориентация', 'оценка кадров'],
+    chips: ['HR TECH', 'career_guidance', 'personnel_assessment'],
   },
   {
     link: 'bass-eco',
     image: homeCard3,
     title: 'SHIPPING',
-    desc: 'развитие речного порта и судоходства по реке Или',
-    chips: ['экология', 'транспорт'],
+    desc: 'shipping_desc',
+    chips: ['ecology', 'transport'],
   },
   {
     link: 'fintech',
     image: homeCard4,
     title: 'FINTECH',
-    desc: 'реализация финтех проектов в Казахстане и за пределами',
-    chips: ['краудлендинг', 'факторинг'],
+    desc: 'fintech_desc',
+    chips: ['crowdlending', 'factoring'],
   },
 ]
 
