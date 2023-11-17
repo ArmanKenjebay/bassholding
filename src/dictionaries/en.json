@@ -2,8 +2,8 @@
   "main": {
     "title": "Bassholding",
     "description": "Bassholding description",
-    "text-photo": "BUILD,.DEVELOP,.INSPIRING.",
-    "text-under-photo": "Группа компаний, осуществляющая инвестиционную деятельность в разных секторах экономики."
+    "text-photo": "BUILD,.DEVELOP,.INSPIRE.",
+    "text-under-photo": "A group of companies engaging in investments into various sectors of the economy"
   },
   "about": {
     "title": "About us",
@@ -37,18 +37,18 @@
     "address": "ave. Kabanbay Batyr 11/5, Astana 020000"
   },
   "card_direction": {
-    "mining": "золотодобывающая компания, имеющая 25-летний опыт деятельности на рынке драгоценных металлов",
-    "hr_tech": "диагностика компетенции"
+    "mining": "A gold extracting company with over 25 years of experience in the precious metals market",
+    "hr_tech": "Diagnostics of competencies"
   },
   "button": {
-    "find-out-more": "Узнать подробнее"
+    "find-out-more": "Find out more"
   },
   "chips": {
-    "subsoil_use": "недропользование",
-    "gold_mining": "добыча золота",
+    "subsoil_use": "mining",
+    "gold_mining": "Gold extraction",
     "hr_tech": "HR TECH",
-    "career_guidance": "профориентация",
-    "personnel assessment": "оценка кадров"
+    "career_guidance": "Career orientation",
+    "personnel assessment": "Human capital assessment"
   },
   "pincode": "Pincode",
   "bass-eco": "Bass Eco",
