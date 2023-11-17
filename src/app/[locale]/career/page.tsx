@@ -72,10 +72,11 @@ export default async function Career({
   return (
     <section className="flex flex-col">
       <div className="mt-20">
-        <div className="sm:px-5 px-2 sm:mb-10 mb-5">
+        <div className="sm:mb-10 mb-5">
           <div className="relative h-full w-full">
             <Image
-              isBlurred
+              priority
+              as={NextImage}
               radius="none"
               src={careerImage.src}
               width={careerImage.width}
@@ -90,8 +91,8 @@ export default async function Career({
         </div>
 
         <div className="sm:px-5 px-2 sm:mb-10 mb-5">
-          <div className="sm:w-3/4 w-full">
-            <span className="text-xl text-primary-gold tracking-widest">
+          <div className="sm:w-3/4 xl:w-1/2 py-3 w-full">
+            <span className="text-base md:text-4xl text-primary-gold tracking-widest">
               Мы предоставляем комфортную среду и поддерживаем развитие наших
               людей.
             </span>
@@ -99,24 +100,32 @@ export default async function Career({
         </div>
 
         <div className="sm:px-5 px-2 sm:mb-10 mb-5">
-          <div className="flex flex-col gap-y-14">
+          <div className="flex h-full flex-col gap-y-14">
             {careers.map(({ text, image, content }) => (
               <div
                 key={text}
-                className="flex lg:gap-x-20 md:gap-x-14 sm:gap-x-10 gap-y-3 sm:odd:flex-row sm:even:flex-row-reverse flex-col justify-between items-center"
+                className="flex h-full lg:gap-x-20 md:gap-x-14 sm:gap-x-10 gap-y-3 sm:odd:flex-row sm:even:flex-row-reverse flex-col justify-between items-center"
               >
-                <div className="relative aspect-video  w-full h-full">
-                  <Image
-                    src={image.src}
-                    alt={text}
-                    className="w-full z-10 h-full object-cover md:rounded-[50px] rounded-2xl filter brightness-[.35] grayscale"
-                  />
-                  <span className="absolute top-1/2 w-full h-full text-xs text-center z-50">
+                <div className="relative overflow-hidden w-full h-full">
+                  <span className="absolute flex w-full items-center justify-center h-full text-base lg:text-lg xl:text-xl text-center z-50">
                     {text}
                   </span>
+                  <Image
+                    as={NextImage}
+                    width={image.width}
+                    height={image.height}
+                    src={image.src}
+                    alt={text}
+                    className="z-10 w-full h-full  object-cover rounded-[30px] md:rounded-[50px]  filter brightness-[.35] grayscale"
+                    classNames={{
+                      wrapper: 'w-full h-full',
+                    }}
+                  />
                 </div>
                 <div>
-                  <span className="text-sm">{content}</span>
+                  <span className="text-sm lg:text-base xl:text-lg">
+                    {content}
+                  </span>
                 </div>
               </div>
             ))}
