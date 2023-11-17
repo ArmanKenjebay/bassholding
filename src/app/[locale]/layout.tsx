@@ -60,7 +60,7 @@ export default async function RootLayout({
     <html lang={locale} className="dark">
       <body className={`${gilroy.variable} font-gilroy`}>
         <ScrollShadow
-          size={40}
+          size={10}
           className="w-full h-full overflow-x-hidden"
           hideScrollBar
         >
