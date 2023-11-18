@@ -22,7 +22,7 @@ export default function HomeBackgroundImage({
   return (
     <div className={`relative overflow-hidden ${className ?? ''}`}>
       <div
-        className={`absolute z-50 px-3 pb-10 lg:pb-24 w-full h-full flex flex-col justify-end`}
+        className={`absolute z-20 px-3 pb-10 lg:pb-24 w-full h-full flex flex-col justify-end`}
       >
         {children}
       </div>

@@ -38,7 +38,7 @@ export default function CustomNavbar({
         isMenuOpen ? 'bg-black' : 'bg-transparent'
       }`}
       classNames={{
-        base: 'absolute top-0',
+        base: 'absolute top-0 z-50',
         wrapper: 'px-2 lg:px-5 xl:px-2',
       }}
     >
