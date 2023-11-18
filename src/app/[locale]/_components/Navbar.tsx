@@ -1,6 +1,6 @@
 'use client'
 
-import { Navbar, Select, SelectItem } from '@nextui-org/react'
+import { Button, Navbar, Select, SelectItem } from '@nextui-org/react'
 import Image from 'next/image'
 import Link from 'next-intl/link'
 import { ChangeEvent, useState } from 'react'
@@ -47,14 +47,14 @@ export default function CustomNavbar({
           <Link
             href="/"
             lang={locale}
-            className="w-[104px] h-[20px] lg:w-[273px] lg:h-[53px]"
+            className="w-[104px] h-[20px] md:w-[120px] md:h-full xl:w-[273px] xl:h-[53px]"
           >
             <Image
               src={bassholdingLogo}
               alt={''}
               width={274}
               height={53}
-              className="pointer-events-none"
+              className="pointer-events-none w-full h-full"
               priority
             />
           </Link>
@@ -62,28 +62,28 @@ export default function CustomNavbar({
         <div className="sm:flex hidden flex-1 justify-start">
           <div className="flex sm:gap-x-8 md:gap-x-10 lg:gap-x-12 xl:gap-x-16 2xl:gap-x-20">
             <NavigationLink
-              className="xl:text-2xl lg:text-lg md:text-sm text-xs font-normal"
+              className="xl:text-2xl lg:text-base md:text-sm text-xs font-normal whitespace-nowrap"
               href="/about"
               lang={locale}
             >
               {dictionary.about}
             </NavigationLink>
             <NavigationLink
-              className="xl:text-2xl lg:text-lg md:text-sm text-xs font-normal"
+              className="xl:text-2xl lg:text-base md:text-sm text-xs font-normal"
               href="/direction"
               lang={locale}
             >
               {dictionary.direction}
             </NavigationLink>
             <NavigationLink
-              className="xl:text-2xl lg:text-lg md:text-sm text-xs font-normal"
+              className="xl:text-2xl lg:text-base md:text-sm text-xs font-normal"
               href="/news"
               lang={locale}
             >
               {dictionary.news}
             </NavigationLink>
             <NavigationLink
-              className="xl:text-2xl lg:text-lg md:text-sm text-xs font-normal"
+              className="xl:text-2xl lg:text-base md:text-sm text-xs font-normal"
               href="/career"
               lang={locale}
             >
@@ -91,15 +91,17 @@ export default function CustomNavbar({
             </NavigationLink>
           </div>
         </div>
-        <div className="flex">
+        <div className="flex gap-x-2 justify-between">
           <Select
             aria-label="Choose language"
-            size="sm"
-            className="min-w-[72px] bg-transparent text-white"
-            variant="bordered"
             onChange={handleSelectionChange}
             selectedKeys={[locale]}
-            classNames={{}}
+            className="min-w-[72px]"
+            classNames={{
+              mainWrapper: 'h-10',
+              trigger: 'bg-transparent data-[hover=true]:bg-transparent',
+              innerWrapper: '',
+            }}
           >
             <SelectItem key="en" lang="en" value="en">
               EN
@@ -108,6 +110,12 @@ export default function CustomNavbar({
               RU
             </SelectItem>
           </Select>
+
+          <div className="hidden sm:flex sm:items-center ">
+            <Button className="bg-transparent border-2 px-2 py-1 transition-transform hover:border-primary-gold hover:text-primary-gold">
+              {dictionary.contact}
+            </Button>
+          </div>
         </div>
       </div>
 

@@ -11,7 +11,7 @@ import homeImg2 from '@/../public/home-page-2.jpg'
 import DirectionCard from '@/app/[locale]/_components/DirectionCard'
 import Marquee from '@/app/[locale]/_components/Marquee'
 import NewsLine from '@/app/[locale]/_components/NewsLine'
-import directionCards from '@/app/[locale]/_variables/DirectionCards'
+import getDirections from '@/app/[locale]/_variables/DirectionCards'
 import HomeBackgroundImage from '@/app/[locale]/_components/HomeBackgroundImage'
 
 type TCard = {
@@ -28,7 +28,7 @@ export default async function Home({
 }) {
   const dictionary = await getDictionary(locale)
 
-  const cards = [...directionCards]
+  const cards = getDirections()
 
   const news = [
     {
@@ -66,7 +66,7 @@ export default async function Home({
             <span className="text-4xl lg:text-6xl tracking-widest">
               BASS HOLDING
             </span>
-            <span className="opacity-70 tracking-wide text-base lg:text-4xl">
+            <span className=" tracking-wide font-light text-base lg:text-4xl">
               {dictionary.main['text-under-photo']}
             </span>
           </div>

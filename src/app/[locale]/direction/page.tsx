@@ -2,7 +2,7 @@ import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 import DirectionCard from '@/app/[locale]/_components/DirectionCard'
 import React from 'react'
-import directionCards from '@/app/[locale]/_variables/DirectionCards'
+import getDirections from '@/app/[locale]/_variables/DirectionCards'
 
 export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.locale)
@@ -20,7 +20,7 @@ export default async function Direction({
 }) {
   const dictionary = await getDictionary(locale)
 
-  const cards = [...directionCards]
+  const cards = [...getDirections()]
 
   return (
     <section className="flex flex-col w-full h-full">

@@ -34,4 +34,8 @@ const directionCards = [
   },
 ]
 
-export default directionCards
+const getDirections = () => {
+  return [...directionCards]
+}
+
+export default getDirections
