@@ -70,6 +70,11 @@
     "shipping_desc": "Development of the river port and shipping on the Ili river",
     "fintech_desc": "A group of companies engaging in investments into various sectors of the economy"
   },
+  "contact_us": {
+    "name_placeholder": "Your name",
+    "telephone_placeholder": "Your phone number",
+    "submit_application": "Submit your application"
+  },
   "button": {
     "find-out-more": "Find out more"
   },

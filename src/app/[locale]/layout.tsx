@@ -94,7 +94,11 @@ export default async function RootLayout({
           hideScrollBar
         >
           <CustomNavbar
-            params={{ dictionary: { ...dictionary.navbar }, locale }}
+            params={{
+              dictionary: { ...dictionary.navbar },
+              modalDictionary: { ...dictionary.contact_us },
+              locale,
+            }}
           />
           <main>{children}</main>
           <Footer

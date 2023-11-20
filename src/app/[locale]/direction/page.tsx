@@ -1,8 +1,7 @@
 import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 import DirectionCard from '@/app/[locale]/_components/DirectionCard'
-import React from 'react'
-import getDirections from '@/app/[locale]/_variables/DirectionCards'
+import getDirections from '@/app/[locale]/_variables/direction-cards'
 
 export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.locale)

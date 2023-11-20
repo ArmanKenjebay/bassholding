@@ -1,4 +1,3 @@
-import React from 'react'
 import { Image as ImageNext } from '@nextui-org/image'
 import { StaticImageData } from 'next/image'
 import { Locale } from '@/i18n-config'
@@ -11,7 +10,7 @@ import homeImg2 from '@/../public/home-page-2.jpg'
 import DirectionCard from '@/app/[locale]/_components/DirectionCard'
 import Marquee from '@/app/[locale]/_components/Marquee'
 import NewsLine from '@/app/[locale]/_components/NewsLine'
-import getDirections from '@/app/[locale]/_variables/DirectionCards'
+import getDirections from '@/app/[locale]/_variables/direction-cards'
 import HomeBackgroundImage from '@/app/[locale]/_components/HomeBackgroundImage'
 
 type TCard = {
@@ -54,7 +53,7 @@ export default async function Home({
   return (
     <section className="flex flex-col w-full h-full">
       <div className="lg:min-h-[600px] flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-10 mb-5">
-        <div className="sm:px-0 px-2 flex flex-col gap-y-3 justify-end md:pb-0 sm:pb-0 sm:ml-5">
+        <div className="sm:px-0 px-2 flex flex-col gap-y-3 justify-end md:pb-0 sm:pb-0 sm:pl-5">
           <ImageNext
             className="xl:w-[447px] lg:w-[650px] md:w-[315px] sm:w-[280px] w-[210px]"
             src={homeImg2.src}
