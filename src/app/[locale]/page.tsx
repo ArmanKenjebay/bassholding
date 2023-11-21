@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Image as ImageNext } from '@nextui-org/image'
 import { StaticImageData } from 'next/image'
 import { Locale } from '@/i18n-config'
@@ -55,11 +56,13 @@ export default async function Home({
       <div className="lg:min-h-[600px] flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-10 mb-5">
         <div className="sm:px-0 px-2 flex flex-col gap-y-3 justify-end md:pb-0 sm:pb-0 sm:pl-5">
           <ImageNext
+            as={Image}
             className="xl:w-[447px] lg:w-[650px] md:w-[315px] sm:w-[280px] w-[210px]"
             src={homeImg2.src}
             width={447}
             height={111}
             radius="full"
+            alt={'bassholding image'}
           />
           <div className="flex flex-col gap-y-1">
             <span className="text-4xl lg:text-6xl tracking-widest">
@@ -133,6 +136,9 @@ export default async function Home({
 
       <div className="sm:px-5 px-2 sm:mb-10 w-full h-full">
         <ImageNext
+          as={Image}
+          width={news1.width}
+          height={news1.height}
           radius={`none`}
           src={news1.src}
           className={`w-[320px] h-[104px] sm:h-full sm:w-full rounded-[40px] sm:rounded-3xl object-cover object-top`}
