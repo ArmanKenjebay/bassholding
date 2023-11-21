@@ -1,7 +1,7 @@
-import homeCard1 from '@/../../public/home-card1.jpg'
-import homeCard2 from '@/../../public/home-card2.jpg'
-import homeCard3 from '@/../../public/home-card3.jpg'
-import homeCard4 from '@/../../public/home-card4.jpg'
+import homeCard1 from '@/../../public/images/home-card1.webp'
+import homeCard2 from '@/../../public/images/home-card2.webp'
+import homeCard3 from '@/../../public/images/home-card3.webp'
+import homeCard4 from '@/../../public/images/home-card4.webp'
 
 const directionCards = [
   {

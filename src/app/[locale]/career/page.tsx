@@ -2,11 +2,11 @@ import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 import NextImage from 'next/image'
 import { Image } from '@nextui-org/image'
-import careerImage from '@/../public/career.jpg'
-import careerImage1 from '@/../public/career1.jpg'
-import careerImage2 from '@/../public/career2.jpg'
-import careerImage3 from '@/../public/career3.jpg'
-import careerImage4 from '@/../public/career4.jpg'
+import careerImage from '@/../public/images/career.webp'
+import careerImage1 from '@/../public/images/career1.webp'
+import careerImage2 from '@/../public/images/career2.webp'
+import careerImage3 from '@/../public/images/career3.webp'
+import careerImage4 from '@/../public/images/career4.webp'
 import { Divider } from '@nextui-org/divider'
 import NewsLine from '@/app/[locale]/_components/NewsLine'
 import React from 'react'
@@ -107,7 +107,7 @@ export default async function Career({
                 className="flex h-full lg:gap-x-20 md:gap-x-14 sm:gap-x-10 gap-y-3 sm:odd:flex-row sm:even:flex-row-reverse flex-col justify-between items-center"
               >
                 <div className="relative overflow-hidden w-full h-full">
-                  <span className="absolute flex w-full items-center justify-center h-full text-base lg:text-lg xl:text-xl text-center z-50">
+                  <span className="z-20 absolute flex w-full items-center justify-center h-full text-base lg:text-lg xl:text-xl text-center">
                     {text}
                   </span>
                   <Image

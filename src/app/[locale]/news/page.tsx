@@ -1,12 +1,12 @@
 import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
-import newsImage from '@/../public/news.jpg'
+import newsImage from '@/../public/images/news.webp'
 import { Image as ImageNext } from '@nextui-org/image'
 import React from 'react'
-import newsItem4 from '@/../public/news-item-1.jpg'
-import newsItem2 from '@/../public/news-item-2.jpg'
-import newsItem3 from '@/../public/news-item-3.jpg'
-import newsItem1 from '@/../public/news-item-4.jpg'
+import newsItem4 from '@/../public/images/news-item-1.webp'
+import newsItem2 from '@/../public/images/news-item-2.webp'
+import newsItem3 from '@/../public/images/news-item-3.webp'
+import newsItem1 from '@/../public/images/news-item-4.webp'
 import { Chip } from '@nextui-org/chip'
 
 export async function generateMetadata({ params }: any) {

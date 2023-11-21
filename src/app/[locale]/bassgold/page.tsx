@@ -1,7 +1,7 @@
 import { getDictionary } from '@/get-dictionary'
 import { Locale } from '@/i18n-config'
 import { Image } from '@nextui-org/image'
-import bassgoldImage from '@/../public/bassgold-slider.jpg'
+import bassgoldImage from '@/../public/images/bassgold-slider.webp'
 
 export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.locale)
