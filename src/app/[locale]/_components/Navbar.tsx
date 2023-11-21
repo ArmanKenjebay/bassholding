@@ -86,17 +86,17 @@ export default function CustomNavbar({
               </NavigationLink>
               <NavigationLink
                 className="xl:text-2xl lg:text-base md:text-sm text-xs font-normal"
-                href="/news"
-                lang={locale}
-              >
-                {dictionary.news}
-              </NavigationLink>
-              <NavigationLink
-                className="xl:text-2xl lg:text-base md:text-sm text-xs font-normal"
                 href="/career"
                 lang={locale}
               >
                 {dictionary.career}
+              </NavigationLink>
+              <NavigationLink
+                className="xl:text-2xl lg:text-base md:text-sm text-xs font-normal"
+                href="/news"
+                lang={locale}
+              >
+                {dictionary.news}
               </NavigationLink>
             </div>
           </div>
