@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 import { Image as ImageNext } from '@nextui-org/image'
@@ -96,10 +97,13 @@ export default async function News({
         <div className="flex xl:w-[570px] lg:w-[370px] md:w-[310px] sm:w-[270px] w-full">
           <div className="sm:h-full h-[294px] overflow-hidden relative right-0">
             <ImageNext
-              fetchPriority="high"
+              as={Image}
+              width={newsImage.width}
+              height={newsImage.height}
               src={newsImage.src}
               radius="none"
               className="filter sm:brightness-75 brightness-[.3] z-10 object-cover"
+              alt={'bassholding news image'}
             />
           </div>
         </div>
@@ -113,6 +117,9 @@ export default async function News({
               className="overflow-hidden flex-1 flex flex-col gap-2"
             >
               <ImageNext
+                as={Image}
+                width={image.width}
+                height={image.height}
                 src={image.src}
                 alt={chip}
                 className="aspect-square sm:w-[280px] sm:h-[180px] w-[150px] h-[80px]"
