@@ -9,7 +9,7 @@ import {
 } from '@nextui-org/react'
 import Image from 'next/image'
 import Link from 'next-intl/link'
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { usePathname, useRouter } from 'next-intl/client'
 import bassholdingLogo from '@/app/asset/bassholding-navbar-logo.svg'
 import NavigationLink from '@/app/[locale]/_components/NavigationLink'
@@ -19,6 +19,7 @@ import {
   NavbarMenuToggle,
 } from '@nextui-org/navbar'
 import ModalContactUs from '@/app/[locale]/_components/ModalContactUs'
+import useScrollPosition from '@/app/[locale]/_lib/useScrollPosition'
 
 export default function CustomNavbar({
   params: { dictionary, locale, modalDictionary },
@@ -34,6 +35,12 @@ export default function CustomNavbar({
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const { y } = useScrollPosition()
+
+  useEffect(() => {
+    console.log(y)
+  }, [y])
+
   const handleSelectionChange = (e: ChangeEvent<HTMLSelectElement>) => {
     router.replace(pathName, { locale: e.target.value })
   }
@@ -44,13 +51,9 @@ export default function CustomNavbar({
         isBlurred={false}
         maxWidth="full"
         onMenuOpenChange={setIsMenuOpen}
-        className={`z-50 ease-in-out duration-200 ${
+        className={`ease-in-out duration-200 top-0 z-50 absolute ${
           isMenuOpen ? 'bg-black' : 'bg-transparent'
         }`}
-        classNames={{
-          base: 'absolute top-0 z-50',
-          wrapper: 'px-2 lg:px-5 xl:px-2',
-        }}
       >
         <div className="flex gap-x-10 w-full items-center justify-between">
           <div className="flex">

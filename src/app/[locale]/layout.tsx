@@ -4,7 +4,6 @@ import CustomNavbar from '@/app/[locale]/_components/Navbar'
 import { i18n, Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 import Footer from '@/app/[locale]/_components/Footer'
-import { ScrollShadow } from '@nextui-org/scroll-shadow'
 import getGilroy from '@/app/[locale]/_variables/gilroy-font'
 
 const gilroy = getGilroy()
