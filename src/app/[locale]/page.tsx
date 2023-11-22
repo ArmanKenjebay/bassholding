@@ -78,7 +78,7 @@ export default async function Home({
             image={homeImg}
             width={1800}
             height={2120}
-            className={`w-full h-[294px] sm:h-[380px] sm:w-[210px] md:h-[480px] md:w-[240px] lg:h-[640px] lg:w-[340px] xl:h-[942px] xl:w-[475px] 2xl:h-full 2xl:w-full`}
+            className={`w-full h-[294px] sm:h-[380px] sm:w-[210px] md:h-[480px] md:w-[240px] lg:h-[640px] lg:w-[340px] xl:w-[470px] xl:h-[720px] 2xl:w-[630px] 2xl:h-[760px]`}
           >
             {dictionary.main['text-photo'].split('.').map((text) => (
               <span className="block lg:text-4xl xl:text-4xl">{text}</span>
