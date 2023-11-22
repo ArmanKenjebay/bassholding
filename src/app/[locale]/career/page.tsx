@@ -73,7 +73,7 @@ export default async function Career({
     <section className="flex flex-col">
       <div className="mt-20">
         <div className="sm:mb-10 mb-5">
-          <div className="relative h-full w-full">
+          <div className="relative w-full h-[294px] sm:h-[380px] md:h-[480px] lg:h-[540px] xl:h-[620px] 2xl:h-[660px]">
             <Image
               priority
               as={NextImage}
@@ -81,8 +81,11 @@ export default async function Career({
               src={careerImage.src}
               width={careerImage.width}
               height={careerImage.height}
-              alt={'about'}
-              className="filter brightness-50 object-contain"
+              alt={'bassholding career'}
+              className="filter brightness-50 w-full h-full object-cover object-bottom"
+              classNames={{
+                wrapper: 'w-full h-full',
+              }}
             />
             <span className="z-50 tracking-widest absolute lg:bottom-20 bottom-5 left-3 font-gilroy xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg">
               Люди — главный актив компании.

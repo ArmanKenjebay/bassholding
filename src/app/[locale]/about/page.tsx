@@ -112,7 +112,7 @@ export default async function About({
               src={aboutImage.src}
               width={aboutImage.width}
               height={aboutImage.height}
-              alt={'about'}
+              alt={'bassholding about'}
               className="z-10 filter brightness-50 w-full h-full object-cover object-center"
               classNames={{
                 wrapper: 'w-full h-full',
