@@ -54,10 +54,10 @@ export default async function Home({
   return (
     <section className="flex flex-col w-full h-full">
       <div className="lg:min-h-[600px] flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-10 mb-5">
-        <div className="sm:px-0 px-2 flex flex-col gap-y-3 justify-end md:pb-0 sm:pb-0 sm:pl-5">
+        <div className="flex flex-col gap-y-3 justify-end px-5 sm:px-6 md:px-8">
           <ImageNext
             as={Image}
-            className="xl:w-[447px] lg:w-[650px] md:w-[315px] sm:w-[280px] w-[210px]"
+            className="lg:w-[336px] lg:h-[83px] w-[168px] h-[42px]"
             src={homeImg2.src}
             width={447}
             height={111}
@@ -65,10 +65,10 @@ export default async function Home({
             alt={'bassholding image'}
           />
           <div className="flex flex-col gap-y-1">
-            <span className="text-4xl lg:text-6xl tracking-widest">
+            <span className="text-2xl lg:text-5xl tracking-widest">
               BASS HOLDING
             </span>
-            <span className=" tracking-wide font-light text-base lg:text-4xl">
+            <span className=" tracking-wide font-light text-sm lg:text-3xl">
               {dictionary.main['text-under-photo']}
             </span>
           </div>
