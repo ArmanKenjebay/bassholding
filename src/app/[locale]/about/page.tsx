@@ -105,18 +105,20 @@ export default async function About({
   return (
     <section className="flex flex-col">
       <div className="mt-20">
-        <div className="sm:px-5 px-2 mb-10">
-          <div className="relative h-full w-full">
+        <div className="mb-10">
+          <div className="relative w-full h-[294px] sm:h-[380px] md:h-[480px] lg:h-[540px] xl:h-[620px] 2xl:h-[660px]">
             <Image
-              isBlurred
               radius="none"
               src={aboutImage.src}
               width={aboutImage.width}
               height={aboutImage.height}
               alt={'about'}
-              className="z-10 filter brightness-50 object-contain"
+              className="z-10 filter brightness-50 w-full h-full object-cover object-center"
+              classNames={{
+                wrapper: 'w-full h-full',
+              }}
             />
-            <span className="z-50 w-3/4 tracking-widest absolute lg:bottom-20 bottom-5 left-3 font-gilroy xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg">
+            <span className="z-10 w-3/4 tracking-widest absolute lg:bottom-20 bottom-5 left-3 font-gilroy xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg">
               {dictionary.about.human_value}
             </span>
           </div>
