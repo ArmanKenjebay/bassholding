@@ -64,8 +64,8 @@ export default function DirectionCard({
       <Image
         src={image}
         quality={100}
-        width={668}
-        height={774}
+        width={454}
+        height={526}
         className={`group-hover:scale-110 group-hover:grayscale-0 group-hover:brightness-[.5] z-0 w-full h-full  ${
           classNameImage ?? ''
         }`}
@@ -77,7 +77,7 @@ export default function DirectionCard({
           <span className="z-10 tracking-wider text-2xl lg:text-6xl truncate">
             {title}
           </span>
-          <span className="pointer-events-auto z-0 text-sm lg:text-2xl h-10 group-hover:h-full overflow-y-hidden">
+          <span className="pointer-events-auto z-0 text-sm lg:text-2xl h-10 group-hover:h-full overflow-hidden">
             {dictionary['card_direction'][desc] ?? desc}
           </span>
         </div>
