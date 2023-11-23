@@ -1,14 +1,20 @@
 import { useEffect, useState } from 'react'
 
 const useScrollPosition = (threshold = 100) => {
+  const isBrowser = () => typeof window !== 'undefined'
+
+  if (!isBrowser()) {
+    return
+  }
+
   const [position, setPosition] = useState({
-    x: window.scrollX,
-    y: window.scrollY,
+    x: window?.scrollX,
+    y: window?.scrollY,
   })
 
   const handleScroll = () => {
     requestAnimationFrame(() => {
-      setPosition({ x: window.scrollX, y: window.scrollY })
+      setPosition({ x: window?.scrollX, y: window?.scrollY })
     })
   }
 

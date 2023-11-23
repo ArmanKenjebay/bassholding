@@ -35,11 +35,11 @@ export default function CustomNavbar({
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const { y } = useScrollPosition()
+  const position = useScrollPosition()
 
   useEffect(() => {
-    console.log(y)
-  }, [y])
+    console.log(position?.y)
+  }, [position?.y])
 
   const handleSelectionChange = (e: ChangeEvent<HTMLSelectElement>) => {
     router.replace(pathName, { locale: e.target.value })
