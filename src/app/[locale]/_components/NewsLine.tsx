@@ -10,10 +10,10 @@ export default function NewsLine({ content, chip, date }: Props) {
   return (
     <div className="w-full grid grid-cols-[3fr_1fr_1fr_50px] gap-x-5 gap-y-3 items-center justify-center px-1">
       <div className="flex justify-start sm:col-span-1 col-span-4">
-        <span className="text-sm">{content}</span>
+        <span className="text-sm md:text-[20px] font-[300]">{content}</span>
       </div>
 
-      <div className="flex justify-center items-center gap-x-3 sm:col-span-1 col-span-2">
+      <div className="flex justify-center gap-x-3 sm:col-span-1 col-span-2">
         <Chip
           variant="bordered"
           color="warning"
@@ -27,7 +27,9 @@ export default function NewsLine({ content, chip, date }: Props) {
         </Chip>
       </div>
 
-      <div className={`flex justify-center sm:col-span-1`}>
+      <div
+        className={`flex justify-center sm:col-span-1 text-[12px] md:text-[20px]`}
+      >
         {date ?? <span>{date}</span>}
       </div>
 
