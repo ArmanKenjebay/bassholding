@@ -53,8 +53,8 @@ export default async function Home({
 
   return (
     <section className="flex flex-col w-full h-full">
-      <div className="lg:min-h-[600px] flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-10 mb-5">
-        <div className="flex flex-col gap-y-3 justify-end px-5 sm:px-6 md:px-8">
+      <div className="lg:min-h-[600px] flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-0 mb-8">
+        <div className="flex flex-col gap-y-3 justify-end px-5 sm:pb-10 lg:pb-24 sm:px-6 md:px-8">
           <ImageNext
             as={Image}
             className="lg:w-[336px] lg:h-[83px] w-[168px] h-[42px]"
@@ -65,10 +65,10 @@ export default async function Home({
             alt={'bassholding image'}
           />
           <div className="flex flex-col gap-y-1">
-            <span className="text-2xl lg:text-5xl tracking-widest">
+            <span className="text-2xl lg:text-5xl tracking-widest font-[250]">
               BASS HOLDING
             </span>
-            <span className=" tracking-wide font-light text-sm lg:text-3xl">
+            <span className=" tracking-wide text-sm lg:text-3xl font-[250]">
               {dictionary.main['text-under-photo']}
             </span>
           </div>
@@ -81,7 +81,9 @@ export default async function Home({
             className={`w-full h-[294px] sm:h-[380px] sm:w-[210px] md:h-[480px] md:w-[300px] lg:h-[640px] lg:w-[340px] xl:w-[564px] xl:h-[700px]`}
           >
             {dictionary.main['text-photo'].split('.').map((text) => (
-              <span className="block lg:text-4xl xl:text-4xl">{text}</span>
+              <span className="block lg:text-4xl xl:text-4xl font-[250]">
+                {text}
+              </span>
             ))}
           </HomeBackgroundImage>
         </div>

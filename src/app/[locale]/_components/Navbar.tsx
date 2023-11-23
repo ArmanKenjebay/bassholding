@@ -60,13 +60,13 @@ export default function CustomNavbar({
             <Link
               href="/"
               lang={locale}
-              className="w-[104px] h-[20px] md:w-[120px] md:h-full xl:w-[273px] xl:h-[53px]"
+              className="w-[104px] h-[20px] md:w-[120px] md:h-full xl:w-[170px] xl:h-[34px]"
             >
               <Image
                 src={bassholdingLogo}
                 alt={''}
-                width={274}
-                height={53}
+                width={170}
+                height={34}
                 className="pointer-events-none w-full h-full"
                 priority
               />
@@ -126,9 +126,8 @@ export default function CustomNavbar({
 
             <div className="hidden md:flex md:items-center">
               <Button
-                size={'sm'}
                 onClick={onOpen}
-                className={`truncate lg:text-base md:text-xs font-normal px-1 rounded-xl border-2 bg-transparent ease-in-out duration-200 hover:bg-primary-gold hover:border-white hover:text-white`}
+                className={`p-4 truncate lg:text-base md:text-xs font-normal rounded-xl border-1 bg-transparent ease-in-out duration-200 hover:bg-primary-gold hover:border-white hover:text-white`}
               >
                 {dictionary.contact}
               </Button>
