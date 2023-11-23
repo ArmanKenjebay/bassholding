@@ -43,10 +43,14 @@ export default function DirectionCard({
             <Chip
               key={chi}
               className="border-white group-hover:border-primary-gold"
+              classNames={{
+                base: 'truncate',
+                content: 'p-0 sm:p-1 truncate',
+              }}
               // @ts-ignored
               variant="bordered"
             >
-              <span className="group-hover:text-primary-gold">
+              <span className="group-hover:text-primary-gold text-xs truncate">
                 {dictionary.chips[chi] ?? chi}
               </span>
             </Chip>
