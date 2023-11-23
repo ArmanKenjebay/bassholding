@@ -8,26 +8,35 @@ type Props = {
 }
 export default function NewsLine({ content, chip, date }: Props) {
   return (
-    <div className="group sm:py-5 py-3 flex sm:flex-row flex-col gap-y-2 justify-between">
-      <div className="flex">
+    <div className="w-full grid grid-cols-[3fr_1fr_1fr_50px] gap-x-5 gap-y-3 items-center justify-center px-1">
+      <div className="flex justify-start sm:col-span-1 col-span-4">
         <span className="text-sm">{content}</span>
       </div>
-      <div className="flex justify-between items-center gap-x-3">
-        <Chip variant="bordered" color="warning">
+
+      <div className="flex justify-center items-center gap-x-3 sm:col-span-1 col-span-2">
+        <Chip
+          variant="bordered"
+          color="warning"
+          className={`text-sm`}
+          classNames={{
+            base: 'truncate',
+            content: 'p-0 sm:p-1 truncate',
+          }}
+        >
           {chip}
         </Chip>
-        {date ?? (
-          <div>
-            <span>{date}</span>
-          </div>
-        )}
-        <div>
-          <div
-            className={`rounded-[99px] min-w-[30px] min-h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 group-hover:bg-primary-gold group-hover:text-white`}
-          >
-            <span className={`block group-hover:hidden`}>&#8594;</span>
-            <span className={`hidden group-hover:block`}>&#8599;</span>
-          </div>
+      </div>
+
+      <div className={`flex justify-center sm:col-span-1`}>
+        {date ?? <span>{date}</span>}
+      </div>
+
+      <div className={`flex justify-end sm:col-span-1`}>
+        <div
+          className={`group rounded-[99px] w-[30px] h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 cursor-pointer hover:bg-primary-gold hover:text-white`}
+        >
+          <span className={`block group-hover:hidden`}>&#8594;</span>
+          <span className={`hidden group-hover:block`}>&#8599;</span>
         </div>
       </div>
     </div>

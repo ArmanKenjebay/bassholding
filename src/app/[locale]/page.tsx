@@ -125,7 +125,7 @@ export default async function Home({
       </div>
 
       <div className="sm:px-5 px-2 sm:mb-10 mb-5">
-        <span className="lg:text-4xl md:text-3xl text-2xl">
+        <span className="lg:text-4xl md:text-3xl text-2xl font-[250]">
           {dictionary.news.title}
         </span>
         {news.map((n, index) => (
