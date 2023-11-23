@@ -73,8 +73,8 @@ export default function DirectionCard({
       />
 
       <CardFooter className="absolute z-10 bottom-0 flex flex-col w-full text-left">
-        <div className="relative flex flex-col w-full pb-5">
-          <span className="z-10 tracking-wider text-[28px] lg:text-3xl xl:text-[40px] truncate mb-1">
+        <div className="relative flex flex-col w-full sm:pb-5 pb-1">
+          <span className="z-10 tracking-wider text-[28px] lg:text-3xl xl:text-[40px] truncate sm:mb-1">
             {title}
           </span>
           <span className="pointer-events-auto z-0 text-sm xl:text-[20px] h-10 group-hover:h-full overflow-hidden">
