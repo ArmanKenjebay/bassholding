@@ -66,14 +66,14 @@ export default function DirectionCard({
         quality={100}
         width={454}
         height={526}
-        className={`pointer-events-none group-hover:scale-110 group-hover:grayscale-0 group-hover:brightness-[.5] z-0 w-full h-full  ${
+        className={`pointer-events-none group-hover:scale-110 group-hover:grayscale-0 group-hover:brightness-[.5] z-0 w-full h-full ${
           classNameImage ?? ''
         }`}
         alt="Bassholding card"
       />
 
       <CardFooter className="absolute z-10 bottom-0 flex flex-col w-full text-left">
-        <div className="relative flex flex-col w-full sm:h-32">
+        <div className="relative flex flex-col w-full">
           <span className="z-10 tracking-wider text-[28px] lg:text-3xl xl:text-[40px] truncate">
             {title}
           </span>
