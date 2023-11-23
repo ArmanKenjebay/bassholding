@@ -109,7 +109,7 @@ export default async function Home({
       </div>
 
       <div className="sm:px-5 px-2 sm:mb-10 mb-5">
-        <div className="flex sm:flex-row flex-col">
+        <div className="flex justify-center sm:flex-row flex-col">
           {cards.map((card, index) => (
             <DirectionCard
               key={card.title}

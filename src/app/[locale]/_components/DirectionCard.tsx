@@ -66,7 +66,7 @@ export default function DirectionCard({
         quality={100}
         width={454}
         height={526}
-        className={`group-hover:scale-110 group-hover:grayscale-0 group-hover:brightness-[.5] z-0 w-full h-full  ${
+        className={`pointer-events-none group-hover:scale-110 group-hover:grayscale-0 group-hover:brightness-[.5] z-0 w-full h-full  ${
           classNameImage ?? ''
         }`}
         alt="Bassholding card"
@@ -74,20 +74,20 @@ export default function DirectionCard({
 
       <CardFooter className="absolute z-10 bottom-0 flex flex-col w-full text-left">
         <div className="relative flex flex-col w-full sm:h-32">
-          <span className="z-10 tracking-wider text-2xl lg:text-6xl truncate">
+          <span className="z-10 tracking-wider text-[28px] lg:text-3xl xl:text-[40px] truncate">
             {title}
           </span>
-          <span className="pointer-events-auto z-0 text-sm lg:text-2xl h-10 group-hover:h-full overflow-hidden">
+          <span className="pointer-events-auto z-0 text-sm xl:text-[20px] h-10 group-hover:h-full overflow-hidden">
             {dictionary['card_direction'][desc] ?? desc}
           </span>
         </div>
         <Button
           onClick={redirect}
           as="div"
-          className="py-1 rounded-3xl outline-0 border-0 bg-white text-black transition-transform hover:scale-95 text-base xl:text-xl flex w-full"
+          className="py-1 rounded-3xl outline-0 border-0 bg-white text-black transition-transform hover:scale-95 hover:bg-primary-gold hover:text-white text-base xl:text-xl flex w-full"
           size="sm"
         >
-          <span className={`inline-block w-full text-center`}>
+          <span className={`truncate inline-block w-full text-left text-base`}>
             {dictionary.button['find-out-more']}
           </span>
           &#8594;
