@@ -1,6 +1,5 @@
 import { getNewsById } from '@/get-api'
 import { getDictionary } from '@/get-dictionary'
-import Link from 'next/link'
 import PrevNews from '@/app/[locale]/_components/PrevNews'
 
 type Props = {
