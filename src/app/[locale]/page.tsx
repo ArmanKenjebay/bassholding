@@ -13,6 +13,7 @@ import Marquee from '@/app/[locale]/_components/Marquee'
 import NewsLine from '@/app/[locale]/_components/NewsLine'
 import getDirections from '@/app/[locale]/_variables/direction-cards'
 import HomeBackgroundImage from '@/app/[locale]/_components/HomeBackgroundImage'
+import { getNews } from '@/get-api'
 
 type TCard = {
   image: StaticImageData
@@ -30,26 +31,7 @@ export default async function Home({
 
   const cards = getDirections()
 
-  const news = [
-    {
-      content:
-        'Группа компаний, осуществляющая инвестиционную деятельность в разных секторах экономики.',
-      chip: 'социальная жизнь',
-      date: '28/10/2023',
-    },
-    {
-      content:
-        'Работников рудника Ушшокы наградили благодарственными письмами в честь Дня Республики',
-      chip: 'BASS GOLD',
-      date: '28/09/2023',
-    },
-    {
-      content:
-        'BASS Gold выплатил купонное вознаграждение по облигациям первого выпуска',
-      chip: 'социальная жизнь',
-      date: '06/10/2023',
-    },
-  ]
+  const news = await getNews().then((res) => res.news)
 
   return (
     <section className="flex flex-col w-full h-full">
@@ -131,7 +113,13 @@ export default async function Home({
         {news.map((n, index) => (
           <div key={index}>
             {index < news.length && <Divider className="my-2 bg-white" />}
-            <NewsLine {...n} />
+            <NewsLine
+              locale={locale}
+              id={n.id}
+              content={n.content[locale]}
+              date={n.date[locale]}
+              chip={n.chips.map((c) => c[locale])[0]}
+            />
           </div>
         ))}
       </div>
