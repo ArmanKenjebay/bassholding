@@ -37,9 +37,9 @@ export default function CustomNavbar({
 
   const position = useScrollPosition()
 
-  useEffect(() => {
-    console.log(position?.y)
-  }, [position?.y])
+  // useEffect(() => {
+  //   console.log(position?.y)
+  // }, [position?.y])
 
   const handleSelectionChange = (e: ChangeEvent<HTMLSelectElement>) => {
     router.replace(pathName, { locale: e.target.value })
