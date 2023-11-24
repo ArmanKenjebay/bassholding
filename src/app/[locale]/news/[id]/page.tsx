@@ -17,6 +17,22 @@ async function getData(id: string) {
   return { ...data }
 }
 
+export async function generateMetadata({
+  id,
+  locale,
+}: {
+  id: string
+  locale: 'en' | 'ru'
+}) {
+  const data = await getData(id).then((res) => res)
+
+  console.log(data)
+
+  return {
+    title: data.title && (data?.title[locale] as string),
+  }
+}
+
 export default async function NewsDetail({ params: { locale, id } }: Props) {
   const dictionary = await getDictionary(locale)
   const data = await getData(id).then((res) => res)
@@ -74,7 +90,7 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
             </div>
           </div>
         </div>
-        <div className={``}></div>
+        <div className={``}>{data.content && data.content[locale]}</div>
       </div>
     </div>
   )
