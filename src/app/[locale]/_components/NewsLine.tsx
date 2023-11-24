@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { Chip } from '@nextui-org/chip'
-import Link from 'next-intl/link'
 import { useRouter } from 'next-intl/client'
 
 type Props = {
