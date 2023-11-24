@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { Image as ImageNext } from '@nextui-org/image'
-import { StaticImageData } from 'next/image'
 import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 import { Divider } from '@nextui-org/divider'
@@ -15,23 +14,14 @@ import getDirections from '@/app/[locale]/_variables/direction-cards'
 import HomeBackgroundImage from '@/app/[locale]/_components/HomeBackgroundImage'
 import { getNews } from '@/get-api'
 
-type TCard = {
-  image: StaticImageData
-  title: string
-  desc: string
-  chips: string[]
-}
-
 export default async function Home({
   params: { locale },
 }: {
   params: { locale: Locale }
 }) {
   const dictionary = await getDictionary(locale)
-
-  const cards = getDirections()
-
   const news = await getNews().then((res) => res.news)
+  const cards = getDirections()
 
   return (
     <section className="flex flex-col w-full h-full">
