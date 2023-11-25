@@ -4,14 +4,6 @@ import { getDictionary } from '@/get-dictionary'
 import PrevNews from '@/app/[locale]/_components/PrevNews'
 import { Chip } from '@nextui-org/chip'
 
-type Props = {
-  params: {
-    id: string
-    locale: 'en' | 'ru'
-  }
-  searchParams: { [key: string]: string }
-}
-
 async function getData(id: string) {
   const data = await getNewsById(id)
   return { ...data }
@@ -28,7 +20,11 @@ export async function generateMetadata({ params }: any) {
   }
 }
 
-export default async function NewsDetail({ params: { locale, id } }: Props) {
+export default async function NewsDetail({
+  params: { locale, id },
+}: {
+  params: { locale: 'en' | 'ru'; id: string }
+}) {
   const dictionary = await getDictionary(locale)
   const data = await getData(id).then((res) => res)
 
