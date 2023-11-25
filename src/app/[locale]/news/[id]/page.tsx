@@ -17,19 +17,14 @@ async function getData(id: string) {
   return { ...data }
 }
 
-export async function generateMetadata({
-  id,
-  locale,
-}: {
-  id: string
-  locale: 'en' | 'ru'
-}) {
-  const data = await getData(id).then((res) => res)
-
-  console.log(data)
+export async function generateMetadata({ params }: any) {
+  const data = await getData(params.id).then((res) => res)
 
   return {
-    title: data.title && (data?.title[locale] as string),
+    title: data.title
+      ? data.title[params.locale as 'en' | 'ru']
+      : 'Bassholding',
+    description: data.context ? data.context[params.locale as 'en' | 'ru'] : '',
   }
 }
 
