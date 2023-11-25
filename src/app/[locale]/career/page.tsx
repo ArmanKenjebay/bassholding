@@ -144,7 +144,6 @@ export default async function Career({
               {index < positions.length && (
                 <Divider className="my-2 bg-white" />
               )}
-              <NewsLine {...n} />
             </div>
           ))}
         </div>
