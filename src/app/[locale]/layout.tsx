@@ -5,6 +5,7 @@ import { i18n, Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 import Footer from '@/app/[locale]/_components/Footer'
 import getGilroy from '@/app/[locale]/_variables/gilroy-font'
+import { bassholdingConfig } from '@/bassholding-config'
 
 const gilroy = getGilroy()
 
@@ -16,7 +17,10 @@ export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.locale)
 
   return {
-    title: dictionary.main.title,
+    title: {
+      default: bassholdingConfig.name,
+      template: `%s | ${bassholdingConfig.name}`,
+    },
     description: dictionary.main.description,
   }
 }
