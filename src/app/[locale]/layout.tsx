@@ -1,9 +1,7 @@
 import './globals.css'
 import { ReactNode } from 'react'
-import CustomNavbar from '@/app/[locale]/_components/Navbar'
 import { i18n, Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
-import Footer from '@/app/[locale]/_components/Footer'
 import getGilroy from '@/app/[locale]/_variables/gilroy-font'
 import { bassholdingConfig } from '@/bassholding-config'
 
@@ -32,29 +30,9 @@ export default async function RootLayout({
   children: ReactNode
   params: { locale: Locale }
 }) {
-  const dictionary = await getDictionary(locale)
-
   return (
     <html lang={locale} className="dark">
-      <body className={`${gilroy.variable} font-gilroy`}>
-        <CustomNavbar
-          params={{
-            dictionary: { ...dictionary.navbar },
-            modalDictionary: { ...dictionary.contact_us },
-            locale,
-          }}
-        />
-        <main>{children}</main>
-        <Footer
-          params={{
-            dictionary: {
-              navbar: dictionary.navbar,
-              contact: dictionary.contact,
-            },
-            locale,
-          }}
-        />
-      </body>
+      <body className={`${gilroy.variable} font-gilroy`}>{children}</body>
     </html>
   )
 }

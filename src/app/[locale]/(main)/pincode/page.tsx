@@ -1,8 +1,8 @@
 import { getDictionary } from '@/get-dictionary'
 import { Locale } from '@/i18n-config'
 import { Image } from '@nextui-org/image'
-import pincodeImage from '@/../public/images/pincode.webp'
-import pincodeImage1 from '@/../public/images/pincode-1.webp'
+import pincodeImage from '../../../../../public/images/pincode.webp'
+import pincodeImage1 from '../../../../../public/images/pincode-1.webp'
 
 export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.locale)
