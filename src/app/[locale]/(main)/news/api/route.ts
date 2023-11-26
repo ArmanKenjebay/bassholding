@@ -5,9 +5,14 @@ import { TNewsData } from '@/app/[locale]/_types/TNews'
 export async function GET(request: NextRequest, response: NextResponse) {
   try {
     const res = await getNews()
-    const newsData = res.news as TNewsData[] // Распаковываем промис
+    const newsData = res.news as TNewsData[]
 
-    return new Response(JSON.stringify(newsData), {
+    const response = newsData.map((el) => ({
+      ...el,
+      baseImg: require(`@/../public/images/${el.image.main}`),
+    }))
+
+    return new Response(JSON.stringify(response), {
       headers: {
         'Content-Type': 'application/json',
       },

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { Locale } from '@/i18n-config'
 import { TNews, TNewsData } from '@/app/[locale]/_types/TNews'
 import { Image as ImageNext } from '@nextui-org/image'
+import Image from 'next/image'
 import { Chip } from '@nextui-org/chip'
 
 const fetchNewsData = async () => {
@@ -41,8 +42,10 @@ export default function NewsPreviews({ locale }: Props) {
               key={news.id}
               className="overflow-hidden flex-1 flex flex-col gap-2"
             >
-              <ImageNext
-                src={`public/${news.image.preview}`}
+              <Image
+                src={news.baseImg}
+                width={news.baseImg.width}
+                height={news.baseImg.height}
                 alt={`bassholding news image`}
                 className="aspect-square sm:w-[280px] sm:h-[180px] w-[150px] h-[80px]"
               />

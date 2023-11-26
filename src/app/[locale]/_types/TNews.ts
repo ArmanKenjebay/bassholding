@@ -17,4 +17,5 @@ export type TNewsData = {
     sub_content: string
   }
   chips: TLocaleObject[]
+  baseImg?: any
 }
