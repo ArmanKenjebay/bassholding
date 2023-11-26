@@ -25,6 +25,7 @@ export default async function Direction({
         <div className="flex sm:flex-row flex-col">
           {cards.map((card, index) => (
             <DirectionCard
+              locale={locale}
               key={card.title}
               {...card}
               dictionary={dictionary}
