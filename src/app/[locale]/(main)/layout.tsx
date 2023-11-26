@@ -34,7 +34,7 @@ export default async function Layout({ params: { locale }, children }: Props) {
           locale,
         }}
       />
-      <main>{children}</main>
+      <main className={`flex flex-col`}>{children}</main>
       <Footer
         params={{
           dictionary: {

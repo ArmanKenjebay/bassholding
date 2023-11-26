@@ -87,8 +87,13 @@ export default async function Home({
           {cards.map((card, index) => (
             <DirectionCard
               key={card.title}
-              {...card}
+              locale={locale}
               dictionary={dictionary}
+              image={card.image}
+              title={card.title}
+              desc={card.desc}
+              chips={card.chips}
+              link={card.link}
               className="app-img-box"
               classNameImage="filter brightness-50 ease-in-out duration-200 scale-150 -translate-y-6 object-cover object-center 2xl:object-bottom grayscale"
             />

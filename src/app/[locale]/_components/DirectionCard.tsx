@@ -4,11 +4,13 @@ import { Button, Card, CardFooter, CardHeader, Chip } from '@nextui-org/react'
 import Image, { StaticImageData } from 'next/image'
 import React, { HTMLAttributes } from 'react'
 import { useRouter } from 'next-intl/client'
+import { Locale } from '@/i18n-config'
 
 type Props = TCard & {
   className?: string | HTMLAttributes<any>
   classNameImage?: string | HTMLAttributes<any>
   dictionary: any
+  locale: Locale
 }
 
 type TCard = {
@@ -28,11 +30,12 @@ export default function DirectionCard({
   className,
   dictionary,
   link,
+  locale,
 }: Props) {
   const router = useRouter()
 
-  const redirect = () => {
-    router.push(link)
+  const redirect = (link: string, locale: Locale) => {
+    router.push(`/${link}`, { locale: locale })
   }
 
   return (
@@ -58,7 +61,8 @@ export default function DirectionCard({
         </div>
 
         <div
-          className={`rounded-[99px] min-w-[30px] min-h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 group-hover:bg-primary-gold group-hover:text-white`}
+          onClick={() => redirect(link, locale)}
+          className={`cursor-pointer rounded-[99px] min-w-[30px] min-h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 group-hover:bg-primary-gold group-hover:text-white`}
         >
           <span className={`block group-hover:hidden`}>&#8594;</span>
           <span className={`hidden group-hover:block`}>&#8599;</span>
@@ -86,7 +90,7 @@ export default function DirectionCard({
           </span>
         </div>
         <Button
-          onClick={redirect}
+          onClick={() => redirect(link, locale)}
           as="div"
           className="py-1 rounded-3xl outline-0 border-0 bg-white text-black transition-transform hover:scale-95 hover:bg-primary-gold hover:text-white text-base xl:text-xl flex w-full"
           size="sm"
