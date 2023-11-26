@@ -1,9 +1,11 @@
 import 'server-only'
-import { News } from '@/app/[locale]/_types/TNews'
+import { TNews } from '@/app/[locale]/_types/TNews'
 
 const news = {
   news: () =>
-    import('./api/news.json').then((module) => module.default) as Promise<News>,
+    import('./api/news.json').then(
+      (module) => module.default,
+    ) as Promise<TNews>,
 }
 
 export const getNews = async () => news.news()

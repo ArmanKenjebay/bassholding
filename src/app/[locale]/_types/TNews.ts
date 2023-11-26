@@ -1,22 +1,18 @@
-import { Locale } from '@/i18n-config'
+import { TLocaleObject } from '@/app/[locale]/_types/TLocaleObject'
 
-export type News = {
+export type TNews = {
   news: {
     id: string
-    title: LocaleObject
-    context: LocaleObject
-    content: LocaleObject
-    date: LocaleObject
+    title: TLocaleObject
+    context: TLocaleObject
+    content: TLocaleObject
+    date: TLocaleObject
     image: {
       preview: string
       main: string
       content: string
       sub_content: string
     }
-    chips: LocaleObject[]
+    chips: TLocaleObject[]
   }[]
-}
-
-type LocaleObject = {
-  [key in Locale]: string
 }
