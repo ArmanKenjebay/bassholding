@@ -3,6 +3,7 @@ import { getNewsById } from '@/get-api'
 import { getDictionary } from '@/get-dictionary'
 import PrevNews from '@/app/[locale]/_components/PrevNews'
 import { Chip } from '@nextui-org/chip'
+import { Locale } from '@/i18n-config'
 
 async function getData(id: string) {
   const data = await getNewsById(id)
@@ -13,17 +14,15 @@ export async function generateMetadata({ params }: any) {
   const data = await getData(params.id).then((res) => res)
 
   return {
-    title: data.title
-      ? data.title[params.locale as 'en' | 'ru']
-      : 'Bassholding',
-    description: data.context ? data.context[params.locale as 'en' | 'ru'] : '',
+    title: data.title ? data.title[params.locale as Locale] : 'Bassholding',
+    description: data.context ? data.context[params.locale as Locale] : '',
   }
 }
 
 export default async function NewsDetail({
   params: { locale, id },
 }: {
-  params: { locale: 'en' | 'ru'; id: string }
+  params: { locale: Locale; id: string }
 }) {
   const dictionary = await getDictionary(locale)
   const data = await getData(id).then((res) => res)

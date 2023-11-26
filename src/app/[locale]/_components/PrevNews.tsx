@@ -1,10 +1,11 @@
 'use client'
 
 import Link from 'next-intl/link'
+import { Locale } from '@/i18n-config'
 
 type Props = {
   dictionary: any
-  locale: 'en' | 'ru'
+  locale: Locale
   classNames?: string
 }
 

@@ -1,17 +1,18 @@
 import { ReactNode } from 'react'
 import { getDictionary } from '@/get-dictionary'
+import { Locale } from '@/i18n-config'
 
 type Params = {
   children: ReactNode
   params: {
-    locale: 'en' | 'ru'
+    locale: Locale
   }
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: 'en' | 'ru' }
+  params: { locale: Locale }
 }) {
   const dictionary = await getDictionary(params.locale)
 
