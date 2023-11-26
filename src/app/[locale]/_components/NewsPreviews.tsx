@@ -28,11 +28,9 @@ export default function NewsPreviews({ locale }: Props) {
   const [newsData, setNewsData] = useState<TNewsData[] | null>(null)
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      fetchNewsData().then((res) => {
-        if (res) setNewsData(res)
-      })
-    }
+    fetchNewsData().then((res) => {
+      if (res) setNewsData(res)
+    })
   }, [])
 
   return (
