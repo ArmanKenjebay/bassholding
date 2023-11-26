@@ -5,6 +5,7 @@ import { Image as ImageNext } from '@nextui-org/image'
 import newsImage from '../../../../../public/images/news.webp'
 import { Chip } from '@nextui-org/chip'
 import { getNews } from '@/get-api'
+import NewsPreviews from '@/app/[locale]/_components/NewsPreviews'
 
 export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.locale)
@@ -73,24 +74,7 @@ export default async function News({
       </div>
 
       <div className="flex flex-col md:flex-row justify-between gap-y-10 gap-x-2 px-2 sm:px-5 sm:mb-10 mb-5">
-        <div className="grid gap-3 md:grid-cols-2 grid-cols-1">
-          {news.map(({ id, title, content, context, chips, image }, index) => (
-            <div
-              key={id}
-              className="overflow-hidden flex-1 flex flex-col gap-2"
-            >
-              <ImageNext
-                src={image.preview}
-                alt={`bassholding news image`}
-                className="aspect-square sm:w-[280px] sm:h-[180px] w-[150px] h-[80px]"
-              />
-              <Chip variant="bordered" color="warning">
-                {chips.map((c) => c[locale])[0]}
-              </Chip>
-              <span>{context[locale]}</span>
-            </div>
-          ))}
-        </div>
+        <NewsPreviews locale={locale} />
 
         <div className="flex flex-col max-h-[600px] bg-[#272727] p-5 rounded-lg overflow-y-auto scrollbar-hide">
           <div className="text-xl mb-5 w-full p-2 tracking-widest">
