@@ -44,10 +44,10 @@ export default function NewsPreviews({ locale }: Props) {
             >
               <Image
                 src={news.baseImg}
-                width={news.baseImg.width}
-                height={news.baseImg.height}
+                width={300}
+                height={300}
                 alt={`bassholding news image`}
-                className="aspect-square sm:w-[280px] sm:h-[180px] w-[150px] h-[80px]"
+                className="sm:w-[280px] sm:h-[180px] w-[150px] h-[80px]"
               />
               <Chip variant="bordered" color="warning">
                 {news.chips.map((c) => c[locale])[0]}
