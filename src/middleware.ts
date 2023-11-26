@@ -5,8 +5,6 @@ import { match as matchLocale } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 import { authMiddleware } from '@clerk/nextjs'
 
-export default authMiddleware({})
-
 function getLocale(request: NextRequest): string | undefined {
   const negotiatorHeaders: Record<string, string> = {}
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value))
@@ -22,7 +20,7 @@ function getLocale(request: NextRequest): string | undefined {
   return locale
 }
 
-export function middleware(request: NextRequest) {
+function localeMiddleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) =>
@@ -39,6 +37,28 @@ export function middleware(request: NextRequest) {
     )
   }
 }
+
+export default authMiddleware({
+  beforeAuth: (req) => {
+    return localeMiddleware(req)
+  },
+
+  // Ensure that locale specific sign-in pages are public
+  publicRoutes: [
+    '/',
+    '/:locale',
+    '/:locale/about',
+    '/:locale/bass-eco',
+    '/:locale/bassgold',
+    '/:locale/career',
+    '/:locale/direction',
+    '/:locale/fintech',
+    '/:locale/news',
+    '/:locale/news/:id',
+    '/:locale/pincode',
+    '/:locale/sign-in',
+  ],
+})
 
 export const config = {
   matcher: [
