@@ -3,7 +3,6 @@ import { NextResponse } from 'next/server'
 import { i18n } from './i18n-config'
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
-import { authMiddleware } from '@clerk/nextjs'
 
 function getLocale(request: NextRequest): string | undefined {
   const negotiatorHeaders: Record<string, string> = {}
@@ -20,7 +19,7 @@ function getLocale(request: NextRequest): string | undefined {
   return locale
 }
 
-function localeMiddleware(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) =>
@@ -38,33 +37,6 @@ function localeMiddleware(request: NextRequest) {
   }
 }
 
-export default authMiddleware({
-  beforeAuth: (req) => {
-    return localeMiddleware(req)
-  },
-
-  // Ensure that locale specific sign-in pages are public
-  publicRoutes: [
-    '/',
-    '/:locale',
-    '/:locale/about',
-    '/:locale/bass-eco',
-    '/:locale/bassgold',
-    '/:locale/career',
-    '/:locale/direction',
-    '/:locale/fintech',
-    '/:locale/news',
-    '/:locale/news/:id',
-    '/:locale/pincode',
-    '/:locale/sign-in',
-  ],
-})
-
 export const config = {
-  matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
-    '/((?!.+\\.[\\w]+$|_next).*)',
-    '/',
-    '/(api|trpc)(.*)',
-  ],
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
 }
