@@ -31,20 +31,14 @@ export default async function Pincode({
           src={pincodeImage.src}
           alt="bassgold image"
         />
-        <div className="z-10 sm:w-2/3 w-full absolute bottom-5 left-2 flex flex-col">
+        <div className="z-10 lg:w-[80%] w-full absolute bottom-5 left-2 flex flex-col">
           <span className="tracking-widest xl:text-[64px] font-[400]">
             PINCODE
           </span>
-          <span className="opacity-95 xl:text-[20px] font-[300] text-xs">
+          <span className="opacity-95 xl:text-[40px] leading-tight font-[300] text-xs">
             уникальная онлайн-платформа, которая дает возможность пройти
-          </span>
-          <span className="opacity-95 xl:text-[20px] font-[300] text-xs">
             тестирование и получить рекомендации по вопросам профессиональной
-          </span>
-          <span className="opacity-95 xl:text-[20px] font-[300] text-xs">
             ориентации, отбора и оценки кадров, карьерного развития и
-          </span>
-          <span className="opacity-95 xl:text-[20px] font-[300] text-xs">
             психологической совместимости людей в команде.
           </span>
         </div>

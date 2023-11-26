@@ -23,20 +23,22 @@ export default async function Fintech({
     <section className="flex flex-col w-full h-full">
       <div className="relative w-full h-full flex sm:mb-10 mb-5">
         <Image
-          className="xl:h-[500px] lg:h-[350px] md:h-[300px] sm:h-[250px] h-[200px] brightness-[.3] object-cover object-center grayscale"
+          className="2xl:h-[650px] xl:h-[500px] md:h-[300px] sm:h-[250px] h-[200px] brightness-[.3] object-cover object-center grayscale"
           width={1919}
           height={1098}
           radius="none"
           src={fintechImage.src}
           alt="fintechImage image"
         />
-        <div className="z-10 sm:w-1/2 w-full absolute bottom-5 left-2 flex flex-col">
-          <span className="tracking-widest text-2xl">FINTECH</span>
-          <span className="opacity-95 md:text-sm text-xs">
+        <div className="z-10 sm:w-2/3 w-full absolute bottom-5 left-2 flex flex-col">
+          <span className="tracking-widest xl:text-[64px] font-[400]">
+            FINTECH
+          </span>
+          <span className="opacity-95 xl:text-[40px] leading-tight text-xs font-[300]">
             В рамках данного направления планируется реализация финтех проектов
-            в Казахстане и за его пределами.
-            <br />В сентябре 2023 года открыто представительство в Тайланде,
-            которое будет работать в данном направлении.
+            в Казахстане и за его пределами. В сентябре 2023 года открыто
+            представительство в Тайланде, которое будет работать в данном
+            направлении.
           </span>
         </div>
       </div>

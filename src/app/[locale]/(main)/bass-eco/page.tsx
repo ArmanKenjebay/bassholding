@@ -23,16 +23,18 @@ export default async function BassEco({
     <section className="flex flex-col w-full h-full">
       <div className="relative w-full h-full flex sm:mb-10 mb-5">
         <Image
-          className="xl:h-[500px] lg:h-[350px] md:h-[300px] sm:h-[250px] h-[200px] brightness-75 object-cover object-center"
+          className="2xl:h-[650px] xl:h-[500px] md:h-[300px] sm:h-[250px] h-[200px] brightness-75 object-cover object-center"
           width={1919}
           height={1098}
           radius="none"
           src={bassecoImage.src}
           alt="bassecoImage image"
         />
-        <div className="z-10 sm:w-1/2 w-full absolute bottom-5 left-2 flex flex-col">
-          <span className="tracking-widest text-2xl">BASS ECO</span>
-          <span className="opacity-95 md:text-sm text-xs">
+        <div className="z-10 sm:w-2/3 w-full absolute bottom-5 left-2 flex flex-col">
+          <span className="tracking-widest xl:text-[64px] font-[400]">
+            BASS ECO
+          </span>
+          <span className="opacity-95 xl:text-[40px] text-xs leading-tight font-[300]">
             направление деятельности холдинга в сфере экологии, развития
             транспортной инфраструктуры и логистики.
           </span>
