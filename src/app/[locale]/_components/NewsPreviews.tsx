@@ -14,18 +14,23 @@ export default function NewsPreviews({ locale }: Props) {
   const [newsData, setNewsData] = useState<TNewsData | null>(null)
 
   useEffect(() => {
-    const fetchNewsData = async () => {
-      try {
-        const response = await fetch('news/api') // Поменяйте на свой маршрут
-        const data = await response.json()
-        setNewsData(data)
-      } catch (error) {
-        console.error('Ошибка при получении данных:', error)
-      }
-    }
+    if (typeof window !== 'undefined') {
+      console.log('Fetching news data...')
 
-    fetchNewsData()
-  }, [])
+      const fetchNewsData = async () => {
+        try {
+          const response = await fetch('news/api') // Поменяйте на свой маршрут
+          const data = await response.json()
+          setNewsData(data)
+          console.log('News data fetched successfully:', data)
+        } catch (error) {
+          console.error('Ошибка при получении данных:', error)
+        }
+      }
+
+      fetchNewsData().then()
+    }
+  }, [locale])
 
   return (
     <div className="grid gap-3 md:grid-cols-2 grid-cols-1">
@@ -36,7 +41,7 @@ export default function NewsPreviews({ locale }: Props) {
               className="overflow-hidden flex-1 flex flex-col gap-2"
             >
               <ImageNext
-                src={news.image.preview}
+                src={`public/${news.image.preview}`}
                 alt={`bassholding news image`}
                 className="aspect-square sm:w-[280px] sm:h-[180px] w-[150px] h-[80px]"
               />
