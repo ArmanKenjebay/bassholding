@@ -6,31 +6,34 @@ import { TNews, TNewsData } from '@/app/[locale]/_types/TNews'
 import { Image as ImageNext } from '@nextui-org/image'
 import { Chip } from '@nextui-org/chip'
 
+const fetchNewsData = async () => {
+  try {
+    const response = await fetch('news/api', {
+      next: {
+        revalidate: 3600,
+      },
+    })
+
+    return (await response.json()) as Promise<TNewsData[]>
+  } catch (error) {
+    console.error('Ошибка при получении данных:', error)
+  }
+}
+
 type Props = {
   locale: Locale
   news?: TNews
 }
 export default function NewsPreviews({ locale }: Props) {
-  const [newsData, setNewsData] = useState<TNewsData | null>(null)
+  const [newsData, setNewsData] = useState<TNewsData[] | null>(null)
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      console.log('Fetching news data...')
-
-      const fetchNewsData = async () => {
-        try {
-          const response = await fetch('news/api') // Поменяйте на свой маршрут
-          const data = await response.json()
-          setNewsData(data)
-          console.log('News data fetched successfully:', data)
-        } catch (error) {
-          console.error('Ошибка при получении данных:', error)
-        }
-      }
-
-      fetchNewsData().then()
+      fetchNewsData().then((res) => {
+        if (res) setNewsData(res)
+      })
     }
-  }, [locale])
+  }, [])
 
   return (
     <div className="grid gap-3 md:grid-cols-2 grid-cols-1">

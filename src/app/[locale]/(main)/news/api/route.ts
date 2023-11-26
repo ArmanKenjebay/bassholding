@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getNews } from '@/get-api'
+import { TNewsData } from '@/app/[locale]/_types/TNews'
 
 export async function GET(request: NextRequest, response: NextResponse) {
   try {
     const res = await getNews()
-    const newsData = await res.news // Распаковываем промис
+    const newsData = res.news as TNewsData[] // Распаковываем промис
 
     return new Response(JSON.stringify(newsData), {
       headers: {
