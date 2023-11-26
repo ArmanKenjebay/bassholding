@@ -14,8 +14,8 @@ type Props = {
 }
 export default async function Layout({ params: { locale }, children }: Props) {
   return (
-    <main className={`h-full w-full px-3 py-2`}>
-      <ClerkProvider>{children}</ClerkProvider>
-    </main>
+    <ClerkProvider>
+      <main className={`h-full w-full px-3 py-2`}>{children}</main>
+    </ClerkProvider>
   )
 }
