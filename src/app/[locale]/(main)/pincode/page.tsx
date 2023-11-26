@@ -24,19 +24,27 @@ export default async function Pincode({
     <section className="flex flex-col w-full h-full">
       <div className="relative w-full h-full flex sm:mb-10 mb-5">
         <Image
-          className="xl:h-[500px] lg:h-[350px] md:h-[300px] sm:h-[250px] h-[200px] brightness-75 object-cover object-bottom"
+          className="2xl:h-[650px] xl:h-[500px] lg:h-[350px] md:h-[300px] sm:h-[250px] h-[200px] brightness-[.45] object-cover object-top"
           width={1919}
           height={1098}
           radius="none"
           src={pincodeImage.src}
           alt="bassgold image"
         />
-        <div className="z-10 sm:w-1/2 w-full absolute bottom-5 left-2 flex flex-col">
-          <span className="tracking-widest text-2xl">PINCODE</span>
-          <span className="opacity-95 md:text-sm text-xs">
+        <div className="z-10 sm:w-2/3 w-full absolute bottom-5 left-2 flex flex-col">
+          <span className="tracking-widest xl:text-[64px] font-[400]">
+            PINCODE
+          </span>
+          <span className="opacity-95 xl:text-[20px] font-[300] text-xs">
             уникальная онлайн-платформа, которая дает возможность пройти
+          </span>
+          <span className="opacity-95 xl:text-[20px] font-[300] text-xs">
             тестирование и получить рекомендации по вопросам профессиональной
+          </span>
+          <span className="opacity-95 xl:text-[20px] font-[300] text-xs">
             ориентации, отбора и оценки кадров, карьерного развития и
+          </span>
+          <span className="opacity-95 xl:text-[20px] font-[300] text-xs">
             психологической совместимости людей в команде.
           </span>
         </div>

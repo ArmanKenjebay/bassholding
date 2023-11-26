@@ -23,18 +23,22 @@ export default async function BassGold({
     <section className="flex flex-col w-full h-full">
       <div className="relative w-full h-full flex sm:mb-10 mb-5">
         <Image
-          className="xl:h-[500px] lg:h-[350px] md:h-[300px] sm:h-[250px] h-[200px] brightness-75 object-cover object-center"
+          className="2xl:h-[650px] xl:h-[500px] lg:h-[350px] md:h-[300px] sm:h-[250px] h-[200px] brightness-75 object-cover object-center"
           width={1919}
           height={1098}
           radius="none"
           src={bassgoldImage.src}
           alt="bassgold image"
         />
-        <div className="z-10 sm:w-1/2 w-full absolute bottom-5 left-2 flex flex-col">
-          <span className="tracking-widest text-2xl">BASS GOLD</span>
-          <span className="opacity-95 md:text-sm text-xs">
-            золотодобывающая компания, имеющая 25-летний опыт деятельности на
-            рынке драгоценных металлов
+        <div className="px-5 z-10 absolute bottom-5 h-full flex flex-col justify-end">
+          <span className="tracking-widest xl:text-[64px] font-[400]">
+            BASS GOLD
+          </span>
+          <span className="opacity-95 xl:text-[40px] text-xs font-[300] mb-5">
+            золотодобывающая компания, имеющая 25-летний
+          </span>
+          <span className="opacity-95 xl:text-[40px] text-xs font-[300]">
+            опыт деятельности на рынке драгоценных металлов
           </span>
         </div>
       </div>
