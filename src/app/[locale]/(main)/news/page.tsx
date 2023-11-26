@@ -3,11 +3,8 @@ import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 import { Image as ImageNext } from '@nextui-org/image'
 import newsImage from '../../../../../public/images/news.webp'
-import newsItem4 from '../../../../../public/images/news-item-1.webp'
-import newsItem2 from '../../../../../public/images/news-item-2.webp'
-import newsItem3 from '../../../../../public/images/news-item-3.webp'
-import newsItem1 from '../../../../../public/images/news-item-4.webp'
 import { Chip } from '@nextui-org/chip'
+import { getNews } from '@/get-api'
 
 export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.locale)
@@ -24,43 +21,9 @@ export default async function News({
   params: { locale: Locale }
 }) {
   const dictionary = await getDictionary(locale)
-
-  const news = [
-    {
-      image: newsItem1,
-      chip: 'социальная жизнь',
-      text: 'Надпись UMIT из 270 деревьев была высажена в Павлодарской области',
-    },
-    {
-      image: newsItem2,
-      chip: 'BASS GOLD',
-      text: 'Работников рудника Ушшокы наградили благодарственными...',
-    },
-    {
-      image: newsItem3,
-      chip: 'социальная жизнь',
-      text: 'BASS Gold выплатил купонное вознаграждение по облигациям первого...',
-    },
-    {
-      image: newsItem4,
-      chip: 'BASS GOLD',
-      text: 'BASS Gold сообщает о начале торгов облигациями на KASE',
-    },
-  ]
+  const news = await getNews().then((res) => res.news)
 
   const events = [
-    {
-      text: 'Число работников холдинга достигло круглой цифры.',
-      date: '9/10/2023',
-    },
-    {
-      text: 'Число работников холдинга достигло круглой цифры.',
-      date: '9/10/2023',
-    },
-    {
-      text: 'Число работников холдинга достигло круглой цифры.',
-      date: '9/10/2023',
-    },
     {
       text: 'Число работников холдинга достигло круглой цифры.',
       date: '9/10/2023',
@@ -111,23 +74,20 @@ export default async function News({
 
       <div className="flex flex-col md:flex-row justify-between gap-y-10 gap-x-2 px-2 sm:px-5 sm:mb-10 mb-5">
         <div className="grid gap-3 md:grid-cols-2 grid-cols-1">
-          {news.map(({ image, chip, text }, index) => (
+          {news.map(({ id, title, content, context, chips, image }, index) => (
             <div
-              key={index}
+              key={id}
               className="overflow-hidden flex-1 flex flex-col gap-2"
             >
               <ImageNext
-                as={Image}
-                width={image.width}
-                height={image.height}
-                src={image.src}
-                alt={chip}
+                src={image.preview}
+                alt={`bassholding news image`}
                 className="aspect-square sm:w-[280px] sm:h-[180px] w-[150px] h-[80px]"
               />
               <Chip variant="bordered" color="warning">
-                {chip}
+                {chips.map((c) => c[locale])[0]}
               </Chip>
-              <span>{text}</span>
+              <span>{context[locale]}</span>
             </div>
           ))}
         </div>

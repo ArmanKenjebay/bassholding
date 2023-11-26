@@ -49,7 +49,7 @@ export default async function NewsDetail({
         >
           {main && (
             <Image
-              className={`rounded-2xl`}
+              className={`rounded-2xl 2xl:w-[660px] 2xl:h-[350px] sm:w-[200px] sm:h-[150px] w-full h-[200px]`}
               src={main}
               width={959}
               height={650}
@@ -80,7 +80,13 @@ export default async function NewsDetail({
             </div>
           </div>
         </div>
-        <div className={``}>{data.content && data.content[locale]}</div>
+        <div className={`px-5`}>
+          <span
+            className={`whitespace-pre-line leading-normal text-[20px] font-[200]`}
+          >
+            {data.content && data.content[locale]}
+          </span>
+        </div>
       </div>
     </div>
   )
