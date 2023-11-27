@@ -125,12 +125,13 @@ export default function CustomNavbar({
             </Select>
 
             <div className="hidden md:flex md:items-center">
-              <Button
-                onClick={onOpen}
-                className={`p-4 truncate lg:text-base md:text-xs font-normal rounded-xl border-1 bg-transparent ease-in-out duration-200 hover:bg-primary-gold hover:border-white hover:text-white`}
-              >
-                {dictionary.contact}
-              </Button>
+              <Link href={'/contact'} locale={locale}>
+                <Button
+                  className={`p-4 truncate lg:text-base md:text-xs font-normal rounded-xl border-1 bg-transparent ease-in-out duration-200 hover:bg-primary-gold hover:border-white hover:text-white`}
+                >
+                  {dictionary.contact}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
