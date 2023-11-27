@@ -9,7 +9,9 @@ const news = {
 }
 
 export const getNews = async () =>
-  await news.news().then((n) => n.news.sort((a, b) => b.id.localeCompare(a.id)))
+  await news
+    .news()
+    .then((n) => n.news.sort((a, b) => Number(b.id) - Number(a.id)))
 
 export const getNewsById = async (id: string) =>
   news.news().then((res) => res.news.find((n) => n.id === id))
