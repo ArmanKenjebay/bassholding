@@ -8,12 +8,8 @@ const news = {
     ) as Promise<TNews>,
 }
 
-export const getNews = async () => {
-  const sortedNews = await news
-    .news()
-    .then((n) => n.news.sort((a, b) => b.id.localeCompare(a.id)))
-  return sortedNews
-}
+export const getNews = async () =>
+  await news.news().then((n) => n.news.sort((a, b) => b.id.localeCompare(a.id)))
 
 export const getNewsById = async (id: string) =>
   news.news().then((res) => res.news.find((n) => n.id === id))
