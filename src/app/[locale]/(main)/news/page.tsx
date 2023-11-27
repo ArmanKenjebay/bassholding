@@ -3,8 +3,6 @@ import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 import { Image as ImageNext } from '@nextui-org/image'
 import newsImage from '../../../../../public/images/news.webp'
-import { Chip } from '@nextui-org/chip'
-import { getNews } from '@/get-api'
 import NewsPreviews from '@/app/[locale]/_components/NewsPreviews'
 
 export async function generateMetadata({ params }: any) {
@@ -22,7 +20,6 @@ export default async function News({
   params: { locale: Locale }
 }) {
   const dictionary = await getDictionary(locale)
-  const news = await getNews().then((res) => res.news)
 
   const events = [
     {

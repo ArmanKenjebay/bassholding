@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import { Locale } from '@/i18n-config'
 import { TNews, TNewsData } from '@/app/[locale]/_types/TNews'
-import { Image as ImageNext } from '@nextui-org/image'
 import Image from 'next/image'
 import { Chip } from '@nextui-org/chip'
 
