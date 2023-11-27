@@ -26,7 +26,12 @@ type Props = {
   news?: TNews
 }
 export default function NewsPreviews({ locale }: Props) {
+  const router = useRouter()
+
   const [newsData, setNewsData] = useState<TNewsData[] | null>(null)
+
+  const [itemPerPage, setItemPerPage] = useState(4)
+  const [currentPage, setCurrentPage] = useState(1)
 
   useEffect(() => {
     fetchNewsData().then((res) => {
@@ -34,7 +39,6 @@ export default function NewsPreviews({ locale }: Props) {
     })
   }, [])
 
-  const router = useRouter()
   const handleRedirect = (id: string, locale: string) => {
     router.push(`/news/${id}`, { locale: locale })
   }
