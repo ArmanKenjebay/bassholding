@@ -70,7 +70,7 @@ export default async function News({
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between gap-y-10 gap-x-2 px-2 sm:px-5 sm:mb-10 mb-5">
+      <div className="flex flex-col sm:flex-row justify-between gap-y-10 gap-x-2 px-2 sm:mb-10 mb-5">
         <NewsPreviews locale={locale} />
 
         <div className="flex flex-col max-h-[600px] bg-[#272727] p-5 rounded-lg overflow-y-auto scrollbar-hide">
@@ -79,9 +79,16 @@ export default async function News({
           </div>
 
           {events.map(({ text, date }, index) => (
-            <div key={text + index} className="flex flex-col gap-y-1 mb-5">
-              <span className="text-xl tracking-wider font-thin">{text}</span>
-              <span className="text-sm opacity-70">{date}</span>
+            <div
+              key={text + index}
+              className="group flex flex-col gap-y-1 mb-5 cursor-pointer"
+            >
+              <span className="text-xl tracking-wider font-thin group-hover:text-primary-gold">
+                {text}
+              </span>
+              <span className="text-sm font-thin group-hover:text-primary-gold">
+                {date}
+              </span>
             </div>
           ))}
         </div>

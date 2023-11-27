@@ -5,6 +5,7 @@ import { Locale } from '@/i18n-config'
 import { TNews, TNewsData } from '@/app/[locale]/_types/TNews'
 import Image from 'next/image'
 import { Chip } from '@nextui-org/chip'
+import { useRouter } from 'next-intl/client'
 
 const fetchNewsData = async () => {
   try {
@@ -33,22 +34,32 @@ export default function NewsPreviews({ locale }: Props) {
     })
   }, [])
 
+  const router = useRouter()
+  const handleRedirect = (id: string, locale: string) => {
+    router.push(`/news/${id}`, { locale: locale })
+  }
+
   return (
-    <div className="grid gap-3 md:grid-cols-2 grid-cols-1">
+    <div className="grid gap-[40px] 2xl:grid-cols-[510px_510px] xl:grid-cols-[420px_420px] lg:grid-cols-[300px_300px] md:grid-cols-[250px_250px] sm:grid-cols-[120px_120px] grid-cols-1">
       {newsData
         ? newsData.map((news) => (
             <div
+              onClick={() => handleRedirect(news.id, locale)}
               key={news.id}
-              className="overflow-hidden flex-1 flex flex-col gap-2"
+              className="overflow-hidden flex-1 flex flex-col cursor-pointer"
             >
               <Image
+                className="rounded-3xl 2xl:w-[510px] 2xl:h-[447px] xl:w-[410px] xl:h-[380px] lg:w-[240px] lg:h-[180px] md:w-[180px] md:h-[120px] sm:w-[120px] sm:h-[80px] w-full h-[200px] object-cover md:mb-10 mb-5"
                 src={news.baseImg}
-                width={300}
-                height={300}
+                width={510}
+                height={447}
                 alt={`bassholding news image`}
-                className="sm:w-[280px] sm:h-[180px] w-[150px] h-[80px]"
               />
-              <Chip variant="bordered" color="warning">
+              <Chip
+                variant="bordered"
+                color="warning"
+                className={`md:mb-5 mb-2`}
+              >
                 {news.chips.map((c) => c[locale])[0]}
               </Chip>
               <span>{news.context[locale]}</span>
