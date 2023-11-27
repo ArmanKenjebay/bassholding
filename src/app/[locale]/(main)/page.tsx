@@ -20,7 +20,7 @@ export default async function Home({
   params: { locale: Locale }
 }) {
   const dictionary = await getDictionary(locale)
-  const news = await getNews().then((res) => res.news)
+  const news = await getNews().then((res) => res)
   const cards = getDirections()
 
   return (

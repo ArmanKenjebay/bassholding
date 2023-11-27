@@ -5,7 +5,7 @@ import { TNewsData } from '@/app/[locale]/_types/TNews'
 export async function GET(request: NextRequest, response: NextResponse) {
   try {
     const res = await getNews()
-    const newsData = res.news as TNewsData[]
+    const newsData = res as TNewsData[]
 
     const response = newsData.map((el) => ({
       ...el,
