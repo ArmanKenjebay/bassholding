@@ -62,7 +62,9 @@ export default function NewsPreviews({ locale }: Props) {
               >
                 {news.chips.map((c) => c[locale])[0]}
               </Chip>
-              <span className={`group-hover:text-primary-gold`}>
+              <span
+                className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl 2xl:text-[30px] font-[300]`}
+              >
                 {news.context[locale]}
               </span>
             </div>

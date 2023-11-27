@@ -73,8 +73,8 @@ export default async function News({
       <div className="flex flex-col sm:flex-row justify-between gap-y-10 gap-x-2 px-2 sm:mb-10 mb-5">
         <NewsPreviews locale={locale} />
 
-        <div className="flex flex-col max-h-[600px] bg-[#272727] p-5 rounded-lg overflow-y-auto scrollbar-hide">
-          <div className="text-xl mb-5 w-full p-2 tracking-widest">
+        <div className="flex flex-col max-h-[600px] max-w-[700px] sm:w-1/3 bg-[#272727] p-4 rounded-lg overflow-y-auto scrollbar-hide">
+          <div className="text-lg mb-2 sm:mb-5 w-full tracking-widest">
             События холдинга
           </div>
 
@@ -83,10 +83,10 @@ export default async function News({
               key={text + index}
               className="group flex flex-col gap-y-1 mb-5 cursor-pointer"
             >
-              <span className="text-xl tracking-wider font-thin group-hover:text-primary-gold">
+              <span className="text-sm  tracking-wider font-thin group-hover:text-primary-gold">
                 {text}
               </span>
-              <span className="text-sm font-thin group-hover:text-primary-gold">
+              <span className="text-xs font-thin group-hover:text-primary-gold">
                 {date}
               </span>
             </div>
