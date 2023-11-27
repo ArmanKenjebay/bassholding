@@ -3,7 +3,6 @@ import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 
 type Props = {
-  children: ReactNode
   params: {
     locale: Locale
   }
