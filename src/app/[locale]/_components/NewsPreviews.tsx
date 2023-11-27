@@ -46,10 +46,10 @@ export default function NewsPreviews({ locale }: Props) {
             <div
               onClick={() => handleRedirect(news.id, locale)}
               key={news.id}
-              className="overflow-hidden flex-1 flex flex-col cursor-pointer"
+              className="overflow-hidden flex-1 flex flex-col cursor-pointer transition duration-200 ease-in-out group hover:scale-90"
             >
               <Image
-                className="rounded-3xl 2xl:w-[510px] 2xl:h-[447px] xl:w-[410px] xl:h-[380px] lg:w-[240px] lg:h-[180px] md:w-[180px] md:h-[120px] sm:w-[120px] sm:h-[80px] w-full h-[200px] object-cover md:mb-10 mb-5"
+                className="group-hover:grayscale rounded-3xl 2xl:w-[510px] 2xl:h-[447px] xl:w-[410px] xl:h-[380px] lg:w-[240px] lg:h-[180px] md:w-[180px] md:h-[120px] sm:w-[120px] sm:h-[80px] w-full h-[200px] object-cover md:mb-10 mb-5"
                 src={news.baseImg}
                 width={510}
                 height={447}
@@ -62,7 +62,9 @@ export default function NewsPreviews({ locale }: Props) {
               >
                 {news.chips.map((c) => c[locale])[0]}
               </Chip>
-              <span>{news.context[locale]}</span>
+              <span className={`group-hover:text-primary-gold`}>
+                {news.context[locale]}
+              </span>
             </div>
           ))
         : 'No data'}
