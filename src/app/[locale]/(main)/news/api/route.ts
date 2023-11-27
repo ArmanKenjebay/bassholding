@@ -1,13 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getNews } from '@/get-api'
-import { TNewsData } from '@/app/[locale]/_types/TNews'
 
 export async function GET(request: NextRequest, response: NextResponse) {
   try {
     const res = await getNews()
-    const newsData = res as TNewsData[]
 
-    const response = newsData.map((el) => ({
+    const response = res.map((el) => ({
       ...el,
       baseImg: require(`@/../public/images/${el.image.main}`),
     }))
@@ -18,6 +16,7 @@ export async function GET(request: NextRequest, response: NextResponse) {
       },
     })
   } catch (error) {
+    console.error(error)
     console.error('Ошибка при получении новостей:', error)
     return new Response('Internal Server Error', { status: 500 })
   }

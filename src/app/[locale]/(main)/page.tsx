@@ -111,7 +111,7 @@ export default async function Home({
             <NewsLine
               locale={locale}
               id={n.id}
-              content={n.context[locale]}
+              content={n.title[locale]}
               date={n.date[locale]}
               chip={n.chips.map((c) => c[locale])[0]}
             />

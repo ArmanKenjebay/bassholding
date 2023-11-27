@@ -4,6 +4,7 @@ import { getDictionary } from '@/get-dictionary'
 import PrevNews from '@/app/[locale]/_components/PrevNews'
 import { Chip } from '@nextui-org/chip'
 import { Locale } from '@/i18n-config'
+import Link from 'next/link'
 
 async function getData(id: string) {
   const data = await getNewsById(id)
@@ -80,12 +81,26 @@ export default async function NewsDetail({
             </div>
           </div>
         </div>
-        <div className={`px-5`}>
+        <div className={`px-5 sm:mb-10`}>
           <span
-            className={`whitespace-pre-line leading-normal text-[20px] font-[200]`}
+            className={`inline-block whitespace-pre-line leading-normal text-[20px] font-[200] mb-5`}
           >
             {data.content && data.content[locale]}
           </span>
+
+          {data?.docsHref?.length && (
+            <div className={`flex gap-3`}>
+              {data?.docsHref.map((doc) => (
+                <Link
+                  target={`_blank`}
+                  className={`px-3 py-1 rounded-xl border border-primary-gold text-primary-gold transition duration-200 hover:text-white hover:border-white`}
+                  href={doc}
+                >
+                  <span className={`text-sm`}>Документ</span>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

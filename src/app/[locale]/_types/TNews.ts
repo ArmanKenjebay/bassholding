@@ -18,4 +18,5 @@ export type TNewsData = {
   }
   chips: TLocaleObject[]
   baseImg?: any
+  docsHref?: string[]
 }
