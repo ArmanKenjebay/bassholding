@@ -78,7 +78,7 @@ export default async function NewsDetail({
               </span>
             </div>
             <span
-              className={`xl:text-[48px] leading-normal text-lg font-[300]`}
+              className={`xl:text-[48px] lg:text-[32px] text-lg leading-normal font-[300]`}
             >
               {data.title && data?.title[locale]}
             </span>
