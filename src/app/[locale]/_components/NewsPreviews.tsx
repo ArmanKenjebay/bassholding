@@ -79,7 +79,7 @@ export default function NewsPreviews({ locale }: Props) {
                   <div
                     onClick={() => handleRedirect(news.id, locale)}
                     key={news.id}
-                    className="cursor-pointer transition duration-200 ease-in-out group hover:scale-90 hover:border-primary-gold border rounded-2xl border-transparent px-2 py-5 overflow-hidden flex-1 flex flex-col"
+                    className="cursor-pointer transition duration-200 ease-in-out group hover:scale-[.98] hover:border-primary-gold border rounded-2xl border-transparent px-2 py-5 overflow-hidden flex-1 flex flex-col"
                   >
                     <Image
                       className="transition duration-200 ease-in-out rounded-3xl 2xl:h-[447px] xl:h-[200px] lg:h-[180px] md:h-[120px] sm:h-[100px] w-full h-[200px] object-cover md:mb-10 mb-5"
