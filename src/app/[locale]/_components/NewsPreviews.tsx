@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react'
 import { Locale } from '@/i18n-config'
 import { TNews, TNewsData } from '@/app/[locale]/_types/TNews'
 import Image from 'next/image'
+import { Spinner } from '@nextui-org/spinner'
 import { Chip } from '@nextui-org/chip'
 import { useRouter } from 'next-intl/client'
 import CustomPagination from '@/app/[locale]/_components/CustomPagination'
-import { Skeleton } from '@nextui-org/skeleton'
 
 const fetchNewsData = async () => {
   try {
@@ -70,10 +70,10 @@ export default function NewsPreviews({ locale }: Props) {
   }
 
   return (
-    <div className={`flex flex-col gap-y-10`}>
-      {newsDataPaginated && (
+    <div className={`flex flex-1 flex-col gap-y-10`}>
+      {newsDataPaginated ? (
         <>
-          <div className="grid gap-[40px] 2xl:grid-cols-[510px_510px] xl:grid-cols-[420px_420px] lg:grid-cols-[300px_300px] md:grid-cols-[250px_250px] sm:grid-cols-[120px_120px] grid-cols-1">
+          <div className="grid gap-[40px] 2xl:grid-cols-[510px_510px] xl:grid-cols-[420px_420px] lg:grid-cols-[300px_300px] md:grid-cols-[250px_250px] sm:grid-cols-[200px_200px] grid-cols-1">
             {newsDataPaginated
               ? newsDataPaginated.map((news) => (
                   <div
@@ -82,7 +82,7 @@ export default function NewsPreviews({ locale }: Props) {
                     className="cursor-pointer transition duration-200 ease-in-out group hover:scale-90 hover:border-primary-gold border rounded-2xl border-transparent px-2 py-5 overflow-hidden flex-1 flex flex-col"
                   >
                     <Image
-                      className="transition duration-200 ease-in-out rounded-3xl 2xl:w-[510px] 2xl:h-[447px] xl:w-[410px] xl:h-[380px] lg:w-[240px] lg:h-[180px] md:w-[180px] md:h-[120px] sm:w-[120px] sm:h-[80px] w-full h-[200px] object-cover md:mb-10 mb-5"
+                      className="transition duration-200 ease-in-out rounded-3xl 2xl:h-[447px] xl:h-[200px] lg:h-[180px] md:h-[120px] sm:h-[100px] w-full h-[200px] object-cover md:mb-10 mb-5"
                       src={news.baseImg}
                       width={510}
                       height={447}
@@ -107,6 +107,10 @@ export default function NewsPreviews({ locale }: Props) {
 
           <CustomPagination handlePage={handlePage} total={total} />
         </>
+      ) : (
+        <div className={`flex w-full h-full justify-center items-center`}>
+          <Spinner size={`lg`} color="warning" />
+        </div>
       )}
     </div>
   )
