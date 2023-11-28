@@ -107,14 +107,20 @@ export default async function Home({
         </span>
         {news.map((n, index) => (
           <div key={index}>
-            {index < news.length && <Divider className="my-2 bg-white" />}
-            <NewsLine
-              locale={locale}
-              id={n.id}
-              content={n.title[locale]}
-              date={n.date[locale]}
-              chip={n.chips.map((c) => c[locale])[0]}
-            />
+            {index <= 3 && (
+              <>
+                <Divider className="my-2 bg-white" />
+                <div className={`p-1`}>
+                  <NewsLine
+                    locale={locale}
+                    id={n.id}
+                    content={n.title[locale]}
+                    date={n.date[locale]}
+                    chip={n.chips.map((c) => c[locale])[0]}
+                  />
+                </div>
+              </>
+            )}
           </div>
         ))}
       </div>
