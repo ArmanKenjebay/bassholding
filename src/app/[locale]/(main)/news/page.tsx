@@ -43,7 +43,7 @@ export default async function News({
   return (
     <section className="flex flex-col w-full h-full">
       <div className="flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-10 mb-5 relative">
-        <div className="sm:static absolute z-20 flex xl:text-3xl lg:text-2xl sm:text-xl flex-col sm:justify-end px-5">
+        <div className="sm:static absolute z-20 flex xl:text-3xl lg:text-2xl sm:text-xl flex-col sm:justify-end px-5 sm:pb-0 pb-5">
           <span>
             <span className="text-primary-gold">Наши новости и обновления</span>
             - это история нашего роста и развития.
@@ -55,18 +55,14 @@ export default async function News({
           </span>
         </div>
 
-        <div className="flex xl:w-[570px] lg:w-[370px] md:w-[310px] sm:w-[270px] w-full">
-          <div className="sm:h-full h-[294px] overflow-hidden relative right-0">
-            <ImageNext
-              as={Image}
-              width={newsImage.width}
-              height={newsImage.height}
-              src={newsImage.src}
-              radius="none"
-              className="filter sm:brightness-75 brightness-[.3] z-10 object-cover"
-              alt={'bassholding news image'}
-            />
-          </div>
+        <div className="relative w-full h-[350px] sm:w-[350px] md:w-1/3 md:h-[380px] lg:h-[480px] xl:h-[560px] 2xl:h-[740px] overflow-hidden ">
+          <Image
+            width={808}
+            height={900}
+            src={newsImage.src}
+            className="filter sm:brightness-75 brightness-[.3] z-10 object-cover w-full h-full"
+            alt={'bassholding news image'}
+          />
         </div>
       </div>
 
