@@ -11,11 +11,12 @@ export default function PersonalCard({ src, name, position }: Props) {
     <div className="flex flex-col gap-y-1">
       <Image
         as={NextImage}
+        quality={100}
         width={420}
         height={500}
         src={src.src}
         alt={name}
-        className="md:w-[420px] md:h-[500px] w-[155px] h-[192px] object-cover object-center rounded-xl"
+        className="md:w-[420px] md:h-[500px] w-[155px] h-[192px] object-cover object-center rounded-xl pointer-events-none"
         classNames={{
           wrapper: 'w-full h-full',
         }}
