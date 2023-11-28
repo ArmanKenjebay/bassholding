@@ -84,9 +84,9 @@ export default async function NewsDetail({
             </span>
           </div>
         </div>
-        <div className={`lg:px-5 sm:mb-10`}>
+        <div className={`sm:mb-10`}>
           <span
-            className={`inline-block whitespace-pre-line leading-normal text-sm font-[200] mb-5`}
+            className={`inline-block whitespace-pre-line leading-normal text-sm lg:text-2xl font-[200] mb-5`}
           >
             {data.content && data.content[locale]}
           </span>
