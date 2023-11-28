@@ -1,4 +1,3 @@
-'use client'
 import {
   Pagination,
   PaginationItemType,
@@ -94,14 +93,10 @@ export default function CustomPagination({
           <button
             ref={ref}
             key={key}
-            className={cn(
-              className,
-              isActive &&
-                'text-white bg-gradient-to-br from-indigo-500 to-pink-500 font-bold',
-            )}
+            className={cn(className, isActive && 'bg-white font-bold')}
             onClick={() => setPage(value)}
           >
-            {value}
+            <span className={`${isActive && 'text-black'}`}>{value}</span>
           </button>
         )
       }}
