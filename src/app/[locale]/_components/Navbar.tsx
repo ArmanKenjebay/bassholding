@@ -35,11 +35,7 @@ export default function CustomNavbar({
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const position = useScrollPosition()
-
-  // useEffect(() => {
-  //   console.log(position?.y)
-  // }, [position?.y])
+  // const position = useScrollPosition()
 
   const handleSelectionChange = (e: ChangeEvent<HTMLSelectElement>) => {
     router.replace(pathName, { locale: e.target.value })
@@ -55,7 +51,7 @@ export default function CustomNavbar({
           isMenuOpen ? 'bg-black' : 'bg-transparent'
         }`}
       >
-        <div className="flex gap-x-10 w-full items-center justify-between">
+        <div className="flex lg:gap-x-10 md:gap-x-5 w-full items-center justify-between">
           <div className="flex">
             <Link
               href="/"
