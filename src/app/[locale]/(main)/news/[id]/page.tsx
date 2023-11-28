@@ -50,7 +50,7 @@ export default async function NewsDetail({
         >
           {main && (
             <Image
-              className={`rounded-2xl 2xl:w-[660px] 2xl:h-[350px] sm:w-[200px] sm:h-[150px] w-full h-[200px]`}
+              className={`rounded-2xl w-full 2xl:h-[500px] xl:w-[600px] xl:h-[450px] lg:h-[280px] h-[200px] object-cover`}
               src={main}
               width={959}
               height={650}
@@ -58,11 +58,13 @@ export default async function NewsDetail({
             />
           )}
 
-          <div className={`flex flex-col`}>
-            <div className={`flex flex-row lg:flex-col`}>
+          <div className={`flex flex-col gap-y-3`}>
+            <div
+              className={`flex flex-row lg:flex-col gap-x-5 gap-y-3 items-center lg:items-start`}
+            >
               <Chip
                 variant={'bordered'}
-                className="border-primary-gold text-primary-gold mb-10"
+                className="border-primary-gold text-primary-gold"
                 classNames={{
                   base: 'truncate',
                   content: 'p-0 sm:p-1 truncate',
@@ -71,17 +73,16 @@ export default async function NewsDetail({
                 {data?.chips?.map((chi) => chi[locale])[0]}
               </Chip>
 
-              <span className={`xl:text-[40px] font-[300] mb-10`}>
+              <span className={`xl:text-[40px] font-[300]`}>
                 {data.date && data?.date[locale]}
               </span>
-
-              <span className={`xl:text-[48px] font-[300]`}>
-                {data.title && data?.title[locale]}
-              </span>
             </div>
+            <span className={`xl:text-[48px] font-[300]`}>
+              {data.title && data?.title[locale]}
+            </span>
           </div>
         </div>
-        <div className={`px-5 sm:mb-10`}>
+        <div className={`lg:px-5 sm:mb-10`}>
           <span
             className={`inline-block whitespace-pre-line leading-normal text-[20px] font-[200] mb-5`}
           >
