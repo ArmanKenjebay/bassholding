@@ -6,6 +6,8 @@ import { TNews, TNewsData } from '@/app/[locale]/_types/TNews'
 import Image from 'next/image'
 import { Chip } from '@nextui-org/chip'
 import { useRouter } from 'next-intl/client'
+import CustomPagination from '@/app/[locale]/_components/CustomPagination'
+import { Skeleton } from '@nextui-org/skeleton'
 
 const fetchNewsData = async () => {
   try {
@@ -29,51 +31,83 @@ export default function NewsPreviews({ locale }: Props) {
   const router = useRouter()
 
   const [newsData, setNewsData] = useState<TNewsData[] | null>(null)
+  const [total, setTotal] = useState<number>(0)
+  const [newsDataPaginated, setNewsDataPaginated] = useState<
+    TNewsData[] | null
+  >(null)
 
   const [itemPerPage, setItemPerPage] = useState(4)
   const [currentPage, setCurrentPage] = useState(1)
 
   useEffect(() => {
     fetchNewsData().then((res) => {
-      if (res) setNewsData(res)
+      if (res) {
+        const startIndex = (currentPage - 1) * itemPerPage
+        const endIndex = startIndex + itemPerPage
+
+        const currentNewsPage = res.slice(startIndex, endIndex)
+
+        setNewsData(res)
+        setNewsDataPaginated(currentNewsPage)
+      }
     })
-  }, [])
+  }, [currentPage])
+
+  useEffect(() => {
+    if (newsData?.length) {
+      const total = Math.ceil(newsData.length / itemPerPage)
+
+      setTotal(total)
+    }
+  }, [newsData])
+
+  const handlePage = (page: number) => {
+    setCurrentPage(page)
+  }
 
   const handleRedirect = (id: string, locale: string) => {
     router.push(`/news/${id}`, { locale: locale })
   }
 
   return (
-    <div className="grid gap-[40px] 2xl:grid-cols-[510px_510px] xl:grid-cols-[420px_420px] lg:grid-cols-[300px_300px] md:grid-cols-[250px_250px] sm:grid-cols-[120px_120px] grid-cols-1">
-      {newsData
-        ? newsData.map((news) => (
-            <div
-              onClick={() => handleRedirect(news.id, locale)}
-              key={news.id}
-              className="cursor-pointer transition duration-200 ease-in-out group hover:scale-95 active:scale-90 hover:border hover:rounded-2xl hover:px-2 hover:py-5 hover:border-primary-gold overflow-hidden flex-1 flex flex-col"
-            >
-              <Image
-                className="transition duration-200 ease-in-out group-hover:grayscale group-hover:scale-80 rounded-3xl 2xl:w-[510px] 2xl:h-[447px] xl:w-[410px] xl:h-[380px] lg:w-[240px] lg:h-[180px] md:w-[180px] md:h-[120px] sm:w-[120px] sm:h-[80px] w-full h-[200px] object-cover md:mb-10 mb-5"
-                src={news.baseImg}
-                width={510}
-                height={447}
-                alt={`bassholding news image`}
-              />
-              <Chip
-                variant="bordered"
-                color="warning"
-                className={`md:mb-5 mb-2`}
-              >
-                {news.chips.map((c) => c[locale])[0]}
-              </Chip>
-              <span
-                className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl 2xl:text-[30px] font-[300]`}
-              >
-                {news.context[locale]}
-              </span>
-            </div>
-          ))
-        : 'No data'}
+    <div className={`flex flex-col gap-y-10`}>
+      {newsDataPaginated && (
+        <>
+          <div className="grid gap-[40px] 2xl:grid-cols-[510px_510px] xl:grid-cols-[420px_420px] lg:grid-cols-[300px_300px] md:grid-cols-[250px_250px] sm:grid-cols-[120px_120px] grid-cols-1">
+            {newsDataPaginated
+              ? newsDataPaginated.map((news) => (
+                  <div
+                    onClick={() => handleRedirect(news.id, locale)}
+                    key={news.id}
+                    className="cursor-pointer transition duration-200 ease-in-out group hover:scale-90 hover:border-primary-gold border rounded-2xl border-transparent px-2 py-5 overflow-hidden flex-1 flex flex-col"
+                  >
+                    <Image
+                      className="transition duration-200 ease-in-out rounded-3xl 2xl:w-[510px] 2xl:h-[447px] xl:w-[410px] xl:h-[380px] lg:w-[240px] lg:h-[180px] md:w-[180px] md:h-[120px] sm:w-[120px] sm:h-[80px] w-full h-[200px] object-cover md:mb-10 mb-5"
+                      src={news.baseImg}
+                      width={510}
+                      height={447}
+                      alt={`bassholding news image`}
+                    />
+                    <Chip
+                      variant="bordered"
+                      color="warning"
+                      className={`md:mb-5 mb-2`}
+                    >
+                      {news.chips.map((c) => c[locale])[0]}
+                    </Chip>
+                    <span
+                      className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl 2xl:text-[30px] font-[300]`}
+                    >
+                      {news.context[locale]}
+                    </span>
+                  </div>
+                ))
+              : 'No data'}
+          </div>
+
+          <CustomPagination handlePage={handlePage} total={total} />
+        </>
+      )}
     </div>
   )
 }

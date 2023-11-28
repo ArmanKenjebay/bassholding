@@ -73,7 +73,7 @@ export default async function News({
       <div className="flex flex-col sm:flex-row justify-between gap-y-10 gap-x-2 px-2 sm:mb-10 mb-5">
         <NewsPreviews locale={locale} />
 
-        <div className="flex flex-col max-h-[600px] max-w-[700px] sm:w-1/3 bg-[#272727] p-4 rounded-lg overflow-y-auto scrollbar-hide">
+        <div className="flex flex-col bg-[#272727] 2xl:max-h-[500px] xl:max-h-[450px] lg:max-h-[400px] md:max-h-[350px] sm:max-h-[300px] max-h-[280px] p-4 rounded-lg overflow-y-auto scrollbar-hide">
           <div className="text-lg mb-2 sm:mb-5 w-full tracking-widest">
             События холдинга
           </div>
