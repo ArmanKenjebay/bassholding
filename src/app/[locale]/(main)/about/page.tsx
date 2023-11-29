@@ -118,7 +118,7 @@ export default async function About({
           />
         </div>
       </div>
-      <div className="xl:px-[60px] sm:px-5 px-5 mb-5 xl:mb-[70px]">
+      <div className="xl:px-[60px] sm:px-5 px-5 sm:mb-10 mb-5 xl:mb-[70px]">
         <div className="flex flex-col sm:w-3/4 w-full">
           <span className="xl:text-[64px] text-[28px] font-[400] mb-[10px] leading-normal">
             {dictionary.about.our_values}
@@ -151,13 +151,13 @@ export default async function About({
         </div>
       </div>
 
-      <div className="sm:px-5 px-2 sm:mb-10 mb-5">
+      <div className="xl:px-[60px] sm:px-5 px-5 mb-10">
         <div className="grid gap-x-3 gap-y-5 sm:gap-y-10 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
           <div className="col-span-2 md:col-span-2 flex justify-center flex-col gap-y-3 ">
-            <span className="text-2xl tracking-widest mb-2 md:text-2xl lg:text-3xl xl:text-6xl">
+            <span className="text-2xl tracking-widest md:text-2xl lg:text-3xl xl:text-[64px] mb-2 xl:mb-14">
               {dictionary.about.our_team}
             </span>
-            <span className="text-primary-gold text-base tracking-widest md:text-2xl lg:text-3xl xl:text-6xl">
+            <span className="text-primary-gold text-base tracking-widest md:text-2xl lg:text-3xl xl:text-6xl font-[250] uppercase">
               {dictionary.about.team_contribution}
             </span>
           </div>
