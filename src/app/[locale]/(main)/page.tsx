@@ -26,7 +26,7 @@ export default async function Home({
   return (
     <section className="flex flex-col w-full h-full">
       <div className="lg:min-h-[600px] flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-0 mb-8">
-        <div className="flex flex-col gap-y-3 justify-end px-5 sm:pb-10 lg:pb-24 sm:px-6 md:px-8">
+        <div className="flex flex-col gap-y-3 justify-end px-5 sm:pb-10 lg:pb-24 sm:px-6 md:px-[60px]">
           <ImageNext
             as={Image}
             className="lg:w-[336px] lg:h-[83px] w-[168px] h-[42px]"
@@ -61,7 +61,7 @@ export default async function Home({
         </div>
       </div>
 
-      <div className="sm:mb-10 mb-5">
+      <div className="sm:mb-[35px] mb-5">
         <Marquee>
           <span className="text-4xl mx-4">HR TECH</span>
           <span className="text-4xl mx-4">FINTECH</span>
@@ -82,7 +82,7 @@ export default async function Home({
         </Marquee>
       </div>
 
-      <div className="sm:px-5 px-2 sm:mb-10 mb-5">
+      <div className="sm:px-5 xl:px-[60px] px-2 sm:mb-10 mb-5">
         <div className="flex justify-center sm:flex-row flex-col">
           {cards.map((card, index) => (
             <DirectionCard
@@ -101,7 +101,7 @@ export default async function Home({
         </div>
       </div>
 
-      <div className="sm:px-5 px-2 sm:mb-10 mb-5">
+      <div className="sm:px-5 xl:px-[60px] px-2 sm:mb-10 mb-5">
         <span className="lg:text-4xl md:text-3xl text-2xl font-[250]">
           {dictionary.news.title}
         </span>
@@ -125,14 +125,14 @@ export default async function Home({
         ))}
       </div>
 
-      <div className="sm:px-5 px-2 sm:mb-10 w-full h-full">
+      <div className="sm:px-5 xl:px-[60px] px-2 sm:mb-10 w-full h-full">
         <ImageNext
           as={Image}
-          width={news1.width}
-          height={news1.height}
+          width={1310}
+          height={410}
           radius={`none`}
           src={news1.src}
-          className={`w-[320px] h-[104px] sm:h-full sm:w-full rounded-[40px] sm:rounded-3xl object-cover object-top`}
+          className={`w-[320px] h-[104px] sm:h-full sm:w-full xl:h-[610px] rounded-[40px] sm:rounded-3xl object-cover object-top`}
           classNames={{
             wrapper: 'w-full h-full',
           }}
