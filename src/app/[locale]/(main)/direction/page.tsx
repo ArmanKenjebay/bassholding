@@ -15,13 +15,16 @@ export default async function Direction({
   return (
     <>
       <div className="sm:px-16 md:px-24 lg:px-32 xl:px-52 px-5 py-8 flex justify-center items-center text-center sm:mb-10 mb-5">
-        <span className="lg:text-4xl md:text-3xl sm:text-2xl text-xl">
+        <span
+          className="2xl:text-[64px] font-[250] lg:text-4xl md:text-3xl sm:text-2xl text-xl"
+          style={{ lineHeight: '92%' }}
+        >
           <span className="text-primary-gold">Основная задача холдинга</span> -
           поднимать знамя Республики Казахстан в разных направлениях и на разных
           площадках.
         </span>
       </div>
-      <div className="sm:px-5 px-2 sm:mb-10 mb-5">
+      <div className="xl:px-[54px] sm:px-5 px-2 lg:mb-40 sm:mb-10 mb-5">
         <div className="flex sm:flex-row flex-col">
           {cards.map((card, index) => (
             <DirectionCard
