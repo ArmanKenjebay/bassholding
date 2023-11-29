@@ -46,7 +46,7 @@ export default function CustomNavbar({
         isBlurred={false}
         maxWidth="full"
         onMenuOpenChange={setIsMenuOpen}
-        className={`ease-in-out duration-200 xl:px-[60px] top-0 z-50 absolute ${
+        className={`ease-in-out duration-200 xl:px-[60px] px-4 top-0 z-50 absolute ${
           isMenuOpen ? 'bg-black' : 'bg-transparent'
         }`}
         classNames={{
