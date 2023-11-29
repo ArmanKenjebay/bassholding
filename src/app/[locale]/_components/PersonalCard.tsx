@@ -8,7 +8,7 @@ type Props = {
 }
 export default function PersonalCard({ src, name, position }: Props) {
   return (
-    <div className="flex flex-col gap-y-1">
+    <div className="flex flex-1 flex-col gap-y-1">
       <Image
         as={NextImage}
         quality={100}
@@ -16,10 +16,7 @@ export default function PersonalCard({ src, name, position }: Props) {
         height={500}
         src={src.src}
         alt={name}
-        className="md:w-[420px] md:h-[500px] w-[155px] h-[192px] object-cover object-center rounded-xl pointer-events-none"
-        classNames={{
-          wrapper: 'w-full h-full',
-        }}
+        className="2xl:w-[420px] 2xl:h-[500px] xl:w-[360px] xl:h-[430px] lg:h-[410px] md:h-[310px] sm:w-full sm:h-[260px] w-[155px] h-[192px] object-cover object-center rounded-xl pointer-events-none"
       />
       <span className="text-primary-gold text-sm md:text-base lg:text-xl xl:text-3xl text-left">
         {name}
