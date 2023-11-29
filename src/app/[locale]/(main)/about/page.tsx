@@ -129,8 +129,8 @@ export default async function About({
         </div>
       </div>
 
-      <div className="sm:px-5 px-2 mb-10">
-        <div className="h-full grid lg:grid-cols-4 grid-cols-2 gap-3">
+      <div className="sm:px-5 px-2 mb-10 xl:mb-[182px]">
+        <div className="h-full grid lg:grid-cols-4 grid-cols-2 xl:gap-x-[40px] gap-[10px]">
           {feels.map(({ title, image, classes }, index) => (
             <div
               key={index}
@@ -142,7 +142,7 @@ export default async function About({
               <NextImage
                 src={image}
                 alt=""
-                className={`w-full h-full object-cover md:rounded-[120px] rounded-3xl filter brightness-[.65] ${
+                className={`w-full h-full object-cover md:rounded-[120px] rounded-[30px] filter brightness-[.65] ${
                   classes ? classes : ''
                 }`}
               />
