@@ -1,4 +1,3 @@
-import { ReactNode } from 'react'
 import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 
@@ -12,7 +11,7 @@ export default async function Contact({ params: { locale } }: Props) {
   const dictionary = await getDictionary(locale)
 
   return (
-    <div className={`flex flex-col h-full sm:px-10 px-5`}>
+    <div className={`flex flex-col h-full xl:px-[60px] px-5`}>
       <span className={`xl:text-[48px] text-primary-gold mb-5 sm:mb-10`}>
         {dictionary.contact.title}
       </span>

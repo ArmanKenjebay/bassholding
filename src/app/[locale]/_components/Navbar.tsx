@@ -43,14 +43,18 @@ export default function CustomNavbar({
   return (
     <>
       <Navbar
+        shouldHideOnScroll
         isBlurred={false}
         maxWidth="full"
         onMenuOpenChange={setIsMenuOpen}
         className={`ease-in-out duration-200 xl:px-[60px] top-0 z-50 absolute ${
           isMenuOpen ? 'bg-black' : 'bg-transparent'
         }`}
+        classNames={{
+          wrapper: 'px-0 sm:px-10',
+        }}
       >
-        <div className="flex 2xl:gap-x-[60px] md:gap-x-5 w-full items-center justify-between">
+        <div className="flex 2xl:gap-x-[74px] md:gap-x-5 w-full items-center justify-between">
           <div className="flex">
             <Link
               href="/"
