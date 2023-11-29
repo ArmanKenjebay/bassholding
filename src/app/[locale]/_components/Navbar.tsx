@@ -9,7 +9,7 @@ import {
 } from '@nextui-org/react'
 import Image from 'next/image'
 import Link from 'next-intl/link'
-import { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 import { usePathname, useRouter } from 'next-intl/client'
 import bassholdingLogo from '@/app/asset/bassholding-navbar-logo.svg'
 import NavigationLink from '@/app/[locale]/_components/NavigationLink'
@@ -19,7 +19,6 @@ import {
   NavbarMenuToggle,
 } from '@nextui-org/navbar'
 import ModalContactUs from '@/app/[locale]/_components/ModalContactUs'
-import useScrollPosition from '@/app/[locale]/_lib/useScrollPosition'
 
 export default function CustomNavbar({
   params: { dictionary, locale, modalDictionary },
@@ -47,11 +46,11 @@ export default function CustomNavbar({
         isBlurred={false}
         maxWidth="full"
         onMenuOpenChange={setIsMenuOpen}
-        className={`ease-in-out duration-200 top-0 z-50 absolute ${
+        className={`ease-in-out duration-200 xl:px-[60px] top-0 z-50 absolute ${
           isMenuOpen ? 'bg-black' : 'bg-transparent'
         }`}
       >
-        <div className="flex lg:gap-x-10 md:gap-x-5 w-full items-center justify-between">
+        <div className="flex 2xl:gap-x-[60px] md:gap-x-5 w-full items-center justify-between">
           <div className="flex">
             <Link
               href="/"
@@ -68,8 +67,8 @@ export default function CustomNavbar({
               />
             </Link>
           </div>
-          <div className="sm:flex hidden flex-1 justify-start">
-            <div className="flex sm:gap-x-8 md:gap-x-10 lg:gap-x-12 xl:gap-x-16 2xl:gap-x-20">
+          <div className="lg:flex hidden flex-1 justify-start">
+            <div className="flex sm:gap-x-8 md:gap-x-10 lg:gap-x-10 xl:gap-x-16 2xl:gap-x-20">
               <NavigationLink
                 className="xl:text-2xl lg:text-base md:text-sm text-xs font-normal whitespace-nowrap"
                 href="/about"
@@ -119,22 +118,23 @@ export default function CustomNavbar({
                 RU
               </SelectItem>
             </Select>
-
-            <div className="hidden md:flex md:items-center">
-              <Link href={'/contact'} locale={locale}>
-                <Button
-                  className={`p-4 truncate lg:text-base md:text-xs font-normal rounded-xl border-1 bg-transparent ease-in-out duration-200 hover:bg-primary-gold hover:border-white hover:text-white`}
-                >
-                  {dictionary.contact}
-                </Button>
-              </Link>
-            </div>
+          </div>
+          <div className="hidden lg:flex md:items-center">
+            <Link href={'/contact'} locale={locale}>
+              <Button
+                className={`p-4 truncate lg:text-base md:text-xs font-normal rounded-xl border-1 bg-transparent ease-in-out duration-200 hover:bg-primary-gold hover:border-white hover:text-white ${
+                  pathName === '/contact' && 'bg-primary-gold border-black'
+                }`}
+              >
+                {dictionary.contact}
+              </Button>
+            </Link>
           </div>
         </div>
 
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className="sm:hidden"
+          className="lg:hidden"
         />
         <NavbarMenu className="pt-5 bg-black z-50">
           <NavbarMenuItem>
@@ -155,6 +155,11 @@ export default function CustomNavbar({
           <NavbarMenuItem>
             <NavigationLink href="/career" lang={locale}>
               {dictionary.career}
+            </NavigationLink>
+          </NavbarMenuItem>
+          <NavbarMenuItem>
+            <NavigationLink href="/contact" lang={locale}>
+              {dictionary.contact}
             </NavigationLink>
           </NavbarMenuItem>
         </NavbarMenu>
