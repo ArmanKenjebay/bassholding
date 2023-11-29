@@ -5,6 +5,7 @@ import { getDictionary } from '@/get-dictionary'
 import { Divider } from '@nextui-org/divider'
 
 import news1 from '@/../public/images/news1.webp'
+import news1_mobile from '@/../public/images/news1_mobile.webp'
 import homeImg from '@/../public/images/home-page.webp'
 import homeImg2 from '@/../public/images/home-page-2.webp'
 import DirectionCard from '@/app/[locale]/_components/DirectionCard'
@@ -128,11 +129,13 @@ export default async function Home({
       <div className="sm:px-5 xl:px-[60px] px-2 sm:mb-10 w-full h-full">
         <ImageNext
           as={Image}
-          width={1310}
-          height={410}
-          radius={`none`}
           src={news1.src}
-          className={`w-[320px] h-[104px] sm:h-full sm:w-full xl:h-[610px] rounded-[40px] sm:rounded-3xl object-cover object-top`}
+          srcSet={`${news1_mobile} 640w, ${news1} 1024w`}
+          sizes="(max-width: 640px) 100vw, 1024px"
+          width={1965}
+          height={615}
+          radius={`none`}
+          className={`w-[320px] h-[104px] sm:h-full sm:w-full xl:h-[610px] rounded-[40px] sm:rounded-3xl object-contain`}
           classNames={{
             wrapper: 'w-full h-full',
           }}
