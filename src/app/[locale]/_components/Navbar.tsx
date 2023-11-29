@@ -43,7 +43,6 @@ export default function CustomNavbar({
   return (
     <>
       <Navbar
-        shouldHideOnScroll
         isBlurred={false}
         maxWidth="full"
         onMenuOpenChange={setIsMenuOpen}

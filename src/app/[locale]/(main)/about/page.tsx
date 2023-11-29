@@ -95,8 +95,16 @@ export default async function About({
 
   return (
     <>
-      <div className="mb-10">
+      <div className="mb-[10px] lg:mb-16 xl:mb-24">
         <div className="relative w-full h-[294px] sm:h-[380px] md:h-[480px] lg:h-[540px] xl:h-[620px] 2xl:h-[660px]">
+          <span
+            className="xl:px-[60px] xl:pb-[54px] px-5 pb-5 uppercase sm:lowercase w-full sm:w-2/3 z-20 h-full flex items-end absolute font-[250] xl:text-[64px] lg:text-6xl sm:text-4xl text-lg"
+            style={{
+              lineHeight: '92%',
+            }}
+          >
+            {dictionary.about.human_value}
+          </span>
           <Image
             radius="none"
             src={aboutImage.src}
@@ -108,17 +116,14 @@ export default async function About({
               wrapper: 'w-full h-full',
             }}
           />
-          <span className="z-10 w-3/4 tracking-widest absolute lg:bottom-20 bottom-5 left-3 font-gilroy xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg">
-            {dictionary.about.human_value}
-          </span>
         </div>
       </div>
-      <div className="sm:px-5 px-2 mb-10">
+      <div className="xl:px-[60px] sm:px-5 px-5 mb-5 xl:mb-[70px]">
         <div className="flex flex-col sm:w-3/4 w-full">
-          <span className="text-2xl tracking-widest mb-2">
+          <span className="xl:text-[64px] text-[28px] font-[400] mb-[10px] leading-normal">
             {dictionary.about.our_values}
           </span>
-          <span className="text-base">
+          <span className="xl:text-[36px] text-base font-[300] leading-normal">
             {dictionary.about.our_values_principles}
           </span>
         </div>
