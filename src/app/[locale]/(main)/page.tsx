@@ -125,7 +125,7 @@ export default async function Home({
         ))}
       </div>
 
-      <div className="sm:px-5 xl:px-[60px] px-2 sm:mb-10 w-full h-full">
+      <div className="sm:px-5 xl:px-[60px] px-2 sm:mb-10 w-full h-full flex justify-center">
         <ImageNext
           as={Image}
           src={news1.src}
@@ -135,9 +135,6 @@ export default async function Home({
           height={615}
           radius={`none`}
           className={`w-[320px] h-[104px] sm:h-full sm:w-full xl:h-[610px] rounded-[40px] sm:rounded-3xl object-contain`}
-          classNames={{
-            wrapper: 'w-full h-full',
-          }}
           alt="bassholding image"
         />
       </div>
