@@ -50,7 +50,7 @@ export default function CustomNavbar({
           isMenuOpen ? 'bg-black' : 'bg-transparent'
         }`}
         classNames={{
-          wrapper: 'px-0 sm:px-10',
+          wrapper: 'px-0',
         }}
       >
         <div className="flex 2xl:gap-x-[74px] md:gap-x-5 w-full items-center justify-between">

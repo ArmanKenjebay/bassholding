@@ -38,7 +38,7 @@ export default async function Home({
             alt={'bassholding image'}
           />
           <div className="flex flex-col gap-y-1">
-            <span className="text-2xl lg:text-5xl tracking-widest font-[250]">
+            <span className="text-2xl lg:text-5xl font-[250]">
               BASS HOLDING
             </span>
             <span className=" tracking-wide text-sm lg:text-3xl font-[250]">
