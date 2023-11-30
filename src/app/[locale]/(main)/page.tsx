@@ -125,7 +125,7 @@ export default async function Home({
         ))}
       </div>
 
-      <div className="sm:px-5 xl:px-[60px] px-2 sm:mb-10 w-full h-full flex justify-center">
+      <div className="sm:px-5 xl:px-[60px] px-2 sm:mb-10 w-full h-full flex justify-center mb-10">
         <ImageNext
           as={Image}
           src={news1.src}

@@ -20,14 +20,14 @@ export default function NewsLine({ locale, id, content, chip, date }: Props) {
   return (
     <div className="w-full grid grid-cols-[3fr_1fr_1fr_50px] gap-x-5 gap-y-3 items-center justify-center px-1">
       <div className="flex justify-start sm:col-span-1 col-span-4">
-        <span className="text-sm md:text-[20px] font-[300]">{content}</span>
+        <span className="text-xs md:text-[20px] font-[300]">{content}</span>
       </div>
 
       <div className="flex justify-center gap-x-3 sm:col-span-1 col-span-2">
         <Chip
           variant="bordered"
           color="warning"
-          className={`text-sm`}
+          className={`text-xs lg:text-base font-[400]`}
           classNames={{
             base: 'truncate',
             content: 'p-0 sm:p-1 truncate',
@@ -38,7 +38,7 @@ export default function NewsLine({ locale, id, content, chip, date }: Props) {
       </div>
 
       <div
-        className={`flex justify-center sm:col-span-1 text-[12px] md:text-[20px]`}
+        className={`flex whitespace-nowrap justify-center sm:col-span-1  text-xs md:text-[20px] font-[300]`}
       >
         {date ?? <span>{date}</span>}
       </div>
