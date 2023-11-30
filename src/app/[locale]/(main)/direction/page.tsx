@@ -19,9 +19,10 @@ export default async function Direction({
           className="2xl:text-[64px] font-[250] lg:text-4xl md:text-3xl sm:text-2xl text-xl"
           style={{ lineHeight: '92%' }}
         >
-          <span className="text-primary-gold">Основная задача холдинга</span> -
-          поднимать знамя Республики Казахстан в разных направлениях и на разных
-          площадках.
+          <span className="text-primary-gold">
+            {dictionary.direction['main_aim-1']}
+          </span>
+          {dictionary.direction['main_aim-2']}
         </span>
       </div>
       <div className="xl:px-[54px] sm:px-5 px-2 lg:mb-40 sm:mb-10 mb-5">

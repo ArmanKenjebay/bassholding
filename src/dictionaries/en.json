@@ -43,9 +43,22 @@
     "open_positions": "Open positions"
   },
   "direction": {
-    "title": "Direction",
-    "description": "Direction us description",
-    "bassgold": "BassGold"
+    "title": "Industries",
+    "description": "Industries description",
+    "bassgold": "BassGold",
+    "main_aim-1": "The main aim",
+    "main_aim-2": "- raise the flag of the Republic of Kazakhstan on all possible pedestals in any industiers",
+    "bassgold_title-1": "gold mining company with 25 years",
+    "bassgold_title-2": "of experience in the precious metals market",
+    "ushshoky_title": "Ushshoky",
+    "ushshoky_text-1": "The company holds the Ushshoky gold deposit in its assets, which we are actively developing and modernizing. Our goal is to shift from raw material sales to higher value-added products.",
+    "ushshoky_text-2": "Key performance indicators for 2022:",
+    "ushshoky_li-1": "Production of gold ore extraction: 37,372.3 tons",
+    "ushshoky_li-2": "Average gold content in ore: 4.8 grams per ton",
+    "ushshoky_li-3": "Sales volumes of finished products, in tons:Gold-bearing ore: 35,227 tons; Concentrate: 910 tons",
+    "chinasyl_say_title": "Chinasyl-say",
+    "chinasyl_say_text-1": "BASS Holding acquired the Chinasyl-say deposit in the Almaty region to enhance the volume of mining and processing of solid minerals. This transaction will allow to increase gold reserves by about 7 tons.",
+    "chinasyl_say_text-2": "The construction of a flotation concentrate processing plant with a production capacity of 300,000 tons of ore per year is also planned at the deposit, with the production of marketable lead and zinc concentrate with gold, silver and cadmium content"
   },
   "news": {
     "title": "News",

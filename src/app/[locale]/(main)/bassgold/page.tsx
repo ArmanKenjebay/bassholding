@@ -30,53 +30,50 @@ export default async function BassGold({
           src={bassgoldImage.src}
           alt="bassgold image"
         />
-        <div className="px-5 z-10 absolute bottom-5 h-full flex flex-col justify-end">
+        <div className="px-5 xl:pl-[60px] xl:pb-[67px] z-10 absolute h-full flex flex-col justify-end">
           <span className="tracking-widest xl:text-[64px] font-[400]">
             BASS GOLD
           </span>
           <span className="opacity-95 xl:text-[40px] text-xs font-[300] mb-5">
-            золотодобывающая компания, имеющая 25-летний
+            {dictionary.direction['bassgold_title-1']}
           </span>
           <span className="opacity-95 xl:text-[40px] text-xs font-[300]">
-            опыт деятельности на рынке драгоценных металлов
+            {dictionary.direction['bassgold_title-2']}
           </span>
         </div>
       </div>
 
-      <div className="relative z-50 sm:px-5 px-2 flex flex-col gap-3 md:flex-row sm:mb-10 mb-5">
-        <div className="flex flex-1 flex-col p-5 rounded-3xl bg-[#0E0D0D]">
-          <span className="text-primary-gold tracking-widest">Ушоккы</span>
-          <span className="text-sm mb-3">
-            В активах компании имеется золоторудное месторождение Ушшокы,
-            которое мы активно развиваем и модернизируем. Наша цель – переход от
-            операций по реализации сырья к продукции более высокого передела.
+      <div className="xl:px-[60px] relative z-50 sm:px-5 px-2 flex flex-col gap-3 xl:gap-x-[40px] md:flex-row sm:mb-10 mb-5">
+        <div className="flex flex-1 flex-col p-5 xl:px-[40px] xl:py-[55px] rounded-3xl bg-[#0E0D0D]">
+          <span className="text-primary-gold tracking-widest xl:text-[48px] xl:mb-[50px]">
+            {dictionary.direction['ushshoky_title']}
+          </span>
+          <span className="text-sm xl:text-[36px] leading-normal font-[300] xl:mb-10 mb-3">
+            {dictionary.direction['ushshoky_text-1']}
           </span>
 
-          <span>Ключевые показатели за 2022 год:</span>
+          <span
+            className={`text-sm xl:text-[36px] leading-normal font-[300] xl:mb-10 mb-3`}
+          >
+            {dictionary.direction['ushshoky_text-2']}
+          </span>
 
-          <ul className="list-disc text-sm px-5">
-            <li>добыча золотосодержащей руды 37 372,3 тонн;</li>
-            <li>среднее содержание золота в руде 4,8 гр/тонна;</li>
-            <li>
-              объемы реализации готовой продукции, тонн: золотосодержащая руда –
-              35 227 тонн; концентрат – 910 тонн.
-            </li>
+          <ul className="list-disc text-sm xl:text-[36px] leading-normal font-[300] px-5">
+            <li>{dictionary.direction['ushshoky_li-1']}</li>
+            <li>{dictionary.direction['ushshoky_li-2']}</li>
+            <li>{dictionary.direction['ushshoky_li-3']}</li>
           </ul>
         </div>
 
-        <div className="flex flex-1 flex-col p-5 rounded-3xl bg-[#0E0D0D]">
-          <span className="text-primary-gold tracking-widest">Чинасыл-сай</span>
-          <span className="text-sm mb-3">
-            Для наращивания объема добычи и переработки твердых полезных
-            ископаемых, Холдингом приобретено месторождение «Чинасыл-сай» в
-            Алматинской области. Данная сделка позволит увеличить запасы золота
-            на объем порядка 7 тонн.
+        <div className="flex flex-1 flex-col p-5 xl:px-[40px] xl:py-[55px] rounded-3xl bg-[#0E0D0D]">
+          <span className="text-primary-gold tracking-widest xl:text-[48px] xl:mb-[50px]">
+            {dictionary.direction.chinasyl_say_title}
+          </span>
+          <span className="text-sm xl:text-[36px] leading-normal font-[300] mb-3">
+            {dictionary.direction['chinasyl_say_text-1']}
             <br />
             <br />
-            На месторождении также планируется строительство фабрики по
-            переработке флотоконцентрата производственной мощностью 300 тыс.
-            тонн руды в год с получением товарного свинцового и цинкового
-            концентрата с содержанием золота, серебра и кадмия.
+            {dictionary.direction['chinasyl_say_text-2']}
           </span>
         </div>
       </div>
