@@ -96,7 +96,6 @@ export default async function Home({
               chips={card.chips}
               link={card.link}
               className="app-img-box"
-              classNameImage="filter brightness-50 ease-in-out duration-200 scale-150 -translate-y-6 object-cover object-center 2xl:object-bottom grayscale"
             />
           ))}
         </div>

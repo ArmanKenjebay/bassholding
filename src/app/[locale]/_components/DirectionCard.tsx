@@ -74,7 +74,7 @@ export default function DirectionCard({
         quality={100}
         width={454}
         height={526}
-        className={`pointer-events-none group-hover:scale-110 group-hover:grayscale-0 group-hover:brightness-[.5] z-0 w-full h-full ${
+        className={`filter brightness-50 ease-in-out duration-200 object-cover grayscale group-hover:grayscale-0 group-hover:brightness-[.8] z-0 w-full h-full ${
           classNameImage ?? ''
         }`}
         alt="Bassholding card"

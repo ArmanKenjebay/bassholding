@@ -34,7 +34,6 @@ export default async function Direction({
               {...card}
               dictionary={dictionary}
               className="app-img-box"
-              classNameImage="filter brightness-50 ease-in-out duration-200 scale-150 -translate-y-6 object-cover grayscale hover:scale-110 hover:grayscale-0 hover:brightness-[.8]"
             />
           ))}
         </div>
