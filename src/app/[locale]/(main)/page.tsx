@@ -110,7 +110,7 @@ export default async function Home({
             {index <= 3 && (
               <>
                 <Divider className="my-2 bg-white" />
-                <div className={`p-1`}>
+                <div className={`py-[27px]`}>
                   <NewsLine
                     locale={locale}
                     id={n.id}

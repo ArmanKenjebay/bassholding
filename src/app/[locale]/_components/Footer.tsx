@@ -25,9 +25,16 @@ export default function Footer({
   ]
 
   return (
-    <footer className="flex gap-y-3 sm:flex-row flex-col justify-between py-2 px-5 xl:p-[60px]">
-      <div className="flex sm:gap-x-20 gap-x-10">
-        <div className="flex flex-col gap-y-3">
+    <footer className="flex gap-y-10 sm:flex-row flex-col justify-between py-2 px-5 xl:p-[60px]">
+      <div className="flex sm:gap-x-[154px] gap-x-10">
+        <div className="flex flex-col gap-y-[53px]">
+          <Link
+            className="hover:text-primary-gold duration-200 ease-in-out sm:text-sm text-xs"
+            href="/"
+            lang={locale}
+          >
+            {dictionary.navbar.main}
+          </Link>
           <Link
             className="hover:text-primary-gold duration-200 ease-in-out sm:text-sm text-xs"
             href="/about"
@@ -57,7 +64,7 @@ export default function Footer({
             {dictionary.navbar.career}
           </Link>
         </div>
-        <div className="flex flex-col gap-y-3">
+        <div className="flex flex-col gap-y-[53px]">
           {links.map(({ name, link }, index) => (
             <a
               key={index + 'link'}
