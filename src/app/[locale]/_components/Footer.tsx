@@ -25,7 +25,7 @@ export default function Footer({
   ]
 
   return (
-    <footer className="flex gap-y-3 sm:flex-row flex-col justify-between py-2 px-5">
+    <footer className="flex gap-y-3 sm:flex-row flex-col justify-between py-2 px-5 xl:p-[60px]">
       <div className="flex sm:gap-x-20 gap-x-10">
         <div className="flex flex-col gap-y-3">
           <Link
