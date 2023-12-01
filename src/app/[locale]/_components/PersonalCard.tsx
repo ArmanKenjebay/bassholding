@@ -18,7 +18,7 @@ export default function PersonalCard({ src, name, position }: Props) {
         alt={name}
         className="2xl:w-[420px] 2xl:h-[500px] xl:w-[360px] xl:h-[430px] lg:h-[410px] md:h-[310px] sm:w-full sm:h-[260px] w-[155px] h-[192px] object-cover object-center rounded-xl pointer-events-none"
       />
-      <span className="text-primary-gold text-sm md:text-base lg:text-xl xl:text-3xl text-left">
+      <span className="text-primary-gold text-sm md:text-base lg:text-xl xl:text-2xl text-left">
         {name}
       </span>
       <span className="opacity-70 text-xs md:text-sm lg:text-base xl:text-xl">

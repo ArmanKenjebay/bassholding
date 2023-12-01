@@ -8,9 +8,7 @@ export default function Marquee({ children }: Props) {
     <div className="relative flex overflow-x-hidden app-marquee text-black h-12 items-center">
       <div className="animate-marquee whitespace-nowrap">{children}</div>
 
-      <div className="absolute top-0 animate-marquee2 whitespace-nowrap">
-        {children}
-      </div>
+      <div className="animate-marquee whitespace-nowrap">{children}</div>
     </div>
   )
 }

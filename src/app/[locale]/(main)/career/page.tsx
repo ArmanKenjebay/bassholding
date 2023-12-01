@@ -63,6 +63,9 @@ export default async function Career({
     <>
       <div className="sm:mb-10 mb-5">
         <div className="relative w-full h-[294px] sm:h-[380px] md:h-[480px] lg:h-[540px] xl:h-[620px] 2xl:h-[660px]">
+          <span className="z-50 flex h-full items-end pl-10 pb-10 uppercase absolute xl:text-[48px] lg:text-3xl md:text-2xl sm:text-xl text-lg">
+            Люди — главный актив компании.
+          </span>
           <Image
             priority
             as={NextImage}
@@ -76,9 +79,6 @@ export default async function Career({
               wrapper: 'w-full h-full',
             }}
           />
-          <span className="z-50 tracking-widest absolute lg:bottom-20 bottom-5 left-3 font-gilroy xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg">
-            Люди — главный актив компании.
-          </span>
         </div>
       </div>
 
