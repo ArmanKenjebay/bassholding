@@ -91,14 +91,19 @@ export default function NewsPreviews({ locale }: Props) {
                     <Chip
                       variant="bordered"
                       color="warning"
-                      className={`md:mb-5 mb-2`}
+                      className={`md:mb-5 mb-2 xl:text-[16px]`}
                     >
                       {news.chips.map((c) => c[locale])[0]}
                     </Chip>
                     <span
-                      className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl 2xl:text-[30px] font-[300]`}
+                      className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[24px] font-[300] mb-[45px] h-20 whitespace-pre-wrap truncate`}
                     >
                       {news.context[locale]}
+                    </span>
+                    <span
+                      className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[16px] font-[300]`}
+                    >
+                      {news.date[locale]}
                     </span>
                   </div>
                 ))
