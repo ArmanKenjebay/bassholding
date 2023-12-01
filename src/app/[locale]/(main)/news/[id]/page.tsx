@@ -37,20 +37,20 @@ export default async function NewsDetail({
   }
 
   return (
-    <div className={`mt-20 flex flex-col w-full h-full`}>
+    <div className={`xl:px-[60px] mt-20 flex flex-col w-full h-full mb-28`}>
       <div className={`flex flex-col sm:px-5 px-2 sm:mb-10 mb-5`}>
         <PrevNews
           locale={locale}
           dictionary={dictionary}
-          classNames={'mb-5 sm:mb-10'}
+          classNames={'mb-5 sm:mb-10 xl:my-[76px]'}
         />
 
         <div
-          className={`flex gap-x-12 gap-y-3 lg:flex-row flex-col-reverse mb-5 sm:mb-10`}
+          className={`flex gap-x-12 gap-y-3 lg:flex-row flex-col-reverse mb-5 sm:mb-10 xl:mb-24`}
         >
           {main && (
             <Image
-              className={`rounded-2xl w-full 2xl:h-[500px] xl:w-[600px] xl:h-[450px] lg:h-[280px] h-[200px] object-cover`}
+              className={`rounded-[50px] w-full xl:h-[650px] lg:h-[280px] h-[200px] object-cover`}
               src={main}
               width={959}
               height={650}
@@ -64,21 +64,21 @@ export default async function NewsDetail({
             >
               <Chip
                 variant={'bordered'}
-                className="border-primary-gold text-primary-gold"
+                className="border-primary-gold text-primary-gold xl:mb-10 mb-5"
                 classNames={{
-                  base: 'truncate',
+                  base: 'truncate xl:text-[16px]',
                   content: 'p-0 sm:p-1 truncate',
                 }}
               >
                 {data?.chips?.map((chi) => chi[locale])[0]}
               </Chip>
 
-              <span className={`xl:text-[40px] font-[300]`}>
+              <span className={`xl:text-[20px] font-[300] xl:mb-10 mb-5`}>
                 {data.date && data?.date[locale]}
               </span>
             </div>
             <span
-              className={`xl:text-[48px] lg:text-[32px] text-lg leading-normal font-[300]`}
+              className={`xl:text-[32px] lg:text-[32px] text-lg leading-normal font-[300]`}
             >
               {data.title && data?.title[locale]}
             </span>
@@ -86,7 +86,7 @@ export default async function NewsDetail({
         </div>
         <div className={`sm:mb-10`}>
           <span
-            className={`inline-block whitespace-pre-line leading-normal text-sm lg:text-2xl font-[200] mb-5`}
+            className={`xl:text-[20px] inline-block whitespace-pre-line leading-normal text-sm lg:text-2xl font-[200] mb-5`}
           >
             {data.content && data.content[locale]}
           </span>

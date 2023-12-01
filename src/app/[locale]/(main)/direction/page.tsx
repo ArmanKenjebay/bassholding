@@ -14,7 +14,7 @@ export default async function Direction({
 
   return (
     <>
-      <div className="sm:px-16 md:px-24 lg:px-32 xl:px-52 px-5 py-8 flex justify-center items-center text-center sm:mb-10 mb-5">
+      <div className="sm:px-16 md:px-24 lg:px-32 xl:p-52 px-5 py-8 flex justify-center items-center text-center sm:mb-10 mb-5">
         <span
           className="2xl:text-[64px] font-[250] lg:text-4xl md:text-3xl sm:text-2xl text-xl"
           style={{ lineHeight: '92%' }}

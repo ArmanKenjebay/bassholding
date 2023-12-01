@@ -39,7 +39,12 @@ export default async function News({
   return (
     <section className="flex flex-col w-full h-full">
       <div className="flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-10 mb-5 relative">
-        <div className="xl:pl-[60px] xl:pr-[90px] sm:static absolute z-20 flex xl:text-[48px] lg:text-2xl sm:text-xl flex-col sm:justify-end px-5 sm:pb-0 pb-5">
+        <div
+          className="xl:pl-[60px] xl:pr-[90px] sm:static absolute z-20 flex xl:text-[48px] lg:text-2xl sm:text-xl flex-col sm:justify-end px-5 sm:pb-0 pb-5"
+          style={{
+            lineHeight: '100%',
+          }}
+        >
           <span>
             <span className="text-primary-gold">Наши новости и обновления</span>
             - это история нашего роста и развития.

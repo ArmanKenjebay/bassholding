@@ -44,20 +44,20 @@ export default async function Career({
     },
   ]
 
-  const positions = [
-    {
-      content: 'Продакт менеджер',
-      chip: 'PINCODE',
-    },
-    {
-      content: 'Специалист по кадровому делопроизводству',
-      chip: 'BASS Holding',
-    },
-    {
-      content: 'Офис менеджер',
-      chip: 'BASS Holding',
-    },
-  ]
+  // const positions = [
+  //   {
+  //     content: 'Продакт менеджер',
+  //     chip: 'PINCODE',
+  //   },
+  //   {
+  //     content: 'Специалист по кадровому делопроизводству',
+  //     chip: 'BASS Holding',
+  //   },
+  //   {
+  //     content: 'Офис менеджер',
+  //     chip: 'BASS Holding',
+  //   },
+  // ]
 
   return (
     <>
@@ -82,40 +82,42 @@ export default async function Career({
         </div>
       </div>
 
-      <div className="sm:px-5 px-2 sm:mb-10 mb-5">
+      <div className="xl:px-[60px] sm:px-5 px-2 sm:mb-10 mb-5">
         <div className="sm:w-3/4 xl:w-1/2 py-3 w-full">
-          <span className="text-base md:text-4xl text-primary-gold tracking-widest">
+          <span className="xl:text-[32px] text-base md:text-4xl text-primary-gold tracking-widest">
             Мы предоставляем комфортную среду и поддерживаем развитие наших
             людей.
           </span>
         </div>
       </div>
 
-      <div className="sm:px-5 px-2 sm:mb-10 mb-5">
+      <div className="xl:px-[60px] sm:px-5 px-2 sm:mb-52 mb-5">
         <div className="flex h-full flex-col gap-y-14">
           {careers.map(({ text, image, content }) => (
             <div
               key={text}
               className="flex h-full lg:gap-x-20 md:gap-x-14 sm:gap-x-10 gap-y-3 sm:odd:flex-row sm:even:flex-row-reverse flex-col justify-between items-center"
             >
-              <div className="relative overflow-hidden w-full h-full">
-                <span className="z-20 absolute flex w-full items-center justify-center h-full text-base lg:text-lg xl:text-xl text-center">
+              <div className="flex flex-2 relative overflow-hidden w-[320px] h-[120px] xl:w-[691px] xl:h-[282px] rounded-[120px]">
+                <span
+                  className="font-[300] uppercase xl:text-[48px] text-sm z-20 absolute flex w-full items-center justify-center h-full lg:text-lg text-center"
+                  style={{
+                    lineHeight: 'normal',
+                  }}
+                >
                   {text}
                 </span>
                 <Image
                   as={NextImage}
-                  width={image.width}
-                  height={image.height}
+                  width={691}
+                  height={282}
                   src={image.src}
                   alt={text}
-                  className="z-10 w-full h-full  object-cover rounded-[30px] md:rounded-[50px]  filter brightness-[.35] grayscale"
-                  classNames={{
-                    wrapper: 'w-full h-full',
-                  }}
+                  className="z-10 object-cover filter brightness-[.35] grayscale"
                 />
               </div>
-              <div>
-                <span className="text-sm lg:text-base xl:text-lg">
+              <div className={`flex flex-1`}>
+                <span className="text-sm lg:text-base xl:text-2xl font-[300]">
                   {content}
                 </span>
               </div>
@@ -124,16 +126,22 @@ export default async function Career({
         </div>
       </div>
 
-      <div className="sm:px-5 px-2 sm:mb-10 mb-5">
-        <span className="lg:text-4xl md:text-3xl text-2xl">
-          {dictionary.career.open_positions}
-        </span>
-        {positions.map((n, index) => (
-          <div key={index}>
-            {index < positions.length && <Divider className="my-2 bg-white" />}
-          </div>
-        ))}
-      </div>
+      {/*{positions.length > 0 ? (*/}
+      {/*  <div className="xl:px-[60px] sm:px-5 px-2 sm:mb-10 mb-5">*/}
+      {/*    <span className="lg:text-4xl md:text-3xl text-2xl">*/}
+      {/*      {dictionary.career.open_positions}*/}
+      {/*      {positions.map((n, index) => (*/}
+      {/*        <div key={index}>*/}
+      {/*          {index < positions.length && (*/}
+      {/*            <Divider className="my-2 bg-white" />*/}
+      {/*          )}*/}
+      {/*        </div>*/}
+      {/*      ))}*/}
+      {/*    </span>*/}
+      {/*  </div>*/}
+      {/*) : (*/}
+      {/*  <></>*/}
+      {/*)}*/}
     </>
   )
 }
