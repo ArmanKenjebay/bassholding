@@ -12,7 +12,7 @@ export default async function Contact({ params: { locale } }: Props) {
 
   return (
     <div className={`flex flex-col h-full xl:px-[60px] px-5`}>
-      <span className={`xl:text-[48px] text-primary-gold mb-5 sm:mb-10`}>
+      <span className={`xl:text-[48px] text-primary-gold mb-5 sm:mb-10 mt-10`}>
         {dictionary.contact.title}
       </span>
 
@@ -27,10 +27,10 @@ export default async function Contact({ params: { locale } }: Props) {
           </a>
           <a
             target={`_blank`}
-            href={`mailto:bassholding@mail.com`}
+            href={`mailto:info@bassholding.kz`}
             className={`text-[14px] sm:text-[16px] md:text-[18px] xl:text-[32px] font-[250] duration-200 transition ease-in-out hover:text-primary-gold`}
           >
-            bassholding@mail.com
+            info@bassholding.kz
           </a>
           <a
             target={`_blank`}
