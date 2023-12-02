@@ -82,7 +82,7 @@ export default async function Career({
         </div>
       </div>
 
-      <div className="xl:px-[60px] sm:px-5 px-2 sm:mb-10 mb-5">
+      <div className="xl:px-[60px] sm:px-5 px-5 sm:mb-10 mb-5">
         <div className="sm:w-3/4 xl:w-1/2 py-3 w-full">
           <span className="xl:text-[32px] text-base md:text-4xl text-primary-gold tracking-widest">
             Мы предоставляем комфортную среду и поддерживаем развитие наших
@@ -91,7 +91,7 @@ export default async function Career({
         </div>
       </div>
 
-      <div className="xl:px-[60px] sm:px-5 px-2 sm:mb-52 mb-5">
+      <div className="xl:px-[60px] sm:px-5 px-5 sm:mb-52 mb-5">
         <div className="flex h-full flex-col gap-y-14">
           {careers.map(({ text, image, content }) => (
             <div
@@ -127,7 +127,7 @@ export default async function Career({
       </div>
 
       {/*{positions.length > 0 ? (*/}
-      {/*  <div className="xl:px-[60px] sm:px-5 px-2 sm:mb-10 mb-5">*/}
+      {/*  <div className="xl:px-[60px] sm:px-5 px-5 sm:mb-10 mb-5">*/}
       {/*    <span className="lg:text-4xl md:text-3xl text-2xl">*/}
       {/*      {dictionary.career.open_positions}*/}
       {/*      {positions.map((n, index) => (*/}

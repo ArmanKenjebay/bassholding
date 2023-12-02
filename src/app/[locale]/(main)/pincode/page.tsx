@@ -44,7 +44,7 @@ export default async function Pincode({
         </div>
       </div>
 
-      <div className="relative z-50 sm:px-5 px-2 flex flex-col gap-y-3 gap-x-10 sm:flex-row sm:mb-10 mb-5">
+      <div className="relative z-50 sm:px-5 px-5 flex flex-col gap-y-3 gap-x-10 sm:flex-row sm:mb-10 mb-5">
         <div className="relative flex h-[300px] lg:h-[500px] md:h-[450px] sm:h-[400px]">
           <Image
             className="aspect-square sm:aspect-auto w-full h-full object-cover"

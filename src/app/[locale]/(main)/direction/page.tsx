@@ -25,7 +25,7 @@ export default async function Direction({
           {dictionary.direction['main_aim-2']}
         </span>
       </div>
-      <div className="xl:px-[54px] sm:px-5 px-2 lg:mb-40 sm:mb-10 mb-5">
+      <div className="xl:px-[54px] sm:px-5 px-5 lg:mb-40 sm:mb-10 mb-5">
         <div className="flex sm:flex-row flex-col">
           {cards.map((card, index) => (
             <DirectionCard

@@ -43,7 +43,7 @@ export default async function BassGold({
         </div>
       </div>
 
-      <div className="xl:px-[60px] relative z-50 sm:px-5 px-2 flex flex-col gap-3 xl:gap-x-[40px] md:flex-row sm:mb-10 mb-5">
+      <div className="xl:px-[60px] relative z-50 sm:px-5 px-5 flex flex-col gap-3 xl:gap-x-[40px] md:flex-row sm:mb-10 mb-5">
         <div className="flex flex-1 flex-col p-5 xl:px-[40px] xl:py-[55px] rounded-3xl bg-[#0E0D0D]">
           <span className="text-primary-gold tracking-widest xl:text-[48px] xl:mb-[50px]">
             {dictionary.direction['ushshoky_title']}

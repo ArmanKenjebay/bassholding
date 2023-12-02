@@ -83,7 +83,7 @@ export default async function Home({
         </Marquee>
       </div>
 
-      <div className="sm:px-5 xl:px-[60px] px-2 sm:mb-10 mb-5">
+      <div className="sm:px-5 xl:px-[60px] px-5 sm:mb-10 mb-5">
         <div className="flex justify-center sm:flex-row flex-col">
           {cards.map((card, index) => (
             <DirectionCard
@@ -101,7 +101,7 @@ export default async function Home({
         </div>
       </div>
 
-      <div className="sm:px-5 xl:px-[60px] px-2 sm:mb-10 mb-5">
+      <div className="sm:px-5 xl:px-[60px] px-5 sm:mb-10 mb-5">
         <span className="lg:text-4xl md:text-3xl text-2xl font-[250]">
           {dictionary.news.title}
         </span>
@@ -125,7 +125,7 @@ export default async function Home({
         ))}
       </div>
 
-      <div className="sm:px-5 xl:px-[60px] px-2 sm:mb-10 w-full h-full flex justify-center mb-10">
+      <div className="sm:px-5 xl:px-[60px] px-5 sm:mb-10 w-full h-full flex justify-center mb-10">
         <ImageNext
           as={Image}
           src={news1.src}

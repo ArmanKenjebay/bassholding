@@ -65,7 +65,7 @@ export default async function News({
         />
       </div>
 
-      <div className="xl:px-[60px] flex flex-col sm:flex-row justify-between gap-y-10 px-2 sm:mb-10 mb-5">
+      <div className="xl:px-[60px] flex flex-col sm:flex-row justify-between gap-y-10 px-5 sm:mb-10 mb-5">
         <NewsPreviews locale={locale} />
 
         <div className="flex flex-col bg-[#272727] h-fit p-4 xl:px-[52px] xl:py-[72px] rounded-3xl overflow-y-auto scrollbar-hide">

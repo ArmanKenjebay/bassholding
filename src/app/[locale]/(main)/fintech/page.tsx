@@ -43,7 +43,7 @@ export default async function Fintech({
         </div>
       </div>
 
-      <div className="relative z-50 sm:px-5 px-2 flex flex-col gap-3 md:flex-row sm:mb-10 mb-5">
+      <div className="relative z-50 sm:px-5 px-5 flex flex-col gap-3 md:flex-row sm:mb-10 mb-5">
         <div className="flex flex-1 flex-col p-5 rounded-3xl bg-[#0E0D0D]">
           <span className="text-primary-gold tracking-widest mb-5">
             AGRO FINTECH

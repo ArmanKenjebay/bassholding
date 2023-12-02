@@ -38,7 +38,7 @@ export default async function NewsDetail({
 
   return (
     <div className={`xl:px-[60px] mt-20 flex flex-col w-full h-full mb-28`}>
-      <div className={`flex flex-col sm:px-5 px-2 sm:mb-10 mb-5`}>
+      <div className={`flex flex-col sm:px-5 px-5 sm:mb-10 mb-5`}>
         <PrevNews
           locale={locale}
           dictionary={dictionary}
