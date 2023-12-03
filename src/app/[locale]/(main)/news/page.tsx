@@ -46,14 +46,13 @@ export default async function News({
           }}
         >
           <span>
-            <span className="text-primary-gold">Наши новости и обновления</span>
-            - это история нашего роста и развития.
+            <span className="text-primary-gold">
+              {dictionary.news.title_1 + ' '}
+            </span>
+            - {' ' + dictionary.news['title_1-1']}
           </span>
           <br />
-          <span>
-            Мы гордимся тем, что достигли и гордимся тем, куда нас ведет наш
-            путь.
-          </span>
+          <span>{dictionary.news.title_2}</span>
         </div>
 
         <Image
@@ -70,7 +69,7 @@ export default async function News({
 
         <div className="flex flex-1 flex-col bg-[#272727] h-fit p-10 rounded-3xl overflow-y-auto scrollbar-hide">
           <div className="xl:text-[24px] text-lg mb-2 xl:mb-10 sm:mb-5 w-full tracking-widest">
-            События холдинга
+            {dictionary.news.events_title}
           </div>
 
           {events.map(({ text, date }, index) => (

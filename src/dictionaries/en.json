@@ -62,7 +62,11 @@
   },
   "news": {
     "title": "News",
-    "description": "News us description"
+    "description": "News us description",
+    "title_1": "Our news and updates are",
+    "title_1-1": "the history of our growth and development.",
+    "title_2": "We are proud of what we have reached and we are proud of where our path is leading us",
+    "events_title": "Holding Events"
   },
   "navbar": {
     "main": "Home",
