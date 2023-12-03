@@ -104,8 +104,39 @@
     "transport": "transport",
     "ecology": "ecology"
   },
-  "pincode": "Pincode",
-  "bass-eco": "Bass Eco",
-  "fintech": "Fintech",
+  "pincode": {
+    "title": "Pincode",
+    "text_1": "A unique online platform that provides an opportunity to take tests and receive recommendations on the following topics: professional orientation, staff recruitment and human capital assessment, career development, and psychological compatibility of people in a team",
+    "text_2": "Human capital development is one of our areas of activity. It is the foundation of the success of every company and every country.",
+    "text_3": "We are creating a unique HR history of the Holding as part of the Pincode project.",
+    "text_4": "In the 21st century, the need for personal self-realization has become more important than ever before. This is characteristic of modern post-industrial society, in which the individual acts as the ultimate goal of human development, while simultaneously being the main tool of progress. \n Today, we play the role of a \"reliable compass\" for an individual who is focused on success in life, studies, and professional activities. With the help of innovative tools, products of the synthesis of science and technology, we help people to touch their natural potential and promote personal self-realization from the age of 13."
+  },
+  "bass-eco": {
+    "title": "Bass Eco",
+    "text_1": "The holding's activity in the field of ecology, development of transport infrastructure and logistics",
+    "text_2": "The development of the river port and shipping on the Ili River",
+    "text_3": "Improving cargo delivery speed and increasing transportation volume.",
+    "text_4": "Expanding river fleet infrastructure.",
+    "text_5": "Developing logistical infrastructure.",
+    "text_6": "Passenger transportation, tourism.",
+    "text_7": "Construction of waste recycling plants in Kazakhstan",
+    "text_8": "Improvement of the environmental situation",
+    "text_9": "Efficient utilization of recycled materials",
+    "text_10": "Generation of additional energy capacity",
+    "text_11": "Job creation."
+  },
+  "fintech": {
+    "title": "Fintech",
+    "text_1": "The implementation of fintech projects in Kazakhstan and beyond is planned within the framework of this direction.",
+    "text_2": "A representative office was opened in Thailand in September 2023, which will operate in this field.",
+    "text_3": "Implementation of FinTech products with a focus on supporting the development of agriculture and providing service and financial support to farms.",
+    "text_4": "Our goal is to provide access to modern financial instruments and technologies. Our solutions simplify financial transactions and create new opportunities for successful investments.",
+    "text_5": "Projects in this direction:",
+    "text_6": "a crowdlending investment platform;",
+    "text_7": "a credit module for scoring applications in the agricultural sector;",
+    "text_8": "factoring.",
+    "text_9": "Representative Office In Thailand",
+    "text_10": "As part of this direction, the implementation of FinTech projects is planned in Kazakhstan and beyond. In September 2023, a representative office was opened in Thailand, where we intend to launch FinTech projects and foster trade relationships."
+  },
   "prev_news": "Previous news page"
 }

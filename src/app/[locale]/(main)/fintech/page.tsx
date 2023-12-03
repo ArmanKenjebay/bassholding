@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.locale)
 
   return {
-    title: dictionary.fintech,
-    description: dictionary.fintech,
+    title: dictionary.fintech.title,
+    description: dictionary.fintech.title,
   }
 }
 
@@ -34,11 +34,11 @@ export default async function Fintech({
           <span className="tracking-widest xl:text-[48px] font-[400]">
             FINTECH
           </span>
-          <span className="opacity-95 xl:text-[32px] leading-tight text-xs font-[300]">
-            В рамках данного направления планируется реализация финтех проектов
-            в Казахстане и за его пределами. В сентябре 2023 года открыто
-            представительство в Тайланде, которое будет работать в данном
-            направлении.
+          <span className="opacity-95 xl:text-[32px] leading-tight text-xs font-[300] mb-2">
+            {dictionary.fintech.text_1}
+          </span>
+          <span className="opacity-95 xl:text-[32px] leading-tight text-xs font-[300] mb-2">
+            {dictionary.fintech.text_2}
           </span>
         </div>
       </div>
@@ -49,45 +49,38 @@ export default async function Fintech({
             AGRO FINTECH
           </span>
           <span className="text-sm mb-3 xl:text-[20px] leading-normal font-[300] xl:mb-10">
-            Реализация FinTech продуктов с акцентом на поддержку развития
-            сельского хозяйства и оказание сервисно-финансовой поддержки
-            фермерским хозяйствам
+            {dictionary.fintech.text_3}
           </span>
           <span className="text-sm mb-3 xl:text-[20px] leading-normal font-[300] xl:mb-10">
-            Наша цель – обеспечить доступ к современным финансовым инструментам
-            и технологиям. Наши решения упрощают финансовые операции и создают
-            новые возможности для успешных инвестиций.
+            {dictionary.fintech.text_4}
           </span>
 
           <span className={`xl:text-[20px] leading-normal font-[300] xl:mb-10`}>
-            Проекты в данном направлении:
+            {dictionary.fintech.text_5}
           </span>
 
           <ul className="list-disc text-sm px-5 xl:text-[20px] leading-normal font-[300] xl:mb-10">
             <li>
               <span className="text-primary-gold">Crowdlender.kz</span> –
-              краудлендинговая инвестиционная платформа;
+              {' ' + dictionary.fintech.text_6}
             </li>
             <li>
-              <span className="text-primary-gold">AgroCredit</span> – кредитный
-              модуль скоринга заявок в АПК;
+              <span className="text-primary-gold">AgroCredit</span> –
+              {' ' + dictionary.fintech.text_7}
             </li>
             <li>
               <span className="text-primary-gold">GetCapital.kz</span> –
-              факторинг
+              {' ' + dictionary.fintech.text_8}
             </li>
           </ul>
         </div>
 
         <div className="flex flex-1 flex-col p-5 rounded-3xl bg-[#0E0D0D] xl:px-[40px] xl:py-[55px]">
           <span className="text-primary-gold mb-5 xl:text-[24px] xl:mb-[50px]">
-            Представительство в Таиланде
+            {dictionary.fintech.text_9}
           </span>
           <span className="text-sm mb-3 xl:text-[20px] leading-normal font-[300] xl:mb-10">
-            В рамках данного направления планируется реализация финтех проектов
-            в Казахстане и за его пределами. В сентябре 2023 года открыто
-            представительство в Тайланде, где мы планируем запускать финтех
-            проекты и развивать торговые взаимоотношения.
+            {dictionary.fintech.text_10}
           </span>
         </div>
       </div>

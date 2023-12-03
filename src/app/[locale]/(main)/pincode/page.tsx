@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.locale)
 
   return {
-    title: dictionary.pincode,
-    description: dictionary.pincode,
+    title: dictionary.pincode.title,
+    description: dictionary.pincode.title,
   }
 }
 
@@ -32,19 +32,14 @@ export default async function Pincode({
           alt="bassgold image"
         />
         <div className="z-10 lg:w-[80%] w-full absolute flex flex-col justify-end h-full pl-10 pb-10 xl:pl-[60px]">
-          <span className="tracking-widest xl:text-[64px] font-[400]">
-            PINCODE
-          </span>
-          <span className="opacity-95 xl:text-[40px] leading-tight font-[300] text-xs">
-            уникальная онлайн-платформа, которая дает возможность пройти
-            тестирование и получить рекомендации по вопросам профессиональной
-            ориентации, отбора и оценки кадров, карьерного развития и
-            психологической совместимости людей в команде.
+          <span className="xl:text-[64px] font-[400]">PINCODE</span>
+          <span className="opacity-95 xl:text-[24px] leading-tight font-[300] text-xs">
+            {dictionary.pincode.text_1}
           </span>
         </div>
       </div>
 
-      <div className="pl-10 pb-10 xl:pl-[60px] relative z-50 sm:px-5 px-5 flex flex-col gap-y-3 gap-x-10 sm:flex-row sm:mb-10 mb-5">
+      <div className="pl-10 pb-10 xl:px-[60px] relative z-50 sm:px-5 px-5 flex flex-col gap-y-3 gap-x-10 sm:flex-row sm:mb-10 mb-5">
         <div className="relative flex h-[300px] lg:h-[500px] md:h-[450px] sm:h-[400px]">
           <Image
             className="aspect-square sm:aspect-auto w-full h-full object-cover"
@@ -57,36 +52,13 @@ export default async function Pincode({
 
         <div className="flex flex-1 gap-y-5 flex-col">
           <div className="text-primary-gold text-base md:text-2xl">
-            <span>
-              Развитие человеческого потенциала - одно из наших направлений
-              деятельности. Это основа успеха каждой компании, и каждой страны.
-            </span>
+            <span>{dictionary.pincode.text_2}</span>
             <br />
             <br />
-            <span>
-              Мы создаем уникальную HR-историю Холдинга в рамках проекта
-              Pincode.
-            </span>
+            <span>{dictionary.pincode.text_3}</span>
           </div>
           <div className="text-sm md:text-lg">
-            <span>
-              В 21 веке, потребность самореализации личности актуализировалась
-              как никогда прежде. Это характерно современному
-              постиндустриальному обществу, в котором личность выступает как
-              самоцель общечеловеческого развития, одновременно являясь главным
-              орудием прогресса.
-            </span>
-            <br />
-            <span>
-              Cегодня мы выполняем роль «надежного компаса» для человека,
-              ориентированного на успех в жизни, учебе и в профессиональной
-              деятельности.
-            </span>
-            <span>
-              С помощью инновационных инструментов, продуктов синтеза науки и
-              технологий, мы помогаем людям прикоснутся к природному потенциалу
-              и содействуем самореализации личности с 13 лет.
-            </span>
+            <span>{dictionary.pincode.text_4}</span>
           </div>
         </div>
       </div>
