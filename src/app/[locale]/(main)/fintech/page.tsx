@@ -30,11 +30,11 @@ export default async function Fintech({
           src={fintechImage.src}
           alt="fintechImage image"
         />
-        <div className="z-10 sm:w-2/3 w-full absolute bottom-5 left-2 flex flex-col">
-          <span className="tracking-widest xl:text-[64px] font-[400]">
+        <div className="px-5 xl:pl-[60px] xl:pb-[67px] z-10 sm:w-2/3 w-full absolute bottom-5 left-2 flex flex-col">
+          <span className="tracking-widest xl:text-[48px] font-[400]">
             FINTECH
           </span>
-          <span className="opacity-95 xl:text-[40px] leading-tight text-xs font-[300]">
+          <span className="opacity-95 xl:text-[32px] leading-tight text-xs font-[300]">
             В рамках данного направления планируется реализация финтех проектов
             в Казахстане и за его пределами. В сентябре 2023 года открыто
             представительство в Тайланде, которое будет работать в данном
@@ -43,25 +43,27 @@ export default async function Fintech({
         </div>
       </div>
 
-      <div className="relative z-50 sm:px-5 px-5 flex flex-col gap-3 md:flex-row sm:mb-10 mb-5">
-        <div className="flex flex-1 flex-col p-5 rounded-3xl bg-[#0E0D0D]">
-          <span className="text-primary-gold tracking-widest mb-5">
+      <div className="xl:px-[60px] relative z-50 sm:px-5 px-5 flex flex-col gap-3 md:flex-row sm:mb-10 mb-5">
+        <div className="flex flex-1 flex-col p-5 rounded-3xl bg-[#0E0D0D] xl:px-[40px] xl:py-[55px]">
+          <span className="text-primary-gold mb-5 xl:text-[24px] xl:mb-[50px]">
             AGRO FINTECH
           </span>
-          <span className="text-sm mb-3">
+          <span className="text-sm mb-3 xl:text-[20px] leading-normal font-[300] xl:mb-10">
             Реализация FinTech продуктов с акцентом на поддержку развития
             сельского хозяйства и оказание сервисно-финансовой поддержки
             фермерским хозяйствам
           </span>
-          <span className="text-sm mb-3">
+          <span className="text-sm mb-3 xl:text-[20px] leading-normal font-[300] xl:mb-10">
             Наша цель – обеспечить доступ к современным финансовым инструментам
             и технологиям. Наши решения упрощают финансовые операции и создают
             новые возможности для успешных инвестиций.
           </span>
 
-          <span>Проекты в данном направлении:</span>
+          <span className={`xl:text-[20px] leading-normal font-[300] xl:mb-10`}>
+            Проекты в данном направлении:
+          </span>
 
-          <ul className="list-disc text-sm px-5">
+          <ul className="list-disc text-sm px-5 xl:text-[20px] leading-normal font-[300] xl:mb-10">
             <li>
               <span className="text-primary-gold">Crowdlender.kz</span> –
               краудлендинговая инвестиционная платформа;
@@ -77,11 +79,11 @@ export default async function Fintech({
           </ul>
         </div>
 
-        <div className="flex flex-1 flex-col p-5 rounded-3xl bg-[#0E0D0D]">
-          <span className="text-primary-gold tracking-widest mb-5">
+        <div className="flex flex-1 flex-col p-5 rounded-3xl bg-[#0E0D0D] xl:px-[40px] xl:py-[55px]">
+          <span className="text-primary-gold mb-5 xl:text-[24px] xl:mb-[50px]">
             Представительство в Таиланде
           </span>
-          <span className="text-sm mb-3">
+          <span className="text-sm mb-3 xl:text-[20px] leading-normal font-[300] xl:mb-10">
             В рамках данного направления планируется реализация финтех проектов
             в Казахстане и за его пределами. В сентябре 2023 года открыто
             представительство в Тайланде, где мы планируем запускать финтех
