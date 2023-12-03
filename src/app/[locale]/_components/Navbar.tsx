@@ -1,12 +1,6 @@
 'use client'
 
-import {
-  Button,
-  Navbar,
-  Select,
-  SelectItem,
-  useDisclosure,
-} from '@nextui-org/react'
+import { Button, Navbar, Select, SelectItem } from '@nextui-org/react'
 import Image from 'next/image'
 import Link from 'next-intl/link'
 import { ChangeEvent, useState } from 'react'
@@ -18,7 +12,6 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/navbar'
-import ModalContactUs from '@/app/[locale]/_components/ModalContactUs'
 
 export default function CustomNavbar({
   params: { dictionary, locale, modalDictionary },
@@ -31,13 +24,20 @@ export default function CustomNavbar({
 }) {
   const router = useRouter()
   const pathName = usePathname()
-  const { isOpen, onOpen, onOpenChange } = useDisclosure()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  // const position = useScrollPosition()
 
   const handleSelectionChange = (e: ChangeEvent<HTMLSelectElement>) => {
     router.replace(pathName, { locale: e.target.value })
+  }
+
+  const handleMenu = (isOpen: boolean) => {
+    setIsMenuOpen(isOpen)
+  }
+
+  const handleNavbarMenuItem = (isOpen: boolean) => {
+    setTimeout(() => {
+      setIsMenuOpen(!isOpen)
+    }, 500)
   }
 
   return (
@@ -45,7 +45,8 @@ export default function CustomNavbar({
       <Navbar
         isBlurred={false}
         maxWidth="full"
-        onMenuOpenChange={setIsMenuOpen}
+        isMenuOpen={isMenuOpen}
+        onMenuOpenChange={handleMenu}
         className={`ease-in-out duration-200 xl:px-[60px] px-4 top-0 z-50 absolute ${
           isMenuOpen ? 'bg-black' : 'bg-transparent'
         }`}
@@ -141,38 +142,52 @@ export default function CustomNavbar({
         />
         <NavbarMenu className="pt-5 bg-black z-50">
           <NavbarMenuItem>
-            <NavigationLink href="/about" lang={locale}>
+            <NavigationLink
+              onClick={() => handleNavbarMenuItem(isMenuOpen)}
+              href="/about"
+              lang={locale}
+            >
               {dictionary.about}
             </NavigationLink>
           </NavbarMenuItem>
           <NavbarMenuItem>
-            <NavigationLink href="/direction" lang={locale}>
+            <NavigationLink
+              onClick={() => handleNavbarMenuItem(isMenuOpen)}
+              href="/direction"
+              lang={locale}
+            >
               {dictionary.direction}
             </NavigationLink>
           </NavbarMenuItem>
           <NavbarMenuItem>
-            <NavigationLink href="/news" lang={locale}>
+            <NavigationLink
+              onClick={() => handleNavbarMenuItem(isMenuOpen)}
+              href="/news"
+              lang={locale}
+            >
               {dictionary.news}
             </NavigationLink>
           </NavbarMenuItem>
           <NavbarMenuItem>
-            <NavigationLink href="/career" lang={locale}>
+            <NavigationLink
+              onClick={() => handleNavbarMenuItem(isMenuOpen)}
+              href="/career"
+              lang={locale}
+            >
               {dictionary.career}
             </NavigationLink>
           </NavbarMenuItem>
           <NavbarMenuItem>
-            <NavigationLink href="/contact" lang={locale}>
+            <NavigationLink
+              onClick={() => handleNavbarMenuItem(isMenuOpen)}
+              href="/contact"
+              lang={locale}
+            >
               {dictionary.contact}
             </NavigationLink>
           </NavbarMenuItem>
         </NavbarMenu>
       </Navbar>
-      <ModalContactUs
-        dictionary={dictionary}
-        isOpen={isOpen}
-        onOpen={onOpen}
-        onOpenChange={onOpenChange}
-      />
     </>
   )
 }
