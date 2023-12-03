@@ -63,7 +63,7 @@ export default async function Career({
     <>
       <div className="sm:mb-10 mb-5">
         <div className="relative w-full h-[294px] sm:h-[380px] md:h-[480px] lg:h-[540px] xl:h-[620px] 2xl:h-[660px]">
-          <span className="z-50 flex h-full items-end pl-[60px] pb-10 uppercase absolute xl:text-[48px] lg:text-3xl md:text-2xl sm:text-xl text-lg">
+          <span className="z-20 flex h-full items-end xl:pl-[60px] xl:pb-10 p-5 uppercase absolute xl:text-[48px] lg:text-3xl md:text-2xl sm:text-xl text-lg">
             Люди — главный актив компании.
           </span>
           <Image
