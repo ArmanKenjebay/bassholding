@@ -30,24 +30,22 @@ export default async function BassEco({
           src={bassecoImage.src}
           alt="bassecoImage image"
         />
-        <div className="z-10 sm:w-2/3 w-full absolute bottom-5 left-2 flex flex-col">
-          <span className="tracking-widest xl:text-[64px] font-[400]">
-            BASS ECO
-          </span>
-          <span className="opacity-95 xl:text-[40px] text-xs leading-tight font-[300]">
+        <div className="pl-10 pb-10 xl:pl-[60px] z-10 sm:w-2/3 w-full absolute h-full flex flex-col justify-end">
+          <span className="xl:text-[48px] font-[400]">BASS ECO</span>
+          <span className="opacity-95 xl:text-[32px] text-xs leading-tight font-[300]">
             направление деятельности холдинга в сфере экологии, развития
             транспортной инфраструктуры и логистики.
           </span>
         </div>
       </div>
 
-      <div className="relative z-50 sm:px-5 px-5 flex flex-col gap-3 md:flex-row sm:mb-10 mb-5">
-        <div className="flex flex-1 flex-col p-5 rounded-3xl bg-[#0E0D0D]">
-          <span className="text-primary-gold tracking-widest mb-5">
+      <div className="xl:px-[60px] relative z-50 sm:px-5 px-5 flex flex-col gap-3 md:flex-row xl:gap-x-[40px] sm:mb-10 mb-5">
+        <div className="flex flex-1 flex-col p-5 rounded-3xl bg-[#0E0D0D] xl:px-[40px] xl:py-[55px]">
+          <span className="text-primary-gold xl:text-[24px] xl:mb-[50px] mb-5">
             Развитие речного порта и судоходства по реке Или
           </span>
 
-          <ul className="list-disc text-sm px-5">
+          <ul className="list-disc text-sm px-5 xl:text-[20px]">
             <li>
               Улучшение скорости доставки грузов и увеличение объема
               грузоперевозок
@@ -58,13 +56,13 @@ export default async function BassEco({
           </ul>
         </div>
 
-        <div className="flex flex-1 flex-col p-5 rounded-3xl bg-[#0E0D0D]">
-          <span className="text-primary-gold tracking-widest mb-5">
+        <div className="flex flex-1 flex-col p-5 rounded-3xl bg-[#0E0D0D] xl:px-[40px] xl:py-[55px]">
+          <span className="text-primary-gold xl:text-[24px] xl:mb-[50px] mb-5">
             Строительство мусороперерабатывающих заводов на территории
             Казахстана
           </span>
 
-          <ul className="list-disc text-sm px-5">
+          <ul className="list-disc text-sm px-5 xl:text-[20px]">
             <li>Улучшение экологической обстановки</li>
             <li>Эффективное использование вторичного сырья</li>
             <li>Выработка дополнительных мощностей энергии</li>

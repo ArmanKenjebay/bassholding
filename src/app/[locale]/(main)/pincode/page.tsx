@@ -31,7 +31,7 @@ export default async function Pincode({
           src={pincodeImage.src}
           alt="bassgold image"
         />
-        <div className="z-10 lg:w-[80%] w-full absolute bottom-5 left-2 flex flex-col">
+        <div className="z-10 lg:w-[80%] w-full absolute flex flex-col justify-end h-full pl-10 pb-10 xl:pl-[60px]">
           <span className="tracking-widest xl:text-[64px] font-[400]">
             PINCODE
           </span>
@@ -44,7 +44,7 @@ export default async function Pincode({
         </div>
       </div>
 
-      <div className="relative z-50 sm:px-5 px-5 flex flex-col gap-y-3 gap-x-10 sm:flex-row sm:mb-10 mb-5">
+      <div className="pl-10 pb-10 xl:pl-[60px] relative z-50 sm:px-5 px-5 flex flex-col gap-y-3 gap-x-10 sm:flex-row sm:mb-10 mb-5">
         <div className="relative flex h-[300px] lg:h-[500px] md:h-[450px] sm:h-[400px]">
           <Image
             className="aspect-square sm:aspect-auto w-full h-full object-cover"
