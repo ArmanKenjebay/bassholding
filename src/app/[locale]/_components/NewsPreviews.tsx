@@ -70,7 +70,7 @@ export default function NewsPreviews({ locale }: Props) {
   }
 
   return (
-    <div className={`flex flex-1 flex-col gap-y-10`}>
+    <div className={`flex flex-col gap-y-10`}>
       {newsDataPaginated ? (
         <>
           <div className="grid gap-[40px] 2xl:grid-cols-[510px_510px] xl:grid-cols-[420px_420px] lg:grid-cols-[300px_300px] md:grid-cols-[250px_250px] sm:grid-cols-[200px_200px] grid-cols-1">
@@ -79,10 +79,10 @@ export default function NewsPreviews({ locale }: Props) {
                   <div
                     onClick={() => handleRedirect(news.id, locale)}
                     key={news.id}
-                    className="cursor-pointer transition duration-200 ease-in-out group hover:scale-[.98] hover:border-primary-gold border rounded-2xl border-transparent px-5 py-5 overflow-hidden flex-1 flex flex-col"
+                    className="cursor-pointer transition duration-200 ease-in-out group hover:scale-[.98] overflow-hidden flex-1 flex flex-col"
                   >
                     <Image
-                      className="transition duration-200 ease-in-out rounded-3xl 2xl:h-[447px] xl:h-[200px] lg:h-[180px] md:h-[120px] sm:h-[100px] w-full h-[200px] object-cover md:mb-10 mb-5"
+                      className="transition duration-200 ease-in-out rounded-3xl 2xl:h-[300px] xl:h-[280px] lg:h-[180px] md:h-[120px] sm:h-[100px] w-full h-[200px] object-cover md:mb-10 mb-5"
                       src={news.baseImg}
                       width={510}
                       height={447}

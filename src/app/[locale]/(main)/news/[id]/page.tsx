@@ -50,7 +50,7 @@ export default async function NewsDetail({
         >
           {main && (
             <Image
-              className={`rounded-[50px] w-full xl:h-[650px] lg:h-[280px] h-[200px] object-cover`}
+              className={`rounded-[50px] w-full xl:h-[450px] lg:h-[280px] h-[200px] object-cover`}
               src={main}
               width={959}
               height={650}

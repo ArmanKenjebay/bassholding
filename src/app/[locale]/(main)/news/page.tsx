@@ -40,7 +40,7 @@ export default async function News({
     <section className="flex flex-col w-full h-full">
       <div className="flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-10 mb-5 relative">
         <div
-          className="xl:pl-[60px] xl:pr-[90px] sm:static absolute z-20 flex xl:text-[48px] lg:text-2xl sm:text-xl flex-col sm:justify-end px-5 sm:pb-0 pb-5"
+          className="uppercase xl:pl-[60px] xl:pr-[90px] sm:static absolute z-20 flex xl:text-[48px] lg:text-2xl sm:text-xl flex-col sm:justify-end px-5 sm:pb-0 pb-5"
           style={{
             lineHeight: '100%',
           }}
@@ -65,10 +65,10 @@ export default async function News({
         />
       </div>
 
-      <div className="xl:px-[60px] flex flex-col sm:flex-row justify-between gap-y-10 px-5 sm:mb-10 mb-5">
+      <div className="xl:px-[60px] flex flex-col sm:flex-row justify-between gap-x-5 gap-y-10 px-5 sm:mb-10 mb-5">
         <NewsPreviews locale={locale} />
 
-        <div className="flex flex-col bg-[#272727] h-fit p-4 xl:px-[52px] xl:py-[72px] rounded-3xl overflow-y-auto scrollbar-hide">
+        <div className="flex flex-1 flex-col bg-[#272727] h-fit p-10 rounded-3xl overflow-y-auto scrollbar-hide">
           <div className="xl:text-[24px] text-lg mb-2 xl:mb-10 sm:mb-5 w-full tracking-widest">
             События холдинга
           </div>
