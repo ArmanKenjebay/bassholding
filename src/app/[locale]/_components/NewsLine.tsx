@@ -20,7 +20,9 @@ export default function NewsLine({ locale, id, content, chip, date }: Props) {
   return (
     <div className="w-full grid grid-cols-[3fr_1fr_1fr_50px] gap-x-5 gap-y-3 items-center justify-center px-1">
       <div className="flex justify-start sm:col-span-1 col-span-4">
-        <span className="text-xs md:text-[20px] font-[300]">{content}</span>
+        <span className="text-xs md:text-[20px] font-[300] leading-normal">
+          {content}
+        </span>
       </div>
 
       <div className="flex justify-center gap-x-3 sm:col-span-1 col-span-2">

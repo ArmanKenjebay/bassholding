@@ -98,9 +98,10 @@ export default async function About({
       <div className="mb-[10px] lg:mb-16 xl:mb-24">
         <div className="relative w-full h-[294px] sm:h-[380px] md:h-[480px] lg:h-[540px] xl:h-[620px] 2xl:h-[660px]">
           <span
-            className="uppercase xl:px-[60px] xl:pb-[54px] px-5 pb-5 sm:lowercase w-full sm:w-2/3 z-20 h-full flex items-end absolute font-[250] xl:text-[64px] lg:text-6xl sm:text-4xl text-lg"
+            className="xl:px-[60px] xl:pb-[54px] px-5 pb-5 sm:lowercase w-full sm:w-2/3 z-20 h-full flex items-end absolute font-[250] xl:text-[64px] lg:text-6xl sm:text-4xl text-lg"
             style={{
               lineHeight: '92%',
+              textTransform: 'uppercase',
             }}
           >
             {dictionary.about.human_value}
@@ -136,7 +137,7 @@ export default async function About({
               key={index}
               className="relative overflow-hidden h-[101px] sm:w-full md:h-[200px] xl:h-[287px]"
             >
-              <span className="z-10 uppercase font-[250] tracking-widest absolute top-3/4 sm:top-[60%] block w-full h-full text-xs sm:text-base lg:text-xl xl:text-3xl text-center">
+              <span className="z-10 uppercase font-[250] absolute top-3/4 sm:top-[60%] block w-full h-full text-xs sm:text-base lg:text-xl xl:text-3xl text-center">
                 {title}
               </span>
               <NextImage
@@ -152,9 +153,9 @@ export default async function About({
       </div>
 
       <div className="xl:px-[60px] sm:px-5 px-5 mb-10">
-        <div className="grid gap-x-3 gap-y-5 sm:gap-y-10 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+        <div className="grid gap-x-3 gap-y-5 grid-cols-2 sm:gap-y-10 sm:grid-cols-3 md:grid-cols-4 xl:gap-y-14 xl:gap-x-10">
           <div className="col-span-2 md:col-span-2 flex justify-center flex-col gap-y-3 ">
-            <span className="text-2xl tracking-widest md:text-2xl lg:text-3xl xl:text-[48px] mb-2 xl:mb-14">
+            <span className="text-2xl md:text-2xl lg:text-3xl xl:text-[48px] mb-2 xl:mb-14">
               {dictionary.about.our_team}
             </span>
             <span

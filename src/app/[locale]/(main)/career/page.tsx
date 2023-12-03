@@ -63,7 +63,7 @@ export default async function Career({
     <>
       <div className="sm:mb-10 mb-5">
         <div className="relative w-full h-[294px] sm:h-[380px] md:h-[480px] lg:h-[540px] xl:h-[620px] 2xl:h-[660px]">
-          <span className="z-50 flex h-full items-end pl-10 pb-10 uppercase absolute xl:text-[48px] lg:text-3xl md:text-2xl sm:text-xl text-lg">
+          <span className="z-50 flex h-full items-end pl-[60px] pb-10 uppercase absolute xl:text-[48px] lg:text-3xl md:text-2xl sm:text-xl text-lg">
             Люди — главный актив компании.
           </span>
           <Image
@@ -84,7 +84,7 @@ export default async function Career({
 
       <div className="xl:px-[60px] sm:px-5 px-5 sm:mb-10 mb-5">
         <div className="sm:w-3/4 xl:w-1/2 py-3 w-full">
-          <span className="xl:text-[32px] text-base md:text-4xl text-primary-gold tracking-widest">
+          <span className="xl:text-[32px] text-base md:text-4xl text-primary-gold">
             Мы предоставляем комфортную среду и поддерживаем развитие наших
             людей.
           </span>

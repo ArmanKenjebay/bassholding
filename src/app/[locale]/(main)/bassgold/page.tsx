@@ -31,13 +31,11 @@ export default async function BassGold({
           alt="bassgold image"
         />
         <div className="px-5 xl:pl-[60px] xl:pb-[67px] z-10 absolute h-full flex flex-col justify-end">
-          <span className="tracking-widest xl:text-[64px] font-[400]">
-            BASS GOLD
-          </span>
-          <span className="opacity-95 xl:text-[40px] text-xs font-[300] mb-5">
+          <span className="xl:text-[48px] font-[400]">BASS GOLD</span>
+          <span className="opacity-95 xl:text-[32px] text-xs font-[300] mb-5">
             {dictionary.direction['bassgold_title-1']}
           </span>
-          <span className="opacity-95 xl:text-[40px] text-xs font-[300]">
+          <span className="opacity-95 xl:text-[32px] text-xs font-[300]">
             {dictionary.direction['bassgold_title-2']}
           </span>
         </div>
