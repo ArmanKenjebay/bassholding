@@ -1,3 +1,11 @@
+### Работа через докер контейнер
+```
+git clone git@github.com:ArmanKenjebay/bassholding-next.git
+cd ./bassholding-next
+sudo docker build . -t app_bassholding
+sudo docker run -p 3000:3000 -l bassholding_web -d app_bassholding 
+```
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
