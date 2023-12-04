@@ -7,7 +7,6 @@ import careerImage1 from '@/../public/images/career1.webp'
 import careerImage2 from '@/../public/images/career2.webp'
 import careerImage3 from '@/../public/images/career3.webp'
 import careerImage4 from '@/../public/images/career4.webp'
-import { Divider } from '@nextui-org/divider'
 import React from 'react'
 
 export default async function Career({
@@ -19,27 +18,23 @@ export default async function Career({
 
   const careers = [
     {
-      text: 'Тестирование по личностно-деловым компетенциям',
-      content:
-        'Мы даем каждому сотруднику возможность определить свои сильные стороны и области для улучшения. После тестирования, вы получите полную коуч-сессию от наших ведущих экспертов, которые помогут вам разработать стратегию для своего личного и профессионального роста.',
+      text: dictionary.career.text_3,
+      content: dictionary.career.text_4,
       image: careerImage1,
     },
     {
-      text: 'HR-среда',
-      content:
-        'У нас есть 1,5-часовые групповые коуч-сессии, где наши HR-эксперты помогут вам улучшить свои деловые компетенции и навыки. Это отличная возможность для роста в коллективе и обмена опытом с коллегами.',
+      text: dictionary.career.text_5,
+      content: dictionary.career.text_6,
       image: careerImage2,
     },
     {
-      text: 'Изучение английского языка',
-      content:
-        'Мы предоставляем нашим сотрудникам возможность повышения своего уровня английского языка. 2 раза в неделю, во время рабочего дня, вы сможете учить и совершенствовать свои навыки владения английским языком.',
+      text: dictionary.career.text_7,
+      content: dictionary.career.text_8,
       image: careerImage3,
     },
     {
-      text: 'Повышение квалификации',
-      content:
-        'Мы поддерживаем профессиональное и личностное развитие наших сотрудников. У нас есть разнообразные программы для повышения квалификации, позволяющие вам развиваться в своей области и достигать новых высот.',
+      text: dictionary.career.text_9,
+      content: dictionary.career.text_10,
       image: careerImage4,
     },
   ]
@@ -64,7 +59,7 @@ export default async function Career({
       <div className="sm:mb-10 mb-5">
         <div className="relative w-full h-[294px] sm:h-[380px] md:h-[480px] lg:h-[540px] xl:h-[620px] 2xl:h-[660px]">
           <span className="z-20 flex h-full items-end xl:pl-[60px] xl:pb-10 p-5 uppercase absolute xl:text-[48px] lg:text-3xl md:text-2xl sm:text-xl text-lg">
-            Люди — главный актив компании.
+            {dictionary.career.text_1}
           </span>
           <Image
             priority
@@ -85,8 +80,7 @@ export default async function Career({
       <div className="xl:px-[60px] sm:px-5 px-5 sm:mb-10 mb-5">
         <div className="sm:w-3/4 xl:w-1/2 py-3 w-full">
           <span className="xl:text-[32px] text-base md:text-4xl text-primary-gold">
-            Мы предоставляем комфортную среду и поддерживаем развитие наших
-            людей.
+            {dictionary.career.text_2}
           </span>
         </div>
       </div>
