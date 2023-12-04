@@ -46,9 +46,9 @@
     "text_3": "Personal and professional competencies assessment",
     "text_4": "We offer every employee an opportunitity to determine his strengths and areas of growth. After the assessment, you will receive a coach session from our leading experts, who will help you develop a strategy for your personal and professional growth.",
     "text_5": "HR - Wednesdays",
-    "text_6": "We have collective coach sessions where our HR experts will help you improve your professional competencies and skills. It's a great opportunity to grow within the collective and exchange knowledge with colleagues",
+    "text_6": "We have 1.5 hour collective coach sessions where our HR experts will help you improve your professional competencies and skills. It's a great opportunity to grow within the team and exchange knowledge with colleagues",
     "text_7": "ENGLISH LESSONS",
-    "text_8": "We offer our employees the opportunity to improve their knowledge of English. Twice a week, during working hours, you will have the opportunity to learn and perfect your knowledge of English.",
+    "text_8": "We offer our employees the opportunity to improve their knowledge of English. Twice a week, during working hours, you will have the opportunity to learn and enhance your English language proficiency.",
     "text_9": "Professional training ",
     "text_10": "We support professional and personal growth of our employees. We offer various programmes for professional growth in your respected field to help you reach new career heights."
   },
@@ -80,9 +80,9 @@
   },
   "navbar": {
     "main": "Home",
-    "about": "About",
+    "about": "About us",
     "career": "Career",
-    "direction": "Direction",
+    "direction": "Industries",
     "news": "News",
     "contact": "Contact us"
   },
