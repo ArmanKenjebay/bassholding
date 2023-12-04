@@ -17,3 +17,8 @@ export const getNews = async () =>
 
 export const getNewsById = async (id: string) =>
   news.news().then((res) => res.news.find((n) => n.id === id))
+
+export const getKase = async () => {
+  const parser = new Parser()
+  return await parser.parseURL(`https://kase.kz/prices/rss1/`)
+}
