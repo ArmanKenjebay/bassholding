@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import { getDictionary } from '@/get-dictionary'
 import { Locale } from '@/i18n-config'
+import InvestrorsNavBar from '@/app/[locale]/_components/InvestorsNavBar'
 
 type Params = {
   children: ReactNode
@@ -23,5 +24,11 @@ export async function generateMetadata({
 }
 
 export default async function Layout({ params, children }: Params) {
-  return <section className={`mt-20 flex flex-col`}>{children}</section>
+  return (
+    <section className={`mt-20 flex flex-col`}>
+      <InvestrorsNavBar locale={params.locale} />
+
+      {children}
+    </section>
+  )
 }
