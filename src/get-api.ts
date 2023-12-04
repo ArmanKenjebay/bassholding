@@ -1,5 +1,4 @@
 import 'server-only'
-import Parser from 'rss-parser'
 
 import { TNews } from '@/app/[locale]/_types/TNews'
 
@@ -17,8 +16,3 @@ export const getNews = async () =>
 
 export const getNewsById = async (id: string) =>
   news.news().then((res) => res.news.find((n) => n.id === id))
-
-export const getKase = async () => {
-  const parser = new Parser()
-  return await parser.parseURL(`https://kase.kz/prices/rss1/`)
-}

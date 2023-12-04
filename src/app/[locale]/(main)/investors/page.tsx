@@ -1,3 +1,3 @@
-export default function Investors() {
+export default async function Investors() {
   return <div>investrors</div>
 }
