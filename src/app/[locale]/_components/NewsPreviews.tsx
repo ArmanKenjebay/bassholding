@@ -98,7 +98,7 @@ export default function NewsPreviews({ locale }: Props) {
                     <span
                       className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[24px] font-[300] mb-[45px] h-20 whitespace-pre-wrap truncate`}
                     >
-                      {news.context[locale]}
+                      {news.title[locale]}
                     </span>
                     <span
                       className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[16px] font-[300]`}
