@@ -1,4 +1,6 @@
 import 'server-only'
+import Parser from 'rss-parser'
+
 import { TNews } from '@/app/[locale]/_types/TNews'
 
 const news = {

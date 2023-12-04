@@ -49,7 +49,7 @@ export default async function News({
             <span className="text-primary-gold">
               {dictionary.news.title_1 + ' '}
             </span>
-            - {' ' + dictionary.news['title_1-1']}
+            {(locale === 'ru' ? ' - ' : '') + dictionary.news['title_1-1']}
           </span>
           <br />
           <span>{dictionary.news.title_2}</span>
