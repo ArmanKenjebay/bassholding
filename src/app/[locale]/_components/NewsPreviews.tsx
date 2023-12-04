@@ -96,7 +96,7 @@ export default function NewsPreviews({ locale }: Props) {
                       {news.chips.map((c) => c[locale])[0]}
                     </Chip>
                     <span
-                      className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[24px] font-[300] mb-[45px] h-20 whitespace-pre-wrap truncate`}
+                      className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[24px] font-[300] mb-[45px] h-14 w-full whitespace-pre-wrap truncate`}
                     >
                       {news.title[locale]}
                     </span>
