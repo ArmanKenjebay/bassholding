@@ -104,6 +104,10 @@
     "telephone_placeholder": "Your phone number",
     "submit_application": "Submit your application"
   },
+  "investors": {
+    "title": "Investors",
+    "description": "Investors"
+  },
   "button": {
     "find-out-more": "Find out more"
   },

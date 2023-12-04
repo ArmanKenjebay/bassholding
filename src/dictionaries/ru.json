@@ -104,6 +104,10 @@
     "telephone_placeholder": "Введите номер телефона",
     "submit_application": "Оставит заявку"
   },
+  "investors": {
+    "title": "Инвесторам",
+    "description": "Инвесторам"
+  },
   "button": {
     "find-out-more": "Узнать подробнее"
   },
