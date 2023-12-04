@@ -49,6 +49,7 @@ export default async function BassEco({
             <li>{dictionary['bass-eco'].text_4}</li>
             <li>{dictionary['bass-eco'].text_5}</li>
             <li>{dictionary['bass-eco'].text_6}</li>
+            <li>{dictionary['bass-eco'].text_11}</li>
           </ul>
         </div>
 

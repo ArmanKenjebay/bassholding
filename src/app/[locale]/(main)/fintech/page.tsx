@@ -46,7 +46,7 @@ export default async function Fintech({
       <div className="xl:px-[60px] relative z-50 sm:px-5 px-5 flex flex-col gap-3 md:flex-row sm:mb-10 mb-5">
         <div className="flex flex-1 flex-col p-5 rounded-3xl bg-[#0E0D0D] xl:px-[40px] xl:py-[55px]">
           <span className="text-primary-gold mb-5 xl:text-[24px] xl:mb-[50px]">
-            AGRO FINTECH
+            AGROFINTECH
           </span>
           <span className="text-sm mb-3 xl:text-[20px] leading-normal font-[300] xl:mb-10">
             {dictionary.fintech.text_3}
