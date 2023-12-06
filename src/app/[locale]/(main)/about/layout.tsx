@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import { getDictionary } from '@/get-dictionary'
 import { Locale } from '@/i18n-config'
+import PageWrapper from '@/app/[locale]/_components/PageWrapper'
 
 type Params = {
   children: ReactNode

@@ -1,9 +1,8 @@
-import LoadingPage from '@/app/[locale]/_components/LoadingPage'
 import { Progress } from '@nextui-org/progress'
 
 export default function Loading() {
   return (
-    <div className="absolute top-0 h-screen w-screen">
+    <div className="absolute top-0 h-screen w-full">
       <Progress
         size="sm"
         isIndeterminate
@@ -13,7 +12,6 @@ export default function Loading() {
           indicator: 'bg-primary-gold',
         }}
       />
-      <LoadingPage />
     </div>
   )
 }

@@ -18,6 +18,7 @@ import alimImage from '@/../public/images/alim.png'
 import shokanImage from '@/../public/images/shokan.png'
 import ermekImage from '@/../public/images/ermek.png'
 import PersonalCard from '@/app/[locale]/_components/PersonalCard'
+import PageWrapper from '@/app/[locale]/_components/PageWrapper'
 
 export default async function About({
   params: { locale },
@@ -94,7 +95,7 @@ export default async function About({
   ]
 
   return (
-    <>
+    <PageWrapper>
       <div className="mb-[10px] lg:mb-16 xl:mb-24">
         <div className="relative w-full h-[294px] sm:h-[380px] md:h-[480px] lg:h-[540px] xl:h-[620px] 2xl:h-[660px]">
           <span
@@ -177,6 +178,6 @@ export default async function About({
           ))}
         </div>
       </div>
-    </>
+    </PageWrapper>
   )
 }

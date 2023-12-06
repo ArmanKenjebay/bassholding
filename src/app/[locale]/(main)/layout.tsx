@@ -4,6 +4,7 @@ import CustomNavbar from '@/app/[locale]/_components/Navbar'
 import { getDictionary } from '@/get-dictionary'
 import Footer from '@/app/[locale]/_components/Footer'
 import { bassholdingConfig } from '@/bassholding-config'
+import PageWrapper from '@/app/[locale]/_components/PageWrapper'
 
 type Props = {
   children: ReactNode
