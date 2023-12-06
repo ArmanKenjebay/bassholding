@@ -6,9 +6,16 @@ import { usePathname } from 'next-intl/client'
 
 type Props = {
   locale: Locale
+  dictionary: {
+    title: string
+    description: string
+    company_profile: string
+    financial_count: string
+    press_center: string
+  }
 }
 
-export default function InvestrorsNavBar({ locale }: Props) {
+export default function InvestrorsNavBar({ locale, dictionary }: Props) {
   const pathName = usePathname()
 
   return (
@@ -16,29 +23,37 @@ export default function InvestrorsNavBar({ locale }: Props) {
       className={`xl:px-[60px] xl:py-[35px] flex justify-between bg-[#262626] items-center`}
     >
       <Link
-        className={`${pathName === '/investors' ? 'text-primary-gold' : ''}`}
+        className={`${
+          pathName === '/investors'
+            ? 'text-primary-gold'
+            : 'hover:text-primary-gold duration-200'
+        }`}
         href={`/investors`}
         locale={locale}
       >
-        Профиль компании
+        {dictionary.company_profile}
       </Link>
       <Link
         className={`${
-          pathName === '/investors/financial' ? 'text-primary-gold' : ''
+          pathName === '/investors/financial'
+            ? 'text-primary-gold'
+            : 'hover:text-primary-gold duration-200'
         }`}
         href={`/investors/financial`}
         locale={locale}
       >
-        Финансовые показатели
+        {dictionary.financial_count}
       </Link>
       <Link
         className={`${
-          pathName === '/investors/press' ? 'text-primary-gold' : ''
+          pathName === '/investors/press'
+            ? 'text-primary-gold'
+            : 'hover:text-primary-gold duration-200'
         }`}
         href={`/investors/press`}
         locale={locale}
       >
-        Пресс-центр
+        {dictionary.press_center}
       </Link>
     </nav>
   )

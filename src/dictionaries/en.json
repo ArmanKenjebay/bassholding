@@ -106,7 +106,10 @@
   },
   "investors": {
     "title": "Investors",
-    "description": "Investors"
+    "description": "Investors",
+    "company_profile": "Company profile",
+    "financial_count": "Financial indicators",
+    "press_center": "Press center"
   },
   "button": {
     "find-out-more": "Find out more"

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { getDictionary } from '@/get-dictionary'
 import { Locale } from '@/i18n-config'
-import InvestrorsNavBar from '@/app/[locale]/_components/InvestorsNavBar'
+import InvestorsNavBar from '@/app/[locale]/_components/InvestorsNavBar'
 
 type Params = {
   children: ReactNode
@@ -24,9 +24,13 @@ export async function generateMetadata({
 }
 
 export default async function Layout({ params, children }: Params) {
+  const dictionary = await getDictionary(params.locale)
   return (
     <section className={`mt-20 flex flex-col`}>
-      <InvestrorsNavBar locale={params.locale} />
+      <InvestorsNavBar
+        locale={params.locale}
+        dictionary={{ ...dictionary.investors }}
+      />
 
       {children}
     </section>

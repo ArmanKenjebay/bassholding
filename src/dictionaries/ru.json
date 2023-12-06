@@ -106,7 +106,10 @@
   },
   "investors": {
     "title": "Инвесторам",
-    "description": "Инвесторам"
+    "description": "Инвесторам",
+    "company_profile": "Профиль компании",
+    "financial_count": "Финансовые показатели",
+    "press_center": "Пресс-центр"
   },
   "button": {
     "find-out-more": "Узнать подробнее"
