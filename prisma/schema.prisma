@@ -1,0 +1,88 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+  posts Post[]
+}
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title     String
+  content   String?
+  published Boolean  @default(false)
+  viewCount Int      @default(0)
+  authorId  Int?
+  author    User?    @relation(fields: [authorId], references: [id])
+}
+
+model News {
+  id                String   @id
+  title_ru          String
+  title_en          String
+  title_kz          String
+  title_th          String
+  context_ru        String
+  context_en        String
+  context_kz        String
+  context_th        String
+  content_ru        String
+  content_en        String
+  content_kz        String
+  content_th        String
+  date_ru           String
+  date_en           String
+  date_kz           String
+  date_th           String
+  image_preview     String
+  image_main        String
+  image_content     String
+  image_sub_content String
+  chips_ru          String[]
+  chips_en          String[]
+  chips_kz          String[]
+  chips_th          String[]
+  docHref           String[]
+}
+
+model Event {
+  id       String @id
+  title_ru String
+  title_en String
+  title_kz String
+  title_th String
+  date_ru  String
+  date_en  String
+  date_kz  String
+  date_th  String
+}
+
+model Position {
+  id         String   @id
+  title_ru   String
+  title_en   String
+  title_kz   String
+  title_th   String
+  date_ru    String
+  date_en    String
+  date_kz    String
+  date_th    String
+  content_ru String[]
+  content_en String[]
+  content_kz String[]
+  content_th String[]
+  context_ru String
+  context_en String
+  context_kz String
+  context_th String
+}
