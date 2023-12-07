@@ -15,7 +15,7 @@ import getDirections from '@/app/[locale]/_variables/direction-cards'
 import HomeBackgroundImage from '@/app/[locale]/_components/HomeBackgroundImage'
 import { getNews } from '@/get-api'
 import PageWrapper from '@/app/[locale]/_components/PageWrapper'
-import MotionSection from '@/app/[locale]/_components/MotionSection'
+import MotionDiv from '@/app/[locale]/_components/MotionDiv'
 
 export default async function Home({
   params: { locale },
@@ -29,7 +29,7 @@ export default async function Home({
   return (
     <section className="flex flex-col w-full h-full">
       <PageWrapper>
-        <MotionSection>
+        <MotionDiv>
           <div className="lg:min-h-[600px] flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-0 mb-8">
             <div className="flex flex-col gap-y-3 justify-end px-5 sm:pb-10 lg:pb-24 sm:px-6 md:px-[60px]">
               <ImageNext
@@ -65,7 +65,7 @@ export default async function Home({
               </HomeBackgroundImage>
             </div>
           </div>
-        </MotionSection>
+        </MotionDiv>
 
         <div className="sm:mb-[35px] mb-5">
           <Marquee>
@@ -88,47 +88,51 @@ export default async function Home({
           </Marquee>
         </div>
 
-        <div className="sm:px-5 xl:px-[60px] px-5 sm:mb-10 mb-5">
-          <div className="flex justify-center sm:flex-row flex-col">
-            {cards.map((card, index) => (
-              <DirectionCard
-                key={card.title}
-                locale={locale}
-                dictionary={dictionary}
-                image={card.image}
-                title={card.title}
-                desc={card.desc}
-                chips={card.chips}
-                link={card.link}
-                className="app-img-box"
-              />
+        <MotionDiv>
+          <div className="sm:px-5 xl:px-[60px] px-5 sm:mb-10 mb-5">
+            <div className="flex justify-center sm:flex-row flex-col">
+              {cards.map((card, index) => (
+                <DirectionCard
+                  key={card.title}
+                  locale={locale}
+                  dictionary={dictionary}
+                  image={card.image}
+                  title={card.title}
+                  desc={card.desc}
+                  chips={card.chips}
+                  link={card.link}
+                  className="app-img-box"
+                />
+              ))}
+            </div>
+          </div>
+        </MotionDiv>
+
+        <MotionDiv>
+          <div className="sm:px-5 xl:px-[60px] px-5 sm:mb-10 mb-5">
+            <span className="lg:text-4xl md:text-3xl text-2xl font-[250]">
+              {dictionary.news.title}
+            </span>
+            {news.map((n, index) => (
+              <div key={index}>
+                {index <= 3 && (
+                  <>
+                    <Divider className="my-2 bg-white" />
+                    <div className={`py-[27px]`}>
+                      <NewsLine
+                        locale={locale}
+                        id={n.id}
+                        content={n.title[locale]}
+                        date={n.date[locale]}
+                        chip={n.chips.map((c) => c[locale])[0]}
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
             ))}
           </div>
-        </div>
-
-        <div className="sm:px-5 xl:px-[60px] px-5 sm:mb-10 mb-5">
-          <span className="lg:text-4xl md:text-3xl text-2xl font-[250]">
-            {dictionary.news.title}
-          </span>
-          {news.map((n, index) => (
-            <div key={index}>
-              {index <= 3 && (
-                <>
-                  <Divider className="my-2 bg-white" />
-                  <div className={`py-[27px]`}>
-                    <NewsLine
-                      locale={locale}
-                      id={n.id}
-                      content={n.title[locale]}
-                      date={n.date[locale]}
-                      chip={n.chips.map((c) => c[locale])[0]}
-                    />
-                  </div>
-                </>
-              )}
-            </div>
-          ))}
-        </div>
+        </MotionDiv>
 
         <div className="sm:px-5 xl:px-[60px] px-5 sm:mb-10 w-full h-full flex justify-center mb-10">
           <ImageNext

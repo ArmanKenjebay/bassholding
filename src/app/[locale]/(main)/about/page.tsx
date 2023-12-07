@@ -19,6 +19,7 @@ import shokanImage from '@/../public/images/shokan.png'
 import ermekImage from '@/../public/images/ermek.png'
 import PersonalCard from '@/app/[locale]/_components/PersonalCard'
 import PageWrapper from '@/app/[locale]/_components/PageWrapper'
+import MotionDiv from '@/app/[locale]/_components/MotionDiv'
 
 export default async function About({
   params: { locale },
@@ -97,61 +98,66 @@ export default async function About({
   return (
     <PageWrapper>
       <div className="mb-[10px] lg:mb-16 xl:mb-24">
-        <div className="relative w-full h-[294px] sm:h-[380px] md:h-[480px] lg:h-[540px] xl:h-[620px] 2xl:h-[660px]">
-          <span
-            className="xl:px-[60px] xl:pb-[54px] px-5 pb-5 sm:lowercase w-full sm:w-2/3 z-20 h-full flex items-end absolute font-[250] xl:text-[64px] lg:text-6xl sm:text-4xl text-lg"
-            style={{
-              lineHeight: '92%',
-              textTransform: 'uppercase',
-            }}
-          >
-            {dictionary.about.human_value}
-          </span>
-          <Image
-            radius="none"
-            src={aboutImage.src}
-            width={aboutImage.width}
-            height={aboutImage.height}
-            alt={'bassholding about'}
-            className="z-10 filter brightness-50 w-full h-full object-cover object-center"
-            classNames={{
-              wrapper: 'w-full h-full',
-            }}
-          />
-        </div>
-      </div>
-      <div className="xl:px-[60px] sm:px-5 px-5 sm:mb-10 mb-5 xl:mb-[70px]">
-        <div className="flex flex-col sm:w-3/4 w-full">
-          <span className="xl:text-[48px] text-[28px] font-[400] mb-[10px] leading-normal">
-            {dictionary.about.our_values}
-          </span>
-          <span className="xl:text-[32px] text-base font-[300] leading-normal">
-            {dictionary.about.our_values_principles}
-          </span>
-        </div>
+        <MotionDiv>
+          <div className="relative w-full h-[294px] sm:h-[380px] md:h-[480px] lg:h-[540px] xl:h-[620px] 2xl:h-[660px]">
+            <span
+              className="xl:px-[60px] xl:pb-[54px] px-5 pb-5 sm:lowercase w-full sm:w-2/3 z-20 h-full flex items-end absolute font-[250] xl:text-[64px] lg:text-6xl sm:text-4xl text-lg"
+              style={{
+                lineHeight: '92%',
+                textTransform: 'uppercase',
+              }}
+            >
+              {dictionary.about.human_value}
+            </span>
+            <Image
+              radius="none"
+              src={aboutImage.src}
+              width={aboutImage.width}
+              height={aboutImage.height}
+              alt={'bassholding about'}
+              className="z-10 filter brightness-50 w-full h-full object-cover object-center"
+              classNames={{
+                wrapper: 'w-full h-full',
+              }}
+            />
+          </div>
+        </MotionDiv>
       </div>
 
-      <div className="sm:px-5 px-5 mb-10 xl:mb-[182px]">
-        <div className="h-full grid lg:grid-cols-4 grid-cols-2 xl:gap-x-[40px] gap-[10px]">
-          {feels.map(({ title, image, classes }, index) => (
-            <div
-              key={index}
-              className="relative overflow-hidden h-[101px] sm:w-full md:h-[200px] xl:h-[287px]"
-            >
-              <span className="z-10 uppercase font-[250] absolute top-3/4 sm:top-[60%] block w-full h-full text-xs sm:text-base lg:text-xl xl:text-3xl text-center">
-                {title}
-              </span>
-              <NextImage
-                src={image}
-                alt=""
-                className={`w-full h-full object-cover md:rounded-[120px] rounded-[30px] filter brightness-[.65] ${
-                  classes ? classes : ''
-                }`}
-              />
-            </div>
-          ))}
+      <MotionDiv>
+        <div className="xl:px-[60px] sm:px-5 px-5 sm:mb-10 mb-5 xl:mb-[70px]">
+          <div className="flex flex-col sm:w-3/4 w-full">
+            <span className="xl:text-[48px] text-[28px] font-[400] mb-[10px] leading-normal">
+              {dictionary.about.our_values}
+            </span>
+            <span className="xl:text-[32px] text-base font-[300] leading-normal">
+              {dictionary.about.our_values_principles}
+            </span>
+          </div>
         </div>
-      </div>
+
+        <div className="sm:px-5 px-5 mb-10 xl:mb-[182px]">
+          <div className="h-full grid lg:grid-cols-4 grid-cols-2 xl:gap-x-[40px] gap-[10px]">
+            {feels.map(({ title, image, classes }, index) => (
+              <div
+                key={index}
+                className="relative overflow-hidden h-[101px] sm:w-full md:h-[200px] xl:h-[287px]"
+              >
+                <span className="z-10 uppercase font-[250] absolute top-3/4 sm:top-[60%] block w-full h-full text-xs sm:text-base lg:text-xl xl:text-3xl text-center">
+                  {title}
+                </span>
+                <NextImage
+                  src={image}
+                  alt=""
+                  className={`w-full h-full object-cover md:rounded-[120px] rounded-[30px] filter brightness-[.65] ${
+                    classes ? classes : ''
+                  }`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </MotionDiv>
 
       <div className="xl:px-[60px] sm:px-5 px-5 mb-10">
         <div className="grid gap-x-3 gap-y-5 grid-cols-2 sm:gap-y-10 sm:grid-cols-3 md:grid-cols-4 xl:gap-y-14 xl:gap-x-10">

@@ -9,7 +9,7 @@ type Props = {
   offset?: string[]
 }
 
-export default function MotionSection({
+export default function MotionDiv({
   classNames = '',
   offset,
   children,
@@ -23,8 +23,8 @@ export default function MotionSection({
   const opacity = useTransform(scrollYProgress, [0, 1], [1.5, 0])
 
   return (
-    <motion.section ref={ref} style={{ opacity }} className={`${classNames}`}>
+    <motion.div ref={ref} style={{ opacity }} className={`${classNames}`}>
       {children}
-    </motion.section>
+    </motion.div>
   )
 }
