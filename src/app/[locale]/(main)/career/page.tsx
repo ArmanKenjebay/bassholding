@@ -10,6 +10,7 @@ import careerImage4 from '@/../public/images/career4.webp'
 import React from 'react'
 import PageWrapper from '@/app/[locale]/_components/PageWrapper'
 import MotionDiv from '@/app/[locale]/_components/MotionDiv'
+import DivTransform from '@/app/[locale]/_components/DivTransform'
 
 export default async function Career({
   params: { locale },
@@ -92,7 +93,7 @@ export default async function Career({
       <div className="xl:px-[60px] sm:px-5 px-5 sm:mb-52 mb-5">
         <div className="flex h-full flex-col gap-y-14">
           {careers.map(({ text, image, content }) => (
-            <div
+            <DivTransform
               key={text}
               className="flex h-full lg:gap-x-20 md:gap-x-14 sm:gap-x-10 gap-y-3 sm:odd:flex-row sm:even:flex-row-reverse flex-col justify-between items-center"
             >
@@ -119,7 +120,7 @@ export default async function Career({
                   {content}
                 </span>
               </div>
-            </div>
+            </DivTransform>
           ))}
         </div>
       </div>
