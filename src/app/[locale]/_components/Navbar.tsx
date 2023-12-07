@@ -12,6 +12,7 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/navbar'
+import CircleIndicator from '@/app/[locale]/_components/CircleIndicator'
 
 export default function CustomNavbar({
   params: { dictionary, locale, modalDictionary },
@@ -42,6 +43,8 @@ export default function CustomNavbar({
 
   return (
     <>
+      <CircleIndicator />
+
       <Navbar
         isBlurred={false}
         maxWidth="full"
