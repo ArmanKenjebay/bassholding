@@ -34,7 +34,7 @@ export default async function Layout({ params: { locale }, children }: Props) {
           locale,
         }}
       />
-      <main className={`flex flex-col mx-auto max-w-screen-2xl`}>
+      <main className={`flex flex-col mx-auto max-w-screen-2xl scroll-smooth`}>
         {children}
       </main>
       <Footer
