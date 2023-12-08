@@ -1,34 +1,69 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { ReactNode } from 'react'
+import { motion, useInView } from 'framer-motion'
+import { ReactNode, useRef } from 'react'
+
+type ViewPortType = {
+  amount: number
+}
+
+type XOpacity = {
+  x: number
+  opacity: number
+}
+
+type AnimationType = {
+  hidden: XOpacity
+  visible: XOpacity
+}
+
+type TransitionType = {
+  duration: number
+  delay: number
+}
 
 type Props = {
   children: ReactNode
   className?: string
+  once?: boolean
+  viewport?: Partial<ViewPortType>
+  animation?: Partial<AnimationType>
+  transition?: Partial<TransitionType>
 }
 
-export default function DivTransform({ className = '', children }: Props) {
-  const animation = {
+export default function DivTransform({
+  className = '',
+  transition = {
+    duration: 1,
+    delay: 0.5,
+  },
+  animation = {
     hidden: {
       x: -100,
       opacity: 0,
     },
-    visible: (custom: number) => ({
+    visible: {
       x: 0,
       opacity: 1,
-      transition: { delay: custom * 0.2 },
-    }),
-  }
+    },
+  },
+  viewport = {
+    amount: 0.7,
+  },
+  once = false,
+  children,
+}: Props) {
+  const ref = useRef(null)
 
   return (
     <motion.div
+      ref={ref}
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ amount: 0.7 }}
+      viewport={{ ...viewport, once: once }}
       variants={animation}
-      custom={2}
+      transition={transition}
     >
       {children}
     </motion.div>

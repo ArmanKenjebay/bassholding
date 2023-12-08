@@ -17,6 +17,7 @@ import { getNews } from '@/get-api'
 import PageWrapper from '@/app/[locale]/_components/PageWrapper'
 import MotionDiv from '@/app/[locale]/_components/MotionDiv'
 import Reveal from '@/app/[locale]/_components/Reveal'
+import DivTransform from '@/app/[locale]/_components/DivTransform'
 
 export default async function Home({
   params: { locale },
@@ -32,7 +33,12 @@ export default async function Home({
       <PageWrapper>
         <MotionDiv>
           <div className="lg:min-h-[600px] flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-0 mb-8">
-            <div className="flex flex-col gap-y-3 justify-end px-5 sm:pb-10 lg:pb-24 sm:px-6 md:px-[60px]">
+            <DivTransform
+              transition={{ duration: 1, delay: 1 }}
+              viewport={{ amount: 1 }}
+              once
+              className="flex flex-col gap-y-3 justify-end px-5 sm:pb-10 lg:pb-24 sm:px-6 md:px-[60px]"
+            >
               <ImageNext
                 as={Image}
                 className="lg:w-[336px] lg:h-[83px] w-[168px] h-[42px]"
@@ -50,7 +56,7 @@ export default async function Home({
                   {dictionary.main['text-under-photo']}
                 </span>
               </div>
-            </div>
+            </DivTransform>
             <div className="flex h-full">
               <HomeBackgroundImage
                 image={homeImg}
