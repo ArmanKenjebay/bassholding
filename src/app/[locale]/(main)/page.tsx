@@ -124,7 +124,10 @@ export default async function Home({
             {news.map((n, index) => (
               <div key={index}>
                 {index <= 3 && (
-                  <>
+                  <DivTransform
+                    viewport={{ once: true, amount: 0.25 }}
+                    transition={{ delay: 0.1, duration: 0.5 }}
+                  >
                     <Divider className="my-2 bg-white" />
                     <div className={`py-[27px]`}>
                       <NewsLine
@@ -135,7 +138,7 @@ export default async function Home({
                         chip={n.chips.map((c) => c[locale])[0]}
                       />
                     </div>
-                  </>
+                  </DivTransform>
                 )}
               </div>
             ))}
