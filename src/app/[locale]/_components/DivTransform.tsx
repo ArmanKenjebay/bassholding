@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ReactNode, useRef } from 'react'
+import { ReactNode, useEffect, useRef } from 'react'
+import useBreakpoint from '@/app/[locale]/_hooks/useBreakpoint'
 
 type ViewPortType = {
   amount: number
@@ -56,15 +57,30 @@ export default function DivTransform({
 }: Props) {
   const ref = useRef(null)
 
+  const windowSize = useBreakpoint()
+
+  const defaultAnimation = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+    },
+  }
+  const defaultTransition = { duration: 1, delay: 0.5 }
+  const defaultViewport = { amount: 1, once: true }
+
   return (
     <motion.div
       ref={ref}
-      className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={viewport}
-      variants={animation}
-      transition={transition}
+      className={className}
+      variants={animation ? animation : defaultAnimation}
+      viewport={viewport ? viewport : defaultViewport}
+      transition={transition ? transition : defaultTransition}
     >
       {children}
     </motion.div>

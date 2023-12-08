@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ReactNode } from 'react'
+import { ReactNode, useEffect, useRef } from 'react'
+import useBreakpoint from '@/app/[locale]/_hooks/useBreakpoint'
 
 type ViewPortType = {
   amount?: number
@@ -45,14 +46,26 @@ export default function Reveal({
   },
   viewport = { amount: 1, once: true },
 }: Props) {
+  const ref = useRef(null)
+
+  const windowSize = useBreakpoint()
+
+  const defaultAnimation = {
+    hidden: { opacity: 0, y: 75 },
+    visible: { opacity: 1, y: 0 },
+  }
+  const defaultTransition = { duration: 1, delay: 0.5 }
+  const defaultViewport = { amount: 1, once: true }
+
   return (
     <motion.div
-      className={className}
-      variants={animation}
-      transition={transition}
-      viewport={viewport}
+      ref={ref}
       initial="hidden"
       whileInView="visible"
+      className={className}
+      variants={animation ? animation : defaultAnimation}
+      viewport={viewport ? viewport : defaultViewport}
+      transition={transition ? transition : defaultTransition}
     >
       {children}
     </motion.div>
