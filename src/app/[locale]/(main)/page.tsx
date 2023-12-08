@@ -63,11 +63,11 @@ export default async function Home({
                 height={2120}
                 className={`w-full h-[294px] sm:h-[380px] sm:w-[210px] md:h-[480px] md:w-[300px] lg:h-[640px] lg:w-[340px] xl:w-[564px] xl:h-[700px]`}
               >
-                {dictionary.main['text-photo'].split('.').map((text) => (
+                {dictionary.main['text-photo'].split('.').map((text, index) => (
                   <Reveal
-                    className="block lg:text-4xl xl:text-4xl font-[250]"
-                    transition={{ duration: 1, delay: 1.75 }}
+                    transition={{ duration: 1, delay: 1.75 + index * 0.5 }}
                     viewport={{ amount: 1, once: true }}
+                    className="block lg:text-4xl xl:text-4xl font-[250]"
                   >
                     {text}
                   </Reveal>
