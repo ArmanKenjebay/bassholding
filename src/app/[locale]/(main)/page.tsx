@@ -16,6 +16,7 @@ import HomeBackgroundImage from '@/app/[locale]/_components/HomeBackgroundImage'
 import { getNews } from '@/get-api'
 import PageWrapper from '@/app/[locale]/_components/PageWrapper'
 import MotionDiv from '@/app/[locale]/_components/MotionDiv'
+import Reveal from '@/app/[locale]/_components/Reveal'
 
 export default async function Home({
   params: { locale },
@@ -58,9 +59,11 @@ export default async function Home({
                 className={`w-full h-[294px] sm:h-[380px] sm:w-[210px] md:h-[480px] md:w-[300px] lg:h-[640px] lg:w-[340px] xl:w-[564px] xl:h-[700px]`}
               >
                 {dictionary.main['text-photo'].split('.').map((text) => (
-                  <span className="block lg:text-4xl xl:text-4xl font-[250]">
-                    {text}
-                  </span>
+                  <Reveal>
+                    <span className="block lg:text-4xl xl:text-4xl font-[250]">
+                      {text}
+                    </span>
+                  </Reveal>
                 ))}
               </HomeBackgroundImage>
             </div>
