@@ -20,6 +20,7 @@ import ermekImage from '@/../public/images/ermek.png'
 import PersonalCard from '@/app/[locale]/_components/PersonalCard'
 import PageWrapper from '@/app/[locale]/_components/PageWrapper'
 import MotionDiv from '@/app/[locale]/_components/MotionDiv'
+import Reveal from '@/app/[locale]/_components/Reveal'
 
 export default async function About({
   params: { locale },
@@ -107,8 +108,11 @@ export default async function About({
                 textTransform: 'uppercase',
               }}
             >
-              {dictionary.about.human_value}
+              <Reveal viewport={{ once: true }}>
+                {dictionary.about.human_value}
+              </Reveal>
             </span>
+
             <Image
               radius="none"
               src={aboutImage.src}
@@ -128,11 +132,21 @@ export default async function About({
         <div className="xl:px-[60px] sm:px-5 px-5 sm:mb-10 mb-5 xl:mb-[70px]">
           <div className="flex flex-col sm:w-3/4 w-full">
             <span className="xl:text-[48px] text-[28px] font-[400] mb-[10px] leading-normal">
-              {dictionary.about.our_values}
+              <Reveal
+                viewport={{ amount: 0.5, once: true }}
+                transition={{ delay: 0.1, duration: 1 }}
+              >
+                {dictionary.about.our_values}
+              </Reveal>
             </span>
-            <span className="xl:text-[32px] text-base font-[300] leading-normal">
-              {dictionary.about.our_values_principles}
-            </span>
+            <Reveal
+              viewport={{ amount: 0.8, once: true }}
+              transition={{ delay: 0.8, duration: 1 }}
+            >
+              <span className="xl:text-[32px] text-base font-[300] leading-normal">
+                {dictionary.about.our_values_principles}
+              </span>
+            </Reveal>
           </div>
         </div>
 

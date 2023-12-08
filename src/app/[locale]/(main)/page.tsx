@@ -64,7 +64,10 @@ export default async function Home({
                 className={`w-full h-[294px] sm:h-[380px] sm:w-[210px] md:h-[480px] md:w-[300px] lg:h-[640px] lg:w-[340px] xl:w-[564px] xl:h-[700px]`}
               >
                 {dictionary.main['text-photo'].split('.').map((text) => (
-                  <Reveal>
+                  <Reveal
+                    transition={{ duration: 1, delay: 1.75 }}
+                    viewport={{ once: true }}
+                  >
                     <span className="block lg:text-4xl xl:text-4xl font-[250]">
                       {text}
                     </span>
