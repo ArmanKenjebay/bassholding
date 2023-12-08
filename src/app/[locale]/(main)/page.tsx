@@ -35,8 +35,7 @@ export default async function Home({
           <div className="lg:min-h-[600px] flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-0 mb-8">
             <DivTransform
               transition={{ duration: 1, delay: 1 }}
-              viewport={{ amount: 1 }}
-              once
+              viewport={{ amount: 0.25, once: true }}
               className="flex flex-col gap-y-3 justify-end px-5 sm:pb-10 lg:pb-24 sm:px-6 md:px-[60px]"
             >
               <ImageNext

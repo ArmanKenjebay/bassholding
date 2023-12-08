@@ -1,10 +1,11 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ReactNode, useRef } from 'react'
 
 type ViewPortType = {
   amount: number
+  once: boolean
 }
 
 type XOpacity = {
@@ -25,7 +26,7 @@ type TransitionType = {
 type Props = {
   children: ReactNode
   className?: string
-  once?: boolean
+
   viewport?: Partial<ViewPortType>
   animation?: Partial<AnimationType>
   transition?: Partial<TransitionType>
@@ -49,8 +50,8 @@ export default function DivTransform({
   },
   viewport = {
     amount: 0.7,
+    once: false,
   },
-  once = false,
   children,
 }: Props) {
   const ref = useRef(null)
@@ -61,7 +62,7 @@ export default function DivTransform({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ ...viewport, once: once }}
+      viewport={viewport}
       variants={animation}
       transition={transition}
     >
