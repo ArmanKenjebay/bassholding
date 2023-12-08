@@ -41,7 +41,7 @@ export default function Reveal({
     duration: 1,
     delay: 0.5,
   },
-  viewport = { amount: 1, once: false },
+  viewport = { amount: 1, once: true },
 }: Props) {
   return (
     <motion.div

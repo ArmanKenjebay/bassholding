@@ -21,6 +21,7 @@ import PersonalCard from '@/app/[locale]/_components/PersonalCard'
 import PageWrapper from '@/app/[locale]/_components/PageWrapper'
 import MotionDiv from '@/app/[locale]/_components/MotionDiv'
 import Reveal from '@/app/[locale]/_components/Reveal'
+import DivTransform from '@/app/[locale]/_components/DivTransform'
 
 export default async function About({
   params: { locale },
@@ -153,21 +154,23 @@ export default async function About({
         <div className="sm:px-5 px-5 mb-10 xl:mb-[182px]">
           <div className="h-full grid lg:grid-cols-4 grid-cols-2 xl:gap-x-[40px] gap-[10px]">
             {feels.map(({ title, image, classes }, index) => (
-              <div
-                key={index}
-                className="relative overflow-hidden h-[101px] sm:w-full md:h-[200px] xl:h-[287px]"
-              >
-                <span className="z-10 uppercase font-[250] absolute top-3/4 sm:top-[60%] block w-full h-full text-xs sm:text-base lg:text-xl xl:text-3xl text-center">
-                  {title}
-                </span>
-                <NextImage
-                  src={image}
-                  alt=""
-                  className={`w-full h-full object-cover md:rounded-[120px] rounded-[30px] filter brightness-[.65] ${
-                    classes ? classes : ''
-                  }`}
-                />
-              </div>
+              <DivTransform>
+                <div
+                  key={index}
+                  className="relative overflow-hidden h-[101px] sm:w-full md:h-[200px] xl:h-[287px]"
+                >
+                  <span className="z-10 uppercase font-[250] absolute top-3/4 sm:top-[60%] block w-full h-full text-xs sm:text-base lg:text-xl xl:text-3xl text-center">
+                    {title}
+                  </span>
+                  <NextImage
+                    src={image}
+                    alt=""
+                    className={`w-full h-full object-cover md:rounded-[120px] rounded-[30px] filter brightness-[.65] ${
+                      classes ? classes : ''
+                    }`}
+                  />
+                </div>
+              </DivTransform>
             ))}
           </div>
         </div>

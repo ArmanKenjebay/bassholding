@@ -50,7 +50,7 @@ export default function DivTransform({
   },
   viewport = {
     amount: 0.7,
-    once: false,
+    once: true,
   },
   children,
 }: Props) {
