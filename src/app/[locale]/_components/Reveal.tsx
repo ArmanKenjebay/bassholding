@@ -26,6 +26,7 @@ type TransitionType = {
 
 type Props = {
   children: ReactNode
+  className?: string
   viewport?: Partial<ViewPortType>
   animation?: Partial<AnimationType>
   transition?: Partial<TransitionType>
@@ -33,6 +34,7 @@ type Props = {
 
 export default function Reveal({
   children,
+  className,
   animation = {
     hidden: { opacity: 0, y: 75 },
     visible: { opacity: 1, y: 0 },
@@ -45,6 +47,7 @@ export default function Reveal({
 }: Props) {
   return (
     <motion.div
+      className={className}
       variants={animation}
       transition={transition}
       viewport={viewport}

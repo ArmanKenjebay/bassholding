@@ -35,7 +35,7 @@ export default async function Home({
           <div className="lg:min-h-[600px] flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-0 mb-8">
             <DivTransform
               transition={{ duration: 1, delay: 1 }}
-              viewport={{ amount: 0.25 }}
+              viewport={{ amount: 0.25, once: true }}
               className="flex flex-col gap-y-3 justify-end px-5 sm:pb-10 lg:pb-24 sm:px-6 md:px-[60px]"
             >
               <ImageNext
@@ -64,10 +64,12 @@ export default async function Home({
                 className={`w-full h-[294px] sm:h-[380px] sm:w-[210px] md:h-[480px] md:w-[300px] lg:h-[640px] lg:w-[340px] xl:w-[564px] xl:h-[700px]`}
               >
                 {dictionary.main['text-photo'].split('.').map((text) => (
-                  <Reveal transition={{ duration: 1, delay: 1.75 }}>
-                    <span className="block lg:text-4xl xl:text-4xl font-[250]">
-                      {text}
-                    </span>
+                  <Reveal
+                    className="block lg:text-4xl xl:text-4xl font-[250]"
+                    transition={{ duration: 1, delay: 1.75 }}
+                    viewport={{ amount: 1, once: true }}
+                  >
+                    {text}
                   </Reveal>
                 ))}
               </HomeBackgroundImage>
@@ -122,12 +124,13 @@ export default async function Home({
               {dictionary.news.title}
             </span>
             {news.map((n, index) => (
-              <div key={index}>
+              <DivTransform
+                key={index}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ delay: 0.1, duration: 0.5 }}
+              >
                 {index <= 3 && (
-                  <DivTransform
-                    viewport={{ once: true, amount: 0.25 }}
-                    transition={{ delay: 0.1, duration: 0.5 }}
-                  >
+                  <>
                     <Divider className="my-2 bg-white" />
                     <div className={`py-[27px]`}>
                       <NewsLine
@@ -138,9 +141,9 @@ export default async function Home({
                         chip={n.chips.map((c) => c[locale])[0]}
                       />
                     </div>
-                  </DivTransform>
+                  </>
                 )}
-              </div>
+              </DivTransform>
             ))}
           </div>
         </MotionDiv>

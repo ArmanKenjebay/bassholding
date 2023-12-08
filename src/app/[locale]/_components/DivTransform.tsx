@@ -49,7 +49,7 @@ export default function DivTransform({
     },
   },
   viewport = {
-    amount: 0.7,
+    amount: 1,
     once: true,
   },
   children,

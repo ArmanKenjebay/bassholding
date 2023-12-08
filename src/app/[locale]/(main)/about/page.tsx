@@ -109,9 +109,7 @@ export default async function About({
                 textTransform: 'uppercase',
               }}
             >
-              <Reveal viewport={{ once: true }}>
-                {dictionary.about.human_value}
-              </Reveal>
+              <Reveal>{dictionary.about.human_value}</Reveal>
             </span>
 
             <Image
@@ -178,7 +176,14 @@ export default async function About({
 
       <div className="xl:px-[60px] sm:px-5 px-5 mb-10">
         <div className="grid gap-x-3 gap-y-5 grid-cols-2 sm:gap-y-10 sm:grid-cols-3 md:grid-cols-4 xl:gap-y-14 xl:gap-x-10">
-          <div className="col-span-2 md:col-span-2 flex justify-center flex-col gap-y-3 ">
+          <Reveal
+            transition={{
+              duration: 1,
+              delay: 0.1,
+            }}
+            viewport={{ once: true, amount: 0.5 }}
+            className="col-span-2 md:col-span-2 flex justify-center flex-col gap-y-3"
+          >
             <span className="text-2xl md:text-2xl lg:text-3xl xl:text-[48px] mb-2 xl:mb-14">
               {dictionary.about.our_team}
             </span>
@@ -190,14 +195,22 @@ export default async function About({
             >
               {dictionary.about.team_contribution}
             </span>
-          </div>
+          </Reveal>
           {personals.map(({ name, position, src }) => (
-            <PersonalCard
-              key={name}
-              src={src}
-              name={name}
-              position={position}
-            />
+            <DivTransform
+              transition={{
+                duration: 1,
+                delay: 0.85,
+              }}
+              viewport={{ once: true, amount: 0.125 }}
+            >
+              <PersonalCard
+                key={name}
+                src={src}
+                name={name}
+                position={position}
+              />
+            </DivTransform>
           ))}
         </div>
       </div>
