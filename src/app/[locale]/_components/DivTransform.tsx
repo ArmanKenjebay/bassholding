@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ReactNode, useEffect, useRef } from 'react'
+import { ReactNode, useRef } from 'react'
 import useBreakpoint from '@/app/[locale]/_hooks/useBreakpoint'
 
 type ViewPortType = {
@@ -78,9 +78,15 @@ export default function DivTransform({
       initial="hidden"
       whileInView="visible"
       className={className}
-      variants={animation ? animation : defaultAnimation}
-      viewport={viewport ? viewport : defaultViewport}
-      transition={transition ? transition : defaultTransition}
+      variants={
+        animation ? { ...defaultAnimation, ...animation } : defaultAnimation
+      }
+      viewport={
+        viewport ? { ...defaultViewport, ...viewport } : defaultViewport
+      }
+      transition={
+        transition ? { ...defaultTransition, ...transition } : defaultTransition
+      }
     >
       {children}
     </motion.div>

@@ -66,7 +66,6 @@ export default async function Home({
                 {dictionary.main['text-photo'].split('.').map((text, index) => (
                   <Reveal
                     transition={{ duration: 1, delay: 1.75 + index * 0.5 }}
-                    viewport={{ amount: 1, once: true }}
                     className="block lg:text-4xl xl:text-4xl font-[250]"
                   >
                     {text}
