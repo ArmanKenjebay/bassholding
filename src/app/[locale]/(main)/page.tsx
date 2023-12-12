@@ -66,7 +66,8 @@ export default async function Home({
                 {dictionary.main['text-photo'].split('.').map((text, index) => (
                   <Reveal
                     transition={{ duration: 1, delay: 1.75 + index * 0.5 }}
-                    className="block lg:text-4xl xl:text-4xl font-[250]"
+                    viewport={{ amount: 0 }}
+                    className="lg:text-4xl xl:text-4xl font-[250]"
                   >
                     {text}
                   </Reveal>
@@ -100,7 +101,7 @@ export default async function Home({
         <MotionDiv>
           <div className="sm:px-5 xl:px-[60px] px-5 sm:mb-10 mb-5">
             <div className="flex justify-center sm:flex-row flex-col">
-              {cards.map((card, index) => (
+              {cards.map((card) => (
                 <DirectionCard
                   key={card.title}
                   locale={locale}
