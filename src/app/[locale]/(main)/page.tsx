@@ -20,13 +20,14 @@ import Reveal from '@/app/[locale]/_components/Reveal'
 import DivTransform from '@/app/[locale]/_components/DivTransform'
 
 export default async function Home({
-  params: { locale },
-}: {
+                                     params: { locale },
+                                   }: {
   params: { locale: Locale }
 }) {
   const dictionary = await getDictionary(locale)
   const news = await getNews().then((res) => res)
   const cards = getDirections()
+
 
   return (
     <section className="flex flex-col w-full h-full">
@@ -63,7 +64,7 @@ export default async function Home({
                 height={2120}
                 className={`w-full h-[294px] sm:h-[380px] sm:w-[210px] md:h-[480px] md:w-[300px] lg:h-[640px] lg:w-[340px] xl:w-[564px] xl:h-[700px]`}
               >
-                {dictionary.main['text-photo'].split('.').map((text, index) => (
+                {[dictionary.main['text-build'], dictionary.main['text-develop'], dictionary.main['text-inspire']].map((text, index) => (
                   <Reveal
                     transition={{ duration: 1, delay: 1.75 + index * 0.5 }}
                     viewport={{ amount: 0 }}

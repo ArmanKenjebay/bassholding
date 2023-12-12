@@ -2,7 +2,9 @@
   "main": {
     "title": "Bassholding",
     "description": "Bassholding description",
-    "text-photo": "BUILD,.DEVELOP,.INSPIRE.",
+    "text-build": "BUILD,",
+    "text-develop": "DEVELOP,",
+    "text-inspire": "INSPIRE.",
     "text-under-photo": "A group of companies engaging in investments into various sectors of the economy"
   },
   "about": {
