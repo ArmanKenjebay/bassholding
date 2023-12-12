@@ -8,6 +8,9 @@ import { Spinner } from '@nextui-org/spinner'
 import { Chip } from '@nextui-org/chip'
 import { useRouter } from 'next-intl/client'
 import CustomPagination from '@/app/[locale]/_components/CustomPagination'
+import { Card } from '@nextui-org/react'
+import { Skeleton } from '@nextui-org/skeleton'
+import SkeletonNews from '@/app/[locale]/_components/SkeletonNews'
 
 const fetchNewsData = async () => {
   try {
@@ -113,8 +116,15 @@ export default function NewsPreviews({ locale }: Props) {
           <CustomPagination handlePage={handlePage} total={total} />
         </>
       ) : (
-        <div className={`flex w-full h-full justify-center items-center`}>
-          <Spinner size={`lg`} color="warning" />
+        <div
+          className={`grid grid-cols-2 gap-3 w-full h-full justify-center items-center`}
+        >
+          {[...Array(4)].map((_, i) => (
+            <SkeletonNews
+              key={i}
+              classNames={`xl:w-[400px] lg:w-[200px] w-[150px]`}
+            />
+          ))}
         </div>
       )}
     </div>
