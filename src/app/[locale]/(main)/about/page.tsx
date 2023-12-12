@@ -109,7 +109,9 @@ export default async function About({
                 textTransform: 'uppercase',
               }}
             >
-              <Reveal>{dictionary.about.human_value}</Reveal>
+              <Reveal viewport={{ amount: 0 }}>
+                {dictionary.about.human_value}
+              </Reveal>
             </span>
 
             <Image
