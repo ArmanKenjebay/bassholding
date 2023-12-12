@@ -50,8 +50,6 @@ export default function Reveal({
 
   const windowSize = useBreakpoint()
 
-  console.log('windowSize.width', windowSize.width)
-
   const defaultAnimation = {
     hidden: { opacity: 0, y: 75 },
     visible: { opacity: 1, y: 0 },
