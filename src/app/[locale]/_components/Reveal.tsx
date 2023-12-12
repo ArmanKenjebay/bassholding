@@ -57,7 +57,7 @@ export default function Reveal({
     visible: { opacity: 1, y: 0 },
   }
   const defaultTransition = { duration: 1, delay: 0.5 }
-  const defaultViewport = { amount: 1, once: true }
+  const defaultViewport = { amount: 0, once: true }
 
   return (
     <motion.div
