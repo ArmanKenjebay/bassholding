@@ -25,7 +25,7 @@ export async function generateMetadata({
 
 export default async function Layout({ params, children }: Params) {
   return (
-    <section className={`mt-20 flex flex-col`}>
+    <section className={`mt-32 flex flex-col`}>
       <PageWrapper>{children}</PageWrapper>
     </section>
   )
