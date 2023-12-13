@@ -76,40 +76,43 @@ export default function NewsPreviews({ locale }: Props) {
     <div className={`flex flex-col gap-y-10`}>
       {newsDataPaginated ? (
         <>
-          <div className="grid gap-[40px] 2xl:grid-cols-[510px_510px] xl:grid-cols-[420px_420px] lg:grid-cols-[300px_300px] md:grid-cols-[250px_250px] sm:grid-cols-[200px_200px] grid-cols-1">
+          <div
+            className="grid gap-[40px] 2xl:grid-cols-[510px_510px] xl:grid-cols-[420px_420px] lg:grid-cols-[300px_300px] md:grid-cols-[250px_250px] sm:grid-cols-[200px_200px] grid-cols-1">
             {newsDataPaginated
               ? newsDataPaginated.map((news) => (
-                  <div
-                    onClick={() => handleRedirect(news.id, locale)}
-                    key={news.id}
-                    className="cursor-pointer transition duration-200 ease-in-out group hover:scale-[.98] overflow-hidden flex-1 flex flex-col"
-                  >
-                    <Image
-                      className="transition duration-200 ease-in-out rounded-3xl 2xl:h-[300px] xl:h-[280px] lg:h-[180px] md:h-[120px] sm:h-[100px] w-full h-[200px] object-cover md:mb-10 mb-5"
-                      src={news.baseImg}
-                      width={510}
-                      height={447}
-                      alt={`bassholding news image`}
-                    />
+                <div
+                  onClick={() => handleRedirect(news.id, locale)}
+                  key={news.id}
+                  className="cursor-pointer transition duration-200 ease-in-out group hover:scale-[.98] overflow-hidden flex-1 flex flex-col"
+                >
+                  <Image
+                    className="transition duration-200 ease-in-out rounded-3xl 2xl:h-[300px] xl:h-[280px] lg:h-[180px] md:h-[120px] sm:h-[100px] w-full h-[200px] object-cover md:mb-10 mb-5"
+                    src={news.baseImg}
+                    width={510}
+                    height={447}
+                    alt={`bassholding news image`}
+                  />
+                  {news.chips.map((c) =>
                     <Chip
                       variant="bordered"
                       color="warning"
                       className={`md:mb-5 mb-2 xl:text-[16px]`}
                     >
-                      {news.chips.map((c) => c[locale])[0]}
-                    </Chip>
-                    <span
-                      className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[24px] font-[300] mb-[45px] h-14 w-full whitespace-pre-wrap truncate`}
-                    >
+                      {c[locale]}
+                    </Chip>)
+                  }
+                  <span
+                    className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[24px] font-[300] mb-[45px] h-14 w-full whitespace-pre-wrap truncate`}
+                  >
                       {news.title[locale]}
                     </span>
-                    <span
-                      className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[16px] font-[300]`}
-                    >
+                  <span
+                    className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[16px] font-[300]`}
+                  >
                       {news.date[locale]}
                     </span>
-                  </div>
-                ))
+                </div>
+              ))
               : 'No data'}
           </div>
 

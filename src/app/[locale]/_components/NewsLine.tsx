@@ -3,6 +3,7 @@
 import React from 'react'
 import { Chip } from '@nextui-org/chip'
 import { useRouter } from 'next-intl/client'
+import Span from '@/app/[locale]/_components/Span'
 
 type Props = {
   locale: string
@@ -20,23 +21,23 @@ export default function NewsLine({ locale, id, content, chip, date }: Props) {
   return (
     <div className="w-full grid grid-cols-[3fr_1fr_1fr_50px] gap-x-5 gap-y-3 items-center justify-center px-1">
       <div className="flex justify-start sm:col-span-1 col-span-4">
-        <span className="text-xs md:text-[20px] font-[300] leading-normal">
-          {content}
-        </span>
+        <Span classNames={`text-xs md:text-[20px] font-[300] leading-normal`}>{content}</Span>
       </div>
 
       <div className="flex justify-center gap-x-3 sm:col-span-1 col-span-2">
-        <Chip
-          variant="bordered"
-          color="warning"
-          className={`text-xs lg:text-base font-[400]`}
-          classNames={{
-            base: 'truncate',
-            content: 'p-0 sm:p-1 truncate',
-          }}
-        >
-          {chip}
-        </Chip>
+        {chip &&
+          (<Chip
+            variant="bordered"
+            color="warning"
+            className={`text-xs lg:text-base font-[400]`}
+            classNames={{
+              base: 'truncate',
+              content: 'p-0 sm:p-1 truncate',
+            }}
+          >
+            {chip}
+          </Chip>)
+        }
       </div>
 
       <div
