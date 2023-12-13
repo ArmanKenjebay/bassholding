@@ -11,6 +11,7 @@ import CustomPagination from '@/app/[locale]/_components/CustomPagination'
 import { Card } from '@nextui-org/react'
 import { Skeleton } from '@nextui-org/skeleton'
 import SkeletonNews from '@/app/[locale]/_components/SkeletonNews'
+import Span from '@/app/[locale]/_components/Span'
 
 const fetchNewsData = async () => {
   try {
@@ -92,24 +93,20 @@ export default function NewsPreviews({ locale }: Props) {
                     height={447}
                     alt={`bassholding news image`}
                   />
-                  {news.chips.map((c) =>
-                    <Chip
-                      variant="bordered"
-                      color="warning"
-                      className={`md:mb-5 mb-2 xl:text-[16px]`}
-                    >
-                      {c[locale]}
-                    </Chip>)
-                  }
+                  {news.chips.map((c) => (
+                    c[locale] ? <Chip variant="bordered"
+                                      color="warning"
+                                      className={`md:mb-5 mb-2 xl:text-[16px]`}>{c[locale]}</Chip> : <Span classNames={'w-1/4'}></Span>
+                  ))}
                   <span
                     className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[24px] font-[300] mb-[45px] h-14 w-full whitespace-pre-wrap truncate`}
                   >
-                      {news.title[locale]}
+                    <Span classNames={``}>{news.title[locale]}</Span>
                     </span>
                   <span
                     className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[16px] font-[300]`}
                   >
-                      {news.date[locale]}
+                    <Span classNames={`${!news.date[locale] && 'w-1/4'}`}>{news.date[locale]}</Span>
                     </span>
                 </div>
               ))
