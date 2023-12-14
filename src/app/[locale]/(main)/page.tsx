@@ -19,11 +19,12 @@ import MotionDiv from '@/app/[locale]/_components/MotionDiv'
 import Reveal from '@/app/[locale]/_components/Reveal'
 import DivTransform from '@/app/[locale]/_components/DivTransform'
 
-export default async function Home({
-                                     params: { locale },
-                                   }: {
+
+type Props = {
   params: { locale: Locale }
-}) {
+}
+
+export default async function Home({ params: { locale } }: Props) {
   const dictionary = await getDictionary(locale)
   const news = await getNews().then((res) => res)
   const cards = getDirections()
