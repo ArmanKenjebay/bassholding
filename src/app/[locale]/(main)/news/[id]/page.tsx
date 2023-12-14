@@ -101,9 +101,22 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
               className={`xl:text-[20px] inline-block whitespace-pre-line leading-normal text-sm lg:text-2xl font-[200] mb-5`}
             >
               {data.content && data.content[locale]}
-            </span> : <Skeleton className={`inline-block w-full h-4 rounded-lg`}>
-              <div className={`w-full h-full`}></div>
-            </Skeleton>}
+            </span> : (
+              <>
+                <Skeleton className={`inline-block w-full h-4 rounded-lg`}>
+                  <div className={`w-full h-full`}></div>
+                </Skeleton>
+                <Skeleton className={`inline-block w-full h-4 rounded-lg`}>
+                  <div className={`w-full h-full`}></div>
+                </Skeleton>
+                <Skeleton className={`inline-block w-full h-4 rounded-lg`}>
+                  <div className={`w-full h-full`}></div>
+                </Skeleton>
+                <Skeleton className={`inline-block w-full h-4 rounded-lg`}>
+                  <div className={`w-full h-full`}></div>
+                </Skeleton>
+              </>
+              )}
 
 
             {data?.docsHref?.length && (
