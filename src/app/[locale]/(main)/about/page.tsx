@@ -185,7 +185,7 @@ export default async function About({
               duration: 1,
               delay: 0.1,
             }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ amount: 0.5 }}
             className="col-span-2 md:col-span-2 flex justify-center flex-col gap-y-3"
           >
             <span className="text-2xl md:text-2xl lg:text-3xl xl:text-[48px] mb-2 xl:mb-14">
@@ -206,7 +206,7 @@ export default async function About({
                 duration: 1,
                 delay: 0.85,
               }}
-              viewport={{ once: true, amount: 0.125 }}
+              viewport={{ amount: 0.125 }}
             >
               <PersonalCard
                 key={name}
