@@ -124,6 +124,9 @@ export default function CustomNavbar({
               <SelectItem key="ru" lang="ru" value="ru">
                 RU
               </SelectItem>
+              <SelectItem key="kk" lang="kk" value="kk">
+                KZ
+              </SelectItem>
             </Select>
           </div>
           <div className="hidden lg:flex md:items-center">
