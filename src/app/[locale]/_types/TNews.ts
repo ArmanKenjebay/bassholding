@@ -1,22 +1,23 @@
-import { TLocaleObject } from '@/app/[locale]/_types/TLocaleObject'
+import {TResponse} from "@/app/[locale]/_types/TResponse";
 
-export type TNews = {
-  news: TNewsData[]
+export interface TNewsData {
+    id: number;
+    attributes: {
+        title: string;
+        date: string;
+        content: string;
+        context?: string;
+        createdAt: string;
+        updatedAt: string;
+        publishedAt: string;
+        locale: string;
+        localizations: {
+            data: [];
+        };
+    };
 }
 
-export type TNewsData = {
-  id: string
-  title: TLocaleObject
-  context: TLocaleObject
-  content: TLocaleObject
-  date: TLocaleObject
-  image: {
-    preview: string
-    main: string
-    content: string
-    sub_content: string
-  }
-  chips: TLocaleObject[]
-  baseImg?: any
-  docsHref?: string[]
+export interface TNews extends TResponse<TNewsData[]> {
+
 }
+
