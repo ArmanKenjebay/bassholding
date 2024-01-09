@@ -12,12 +12,51 @@ export interface TNewsData {
         publishedAt: string;
         locale: string;
         localizations: {
-            data: [];
+            data: TNewsData[]
+        }
+    };
+}
+
+export interface TNewsImage {
+    data: {
+        id: number;
+        attributes: {
+            name: string;
+            alternativeText?: string; // Отмечен как опциональный
+            caption?: string; // Отмечен как опциональный
+            width: number;
+            height: number;
+            formats: {
+                thumbnail: {
+                    name: string;
+                    hash: string;
+                    ext: string;
+                    mime: string;
+                    path?: string; // Отмечен как опциональный
+                    width: number;
+                    height: number;
+                    size: number;
+                    url: string;
+                };
+            };
+            hash: string;
+            ext: string;
+            mime: string;
+            size: number;
+            url: string;
+            previewUrl?: string; // Отмечен как опциональный
+            provider: string;
+            provider_metadata?: any; // Могут быть разные типы данных
+            createdAt: string;
+            updatedAt: string;
         };
     };
 }
 
 export interface TNews extends TResponse<TNewsData[]> {
-
+    image_preview: TNewsImage
+    image_main: TNewsImage
+    image_content: TNewsImage
+    image_sub_content: TNewsImage
 }
 
