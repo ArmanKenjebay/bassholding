@@ -9,10 +9,10 @@ const news = {
     ) as Promise<TNews>,
 }
 
-export const getNews = async () =>
+export const getMockNews = async () =>
   await news
     .news()
     .then((n) => n.news.sort((a, b) => Number(b.id) - Number(a.id)))
 
-export const getNewsById = async (id: string) =>
+export const getMockNewsById = async (id: string) =>
   news.news().then((res) => res.news.find((n) => n.id === id))

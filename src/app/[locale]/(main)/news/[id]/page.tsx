@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { getNewsById } from '@/get-api'
+import { getMockNewsById } from '@/get-api'
 import { getDictionary } from '@/get-dictionary'
 import PrevNews from '@/app/[locale]/_components/PrevNews'
 import { Chip } from '@nextui-org/chip'
@@ -9,7 +9,7 @@ import PageWrapper from '@/app/[locale]/_components/PageWrapper'
 import { Skeleton } from '@nextui-org/skeleton'
 
 async function getData(id: string) {
-  const data = await getNewsById(id)
+  const data = await getMockNewsById(id)
   return { ...data }
 }
 

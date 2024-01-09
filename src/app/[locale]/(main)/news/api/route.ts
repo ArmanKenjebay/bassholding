@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getNews } from '@/get-api'
+import { getMockNews } from '@/get-api'
 
 export async function GET(request: NextRequest, response: NextResponse) {
   try {
-    const res = await getNews()
+    const res = await getMockNews()
 
     const response = res.map((el) => ({
       ...el,

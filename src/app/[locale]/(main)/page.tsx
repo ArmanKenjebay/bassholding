@@ -13,7 +13,7 @@ import Marquee from '@/app/[locale]/_components/Marquee'
 import NewsLine from '@/app/[locale]/_components/NewsLine'
 import getDirections from '@/app/[locale]/_variables/direction-cards'
 import HomeBackgroundImage from '@/app/[locale]/_components/HomeBackgroundImage'
-import { getNews } from '@/get-api'
+import { getMockNews } from '@/get-api'
 import PageWrapper from '@/app/[locale]/_components/PageWrapper'
 import MotionDiv from '@/app/[locale]/_components/MotionDiv'
 import Reveal from '@/app/[locale]/_components/Reveal'
@@ -26,7 +26,7 @@ type Props = {
 
 export default async function Home({ params: { locale } }: Props) {
   const dictionary = await getDictionary(locale)
-  const news = await getNews().then((res) => res)
+  const news = await getMockNews().then((res) => res)
   const cards = getDirections()
 
 
