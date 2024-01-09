@@ -2,7 +2,14 @@ import 'server-only'
 
 import {TNewsMock} from '@/app/[locale]/_types/TNewsMock'
 import {Locale} from "@/i18n-config";
-import {TNews} from "@/app/[locale]/_types/TNews";
+import {TNews, TNewsById} from "@/app/[locale]/_types/TNews";
+
+const token = process.env.NEXT_PUBLIC_TOKEN
+const api = process.env.NEXT_PUBLIC_BACKEND_API
+const headers = {
+    Authorization: `Bearer ${token}`,
+    'Content-Type': 'application/json'
+}
 
 const news = {
     news: () =>
@@ -21,18 +28,11 @@ export const getMockNewsById = async (id: string) =>
 
 
 export const getNews = async (locale: Locale): Promise<TNews> => {
-    const token = process.env.NEXT_PUBLIC_TOKEN
-    const api = process.env.NEXT_PUBLIC_BACKEND_API
+    const response = await fetch(`${api}/news?locale=${locale}&populate=*`, {headers})
+    return await response.json()
+}
 
-    const headers = {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json'
-    }
-
-    const res = await fetch(`${api}/news?populate=*&locale=${locale}`, {
-        headers
-    })
-
-    return res.json()
-
+export const getNewsById = async (locale: Locale, id: number): Promise<TNewsById> => {
+    const response = await fetch(`${api}/news/${id}?locale=${locale}&populate=*`, {headers})
+    return await response.json()
 }

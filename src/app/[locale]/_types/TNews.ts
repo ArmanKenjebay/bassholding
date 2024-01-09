@@ -6,7 +6,8 @@ export interface TNewsData {
         title: string;
         date: string;
         content: string;
-        context?: string;
+        context: string;
+        chips: string;
         createdAt: string;
         updatedAt: string;
         publishedAt: string;
@@ -60,3 +61,10 @@ export interface TNews extends TResponse<TNewsData[]> {
     image_sub_content: TNewsImage
 }
 
+
+export interface TNewsById extends TResponse<TNewsData> {
+    image_preview: TNewsImage
+    image_main: TNewsImage
+    image_content: TNewsImage
+    image_sub_content: TNewsImage
+}

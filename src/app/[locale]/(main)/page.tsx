@@ -13,7 +13,7 @@ import Marquee from '@/app/[locale]/_components/Marquee'
 import NewsLine from '@/app/[locale]/_components/NewsLine'
 import getDirections from '@/app/[locale]/_variables/direction-cards'
 import HomeBackgroundImage from '@/app/[locale]/_components/HomeBackgroundImage'
-import {getMockNews} from '@/get-api'
+import {getMockNews, getNews} from '@/get-api'
 import PageWrapper from '@/app/[locale]/_components/PageWrapper'
 import MotionDiv from '@/app/[locale]/_components/MotionDiv'
 import Reveal from '@/app/[locale]/_components/Reveal'
@@ -28,7 +28,7 @@ export default async function Home({params: {locale}}: Props) {
     const dictionary = await getDictionary(locale)
     const news = await getMockNews().then((res) => res)
     const cards = getDirections()
-
+    const post = await getNews(locale)
 
     return (
         <section className="flex flex-col w-full h-full">
@@ -126,28 +126,53 @@ export default async function Home({params: {locale}}: Props) {
             <span className="lg:text-4xl md:text-3xl text-2xl font-[250]">
               {dictionary.news.title}
             </span>
-                        {news.map((n, index) => (
-                            <DivTransform
-                                key={index}
-                                viewport={{amount: 0.25}}
-                                transition={{delay: 0.1, duration: 0.5}}
-                            >
-                                {index <= 3 && (
-                                    <>
-                                        <Divider className="my-2 bg-white"/>
-                                        <div className={`py-[27px]`}>
-                                            <NewsLine
-                                                locale={locale}
-                                                id={n.id}
-                                                content={n.title[locale]}
-                                                date={n.date[locale]}
-                                                chip={n.chips.map((c) => c[locale])[0]}
-                                            />
-                                        </div>
-                                    </>
-                                )}
-                            </DivTransform>
-                        ))}
+                        {post && post.data.length > 0 ? (
+                            post.data.map((n, index) => (
+                                <DivTransform
+                                    key={index}
+                                    viewport={{amount: 0.25}}
+                                    transition={{delay: 0.1, duration: 0.5}}
+                                >
+                                    {index <= 3 && (
+                                        <>
+                                            <Divider className="my-2 bg-white"/>
+                                            <div className={`py-[27px]`}>
+                                                <NewsLine
+                                                    locale={locale}
+                                                    id={n.id.toString()}
+                                                    content={n.attributes.title}
+                                                    date={n.attributes.date}
+                                                    chip={n.attributes.chips}
+                                                />
+                                            </div>
+                                        </>
+                                    )}
+                                </DivTransform>
+                            ))
+                        ) : (
+                            news.map((n, index) => (
+                                <DivTransform
+                                    key={index}
+                                    viewport={{amount: 0.25}}
+                                    transition={{delay: 0.1, duration: 0.5}}
+                                >
+                                    {index <= 3 && (
+                                        <>
+                                            <Divider className="my-2 bg-white"/>
+                                            <div className={`py-[27px]`}>
+                                                <NewsLine
+                                                    locale={locale}
+                                                    id={n.id}
+                                                    content={n.title[locale]}
+                                                    date={n.date[locale]}
+                                                    chip={n.chips.map((c) => c[locale])[0]}
+                                                />
+                                            </div>
+                                        </>
+                                    )}
+                                </DivTransform>
+                            ))
+                        )}
                     </div>
                 </MotionDiv>
 
