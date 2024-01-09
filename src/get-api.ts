@@ -27,8 +27,17 @@ export const getMockNewsById = async (id: string) =>
     news.news().then((res) => res.news.find((n) => n.id === id))
 
 
-export const getNews = async (locale: Locale): Promise<TNews> => {
-    const response = await fetch(`${api}/news?locale=${locale}&populate=*`, {headers})
+export const getNews = async (locale: Locale, pagination?: {page: string | string[], pageSize: string | string[]}): Promise<TNews> => {
+
+    let endpoint = `${api}/news?locale=${locale}&populate=*`
+
+    if (pagination && pagination.page) {
+        endpoint = endpoint + `&pagination[page]=${pagination.page}&pagination[pageSize]=${pagination.pageSize || 4}`
+    }
+
+
+
+    const response = await fetch(endpoint, {headers})
     return await response.json()
 }
 

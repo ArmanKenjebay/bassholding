@@ -12,6 +12,10 @@ export interface TNewsData {
         updatedAt: string;
         publishedAt: string;
         locale: string;
+        image_preview: TNewsImage
+        image_main: TNewsImage
+        image_content: TNewsImage
+        image_sub_content: TNewsImage
         localizations: {
             data: TNewsData[]
         }
@@ -55,16 +59,8 @@ export interface TNewsImage {
 }
 
 export interface TNews extends TResponse<TNewsData[]> {
-    image_preview: TNewsImage
-    image_main: TNewsImage
-    image_content: TNewsImage
-    image_sub_content: TNewsImage
 }
 
 
 export interface TNewsById extends TResponse<TNewsData> {
-    image_preview: TNewsImage
-    image_main: TNewsImage
-    image_content: TNewsImage
-    image_sub_content: TNewsImage
 }

@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Pagination,
   PaginationItemType,
@@ -5,6 +7,9 @@ import {
   cn,
 } from '@nextui-org/react'
 import { SVGProps } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { useRouter } from 'next-intl/client'
+import { Locale } from '@/i18n-config'
 
 type IconSvgProps = SVGProps<SVGSVGElement>
 const ChevronIcon = (props: IconSvgProps) => (
@@ -29,24 +34,33 @@ const ChevronIcon = (props: IconSvgProps) => (
 )
 
 type PaginationProps = {
-  handlePage: (page: number) => void
-  total?: number
-  initialPage?: number
+  page: number
+  total: number
+  hasNextPage: boolean
+  hasPrevPage: boolean
 }
 export default function CustomPagination({
-  handlePage,
+  page,
   total,
-  initialPage,
+  hasNextPage,
+  hasPrevPage,
 }: PaginationProps) {
+  const router = useRouter()
+  const searchParams = useSearchParams()
+
+  const onChangePage = (page: number) => {
+    router.push(`/news/?page=${page}&pageSize=${4}`)
+  }
+
   return (
     <Pagination
+      onChange={onChangePage}
       disableCursorAnimation
       showControls
-      total={total || 5}
-      initialPage={initialPage || 1}
+      total={total}
+      initialPage={page}
       className="gap-2"
       radius="full"
-      onChange={handlePage}
       renderItem={({
         ref,
         key,
@@ -63,6 +77,7 @@ export default function CustomPagination({
               key={key}
               className={cn(className, 'bg-default-200/50 min-w-8 w-8 h-8')}
               onClick={onNext}
+              disabled={!hasPrevPage}
             >
               <ChevronIcon className="rotate-180" />
             </button>
@@ -75,6 +90,7 @@ export default function CustomPagination({
               key={key}
               className={cn(className, 'bg-default-200/50 min-w-8 w-8 h-8')}
               onClick={onPrevious}
+              disabled={!hasNextPage}
             >
               <ChevronIcon />
             </button>
