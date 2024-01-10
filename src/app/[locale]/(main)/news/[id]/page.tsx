@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { getMockNewsById } from '@/get-api'
 import { getDictionary } from '@/get-dictionary'
 import PrevNews from '@/app/[locale]/_components/PrevNews'
@@ -28,14 +27,37 @@ type Props = {
 
 export default async function NewsDetail({ params: { locale, id } }: Props) {
   const dictionary = await getDictionary(locale)
-  const data = await getData(id).then((res) => res)
 
-  let main: any
+  const token = process.env.NEXT_PUBLIC_TOKEN
+  const api = process.env.NEXT_PUBLIC_BACKEND_API
+  const headers = {
+    Authorization: `Bearer ${token}`,
+    'Content-Type': 'application/json',
+  }
 
-  try {
-    main = require(`@/../public/images/${data?.image?.main}`)
-  } catch (e) {
-    console.error(e)
+  const response = await fetch(
+    `${api}/news/${id}?locale=${locale}&populate=*`,
+    {
+      headers,
+      cache: 'no-cache',
+      next: { revalidate: 100 },
+    },
+  )
+
+  let news: any | undefined = undefined
+
+  if (response.ok) {
+    news = await response.json()
+    console.log(news.data.attributes?.image_preview?.data?.attributes.url)
+  }
+
+  const getFirstValidUrl = (...urls: (string | undefined)[]): string => {
+    for (const url of urls) {
+      if (url) {
+        return url
+      }
+    }
+    return ''
   }
 
   return (
@@ -51,21 +73,30 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
           <div
             className={`flex gap-x-12 gap-y-3 lg:flex-row flex-col-reverse mb-5 sm:mb-10 xl:mb-24`}
           >
-            {main && (
-              <Image
-                className={`rounded-[50px] w-full xl:h-[450px] lg:h-[280px] h-[200px] object-cover`}
-                src={main}
+            {
+              <img
                 width={959}
                 height={650}
+                className={`rounded-[50px] w-full xl:h-[450px] lg:h-[280px] h-[200px] object-cover`}
+                src={
+                  process.env.NEXT_PUBLIC_IMAGE_API +
+                  getFirstValidUrl(
+                    news.data.attributes?.image_preview?.data?.attributes.url,
+                    news.data.attributes?.image_main?.data?.attributes.url,
+                    news.data.attributes?.image_content?.data?.attributes.url,
+                    news.data.attributes?.image_sub_content?.data?.attributes
+                      .url,
+                  )
+                }
                 alt={'bassholding news image'}
               />
-            )}
+            }
 
             <div className={`flex flex-col gap-y-3 min-w-[200px]`}>
               <div
                 className={`flex flex-row lg:flex-col gap-x-5 gap-y-3 items-center lg:items-start`}
               >
-                {data?.chips?.length && data?.chips[0][locale] ?
+                {news.data.attributes?.chips ? (
                   <Chip
                     variant={'bordered'}
                     className="border-primary-gold text-primary-gold xl:mb-10 mb-5"
@@ -74,34 +105,45 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
                       content: 'p-0 sm:p-1 truncate',
                     }}
                   >
-                    {data?.chips?.map((chi) => chi[locale])[0]}
+                    {news.data.attributes.chips}
                   </Chip>
-                  : <></>}
+                ) : (
+                  <></>
+                )}
 
-                {data.date && data?.date[locale] ? <span className={`xl:text-[20px] font-[300] xl:mb-10 mb-5`}>
-                  {data.date && data?.date[locale]}
-                </span> : <Skeleton className={`inline-block w-1/2 h-3 rounded-lg`}>
-                  <div className={`w-full h-full`}></div>
-                </Skeleton>}
+                {news.data.attributes?.date ? (
+                  <span className={`xl:text-[20px] font-[300] xl:mb-10 mb-5`}>
+                    {news.data.attributes.date}
+                  </span>
+                ) : (
+                  <Skeleton className={`inline-block w-1/2 h-3 rounded-lg`}>
+                    <div className={`w-full h-full`}></div>
+                  </Skeleton>
+                )}
               </div>
               <span
                 className={`xl:text-[32px] lg:text-[32px] text-lg leading-normal font-[300]`}
               >
-                {data.title && data?.title[locale] ? <span className={`xl:text-[20px] font-[300] xl:mb-10 mb-5`}>
-                  {data?.title[locale]}
-                </span> : <Skeleton className={`inline-block w-full h-4 rounded-lg`}>
-                  <div className={`w-full h-full`}></div>
-                </Skeleton>}
+                {news.data.attributes?.title ? (
+                  <span className={`xl:text-[20px] font-[300] xl:mb-10 mb-5`}>
+                    {news.data.attributes.title}
+                  </span>
+                ) : (
+                  <Skeleton className={`inline-block w-full h-4 rounded-lg`}>
+                    <div className={`w-full h-full`}></div>
+                  </Skeleton>
+                )}
               </span>
             </div>
           </div>
           <div className={`sm:mb-10`}>
-
-            {data.content && data.content[locale] ? <span
-              className={`xl:text-[20px] inline-block whitespace-pre-line leading-normal text-sm lg:text-2xl font-[200] mb-5`}
-            >
-              {data.content && data.content[locale]}
-            </span> : (
+            {news.data.attributes?.content ? (
+              <span
+                className={`xl:text-[20px] inline-block whitespace-pre-line leading-normal text-sm lg:text-2xl font-[200] mb-5`}
+              >
+                {news.data.attributes?.content}
+              </span>
+            ) : (
               <>
                 <Skeleton className={`inline-block w-full h-4 rounded-lg`}>
                   <div className={`w-full h-full`}></div>
@@ -116,20 +158,17 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
                   <div className={`w-full h-full`}></div>
                 </Skeleton>
               </>
-              )}
+            )}
 
-
-            {data?.docsHref?.length && (
+            {news.data.attributes?.dockHref && (
               <div className={`flex gap-3`}>
-                {data?.docsHref.map((doc) => (
-                  <Link
-                    target={`_blank`}
-                    className={`px-3 py-1 rounded-xl border border-primary-gold text-primary-gold transition duration-200 hover:text-white hover:border-white`}
-                    href={doc}
-                  >
-                    <span className={`text-sm`}>Документ</span>
-                  </Link>
-                ))}
+                <Link
+                  target={`_blank`}
+                  className={`px-3 py-1 rounded-xl border border-primary-gold text-primary-gold transition duration-200 hover:text-white hover:border-white`}
+                  href={news.data.attributes.dockHref}
+                >
+                  <span className={`text-sm`}>Документ</span>
+                </Link>
               </div>
             )}
           </div>
