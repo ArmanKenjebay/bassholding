@@ -16,10 +16,7 @@ export default async function NewsPreviews({ locale, searchParams }: Props) {
 
   const news = await getNews(locale, { page, pageSize })
 
-  console.log(
-    `NewsPreviews test`,
-    news.data[0].attributes.image_preview.data.attributes.url,
-  )
+  const imageApi = process.env.NEXT_PUBLIC_IMAGE_API
 
   return (
     <div className={`flex flex-col gap-y-10`}>
@@ -32,16 +29,19 @@ export default async function NewsPreviews({ locale, searchParams }: Props) {
                     key={news.id}
                     className="cursor-pointer transition duration-200 ease-in-out group hover:scale-[.98] overflow-hidden flex-1 flex flex-col"
                   >
-                    <Image
-                      className="transition duration-200 ease-in-out rounded-3xl 2xl:h-[300px] xl:h-[280px] lg:h-[180px] md:h-[120px] sm:h-[100px] w-full h-[200px] object-cover md:mb-10 mb-5"
-                      src={
-                        process.env.NEXT_PUBLIC_IMAGE_API +
-                        news.attributes.image_preview.data.attributes.url
-                      }
-                      width={510}
-                      height={447}
-                      alt={`bassholding news image`}
-                    />
+                    {imageApi && (
+                      <Image
+                        className="transition duration-200 ease-in-out rounded-3xl 2xl:h-[300px] xl:h-[280px] lg:h-[180px] md:h-[120px] sm:h-[100px] w-full h-[200px] object-cover md:mb-10 mb-5"
+                        src={
+                          imageApi +
+                          news.attributes.image_preview.data.attributes.url
+                        }
+                        width={510}
+                        height={447}
+                        alt={`bassholding news image`}
+                      />
+                    )}
+
                     {news.attributes.chips ? (
                       <Chip
                         variant="bordered"
