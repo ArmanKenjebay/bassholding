@@ -6,6 +6,8 @@ import Span from '@/app/[locale]/_components/Span'
 import SkeletonNews from '@/app/[locale]/_components/SkeletonNews'
 import CustomPagination from '@/app/[locale]/_components/CustomPagination'
 import { TNews } from '@/app/[locale]/_types/TNews'
+import { useRouter } from 'next-intl/client'
+import NewsPreview from '@/app/[locale]/_components/NewsPreview'
 
 type Props = {
   locale: Locale
@@ -51,53 +53,74 @@ export default async function NewsPreviews({ locale, searchParams }: Props) {
           <div className="grid gap-[40px] 2xl:grid-cols-[510px_510px] xl:grid-cols-[420px_420px] lg:grid-cols-[300px_300px] md:grid-cols-[250px_250px] sm:grid-cols-[200px_200px] grid-cols-1">
             {news && news.data.length
               ? news.data.map((news: any) => (
-                  <div
-                    key={news.id}
-                    className="cursor-pointer transition duration-200 ease-in-out group hover:scale-[.98] overflow-hidden flex-1 flex flex-col"
-                  >
-                    <img
-                      width={808}
-                      height={900}
-                      className="transition duration-200 ease-in-out rounded-3xl 2xl:h-[300px] xl:h-[280px] lg:h-[180px] md:h-[120px] sm:h-[100px] w-full h-[200px] object-cover md:mb-10 mb-5"
-                      src={
-                        process.env.NEXT_PUBLIC_IMAGE_API +
-                        getFirstValidUrl(
-                          news.attributes?.image_preview?.data?.attributes
-                            .url ||
-                            news.attributes?.image_main?.data?.attributes.url ||
-                            news.attributes?.image_content?.data?.attributes
-                              .url ||
-                            news.attributes?.image_sub_content?.data?.attributes
-                              .url,
-                        )
-                      }
-                      alt={'bassholding news image'}
-                    />
+                  <NewsPreview
+                    id={news.id}
+                    locale={locale}
+                    api={process.env.NEXT_PUBLIC_IMAGE_API}
+                    image_preview_url={
+                      news.attributes?.image_preview?.data?.attributes.url
+                    }
+                    image_main_url={
+                      news.attributes?.image_main?.data?.attributes.url
+                    }
+                    image_content_url={
+                      news.attributes?.image_content?.data?.attributes.url
+                    }
+                    image_sub_content_url={
+                      news.attributes?.image_sub_content?.data?.attributes.url
+                    }
+                    chips={news.attributes.chips}
+                    title={news.attributes.title}
+                    date={news.attributes.date}
+                  />
 
-                    {news.attributes.chips ? (
-                      <Chip
-                        variant="bordered"
-                        color="warning"
-                        className={`md:mb-5 mb-2 xl:text-[16px]`}
-                      >
-                        {news.attributes.chips}
-                      </Chip>
-                    ) : (
-                      <Span classNames={'w-1/4'}></Span>
-                    )}
-                    <span
-                      className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[24px] font-[300] mb-[45px] h-14 w-full whitespace-pre-wrap truncate`}
-                    >
-                      <Span classNames={``}>{news.attributes.title}</Span>
-                    </span>
-                    <span
-                      className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[16px] font-[300]`}
-                    >
-                      <Span classNames={`${!news.attributes.date && 'w-1/4'}`}>
-                        {news.attributes.date}
-                      </Span>
-                    </span>
-                  </div>
+                  // <div
+                  //   key={news.id}
+                  //   className="cursor-pointer transition duration-200 ease-in-out group hover:scale-[.98] overflow-hidden flex-1 flex flex-col"
+                  // >
+                  //   <img
+                  //     width={808}
+                  //     height={900}
+                  //     className="transition duration-200 ease-in-out rounded-3xl 2xl:h-[300px] xl:h-[280px] lg:h-[180px] md:h-[120px] sm:h-[100px] w-full h-[200px] object-cover md:mb-10 mb-5"
+                  //     src={
+                  //       process.env.NEXT_PUBLIC_IMAGE_API +
+                  //       getFirstValidUrl(
+                  //         news.attributes?.image_preview?.data?.attributes
+                  //           .url ||
+                  //           news.attributes?.image_main?.data?.attributes.url ||
+                  //           news.attributes?.image_content?.data?.attributes
+                  //             .url ||
+                  //           news.attributes?.image_sub_content?.data?.attributes
+                  //             .url,
+                  //       )
+                  //     }
+                  //     alt={'bassholding news image'}
+                  //   />
+                  //
+                  //   {news.attributes.chips ? (
+                  //     <Chip
+                  //       variant="bordered"
+                  //       color="warning"
+                  //       className={`md:mb-5 mb-2 xl:text-[16px]`}
+                  //     >
+                  //       {news.attributes.chips}
+                  //     </Chip>
+                  //   ) : (
+                  //     <Span classNames={'w-1/4'}></Span>
+                  //   )}
+                  //   <span
+                  //     className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[24px] font-[300] mb-[45px] h-14 w-full whitespace-pre-wrap truncate`}
+                  //   >
+                  //     <Span classNames={``}>{news.attributes.title}</Span>
+                  //   </span>
+                  //   <span
+                  //     className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[16px] font-[300]`}
+                  //   >
+                  //     <Span classNames={`${!news.attributes.date && 'w-1/4'}`}>
+                  //       {news.attributes.date}
+                  //     </Span>
+                  //   </span>
+                  // </div>
                 ))
               : 'No data'}
           </div>
