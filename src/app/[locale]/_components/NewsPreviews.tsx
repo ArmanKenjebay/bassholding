@@ -37,15 +37,6 @@ export default async function NewsPreviews({ locale, searchParams }: Props) {
     news = await response.json()
   }
 
-  const getFirstValidUrl = (...urls: (string | undefined)[]): string => {
-    for (const url of urls) {
-      if (url) {
-        return url
-      }
-    }
-    return ''
-  }
-
   return (
     <div className={`flex flex-col gap-y-10`}>
       {news && news.data.length ? (
@@ -73,54 +64,6 @@ export default async function NewsPreviews({ locale, searchParams }: Props) {
                     title={news.attributes.title}
                     date={news.attributes.date}
                   />
-
-                  // <div
-                  //   key={news.id}
-                  //   className="cursor-pointer transition duration-200 ease-in-out group hover:scale-[.98] overflow-hidden flex-1 flex flex-col"
-                  // >
-                  //   <img
-                  //     width={808}
-                  //     height={900}
-                  //     className="transition duration-200 ease-in-out rounded-3xl 2xl:h-[300px] xl:h-[280px] lg:h-[180px] md:h-[120px] sm:h-[100px] w-full h-[200px] object-cover md:mb-10 mb-5"
-                  //     src={
-                  //       process.env.NEXT_PUBLIC_IMAGE_API +
-                  //       getFirstValidUrl(
-                  //         news.attributes?.image_preview?.data?.attributes
-                  //           .url ||
-                  //           news.attributes?.image_main?.data?.attributes.url ||
-                  //           news.attributes?.image_content?.data?.attributes
-                  //             .url ||
-                  //           news.attributes?.image_sub_content?.data?.attributes
-                  //             .url,
-                  //       )
-                  //     }
-                  //     alt={'bassholding news image'}
-                  //   />
-                  //
-                  //   {news.attributes.chips ? (
-                  //     <Chip
-                  //       variant="bordered"
-                  //       color="warning"
-                  //       className={`md:mb-5 mb-2 xl:text-[16px]`}
-                  //     >
-                  //       {news.attributes.chips}
-                  //     </Chip>
-                  //   ) : (
-                  //     <Span classNames={'w-1/4'}></Span>
-                  //   )}
-                  //   <span
-                  //     className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[24px] font-[300] mb-[45px] h-14 w-full whitespace-pre-wrap truncate`}
-                  //   >
-                  //     <Span classNames={``}>{news.attributes.title}</Span>
-                  //   </span>
-                  //   <span
-                  //     className={`group-hover:text-primary-gold text-sm md:text-base lg:text-xl xl:text-[16px] font-[300]`}
-                  //   >
-                  //     <Span classNames={`${!news.attributes.date && 'w-1/4'}`}>
-                  //       {news.attributes.date}
-                  //     </Span>
-                  //   </span>
-                  // </div>
                 ))
               : 'No data'}
           </div>
