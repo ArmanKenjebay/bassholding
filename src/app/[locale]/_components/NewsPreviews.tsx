@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Span from '@/app/[locale]/_components/Span'
 import SkeletonNews from '@/app/[locale]/_components/SkeletonNews'
 import CustomPagination from '@/app/[locale]/_components/CustomPagination'
+import { TNews } from '@/app/[locale]/_types/TNews'
 
 type Props = {
   locale: Locale
@@ -14,7 +15,23 @@ export default async function NewsPreviews({ locale, searchParams }: Props) {
   const page = searchParams?.page ?? '1'
   const pageSize = searchParams?.pageSize ?? '4'
 
-  const news = await getNews(locale, { page, pageSize })
+  const token = process.env.NEXT_PUBLIC_TOKEN
+  const api = process.env.NEXT_PUBLIC_BACKEND_API
+  const headers = {
+    Authorization: `Bearer ${token}`,
+    'Content-Type': 'application/json',
+  }
+
+  const response = await fetch(
+    `${api}/news?locale=${locale}&populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}`,
+    { headers },
+  )
+
+  let news: any | undefined = undefined
+
+  if (response.ok) {
+    news = await response.json()
+  }
 
   return (
     <div className={`flex flex-col gap-y-10`}>
@@ -22,22 +39,11 @@ export default async function NewsPreviews({ locale, searchParams }: Props) {
         <>
           <div className="grid gap-[40px] 2xl:grid-cols-[510px_510px] xl:grid-cols-[420px_420px] lg:grid-cols-[300px_300px] md:grid-cols-[250px_250px] sm:grid-cols-[200px_200px] grid-cols-1">
             {news && news.data.length
-              ? news.data.map((news) => (
+              ? news.data.map((news: any) => (
                   <div
                     key={news.id}
                     className="cursor-pointer transition duration-200 ease-in-out group hover:scale-[.98] overflow-hidden flex-1 flex flex-col"
                   >
-                    {/*<Image*/}
-                    {/*  className="transition duration-200 ease-in-out rounded-3xl 2xl:h-[300px] xl:h-[280px] lg:h-[180px] md:h-[120px] sm:h-[100px] w-full h-[200px] object-cover md:mb-10 mb-5"*/}
-                    {/*  src={*/}
-                    {/*    process.env.NEXT_PUBLIC_IMAGE_API +*/}
-                    {/*    news.attributes.image_preview.data.attributes.url*/}
-                    {/*  }*/}
-                    {/*  width={510}*/}
-                    {/*  height={447}*/}
-                    {/*  alt={`bassholding news image`}*/}
-                    {/*/>*/}
-
                     <img
                       className="transition duration-200 ease-in-out rounded-3xl 2xl:h-[300px] xl:h-[280px] lg:h-[180px] md:h-[120px] sm:h-[100px] w-full h-[200px] object-cover md:mb-10 mb-5"
                       src={
