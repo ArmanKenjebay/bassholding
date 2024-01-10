@@ -37,6 +37,8 @@ export default async function Home({ params: { locale } }: Props) {
 
   const response = await fetch(`${api}/news?locale=${locale}&populate=*`, {
     headers,
+    cache: 'no-cache',
+    next: { revalidate: 100 },
   })
 
   let post: any | undefined = undefined

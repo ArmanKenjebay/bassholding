@@ -1,5 +1,5 @@
 import { Locale } from '@/i18n-config'
-import { getNews } from '@/get-api'
+import { getMockNews, getNews } from '@/get-api'
 import { Chip } from '@nextui-org/chip'
 import Image from 'next/image'
 import Span from '@/app/[locale]/_components/Span'
@@ -24,8 +24,10 @@ export default async function NewsPreviews({ locale, searchParams }: Props) {
 
   const response = await fetch(
     `${api}/news?locale=${locale}&populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}`,
-    { headers },
+    { headers, cache: 'no-cache', next: { revalidate: 100 } },
   )
+
+  const newsMock = await getMockNews().then((res) => res)
 
   let news: any | undefined = undefined
 
@@ -44,7 +46,7 @@ export default async function NewsPreviews({ locale, searchParams }: Props) {
                     key={news.id}
                     className="cursor-pointer transition duration-200 ease-in-out group hover:scale-[.98] overflow-hidden flex-1 flex flex-col"
                   >
-                    <img
+                    <Image
                       width={808}
                       height={900}
                       className="transition duration-200 ease-in-out rounded-3xl 2xl:h-[300px] xl:h-[280px] lg:h-[180px] md:h-[120px] sm:h-[100px] w-full h-[200px] object-cover md:mb-10 mb-5"
