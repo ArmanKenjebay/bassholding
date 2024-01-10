@@ -41,7 +41,7 @@ export default async function Contact({ params: { locale } }: Props) {
               href={`https://maps.app.goo.gl/tar25zruLETznWYf8`}
               className={`text-[14px] sm:text-[16px] md:text-[18px] xl:text-[32px] font-[250] duration-200 transition ease-in-out hover:text-primary-gold`}
             >
-              проспект Кабанбай Батыра 11/5
+              {dictionary.contact.address}
             </a>
           </div>
 
