@@ -45,6 +45,8 @@ export default async function NewsPreviews({ locale, searchParams }: Props) {
                     className="cursor-pointer transition duration-200 ease-in-out group hover:scale-[.98] overflow-hidden flex-1 flex flex-col"
                   >
                     <img
+                      width={808}
+                      height={900}
                       className="transition duration-200 ease-in-out rounded-3xl 2xl:h-[300px] xl:h-[280px] lg:h-[180px] md:h-[120px] sm:h-[100px] w-full h-[200px] object-cover md:mb-10 mb-5"
                       src={
                         process.env.NEXT_PUBLIC_IMAGE_API +
