@@ -47,7 +47,6 @@ export default async function Home({ params: { locale } }: Props) {
     post = await response.json()
   }
 
-  // const post = await getNews(locale)
 
   return (
     <section className="flex flex-col w-full h-full">

@@ -3,25 +3,13 @@
 import { Tab, Tabs } from '@nextui-org/tabs'
 import React from 'react'
 
-export default function FinancialTabs() {
+export default function YearReport() {
   const years = [
     {
       year: 2023,
       parts: [
         {
-          label: '4 квартал',
-          date: '26 ноября, 2023',
-        },
-        {
-          label: '3 квартал',
-          date: '26 ноября, 2023',
-        },
-        {
-          label: '2 квартал',
-          date: '26 ноября, 2023',
-        },
-        {
-          label: '1 квартал',
+          label: 'Bass Gold годовой отчет',
           date: '26 ноября, 2023',
         },
       ],
@@ -30,19 +18,7 @@ export default function FinancialTabs() {
       year: 2022,
       parts: [
         {
-          label: '4 квартал',
-          date: '26 ноября, 2022',
-        },
-        {
-          label: '3 квартал',
-          date: '26 ноября, 2022',
-        },
-        {
-          label: '2 квартал',
-          date: '26 ноября, 2022',
-        },
-        {
-          label: '1 квартал',
+          label: 'Bass Gold годовой отчет',
           date: '26 ноября, 2022',
         },
       ],
@@ -54,7 +30,7 @@ export default function FinancialTabs() {
       <span
         className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] mb-5`}
       >
-        ФИНАНСОВЫЕ ПОКАЗАТЕЛИ
+        ГОДОВЫЕ ОТЧЕТЫ
       </span>
 
       <Tabs aria-label="years" variant={`underlined`}>
@@ -63,10 +39,14 @@ export default function FinancialTabs() {
             <div className={`flex flex-wrap gap-7`}>
               {year.parts.map((part) => (
                 <div
-                  className={`xl:w-[300px] lg:w-[270px] md:w-[250px] sm:w-[230px] xl:h-[235px] w-full h-[125px] xl:rounded-2xl rounded-3xl flex flex-col justify-between bg-[#262626] p-5`}
+                  className={`xl:w-[300px] lg:w-[270px] md:w-[250px] sm:w-[230px] xl:h-[235px] w-full h-[125px] xl:rounded-2xl rounded-3xl flex flex-col justify-between bg-primary-gold p-5`}
                 >
                   <div className={`flex justify-between`}>
-                    <span className={`text-[24px]`}>{part.label}</span>
+                    <span
+                      className={`xl:text-[24px] lg:text-[22px] text-[18px] text-black`}
+                    >
+                      {part.label}
+                    </span>
                     <div
                       className={`group rounded-[99px] w-[30px] h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 cursor-pointer hover:bg-primary-gold hover:text-white`}
                     >
@@ -79,7 +59,7 @@ export default function FinancialTabs() {
                     </div>
                   </div>
                   <div>
-                    <span className={`text-[16px] text-[#AFACAC]`}>
+                    <span className={`text-[16px] text-black`}>
                       {part.date}
                     </span>
                   </div>

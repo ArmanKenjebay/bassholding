@@ -42,20 +42,7 @@ export default async function Career({
     },
   ]
 
-  // const positions = [
-  //   {
-  //     content: 'Продакт менеджер',
-  //     chip: 'PINCODE',
-  //   },
-  //   {
-  //     content: 'Специалист по кадровому делопроизводству',
-  //     chip: 'BASS Holding',
-  //   },
-  //   {
-  //     content: 'Офис менеджер',
-  //     chip: 'BASS Holding',
-  //   },
-  // ]
+
 
   return (
     <PageWrapper>

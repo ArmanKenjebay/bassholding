@@ -22,6 +22,7 @@ type AnimationType = {
 type TransitionType = {
   duration: number
   delay: number
+  isInfinity: boolean
 }
 
 type Props = {
@@ -69,8 +70,12 @@ export default function DivTransform({
       opacity: 1,
     },
   }
-  const defaultTransition = { duration: 1, delay: 0.5 }
-  const defaultViewport = { amount: 1, once: true }
+  const defaultTransition: Partial<TransitionType> = {
+    duration: 1,
+    delay: 0.5,
+    isInfinity: false,
+  }
+  const defaultViewport: Partial<ViewPortType> = { amount: 1, once: true }
 
   return (
     <motion.div
