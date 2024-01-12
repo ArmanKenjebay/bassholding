@@ -51,7 +51,7 @@ export default async function PressRelease() {
       className={`flex flex-col xl:gap-y-[30px] sm:gap-y-[20px] gap-y-[12px]`}
     >
       {release.map((el) => (
-        <div className={`flex flex-col xl:w-3/4 w-full`}>
+        <div key={el.date} className={`flex flex-col xl:w-3/4 w-full`}>
           <span className={`xl:text-[24px] lg:text-[20px] text-[18px] mb-2`}>
             {el.text}
           </span>
