@@ -24,8 +24,8 @@ import Reveal from '@/app/[locale]/_components/Reveal'
 import DivTransform from '@/app/[locale]/_components/DivTransform'
 
 export default async function About({
-                                      params: { locale },
-                                    }: {
+  params: { locale },
+}: {
   params: { locale: Locale }
 }) {
   const dictionary = await getDictionary(locale)
@@ -109,7 +109,10 @@ export default async function About({
                 textTransform: 'uppercase',
               }}
             >
-              <Reveal viewport={{ amount: 0 }} transition={{ delay: 0.1, duration: 1 }}>
+              <Reveal
+                viewport={{ amount: 0 }}
+                transition={{ delay: 0.1, duration: 1 }}
+              >
                 {dictionary.about.human_value}
               </Reveal>
             </span>
@@ -154,13 +157,15 @@ export default async function About({
         <div className="sm:px-5 px-5 mb-10 xl:mb-[182px]">
           <div className="h-full grid lg:grid-cols-4 grid-cols-2 xl:gap-x-[40px] gap-[10px]">
             {feels.map(({ title, image, classes }, index) => (
-              <DivTransform viewport={{ amount: 0 }} transition={{ delay: 1, duration: 1 }}>
+              <DivTransform
+                viewport={{ amount: 0 }}
+                transition={{ delay: 1, duration: 1 }}
+              >
                 <div
                   key={index}
                   className="relative overflow-hidden h-[101px] sm:w-full md:h-[200px] xl:h-[287px]"
                 >
-                  <span
-                    className="z-10 uppercase font-[250] absolute top-3/4 sm:top-[60%] block w-full h-full text-xs sm:text-base lg:text-xl xl:text-3xl text-center">
+                  <span className="z-10 uppercase font-[250] absolute top-3/4 sm:top-[60%] block w-full h-full text-xs sm:text-base lg:text-xl xl:text-3xl text-center">
                     {title}
                   </span>
                   <NextImage
@@ -178,8 +183,7 @@ export default async function About({
       </MotionDiv>
 
       <div className="xl:px-[60px] sm:px-5 px-5 mb-10">
-        <div
-          className="grid gap-x-3 gap-y-5 grid-cols-2 sm:gap-y-10 sm:grid-cols-3 md:grid-cols-4 xl:gap-y-14 xl:gap-x-10">
+        <div className="grid gap-x-3 gap-y-5 grid-cols-2 sm:gap-y-10 sm:grid-cols-3 md:grid-cols-4 xl:gap-y-14 xl:gap-x-10">
           <Reveal
             transition={{
               duration: 1,

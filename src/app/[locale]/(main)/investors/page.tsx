@@ -48,7 +48,6 @@ export default async function Investors({ params: { locale } }: Props) {
           <DivTransform
             className={`absolute top-1/3 right-10`}
             animation={animate}
-            viewport={{ once: false }}
           >
             <CalculateModal />
           </DivTransform>
