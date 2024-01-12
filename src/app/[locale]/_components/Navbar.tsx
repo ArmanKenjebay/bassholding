@@ -77,32 +77,39 @@ export default function CustomNavbar({
           <div className="lg:flex hidden flex-1 justify-start">
             <div className="flex sm:gap-x-8 md:gap-x-10 lg:gap-x-10 xl:gap-x-16 2xl:gap-x-20">
               <NavigationLink
-                className="xl:text-2xl lg:text-base md:text-sm text-xs font-normal whitespace-nowrap"
+                className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal whitespace-nowrap"
                 href="/about"
                 lang={locale}
               >
                 {dictionary.about}
               </NavigationLink>
               <NavigationLink
-                className="xl:text-2xl lg:text-base md:text-sm text-xs font-normal"
+                className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal"
                 href="/direction"
                 lang={locale}
               >
                 {dictionary.direction}
               </NavigationLink>
               <NavigationLink
-                className="xl:text-2xl lg:text-base md:text-sm text-xs font-normal"
+                className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal"
                 href="/career"
                 lang={locale}
               >
                 {dictionary.career}
               </NavigationLink>
               <NavigationLink
-                className="xl:text-2xl lg:text-base md:text-sm text-xs font-normal"
+                className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal"
                 href="/news"
                 lang={locale}
               >
                 {dictionary.news}
+              </NavigationLink>
+              <NavigationLink
+                className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal"
+                href="/investors"
+                lang={locale}
+              >
+                Инвесторам
               </NavigationLink>
             </div>
           </div>
@@ -181,6 +188,15 @@ export default function CustomNavbar({
               lang={locale}
             >
               {dictionary.career}
+            </NavigationLink>
+          </NavbarMenuItem>
+          <NavbarMenuItem>
+            <NavigationLink
+              onClick={() => handleNavbarMenuItem(isMenuOpen)}
+              href="/investors"
+              lang={locale}
+            >
+              Инвесторы
             </NavigationLink>
           </NavbarMenuItem>
           <NavbarMenuItem>

@@ -20,14 +20,14 @@ export default function InvestrorsNavBar({ locale, dictionary }: Props) {
 
   return (
     <nav
-      className={`xl:px-[60px] xl:py-[35px] flex justify-between bg-[#262626] items-center`}
+      className={`bg-[#262626] xl:px-[60px] px-10 py-2 sm:py-3 flex md:flex-row flex-col justify-between items-center`}
     >
       <Link
         className={`${
           pathName === '/investors'
             ? 'text-primary-gold'
             : 'hover:text-primary-gold duration-200'
-        }`}
+        } xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm sm:leading-none`}
         href={`/investors`}
         locale={locale}
       >
@@ -38,7 +38,7 @@ export default function InvestrorsNavBar({ locale, dictionary }: Props) {
           pathName === '/investors/financial'
             ? 'text-primary-gold'
             : 'hover:text-primary-gold duration-200'
-        }`}
+        } xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm sm:leading-none`}
         href={`/investors/financial`}
         locale={locale}
       >
@@ -49,7 +49,7 @@ export default function InvestrorsNavBar({ locale, dictionary }: Props) {
           pathName === '/investors/press'
             ? 'text-primary-gold'
             : 'hover:text-primary-gold duration-200'
-        }`}
+        } xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm sm:leading-none`}
         href={`/investors/press`}
         locale={locale}
       >
