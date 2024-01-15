@@ -35,18 +35,20 @@ export default async function Home({ params: { locale } }: Props) {
   const news = await getMockNews().then((res) => res)
   const cards = getDirections()
 
-  const response = await fetch(`${api}/news?locale=${locale}&populate=*`, {
-    headers,
-    cache: 'no-cache',
-    next: { revalidate: 100 },
-  })
+  const response = await fetch(
+    `${api}/news?locale=${locale}&populate=*&sort=createdAt:desc`,
+    {
+      headers,
+      cache: 'no-cache',
+      next: { revalidate: 100 },
+    },
+  )
 
   let post: any | undefined = undefined
 
   if (response.ok) {
     post = await response.json()
   }
-
 
   return (
     <section className="flex flex-col w-full h-full">
