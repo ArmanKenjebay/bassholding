@@ -1,12 +1,7 @@
 import { Locale } from '@/i18n-config'
-import { getMockNews, getNews } from '@/get-api'
-import { Chip } from '@nextui-org/chip'
-import Image from 'next/image'
-import Span from '@/app/[locale]/_components/Span'
+import { getMockNews } from '@/get-api'
 import SkeletonNews from '@/app/[locale]/_components/SkeletonNews'
 import CustomPagination from '@/app/[locale]/_components/CustomPagination'
-import { TNews } from '@/app/[locale]/_types/TNews'
-import { useRouter } from 'next-intl/client'
 import NewsPreview from '@/app/[locale]/_components/NewsPreview'
 
 type Props = {
@@ -26,7 +21,7 @@ export default async function NewsPreviews({ locale, searchParams }: Props) {
 
   const response = await fetch(
     `${api}/news?locale=${locale}&populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}&sort=createdAt:desc`,
-    { headers, cache: 'no-cache', next: { revalidate: 100 } },
+    { headers, next: { revalidate: 3600 } },
   )
 
   const newsMock = await getMockNews().then((res) => res)

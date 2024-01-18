@@ -13,7 +13,7 @@ import Marquee from '@/app/[locale]/_components/Marquee'
 import NewsLine from '@/app/[locale]/_components/NewsLine'
 import getDirections from '@/app/[locale]/_variables/direction-cards'
 import HomeBackgroundImage from '@/app/[locale]/_components/HomeBackgroundImage'
-import { getMockNews, getNews } from '@/get-api'
+import { getMockNews } from '@/get-api'
 import PageWrapper from '@/app/[locale]/_components/PageWrapper'
 import MotionDiv from '@/app/[locale]/_components/MotionDiv'
 import Reveal from '@/app/[locale]/_components/Reveal'
@@ -39,8 +39,7 @@ export default async function Home({ params: { locale } }: Props) {
     `${api}/news?locale=${locale}&populate=*&sort=createdAt:desc`,
     {
       headers,
-      cache: 'no-cache',
-      next: { revalidate: 100 },
+      next: { revalidate: 3600 },
     },
   )
 
