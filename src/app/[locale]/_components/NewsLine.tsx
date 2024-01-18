@@ -4,6 +4,7 @@ import React from 'react'
 import { Chip } from '@nextui-org/chip'
 import { useRouter } from 'next-intl/client'
 import Span from '@/app/[locale]/_components/Span'
+import ArrowSvg from '@/app/[locale]/_components/ArrowSvg'
 
 type Props = {
   locale: string
@@ -21,12 +22,14 @@ export default function NewsLine({ locale, id, content, chip, date }: Props) {
   return (
     <div className="w-full grid grid-cols-[3fr_1fr_1fr_50px] gap-x-5 gap-y-3 items-center justify-center px-1">
       <div className="flex justify-start sm:col-span-1 col-span-4">
-        <Span classNames={`text-xs md:text-[20px] font-[300] leading-normal`}>{content}</Span>
+        <Span classNames={`text-xs md:text-[20px] font-[300] leading-normal`}>
+          {content}
+        </Span>
       </div>
 
       <div className="flex justify-center gap-x-3 sm:col-span-1 col-span-2">
-        {chip &&
-          (<Chip
+        {chip && (
+          <Chip
             variant="bordered"
             color="warning"
             className={`text-xs lg:text-base font-[400]`}
@@ -36,8 +39,8 @@ export default function NewsLine({ locale, id, content, chip, date }: Props) {
             }}
           >
             {chip}
-          </Chip>)
-        }
+          </Chip>
+        )}
       </div>
 
       <div
@@ -51,8 +54,17 @@ export default function NewsLine({ locale, id, content, chip, date }: Props) {
           onClick={() => handleRedirect(id, locale)}
           className={`group rounded-[99px] w-[30px] h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 cursor-pointer hover:bg-primary-gold hover:text-white`}
         >
-          <span className={`block group-hover:hidden`}>&#8594;</span>
-          <span className={`hidden group-hover:block`}>&#8599;</span>
+          <ArrowSvg
+            classNames={`block group-hover:hidden`}
+            width={'24'}
+            height={'24'}
+          />
+          <ArrowSvg
+            classNames={`hidden group-hover:block origin-center -rotate-45`}
+            fillPath={'white'}
+            width={'24'}
+            height={'24'}
+          />
         </div>
       </div>
     </div>

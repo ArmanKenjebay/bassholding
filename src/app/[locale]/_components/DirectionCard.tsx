@@ -5,7 +5,7 @@ import Image, { StaticImageData } from 'next/image'
 import React, { HTMLAttributes } from 'react'
 import { useRouter } from 'next-intl/client'
 import { Locale } from '@/i18n-config'
-import Link from 'next/link'
+import ArrowSvg from '@/app/[locale]/_components/ArrowSvg'
 
 type Props = TCard & {
   className?: string | HTMLAttributes<any>
@@ -57,7 +57,7 @@ export default function DirectionCard({
                 }}
                 variant="bordered"
               >
-                <span className="group-hover:text-primary-gold text-xs truncate">
+                <span className="group-hover:text-primary-gold group-hover:font-bold text-xs truncate">
                   {dictionary.chips[chi] ?? chi}
                 </span>
               </Chip>
@@ -66,10 +66,13 @@ export default function DirectionCard({
 
           <div
             onClick={() => redirect(link, locale)}
-            className={`cursor-pointer rounded-[99px] min-w-[30px] min-h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 group-hover:bg-primary-gold group-hover:text-white`}
+            className={`cursor-pointer rounded-[99px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 group-hover:bg-primary-gold group-hover:text-white`}
           >
-            <span className={`block group-hover:hidden`}>&#8594;</span>
-            <span className={`hidden group-hover:block`}>&#8599;</span>
+            <ArrowSvg classNames={`block group-hover:hidden`} />
+            <ArrowSvg
+              classNames={`hidden group-hover:block origin-center -rotate-45`}
+              fillPath={'white'}
+            />
           </div>
         </CardHeader>
 
