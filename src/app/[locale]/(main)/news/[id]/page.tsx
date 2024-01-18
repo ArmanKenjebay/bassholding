@@ -45,7 +45,6 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
 
   if (response.ok) {
     news = await response.json()
-    console.log('news: ', news?.data.attributes.localizations)
   }
 
   const getLangString = (
