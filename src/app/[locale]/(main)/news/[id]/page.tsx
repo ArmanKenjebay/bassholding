@@ -6,6 +6,7 @@ import { Locale } from '@/i18n-config'
 import Link from 'next/link'
 import PageWrapper from '@/app/[locale]/_components/PageWrapper'
 import { Skeleton } from '@nextui-org/skeleton'
+import { TNewsById } from '@/app/[locale]/_types/TNews'
 
 async function getData(id: string) {
   const data = await getMockNewsById(id)
@@ -35,20 +36,37 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
     'Content-Type': 'application/json',
   }
 
-  const response = await fetch(
-    `${api}/news/${id}?locale=${locale}&populate=*`,
-    {
-      headers,
-      cache: 'no-cache',
-      next: { revalidate: 100 },
-    },
-  )
+  const response = await fetch(`${api}/news/${id}?populate=*`, {
+    headers,
+    next: { revalidate: 3600 },
+  })
 
-  let news: any | undefined = undefined
+  let news: TNewsById | undefined = undefined
 
   if (response.ok) {
     news = await response.json()
-    console.log(news.data.attributes?.image_preview?.data?.attributes.url)
+    console.log('news: ', news?.data.attributes.localizations)
+  }
+
+  const getLangString = (
+    locale: Locale,
+    field: 'title' | 'context' | 'date' | 'chips' | 'content',
+  ) => {
+    if (!news) return
+
+    const item = { ...news }
+
+    if (item && item.data && item.data.attributes.locale === locale) {
+      return item.data.attributes[field]
+    }
+
+    const findItem = item.data.attributes.localizations.data.find(
+      (el) => el.attributes.locale === locale,
+    )
+
+    if (findItem) {
+      return findItem.attributes[field]
+    }
   }
 
   const getFirstValidUrl = (...urls: (string | undefined)[]): string => {
@@ -81,10 +99,10 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
                 src={
                   process.env.NEXT_PUBLIC_IMAGE_API +
                   getFirstValidUrl(
-                    news.data.attributes?.image_preview?.data?.attributes.url,
-                    news.data.attributes?.image_main?.data?.attributes.url,
-                    news.data.attributes?.image_content?.data?.attributes.url,
-                    news.data.attributes?.image_sub_content?.data?.attributes
+                    news?.data.attributes?.image_preview?.data?.attributes.url,
+                    news?.data.attributes?.image_main?.data?.attributes.url,
+                    news?.data.attributes?.image_content?.data?.attributes.url,
+                    news?.data.attributes?.image_sub_content?.data?.attributes
                       .url,
                   )
                 }
@@ -96,7 +114,7 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
               <div
                 className={`flex flex-row lg:flex-col gap-x-5 gap-y-3 items-center lg:items-start`}
               >
-                {news.data.attributes?.chips ? (
+                {getLangString(locale, 'chips') ? (
                   <Chip
                     variant={'bordered'}
                     className="border-primary-gold text-primary-gold xl:mb-10 mb-5"
@@ -105,15 +123,15 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
                       content: 'p-0 sm:p-1 truncate',
                     }}
                   >
-                    {news.data.attributes.chips}
+                    {getLangString(locale, 'chips')}
                   </Chip>
                 ) : (
                   <></>
                 )}
 
-                {news.data.attributes?.date ? (
+                {getLangString(locale, 'date') ? (
                   <span className={`xl:text-[20px] font-[300] xl:mb-10 mb-5`}>
-                    {news.data.attributes.date}
+                    {getLangString(locale, 'date')}
                   </span>
                 ) : (
                   <Skeleton className={`inline-block w-1/2 h-3 rounded-lg`}>
@@ -124,9 +142,9 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
               <span
                 className={`xl:text-[32px] lg:text-[32px] text-lg leading-normal font-[300]`}
               >
-                {news.data.attributes?.title ? (
+                {getLangString(locale, 'title') ? (
                   <span className={`xl:text-[20px] font-[300] xl:mb-10 mb-5`}>
-                    {news.data.attributes.title}
+                    {getLangString(locale, 'title')}
                   </span>
                 ) : (
                   <Skeleton className={`inline-block w-full h-4 rounded-lg`}>
@@ -137,11 +155,11 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
             </div>
           </div>
           <div className={`sm:mb-10`}>
-            {news.data.attributes?.content ? (
+            {getLangString(locale, 'content') ? (
               <span
                 className={`xl:text-[20px] inline-block whitespace-pre-line leading-normal text-sm lg:text-2xl font-[200] mb-5`}
               >
-                {news.data.attributes?.content}
+                {getLangString(locale, 'content')}
               </span>
             ) : (
               <>
@@ -160,14 +178,14 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
               </>
             )}
 
-            {news.data.attributes?.dockHref && (
+            {news?.data?.attributes?.dockHref && (
               <div className={`flex gap-3`}>
                 <Link
                   target={`_blank`}
                   className={`px-3 py-1 rounded-xl border border-primary-gold text-primary-gold transition duration-200 hover:text-white hover:border-white`}
-                  href={news.data.attributes.dockHref}
+                  href={news?.data?.attributes?.dockHref}
                 >
-                  <span className={`text-sm`}>Документ</span>
+                  <span className={`text-sm`}>{dictionary.news.doc_title}</span>
                 </Link>
               </div>
             )}
