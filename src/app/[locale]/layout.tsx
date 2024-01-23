@@ -1,10 +1,8 @@
 import './globals.css'
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { i18n, Locale } from '@/i18n-config'
 import { Poppins } from 'next/font/google'
-import getGilroy from '@/app/[locale]/_variables/gilroy-font'
-
-const gilroy = getGilroy()
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -26,6 +24,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} className="dark">
       <body className={`${poppins.variable} font-poppins`}>{children}</body>
+      <GoogleAnalytics gaId="G-2WF7TESEG5" />
     </html>
   )
 }
