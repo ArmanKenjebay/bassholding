@@ -197,17 +197,22 @@ export default async function Home({ params: { locale } }: Props) {
         </MotionDiv>
 
         <div className="sm:px-5 xl:px-[60px] px-5 sm:mb-10 w-full h-full flex justify-center mb-10">
-          <ImageNext
-            as={Image}
-            src={news1.src}
-            srcSet={`${news1_mobile} 640w, ${news1} 1024w`}
-            sizes="(max-width: 640px) 100vw, 1024px"
-            width={1965}
-            height={615}
-            radius={`none`}
-            className={`w-[320px] h-[104px] sm:h-full sm:w-full xl:h-[610px] rounded-[40px] sm:rounded-3xl object-contain`}
-            alt="bassholding image"
-          />
+          <a
+            target={`_blank`}
+            href={`https://www.youtube.com/embed/QO2BRWAIpYs?si=FUeKKsGXnLzcBFHM`}
+          >
+            <ImageNext
+              as={Image}
+              src={news1.src}
+              srcSet={`${news1_mobile} 640w, ${news1} 1024w`}
+              sizes="(max-width: 640px) 100vw, 1024px"
+              width={1965}
+              height={615}
+              radius={`none`}
+              className={`w-[320px] h-[104px] sm:h-full sm:w-full xl:h-[610px] rounded-[40px] sm:rounded-3xl object-contain`}
+              alt="bassholding image"
+            />
+          </a>
         </div>
       </PageWrapper>
     </section>
