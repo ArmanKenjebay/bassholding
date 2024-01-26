@@ -1,7 +1,7 @@
 'use client'
 
-import { Tab, Tabs } from '@nextui-org/tabs'
 import React from 'react'
+import { Tab, Tabs } from '@nextui-org/tabs'
 
 export default function FinancialTabs() {
   const years = [
@@ -9,41 +9,19 @@ export default function FinancialTabs() {
       year: 2023,
       parts: [
         {
-          label: '4 квартал',
-          date: '26 ноября, 2023',
-        },
-        {
           label: '3 квартал',
-          date: '26 ноября, 2023',
+          date: '14 ноября, 2023',
+          doc: '',
         },
         {
           label: '2 квартал',
-          date: '26 ноября, 2023',
+          date: '14 август, 2023',
+          doc: '',
         },
         {
           label: '1 квартал',
-          date: '26 ноября, 2023',
-        },
-      ],
-    },
-    {
-      year: 2022,
-      parts: [
-        {
-          label: '4 квартал',
-          date: '26 ноября, 2022',
-        },
-        {
-          label: '3 квартал',
-          date: '26 ноября, 2022',
-        },
-        {
-          label: '2 квартал',
-          date: '26 ноября, 2022',
-        },
-        {
-          label: '1 квартал',
-          date: '26 ноября, 2022',
+          date: '15 май, 2023',
+          doc: '',
         },
       ],
     },

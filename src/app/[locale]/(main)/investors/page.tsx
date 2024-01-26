@@ -1,14 +1,14 @@
+import React from 'react'
 import NextImage from 'next/image'
-import wallImage from '@/../public/images/company_profile.webp'
 import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
-import CalculateModal from '@/app/[locale]/_components/CalculateModal'
-import FinancialTabs from '@/app/[locale]/_components/FinancialTabs'
 import MotionDiv from '@/app/[locale]/_components/MotionDiv'
-import DivTransform from '@/app/[locale]/_components/DivTransform'
 import YearReport from '@/app/[locale]/_components/YearReport'
-import React from 'react'
+import wallImage from '@/../public/images/company_profile.webp'
+import DivTransform from '@/app/[locale]/_components/DivTransform'
 import PressRelease from '@/app/[locale]/_components/PressRelease'
+import FinancialTabs from '@/app/[locale]/_components/FinancialTabs'
+import CalculateModal from '@/app/[locale]/_components/CalculateModal'
 
 type Props = {
   params: { locale: Locale }
