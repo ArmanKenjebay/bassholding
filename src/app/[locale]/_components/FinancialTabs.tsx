@@ -39,8 +39,9 @@ export default function FinancialTabs() {
         {years.map((year, index) => (
           <Tab key={year.year} title={year.year}>
             <div className={`flex flex-wrap gap-7`}>
-              {year.parts.map((part) => (
+              {year.parts.map((part, index) => (
                 <div
+                  key={index}
                   className={`xl:w-[300px] lg:w-[270px] md:w-[250px] sm:w-[230px] xl:h-[235px] w-full h-[125px] xl:rounded-2xl rounded-3xl flex flex-col justify-between bg-[#262626] p-5`}
                 >
                   <div className={`flex justify-between`}>

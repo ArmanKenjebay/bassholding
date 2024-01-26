@@ -2,7 +2,6 @@ import React from 'react'
 import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 import TopsAccordion from '@/app/[locale]/_components/TopsAccordion'
-import { Divider } from '@nextui-org/divider'
 import FinancialCalendar from '@/app/[locale]/_components/FinancialCalendar'
 
 export default async function Financial({
@@ -11,6 +10,24 @@ export default async function Financial({
   params: { locale: Locale }
 }) {
   const dictionary = await getDictionary(locale)
+
+  const token = process.env.NEXT_PUBLIC_TOKEN
+  const api = process.env.NEXT_PUBLIC_BACKEND_API
+  const headers = {
+    Authorization: `Bearer ${token}`,
+    'Content-Type': 'application/json',
+  }
+  const response = await fetch(`${api}/finance-indicators?populate=*`, {
+    headers,
+  })
+
+  const finDocs: { url: string }[] = await response.json().then((res) => {
+    const urls: { url: string }[] = res.data.map((el: any) =>
+      el.attributes.file.data.map((data: any) => data.attributes),
+    )
+
+    return urls
+  })
 
   const corpAdmin = [
     {
@@ -24,108 +41,6 @@ export default async function Financial({
     {
       label: 'Изменения в Устав компании',
       date: '20 сентября, 2022',
-    },
-  ]
-
-  const corpCalendar = [
-    {
-      month: 'Январь',
-      dates: ['12.01', '20.01'],
-      content: [
-        'Утверждение Стратегии развития ТОО «BASS Holding» на 2024 – 2028 годы',
-        'Получение ТОО «BASS Gold» займа в Банке второго уровня',
-        'Выплаты купонного вознаграждения по второму выпуску облигаций ТОО «BASS Gold»',
-        'Выплаты купонного вознаграждения по первому выпуску облигаций ТОО «BASS Gold»',
-        'Оплата остатка за долю участия в ТОО «Block One Company»',
-        'Раскрытие информации об аффилированных лицах ТОО «BASS Gold» на сайте АО «Казахстанская фондовая биржа»',
-        'Оплата остатка за долю участия в ТОО «Block One Company»',
-      ],
-    },
-    {
-      month: 'ФЕВРАЛЬ',
-      dates: [],
-      content: [
-        'Запуск золотообогатительной фабрики на месторождении Ушшокы',
-        'Оплата остатка за долю участия в ТОО «Block One Company»',
-      ],
-    },
-    {
-      month: 'МАРТ',
-      dates: [],
-      content: [
-        'Утверждение и публикация аудированной (консолидированной и отдельной) годовой финансовой отчетности ТОО «BASS Gold» за 2023 год на сайтах Депозитария финансовой отчетности и АО «Казахстанская фондовая биржа»',
-        'Утверждение и публикация аудированной годовой финансовой отчетности ТОО «Block One Company» за 2023 год на сайтах Депозитария финансовой отчетности и АО «Казахстанская фондовая биржа»',
-        'Распределение чистого дохода ТОО «BASS Gold» за 2023 год и выплата дивидендов его участникам',
-        'Реорганизация ТОО «BASS Gold» путем присоединения к нему ТОО «Block One Company»',
-        'Оплата остатка за долю участия в ТОО «Block One Company»',
-      ],
-    },
-    {
-      month: 'МАЙ',
-      dates: [],
-      content: [
-        'Погашение первого выпуска облигаций ТОО «BASS Gold»',
-        'Определение аудиторской организации для проведения аудита',
-        'Оплата остатка за долю участия в ТОО «Block One Company»',
-      ],
-    },
-    {
-      month: 'ИЮНЬ',
-      dates: [],
-      content: [
-        'Избрание членов Ревизионной комиссии ТОО «BASS Gold»',
-        'Оплата остатка за долю участия в ТОО «Block One Company»',
-      ],
-    },
-    {
-      month: 'ИЮЛЬ',
-      dates: [],
-      content: [
-        'Утверждение и публикация годового отчета ТОО «BASS Gold» на АО «Казахстанская фондовая биржа» и сайте Холдинга',
-        'Выплаты купонного вознаграждения по второму выпуску облигаций ТОО «BASS Gold»',
-      ],
-    },
-    {
-      month: 'АВГУСТ',
-      dates: [],
-      content: [
-        'Информация о суммарном размере вознаграждения членов исполнительного органа ТОО «BASS Gold» по итогам года на сайте АО «Казахстанская фондовая биржа»',
-        'Получение ТОО «BASS Gold» лицензии на разработку за контрактной территории месторождения Ушшокы',
-      ],
-    },
-    {
-      month: 'ОКТЯБРЬ',
-      dates: [],
-      content: [
-        'Погашение второго выпуска облигаций ТОО «BASS Gold»',
-        'Определение аудиторской организации для проведения аудита годовой финансовой отчетности ТОО «BASS Gold» за 2024 год',
-        'Выплаты купонного вознаграждения по второму выпуску облигаций ТОО «BASS Gold»',
-      ],
-    },
-    {
-      month: 'НОЯБРЬ',
-      dates: [],
-      content: [
-        'Определение аудиторской организации для проведения аудита годовой финансовой отчетности ТОО «BASS Gold» за 2024 год',
-      ],
-    },
-    {
-      month: 'ДЕКАБРЬ',
-      dates: [],
-      content: [
-        'Получение международного кредитного рейтинга Преобразование ТОО «BASS Holding» в Акционерное общество «BASS Holding»',
-        'Выход АО «BASS Holding» на IPO',
-        'Запуск золотообогатительной фабрики на месторождении Чинасыл-Сай',
-      ],
-    },
-    {
-      month: 'ПЕРИОДИЧЕСКИЕ СОБЫТИЯ',
-      dates: [],
-      content: [
-        'Утверждение и публикация ежеквартальной финансовой отчетности ТОО «BASS Gold» на сайтах Депозитария финансовой отчетности и АО «Казахстанская фондовая биржа»',
-        'Раскрытие информации об аффилированных лицах ТОО «BASS Gold» на сайте АО «Казахстанская фондовая биржа»',
-        'Опубликование решений Общего собрания участников ТОО «BASS Gold»',
-      ],
     },
   ]
 
