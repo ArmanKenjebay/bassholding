@@ -223,12 +223,12 @@ export default function FinancialCalendar() {
   ]
 
   return (
-    <div className={`flex flex-col`}>
+    <div className={`flex flex-col snap-mandatory snap-y`}>
       {isVisible
         ? corpCalendar.map((calendar) => (
             <motion.div
               key={calendar.month}
-              className={`flex gap-x-20 gap-y-10 justify-between mb-10`}
+              className={`flex gap-x-20 gap-y-10 justify-between mb-10 snap-center`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.75 }}
@@ -254,7 +254,7 @@ export default function FinancialCalendar() {
         : corpCalendar.toSpliced(1).map((calendar) => (
             <motion.div
               key={calendar.month}
-              className={`flex gap-x-20 gap-y-10 justify-between mb-10`}
+              className={`flex gap-x-20 gap-y-10 justify-between mb-10 snap-center`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.75 }}
