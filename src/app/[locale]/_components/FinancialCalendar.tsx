@@ -238,8 +238,8 @@ export default function FinancialCalendar() {
               </div>
 
               <div className={`flex flex-col flex-1 border-t py-10 gap-y-10`}>
-                {calendar.content.map((content) => (
-                  <div key={content.text} className={`relative`}>
+                {calendar.content.map((content, index) => (
+                  <div key={index} className={`relative`}>
                     <span
                       className={`text-[48px] text-primary-gold absolute -left-1/3`}
                     >
@@ -251,32 +251,38 @@ export default function FinancialCalendar() {
               </div>
             </motion.div>
           ))
-        : corpCalendar.toSpliced(1).map((calendar) => (
-            <motion.div
-              key={calendar.month}
-              className={`flex gap-x-20 gap-y-10 justify-between mb-10 snap-center`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.75 }}
-            >
-              <div className={`flex flex-1 border-t py-10`}>
-                <span className={`text-[48px]`}>{calendar.month}</span>
-              </div>
-
-              <div className={`flex flex-col flex-1 border-t py-10 gap-y-10`}>
-                {calendar.content.map((content) => (
-                  <div key={content.text} className={`relative`}>
-                    <span
-                      className={`text-[48px] text-primary-gold absolute -left-1/3`}
-                    >
-                      {content.date ? content.date : ''}
-                    </span>
-                    <span className={`text-[24px]`}>{content.text}</span>
+        : corpCalendar.map((calendar, index) => {
+            if (index === 0) {
+              return (
+                <motion.div
+                  key={calendar.month}
+                  className={`flex gap-x-20 gap-y-10 justify-between mb-10 snap-center`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.75 }}
+                >
+                  <div className={`flex flex-1 border-t py-10`}>
+                    <span className={`text-[48px]`}>{calendar.month}</span>
                   </div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+
+                  <div
+                    className={`flex flex-col flex-1 border-t py-10 gap-y-10`}
+                  >
+                    {calendar.content.map((content, index) => (
+                      <div key={index} className={`relative`}>
+                        <span
+                          className={`text-[48px] text-primary-gold absolute -left-1/3`}
+                        >
+                          {content.date ? content.date : ''}
+                        </span>
+                        <span className={`text-[24px]`}>{content.text}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )
+            }
+          })}
 
       <div>
         <span
