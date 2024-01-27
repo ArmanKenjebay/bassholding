@@ -104,13 +104,13 @@ export default function CustomNavbar({
               >
                 {dictionary.news}
               </NavigationLink>
-              {/*<NavigationLink*/}
-              {/*  className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal"*/}
-              {/*  href="/investors"*/}
-              {/*  lang={locale}*/}
-              {/*>*/}
-              {/*  Инвесторам*/}
-              {/*</NavigationLink>*/}
+              <NavigationLink
+                className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal"
+                href="/investors"
+                lang={locale}
+              >
+                Инвесторам
+              </NavigationLink>
             </div>
           </div>
           <div className="flex gap-x-2 justify-between">
@@ -190,15 +190,15 @@ export default function CustomNavbar({
               {dictionary.career}
             </NavigationLink>
           </NavbarMenuItem>
-          {/*<NavbarMenuItem>*/}
-          {/*  <NavigationLink*/}
-          {/*    onClick={() => handleNavbarMenuItem(isMenuOpen)}*/}
-          {/*    href="/investors"*/}
-          {/*    lang={locale}*/}
-          {/*  >*/}
-          {/*    Инвесторы*/}
-          {/*  </NavigationLink>*/}
-          {/*</NavbarMenuItem>*/}
+          <NavbarMenuItem>
+            <NavigationLink
+              onClick={() => handleNavbarMenuItem(isMenuOpen)}
+              href="/investors"
+              lang={locale}
+            >
+              Инвесторы
+            </NavigationLink>
+          </NavbarMenuItem>
           <NavbarMenuItem>
             <NavigationLink
               onClick={() => handleNavbarMenuItem(isMenuOpen)}
