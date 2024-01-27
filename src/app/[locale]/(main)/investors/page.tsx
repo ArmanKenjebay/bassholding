@@ -101,7 +101,7 @@ export default async function Investors({ params: { locale } }: Props) {
           ПРЕСС РЕЛИЗЫ
         </span>
 
-        <PressRelease />
+        <PressRelease locale={locale} />
       </div>
     </div>
   )

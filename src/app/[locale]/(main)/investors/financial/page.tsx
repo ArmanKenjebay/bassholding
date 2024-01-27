@@ -11,24 +11,6 @@ export default async function Financial({
 }) {
   const dictionary = await getDictionary(locale)
 
-  const token = process.env.NEXT_PUBLIC_TOKEN
-  const api = process.env.NEXT_PUBLIC_BACKEND_API
-  const headers = {
-    Authorization: `Bearer ${token}`,
-    'Content-Type': 'application/json',
-  }
-  const response = await fetch(`${api}/finance-indicators?populate=*`, {
-    headers,
-  })
-
-  const finDocs: { url: string }[] = await response.json().then((res) => {
-    const urls: { url: string }[] = res.data.map((el: any) =>
-      el.attributes.file.data.map((data: any) => data.attributes),
-    )
-
-    return urls
-  })
-
   const corpAdmin = [
     {
       label: 'Кодекс корпоративного управления',
