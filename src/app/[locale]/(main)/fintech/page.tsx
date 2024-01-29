@@ -65,10 +65,6 @@ export default async function Fintech({
 
             <ul className="list-disc text-sm px-5 xl:text-[20px] leading-normal font-[300] xl:mb-10">
               <li>
-                <span className="text-primary-gold">Crowdlender.kz</span> –
-                {' ' + dictionary.fintech.text_6}
-              </li>
-              <li>
                 <span className="text-primary-gold">AgroCredit</span> –
                 {' ' + dictionary.fintech.text_7}
               </li>
