@@ -2,9 +2,9 @@
   "main": {
     "title": "Bassholding",
     "description": "Bassholding описание",
-    "text-build": "СТРОИМ,",
-    "text-develop": "РАЗВИВАЕМ,",
-    "text-inspire": "ВДОХНОВЛЯЕМ.",
+    "text-build": "СТРОИМ",
+    "text-develop": "РАЗВИВАЕМ",
+    "text-inspire": "ВДОХНОВЛЯЕМ",
     "text-under-photo": "Группа компаний, осуществляющая инвестиционную деятельность в разных секторах экономики."
   },
   "about": {

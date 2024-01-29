@@ -75,7 +75,7 @@ export default function CustomNavbar({
             </Link>
           </div>
           <div className="lg:flex hidden flex-1 justify-start">
-            <div className="flex sm:gap-x-8 md:gap-x-10 lg:gap-x-10 xl:gap-x-16 2xl:gap-x-20">
+            <div className="flex sm:gap-x-8 md:gap-x-10 lg:gap-x-10 xl:gap-x-16 2xl:gap-x-20 items-center">
               <NavigationLink
                 className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal whitespace-nowrap"
                 href="/about"
@@ -111,41 +111,44 @@ export default function CustomNavbar({
               >
                 Инвесторам
               </NavigationLink>
+
+              <div className="flex">
+                <Select
+                  aria-label="Choose language"
+                  onChange={handleSelectionChange}
+                  selectedKeys={[locale]}
+                  className="min-w-[72px]"
+                  classNames={{
+                    mainWrapper: 'h-10',
+                    trigger:
+                      'opacity-80 bg-[#5E5E5E] data-[hover=true]:bg-[#5E5E5E]',
+                    innerWrapper: '',
+                  }}
+                >
+                  <SelectItem key="en" lang="en" value="en">
+                    EN
+                  </SelectItem>
+                  <SelectItem key="ru" lang="ru" value="ru">
+                    RU
+                  </SelectItem>
+                  <SelectItem key="kk" lang="kk" value="kk">
+                    KZ
+                  </SelectItem>
+                </Select>
+              </div>
+
+              <div className="hidden lg:flex md:items-center">
+                <Link href={'/contact'} locale={locale}>
+                  <Button
+                    className={`p-4 truncate lg:text-base md:text-xs font-normal rounded-xl opacity-80 bg-[#5E5E5E] ease-in-out duration-200 hover:bg-primary-gold hover:border-white hover:text-white ${
+                      pathName === '/contact' && 'bg-primary-gold border-black'
+                    }`}
+                  >
+                    {dictionary.contact}
+                  </Button>
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className="flex gap-x-2 justify-between">
-            <Select
-              aria-label="Choose language"
-              onChange={handleSelectionChange}
-              selectedKeys={[locale]}
-              className="min-w-[72px]"
-              classNames={{
-                mainWrapper: 'h-10',
-                trigger: 'bg-transparent data-[hover=true]:bg-transparent',
-                innerWrapper: '',
-              }}
-            >
-              <SelectItem key="en" lang="en" value="en">
-                EN
-              </SelectItem>
-              <SelectItem key="ru" lang="ru" value="ru">
-                RU
-              </SelectItem>
-              <SelectItem key="kk" lang="kk" value="kk">
-                KZ
-              </SelectItem>
-            </Select>
-          </div>
-          <div className="hidden lg:flex md:items-center">
-            <Link href={'/contact'} locale={locale}>
-              <Button
-                className={`p-4 truncate lg:text-base md:text-xs font-normal rounded-xl border-1 bg-transparent ease-in-out duration-200 hover:bg-primary-gold hover:border-white hover:text-white ${
-                  pathName === '/contact' && 'bg-primary-gold border-black'
-                }`}
-              >
-                {dictionary.contact}
-              </Button>
-            </Link>
           </div>
         </div>
 
