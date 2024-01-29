@@ -11,13 +11,15 @@ const directionCards = [
     desc: 'mining',
     chips: ['subsoil_use', 'gold_mining'],
   },
+
   {
-    link: 'pincode',
-    image: homeCard2,
-    title: 'HR TECH',
-    desc: 'hr_tech',
-    chips: ['HR TECH', 'career_guidance', 'personnel_assessment'],
+    link: 'fintech',
+    image: homeCard4,
+    title: 'FINTECH',
+    desc: 'fintech_desc',
+    chips: ['factoring'],
   },
+
   {
     link: 'bass-eco',
     image: homeCard3,
@@ -26,11 +28,11 @@ const directionCards = [
     chips: ['ecology', 'transport'],
   },
   {
-    link: 'fintech',
-    image: homeCard4,
-    title: 'FINTECH',
-    desc: 'fintech_desc',
-    chips: ['crowdlending', 'factoring'],
+    link: 'pincode',
+    image: homeCard2,
+    title: 'HR TECH',
+    desc: 'hr_tech',
+    chips: ['HR TECH', 'career_guidance', 'personnel_assessment'],
   },
 ]
 
