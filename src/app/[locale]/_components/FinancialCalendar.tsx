@@ -224,6 +224,15 @@ export default function FinancialCalendar() {
 
   return (
     <div className={`flex flex-col snap-mandatory snap-y`}>
+      <div className={`mb-5 flex justify-end`}>
+        <span
+          onClick={handleVisible}
+          className={`text-primary-gold text-[24px] duration-200 ease-in-out underline cursor-pointer hover:opacity-95`}
+        >
+          {isVisible ? 'Свернуть' : 'Развернуть'}
+        </span>
+      </div>
+
       {isVisible
         ? corpCalendar.map((calendar) => (
             <motion.div
@@ -283,15 +292,6 @@ export default function FinancialCalendar() {
               )
             }
           })}
-
-      <div>
-        <span
-          onClick={handleVisible}
-          className={`text-primary-gold text-[24px] duration-200 ease-in-out underline cursor-pointer hover:opacity-95`}
-        >
-          {isVisible ? 'Свернуть' : 'Развернуть'}
-        </span>
-      </div>
     </div>
   )
 }

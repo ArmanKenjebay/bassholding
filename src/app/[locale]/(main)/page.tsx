@@ -18,8 +18,8 @@ import PageWrapper from '@/app/[locale]/_components/PageWrapper'
 import MotionDiv from '@/app/[locale]/_components/MotionDiv'
 import Reveal from '@/app/[locale]/_components/Reveal'
 import DivTransform from '@/app/[locale]/_components/DivTransform'
-import PressRelease from '@/app/[locale]/_components/PressRelease'
 import React from 'react'
+import FinancialCalendar from '@/app/[locale]/_components/FinancialCalendar'
 
 type Props = {
   params: { locale: Locale }
@@ -203,12 +203,12 @@ export default async function Home({ params: { locale } }: Props) {
             className={`xl:py-[35px] xl:px-[60px] lg:px-[40px] md:px-[32px] px-[20px] flex flex-col sm:mb-10 mb-5`}
           >
             <span
-              className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] sm:mb-10 mb-5`}
+              className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] font-thin mb-5`}
             >
-              ПРЕСС РЕЛИЗЫ
+              КОРПОРАТИВНЫЙ КАЛЕНДАРЬ 2024
             </span>
 
-            <PressRelease locale={locale} />
+            <FinancialCalendar />
           </div>
         </MotionDiv>
 

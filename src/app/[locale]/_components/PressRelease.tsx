@@ -38,7 +38,9 @@ export default async function PressRelease({ locale }: Props) {
       {post && post.length > 0 ? (
         post.map((el: any) => (
           <Link
-            href={`${locale}/news/${el.id}`}
+            href={`news/${el.id}`}
+            locale={locale}
+            lang={locale}
             key={el.id}
             className={`flex flex-col xl:w-3/4 w-full hover:text-primary-gold duration-200 ease-in-out`}
           >

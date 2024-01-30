@@ -2,7 +2,6 @@
 
 import { Accordion, AccordionItem } from '@nextui-org/accordion'
 import IconPlus from '@/app/[locale]/_components/IconPlus'
-import { subtle } from 'node:crypto'
 
 export default function InvestorDictionaryAccordion({
   dictionary,
