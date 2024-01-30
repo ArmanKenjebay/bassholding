@@ -13,8 +13,27 @@ import CalculateModal from '@/app/[locale]/_components/CalculateModal'
 type Props = {
   params: { locale: Locale }
 }
+
 export default async function Investors({ params: { locale } }: Props) {
+  const token = process.env.NEXT_PUBLIC_TOKEN
+  const api = process.env.NEXT_PUBLIC_BACKEND_API
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    Authorization: `Bearer ${token}`,
+    'Content-Type': 'application/json',
+  }
+
   const dictionary = await getDictionary(locale)
+
+  const response = await fetch(`${api}/finance-indicators?populate=*`, {
+    headers,
+  })
+
+  if (response.ok) {
+    console.log(await response.json())
+  }
 
   const ebidta = [
     { label: 'EBIDTA', value: '457 млн ₸' },

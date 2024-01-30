@@ -198,20 +198,6 @@ export default async function Home({ params: { locale } }: Props) {
           </div>
         </MotionDiv>
 
-        <MotionDiv>
-          <div
-            className={`xl:py-[35px] xl:px-[60px] lg:px-[40px] md:px-[32px] px-[20px] flex flex-col sm:mb-10 mb-5`}
-          >
-            <span
-              className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] font-thin mb-5`}
-            >
-              КОРПОРАТИВНЫЙ КАЛЕНДАРЬ 2024
-            </span>
-
-            <FinancialCalendar />
-          </div>
-        </MotionDiv>
-
         <div className="sm:px-5 xl:px-[60px] px-5 sm:mb-10 w-full h-full flex justify-center mb-10">
           <a
             target={`_blank`}
