@@ -31,9 +31,9 @@
     "bibigul_mussatayeva": "Bibigul Mussatayeva",
     "bibigul_mussatayeva_description": "Head of Legal",
     "aliya_korabayeva": "Aliya Korabayeva",
-    "aliya_korabayeva_description": "Head of Accounting and Audit",
+    "aliya_korabayeva_description": "Head of Accounting",
     "alimzhan_abishev": "Alimzhan Abishev",
-    "alimzhan_abishev_description": "Head of Analytics",
+    "alimzhan_abishev_description": "Head of strategy and analytics",
     "shokan_aidar": "Shokan Aidar",
     "shokan_aidar_description": "Head of Marketing",
     "yermek_ilyasov": "Yermek Ilyasov",
@@ -55,8 +55,8 @@
     "text_10": "We support professional and personal growth of our employees. We offer various programmes for professional growth in your respected field to help you reach new career heights."
   },
   "direction": {
-    "title": "Industries",
-    "description": "Industries description",
+    "title": "Streams",
+    "description": "Streams description",
     "bassgold": "BassGold",
     "main_aim-1": "The main aim",
     "main_aim-2": "- raise the flag of the Republic of Kazakhstan on all possible pedestals in any industiers",
