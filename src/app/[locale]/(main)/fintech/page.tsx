@@ -82,6 +82,9 @@ export default async function Fintech({
             <span className="text-sm mb-3 xl:text-[20px] leading-normal font-[300] xl:mb-10">
               {dictionary.fintech.text_10}
             </span>
+            <span className="text-sm mb-3 xl:text-[20px] leading-normal font-[300] xl:mb-10">
+              {dictionary.fintech.text_11}
+            </span>
           </div>
         </div>
       </PageWrapper>
