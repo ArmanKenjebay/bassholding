@@ -17,7 +17,7 @@ const directionCards = [
     image: homeCard4,
     title: 'FINTECH',
     desc: 'fintech_desc',
-    chips: ['factoring'],
+    chips: ['factoring', 'bank', 'marketplace', 'e-gov'],
   },
 
   {

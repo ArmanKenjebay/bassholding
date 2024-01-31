@@ -10,57 +10,66 @@ export default function InvestorDictionaryAccordion({
 }) {
   const tops = [
     {
-      title: 'Корпоративная информация',
+      title: dictionary.corporate_event_calendar.corporateInformation.title,
       content: [
         {
-          subTitle: 'Когда была основана компания?',
+          subTitle:
+            dictionary.corporate_event_calendar.corporateInformation.subTitle_1,
           text: [
-            'ТОО «BASS Gold» (ранее – ТОО «Форпост») – золотодобывающая компания, имеющая 25-летний опыт деятельности на рынке драгоценных металлов.',
-            'В активах компании имеется золоторудное месторождение Ушшокы, расположенное в области Улытау Республики Казахстан. Срок действия Контракта №272 от 30.11.1998 г. на проведение добычи золотосодержащих руд месторождения Ушшокы в соответствии с Лицензией серии ГКИ No 143Д – до августа 2026 года.',
-            'Для наращивания объема добычи и переработки твердых полезных ископаемых в 2023 году приобретено месторождение «Чинасыл-сай» в Алматинской области. Данная сделка позволила увеличить запасы золота на объем порядка 7 тонн.',
+            dictionary.corporate_event_calendar.corporateInformation
+              .subTitle_1_text_1,
+            dictionary.corporate_event_calendar.corporateInformation
+              .subTitle_1_text_2,
           ],
         },
         {
-          subTitle: 'Когда была переименована компания?',
+          subTitle:
+            dictionary.corporate_event_calendar.corporateInformation.subTitle_2,
           text: [
-            'ТОО «Форпост» было переименовано в ТОО «BASS Gold» осенью 2023 года. Справка о государственной перерегистрации юридического лица от 28 сентября 2023 года, в соответствии с которой ТОО «Форпост» перерегистрировано в ТОО «BASS Gold».',
+            dictionary.corporate_event_calendar.corporateInformation
+              .subTitle_2_text_1,
           ],
         },
         {
-          subTitle: 'Где производится добыча золотосодержащих руд? ',
+          subTitle:
+            dictionary.corporate_event_calendar.corporateInformation.subTitle_3,
           text: [
-            'Добыча золотосодержащих руд производится на месторождении Ушшокы, которое находится в Улытауском районе области Улытау Республики Казахстан. Добыча золотосодержащей руды и получение концентрата посредством флотации на обогатительной фабрике осуществляется непосредственно на территории месторождения.',
-            'В 2024 году запланировано освоение месторождения «Чинасыл-сай» с последующим строительством фабрики по переработке флотоконцентрата производственной мощностью 300 тыс. тонн руды в год с получением товарного свинцового и цинкового концентрата с содержанием золота, серебра и кадмия. ',
+            dictionary.corporate_event_calendar.corporateInformation
+              .subTitle_3_text_1,
           ],
         },
         {
-          subTitle: 'Какое количество золотосодержащих руд добыто в 2023 году?',
+          subTitle:
+            dictionary.corporate_event_calendar.corporateInformation.subTitle_4,
           text: [
-            'В 2023 году добыто: ',
-            '* в руде 149,423 кг',
-            'среднее содержание золота – 4,2 грамм/тонна',
-            '* в концентрате 55,596 кг',
-            'среднее содержание золота – 62,9 грамм/тонна',
+            dictionary.corporate_event_calendar.corporateInformation
+              .subTitle_4_text_1,
             '',
             '',
-            'Добыча золота:',
-            '2021 год – 41 769 тонн руды',
-            '2022 год – 37 372 тонн руды',
-            '2023 год – 50 164 тонн руды',
+            dictionary.corporate_event_calendar.corporateInformation
+              .subTitle_4_text_2,
+            dictionary.corporate_event_calendar.corporateInformation
+              .subTitle_4_text_3,
           ],
         },
         {
-          subTitle: 'Социальная ответственность ТОО «BASS Gold»',
+          subTitle:
+            dictionary.corporate_event_calendar.corporateInformation.subTitle_5,
           text: [
-            'В рамках социальной ответственности ТОО «BASS Gold» осенью 2023 года на территории «Первого карбонового пространства» (полигона), находящегося в ауле Жолтаптык, состоялась закладка надписи из деревьев слова «UMIT» из 270 саженцев сосны.',
-            'Также осенью 2023 года на территории месторождения Ушшокы было высажено 207 саженцев вяза',
-            'Проекты по высадке деревьев несут большое значение с точки зрения вклада в озеленение нашей страны. Мы планируем продолжать высадку деревьев на территории месторождений ТОО «BASS Gold», а также на всей территории Казахстана.',
+            dictionary.corporate_event_calendar.corporateInformation
+              .subTitle_5_text_1,
+            dictionary.corporate_event_calendar.corporateInformation
+              .subTitle_5_text_2,
+            dictionary.corporate_event_calendar.corporateInformation
+              .subTitle_5_text_3,
           ],
         },
         {
-          subTitle: 'Где следить за обновлениями?',
+          subTitle:
+            dictionary.corporate_event_calendar.corporateInformation.subTitle_6,
           text: [
-            'Все актуальные данные представлены на нашем официальном сайте bassholding.com в разделах «Новости» и «Инвесторам». Также бизнес-информация представлена на сайте Казахстанской фондовой биржи KASE.',
+            dictionary.corporate_event_calendar.corporateInformation
+              .subTitle_6_text_1,
           ],
         },
       ],

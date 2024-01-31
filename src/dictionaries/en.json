@@ -10,7 +10,7 @@
   "about": {
     "title": "About us",
     "description": "About us description",
-    "human_value": "People are our main value and the source of strength for the holding.",
+    "human_value": "People are our main value and the source of strength for the holding",
     "our_values": "Our values",
     "our_values_principles": "Our values and principles closely align with the United Nations' Sustainable Development Goals",
     "sustainability": "Sustainability",
@@ -43,7 +43,7 @@
     "title": "Career",
     "description": "Career us description",
     "open_positions": "Open positions",
-    "text_1": "PEOPLE - THE MAIN ASSET OF OUR COMPANY.",
+    "text_1": "PEOPLE - THE MAIN ASSET OF OUR COMPANY",
     "text_2": "We offer a comfortable environment and support the growth of our people",
     "text_3": "Personal and professional competencies assessment",
     "text_4": "We offer every employee an opportunitity to determine his strengths and areas of growth. After the assessment, you will receive a coach session from our leading experts, who will help you develop a strategy for your personal and professional growth.",
@@ -112,7 +112,8 @@
     "description": "Investors",
     "company_profile": "Company profile",
     "financial_count": "Financial indicators",
-    "press_center": "Press center"
+    "press_center": "Press center",
+    "corporate_event_calendar": "CORPORATE EVENT CALENDAR 2024"
   },
   "button": {
     "find-out-more": "Find out more"
@@ -158,8 +159,31 @@
     "text_5": "Projects in this direction:",
     "text_7": "a credit module for scoring applications in the agricultural sector;",
     "text_8": "factoring.",
-    "text_9": "Representative Office In Thailand",
-    "text_10": "As part of this direction, the implementation of FinTech projects is planned in Kazakhstan and beyond. In September 2023, a representative office was opened in Thailand, where we intend to launch FinTech projects and foster trade relationships."
+    "text_9": "Bass Finance",
+    "text_10": "Создать экосистему, которая позволит клиентам решать повседневные финансовые задачи быстро и легко, используя привычные для них способы взаимодействия",
+    "text_11": "Наша главная цель - изменить и облегчить жизнь предпринимателям, создав востребованный онлайн-продукт с качественным сервисом, современными технологиями и возможностью для роста компаний и повышения лояльности клиентов по всей стране."
   },
-  "prev_news": "Previous news page"
+  "prev_news": "Previous news page",
+  "corporate_event_calendar": {
+    "corporateInformation": {
+      "title": "Corporate Information",
+      "subTitle_1": "When was the company founded?",
+      "subTitle_1_text_1": "BASS GOLD – a gold mining company with 25 years of experience in the precious metals industry. The company's assets include Ushshoky gold deposit in Kazakhstan's Ulytau region. Contract No. 272 dated November 30, 1998, for gold-bearing ore mining at the Ushshoky deposit, is valid until August 2026, in accordance with License Series by State Investment Committee No. 143D.",
+      "subTitle_1_text_2": "In 2023, the acquisition of the \"Chinasyl-sai\" deposit in the Almaty Region was made to increase the volume of solid mineral extraction and processing. This transaction resulted in an increase in gold reserves by approximately 7 tons.",
+      "subTitle_2": "When was the company renamed?",
+      "subTitle_2_text_1": "Forpost LLP was renamed to BASS Gold LLP in the autumn of 2023. A state re-registration certificate of the legal entity dated September 28, 2023, confirms the transformation of Forpost LLP into to BASS Gold LLP",
+      "subTitle_3": "Where is the extraction of gold-bearing ores conducted?",
+      "subTitle_3_text_1": "The extraction of gold-bearing ores is carried out at the Ushshoky deposit, located in Kazakhstan's Ulytau region. The extraction of gold-bearing ore and the production of concentrate through flotation at the beneficiation plant are carried out directly on the territory of the deposit.",
+      "subTitle_4": "What was the amount of extracted gold-bearing ore in 2023?",
+      "subTitle_4_text_1": "In 2023, the following amounts were extracted:",
+      "subTitle_4_text_2": "In ore: 149,423 kg\nAverage gold content: 4.2 grams per ton\n",
+      "subTitle_4_text_3": "In concentrate: 55,596 kg\nAverage gold content: 62.9 grams per ton\n",
+      "subTitle_5": "BASS Gold’s Social Responsibility",
+      "subTitle_5_text_1": "In 2023, as part of social responsibility initiatives, BASS Gold LLP contributed to the environment by planting 270 pine saplings to form the word \"UMIT\" at the \"First Carbon Space\" landfill, located in the Zholtaptyk village.",
+      "subTitle_5_text_2": "Moreover, 207 ash tree saplings were planted on the territory of the Ushshoky deposit in the fall of 2023",
+      "subTitle_5_text_3": "Tree planting projects hold significant importance in terms of contributing to the greenery of our country. We plan to continue planting trees on the territory of BASS Gold LLP deposits and throughout Kazakhstan.",
+      "subTitle_6": "Where can I monitor updates?",
+      "subTitle_6_text_1": "All current information is available on our official website at bassholding.com under the \"News\" and \"Investors\" sections. Business information is also available on Kazakhstan Stock Exchange (KASE) website."
+    }
+  }
 }
