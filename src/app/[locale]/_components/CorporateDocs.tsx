@@ -43,7 +43,7 @@ export default function CorporateDocs({ data, locale, dictionary }: Props) {
         КОРПОРАТИВНОЕ УПРАВЛЕНИЕ
       </span>
 
-      <div className={`flex flex-wrap gap-7`}>
+      <div className={`flex gap-7 overflow-x-auto overflow-y-hidden h-[235px]`}>
         {data.data.map((year) => (
           <div key={year.id}>
             {year.attributes.file.data.map((part, index) => (
