@@ -14,8 +14,6 @@ type Props = {
 export default function CorporateDocs({ data, locale, dictionary }: Props) {
   const api = process.env.NEXT_PUBLIC_BACKEND_API_FILE
 
-  console.log(data)
-
   const getName = (locale: Locale, data: FinDocsAttribute) => {
     switch (locale) {
       case 'en':
