@@ -9,6 +9,7 @@ import DivTransform from '@/app/[locale]/_components/DivTransform'
 import PressRelease from '@/app/[locale]/_components/PressRelease'
 import FinancialTabs from '@/app/[locale]/_components/FinancialTabs'
 import CalculateModal from '@/app/[locale]/_components/CalculateModal'
+import { FinDocs } from '@/app/[locale]/_types/TFinDocs'
 
 type Props = {
   params: { locale: Locale }
@@ -27,12 +28,19 @@ export default async function Investors({ params: { locale } }: Props) {
 
   const dictionary = await getDictionary(locale)
 
-  const response = await fetch(`${api}/finance-indicators?populate=*`, {
-    headers,
-  })
+  let finDocs: FinDocs | undefined = undefined
+
+  const response = await fetch(
+    `${api}/finance-indicators?populate=*&sort=id:desc`,
+    {
+      headers,
+      cache: 'no-cache',
+    },
+  )
 
   if (response.ok) {
-    console.log(await response.json())
+    finDocs = await response.json()
+    console.log('finDocs: ', finDocs)
   }
 
   const ebidta = [
@@ -102,7 +110,7 @@ export default async function Investors({ params: { locale } }: Props) {
       <div
         className={`xl:py-[35px] xl:px-[60px] lg:px-[40px] md:px-[32px] px-[20px] flex flex-col sm:mb-10 mb-5`}
       >
-        <FinancialTabs />
+        {finDocs?.data && <FinancialTabs locale={locale} data={finDocs} />}
       </div>
 
       <div
