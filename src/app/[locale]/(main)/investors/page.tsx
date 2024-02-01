@@ -9,7 +9,7 @@ import DivTransform from '@/app/[locale]/_components/DivTransform'
 import PressRelease from '@/app/[locale]/_components/PressRelease'
 import FinancialTabs from '@/app/[locale]/_components/FinancialTabs'
 import CalculateModal from '@/app/[locale]/_components/CalculateModal'
-import { FinDocs } from '@/app/[locale]/_types/TFinDocs'
+import { AnnualsDocs, FinDocs } from '@/app/[locale]/_types/TFinDocs'
 
 type Props = {
   params: { locale: Locale }
@@ -26,11 +26,12 @@ export default async function Investors({ params: { locale } }: Props) {
     'Content-Type': 'application/json',
   }
 
-  const dictionary = await getDictionary(locale)
+  const dictionary: any = await getDictionary(locale)
 
   let finDocs: FinDocs | undefined = undefined
+  let annualsDocs: AnnualsDocs | undefined = undefined
 
-  const response = await fetch(
+  const finDocsResponse = await fetch(
     `${api}/finance-indicators?populate=*&sort=id:desc`,
     {
       headers,
@@ -38,16 +39,27 @@ export default async function Investors({ params: { locale } }: Props) {
     },
   )
 
-  if (response.ok) {
-    finDocs = await response.json()
-    console.log('finDocs: ', finDocs)
+  const annualsDocsResponse = await fetch(
+    `${api}/annuals?populate=*&sort=id:desc`,
+    {
+      headers,
+      cache: 'no-cache',
+    },
+  )
+
+  if (finDocsResponse.ok) {
+    finDocs = await finDocsResponse.json()
+  }
+
+  if (annualsDocsResponse.ok) {
+    annualsDocs = await annualsDocsResponse.json()
   }
 
   const ebidta = [
     { label: 'EBIDTA', value: '457 млн ₸' },
     { label: 'ROA', value: '31.4 %' },
     { label: 'ROE', value: '58.5%' },
-    { label: 'Вклад в развитие', value: '> 2 млрд ₸' },
+    { label: 'developmentContributions', value: '> 2 млрд ₸' },
   ]
 
   const animate = {
@@ -85,11 +97,7 @@ export default async function Investors({ params: { locale } }: Props) {
         <div className={`lg:flex flex-col p-[60px] hidden sm:mb-10 mb-5`}>
           <span className={`text-primary-gold text-[48px]`}>BASS GOLD</span>
           <span className={`text-[24px]`}>
-            золотодобывающая компания, имеющая 25-летний опыт деятельности на
-            рынке драгоценных металлов. В активах компании имеется золоторудное
-            месторождение Ушшокы, расположенное в области Ұлытау Республики
-            Казахстан и Чинасыл-Сай в Алматинской области, на котором
-            планируется строительство фабрики по переработке флотоконцентрата.
+            {dictionary.investors.bass_gold_text}
           </span>
         </div>
       </MotionDiv>
@@ -98,9 +106,9 @@ export default async function Investors({ params: { locale } }: Props) {
         <div
           className={`lg:flex lg:flex-row flex-col p-[60px] justify-evenly items-center hidden sm:mb-10 mb-5`}
         >
-          {ebidta.map((el) => (
+          {ebidta.map((el: any) => (
             <div className={`flex flex-col text-[32px]`}>
-              <span className={``}>{el.label}</span>
+              <span className={``}>{dictionary.investors[el.label]}</span>
               <span className={`text-primary-gold`}>{el.value}</span>
             </div>
           ))}
@@ -110,13 +118,25 @@ export default async function Investors({ params: { locale } }: Props) {
       <div
         className={`xl:py-[35px] xl:px-[60px] lg:px-[40px] md:px-[32px] px-[20px] flex flex-col sm:mb-10 mb-5`}
       >
-        {finDocs?.data && <FinancialTabs locale={locale} data={finDocs} />}
+        {finDocs?.data && (
+          <FinancialTabs
+            dictionary={dictionary.investors}
+            locale={locale}
+            data={finDocs}
+          />
+        )}
       </div>
 
       <div
         className={`xl:py-[35px] xl:px-[60px] lg:px-[40px] md:px-[32px] px-[20px] flex flex-col sm:mb-10 mb-5`}
       >
-        <YearReport />
+        {annualsDocs?.data && (
+          <YearReport
+            dictionary={dictionary.investors}
+            locale={locale}
+            data={annualsDocs}
+          />
+        )}
       </div>
 
       <div

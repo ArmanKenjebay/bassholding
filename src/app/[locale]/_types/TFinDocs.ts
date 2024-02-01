@@ -5,6 +5,13 @@ export type FinDocs = {
   }[]
 }
 
+export type AnnualsDocs = {
+  data: {
+    id: number
+    attributes: AnnualsDocsAttribute
+  }[]
+}
+
 export type FinDocsAttribute = {
   createdAt: string
   updatedAt: string
@@ -16,6 +23,20 @@ export type FinDocsAttribute = {
   date_provision: string | null
   period_provision: string | null
   file: FinDocsFile
+}
+
+export type AnnualsDocsAttribute = {
+  createdAt: string
+  updatedAt: string
+  publishedAt: string
+  name_ru: string
+  name_kz: string
+  name_en: string
+  name_th: string | null
+  date_provision: string | null
+  period_provision: string | null
+  file: FinDocsFile
+  href: string
 }
 
 export type FinDocsFile = {

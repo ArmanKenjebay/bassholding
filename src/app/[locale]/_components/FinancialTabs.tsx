@@ -4,13 +4,15 @@ import React from 'react'
 import { Tab, Tabs } from '@nextui-org/tabs'
 import { FinDocs, FinDocsAttribute } from '@/app/[locale]/_types/TFinDocs'
 import { Locale } from '@/i18n-config'
+import ArrowSvg from '@/app/[locale]/_components/ArrowSvg'
 
 type Props = {
   data: FinDocs
   locale: Locale
+  dictionary: any
 }
 
-export default function FinancialTabs({ data, locale }: Props) {
+export default function FinancialTabs({ data, locale, dictionary }: Props) {
   const api = process.env.NEXT_PUBLIC_BACKEND_API_FILE
 
   const getName = (locale: Locale, data: FinDocsAttribute) => {
@@ -37,7 +39,7 @@ export default function FinancialTabs({ data, locale }: Props) {
       <span
         className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] mb-5`}
       >
-        ФИНАНСОВЫЕ ПОКАЗАТЕЛИ
+        {dictionary.financialIndicators}
       </span>
 
       <Tabs aria-label="years" variant={`underlined`}>
@@ -59,12 +61,17 @@ export default function FinancialTabs({ data, locale }: Props) {
                         href={api + part.attributes.url}
                         className={`group rounded-[99px] w-[30px] h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 cursor-pointer hover:bg-primary-gold hover:text-white`}
                       >
-                        <span className={`block group-hover:hidden`}>
-                          &#8594;
-                        </span>
-                        <span className={`hidden group-hover:block`}>
-                          &#8599;
-                        </span>
+                        <ArrowSvg
+                          classNames={`block group-hover:hidden`}
+                          width={'24'}
+                          height={'24'}
+                        />
+                        <ArrowSvg
+                          classNames={`hidden group-hover:block origin-center -rotate-45`}
+                          fillPath={'white'}
+                          width={'24'}
+                          height={'24'}
+                        />
                       </a>
                     </div>
                     <div>

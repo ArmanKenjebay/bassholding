@@ -1,4 +1,5 @@
-export default async function ArrowSvg({
+'use client'
+export default function ArrowSvg({
   classNames = '',
   width = '32',
   height = '32',
