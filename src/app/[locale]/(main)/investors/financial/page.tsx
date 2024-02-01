@@ -3,6 +3,8 @@ import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 import TopsAccordion from '@/app/[locale]/_components/TopsAccordion'
 import FinancialCalendar from '@/app/[locale]/_components/FinancialCalendar'
+import CorporateDocs from '@/app/[locale]/_components/CorporateDocs'
+import { AnnualsDocs } from '@/app/[locale]/_types/TFinDocs'
 
 export default async function Financial({
   params: { locale },
@@ -11,59 +13,42 @@ export default async function Financial({
 }) {
   const dictionary = await getDictionary(locale)
 
-  const corpAdmin = [
+  const token = process.env.NEXT_PUBLIC_TOKEN
+  const api = process.env.NEXT_PUBLIC_BACKEND_API
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    Authorization: `Bearer ${token}`,
+    'Content-Type': 'application/json',
+  }
+
+  let corporateDocs: AnnualsDocs | undefined = undefined
+
+  const corporateDocsResponse = await fetch(
+    `${api}/documents?populate=*&sort=id:desc`,
     {
-      label: 'Кодекс корпоративного управления',
-      date: '26 ноября, 2022',
+      headers,
+      cache: 'no-cache',
     },
-    {
-      label: 'Устав',
-      date: '3 февраля, 2022',
-    },
-    {
-      label: 'Изменения в Устав компании',
-      date: '20 сентября, 2022',
-    },
-  ]
+  )
+
+  if (corporateDocsResponse.ok) {
+    corporateDocs = await corporateDocsResponse.json()
+  }
 
   return (
     <div className={`flex flex-col h-full xl:mb-10 mb-5`}>
       <div
         className={`xl:py-[35px] xl:px-[60px] lg:px-[40px] md:px-[32px] px-[20px] flex flex-col sm:mb-10 mb-5`}
       >
-        <div className={`flex flex-col`}>
-          <span
-            className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] mb-5`}
-          >
-            КОРПОРАТИВНОЕ УПРАВЛЕНИЕ
-          </span>
-
-          <div className={`flex flex-wrap gap-7`}>
-            {corpAdmin.map((el) => (
-              <div
-                key={el.label}
-                className={`xl:w-[300px] lg:w-[270px] md:w-[250px] sm:w-[230px] xl:h-[235px] w-full h-[125px] xl:rounded-2xl rounded-3xl flex flex-col justify-between bg-[#262626] p-5`}
-              >
-                <div className={`flex justify-between`}>
-                  <span className={`xl:text-[24px] sm:text-[18px] text-[16px]`}>
-                    {el.label}
-                  </span>
-                  <div
-                    className={`group rounded-[99px] w-[30px] h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 cursor-pointer hover:bg-primary-gold hover:text-white`}
-                  >
-                    <span className={`block group-hover:hidden`}>&#8594;</span>
-                    <span className={`hidden group-hover:block`}>&#8599;</span>
-                  </div>
-                </div>
-                <div>
-                  <span className={`text-[16px] text-[#AFACAC]`}>
-                    {el.date}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        {corporateDocs && (
+          <CorporateDocs
+            data={corporateDocs}
+            locale={locale}
+            dictionary={dictionary}
+          />
+        )}
       </div>
 
       <div

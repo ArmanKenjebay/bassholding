@@ -1,18 +1,21 @@
 'use client'
 
-import { Tab, Tabs } from '@nextui-org/tabs'
 import React from 'react'
-import { AnnualsDocs, FinDocsAttribute } from '@/app/[locale]/_types/TFinDocs'
+import { FinDocs, FinDocsAttribute } from '@/app/[locale]/_types/TFinDocs'
 import { Locale } from '@/i18n-config'
 import ArrowSvg from '@/app/[locale]/_components/ArrowSvg'
 
 type Props = {
-  data: AnnualsDocs
+  data: FinDocs
   locale: Locale
   dictionary: any
 }
 
-export default async function YearReport({ data, locale, dictionary }: Props) {
+export default function CorporateDocs({ data, locale, dictionary }: Props) {
+  const api = process.env.NEXT_PUBLIC_BACKEND_API_FILE
+
+  console.log(data)
+
   const getName = (locale: Locale, data: FinDocsAttribute) => {
     switch (locale) {
       case 'en':
@@ -37,25 +40,24 @@ export default async function YearReport({ data, locale, dictionary }: Props) {
       <span
         className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] mb-5`}
       >
-        ГОДОВЫЕ ОТЧЕТЫ
+        КОРПОРАТИВНОЕ УПРАВЛЕНИЕ
       </span>
 
-      <Tabs aria-label="years" variant={`underlined`}>
-        {data.data.map((year, index) => (
-          <Tab key={year.id} title={`2024`}>
-            <div className={`flex flex-wrap gap-7`}>
+      <div className={`flex flex-wrap gap-7`}>
+        {data.data.map((year) => (
+          <div key={year.id}>
+            {year.attributes.file.data.map((part, index) => (
               <div
-                className={`xl:w-[300px] lg:w-[270px] md:w-[250px] sm:w-[230px] xl:h-[235px] w-full h-[125px] xl:rounded-2xl rounded-3xl flex flex-col justify-between bg-primary-gold p-5`}
+                key={index}
+                className={`xl:w-[300px] lg:w-[270px] md:w-[250px] sm:w-[230px] xl:h-[235px] w-full h-[125px] xl:rounded-2xl rounded-3xl flex flex-col justify-between bg-[#262626] p-5`}
               >
                 <div className={`flex justify-between`}>
-                  <span
-                    className={`xl:text-[24px] lg:text-[22px] text-[18px] text-black`}
-                  >
+                  <span className={`text-[24px] truncate`}>
                     {getName(locale, year.attributes)}
                   </span>
                   <a
                     target={`_blank`}
-                    href={year.attributes.href}
+                    href={api + part.attributes.url}
                     className={`group rounded-[99px] w-[30px] h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 cursor-pointer hover:bg-primary-gold hover:text-white`}
                   >
                     <ArrowSvg
@@ -72,15 +74,15 @@ export default async function YearReport({ data, locale, dictionary }: Props) {
                   </a>
                 </div>
                 <div>
-                  <span className={`text-[16px] text-black`}>
-                    {getDate(year.attributes.createdAt)}
+                  <span className={`text-[16px] text-[#AFACAC]`}>
+                    {getDate(part.attributes.createdAt)}
                   </span>
                 </div>
               </div>
-            </div>
-          </Tab>
+            ))}
+          </div>
         ))}
-      </Tabs>
+      </div>
     </div>
   )
 }
