@@ -57,7 +57,6 @@ export default function FinancialTabs({ data, locale, dictionary }: Props) {
                         {getName(locale, year.attributes)}
                       </span>
                       <a
-                        target={`_blank`}
                         download
                         href={api + part.attributes.url}
                         className={`group rounded-[99px] w-[30px] h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 cursor-pointer hover:bg-primary-gold hover:text-white`}
