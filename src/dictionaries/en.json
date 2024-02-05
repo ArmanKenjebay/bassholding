@@ -120,7 +120,9 @@
     "EBIDTA": "EBIDTA",
     "ROA": "ROA",
     "ROE": "ROE",
-    "financialIndicators": "FINANCIAL INDICATORS"
+    "financialIndicators": "FINANCIAL INDICATORS",
+    "pressRelease": "PRESS RELEASE"
+
   },
   "button": {
     "find-out-more": "Find out more"

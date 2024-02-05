@@ -120,7 +120,8 @@
     "EBIDTA": "EBIDTA",
     "ROA": "ROA",
     "ROE": "ROE",
-    "financialIndicators": "ҚАРЖЫ КӨРСЕТКІШТЕРІ"
+    "financialIndicators": "ҚАРЖЫ КӨРСЕТКІШТЕРІ",
+    "pressRelease": "ПРЕСС РЕЛИЗЫ"
   },
   "button": {
     "find-out-more": "Толығырақ"

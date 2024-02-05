@@ -145,7 +145,7 @@ export default async function Investors({ params: { locale } }: Props) {
         <span
           className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] sm:mb-10 mb-5`}
         >
-          ПРЕСС РЕЛИЗЫ
+          {dictionary.investors.pressRelease}
         </span>
 
         <PressRelease locale={locale} />
