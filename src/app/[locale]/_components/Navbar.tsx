@@ -109,7 +109,7 @@ export default function CustomNavbar({
                 href="/investors"
                 lang={locale}
               >
-                Инвесторам
+                {dictionary.investor}
               </NavigationLink>
 
               <div className="flex">

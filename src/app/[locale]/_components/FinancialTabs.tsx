@@ -43,7 +43,7 @@ export default function FinancialTabs({ data, locale, dictionary }: Props) {
       </span>
 
       <Tabs aria-label="years" variant={`underlined`}>
-        <Tab title={'2024'}>
+        <Tab title={'2023'}>
           <div className={`flex flex-wrap gap-7`}>
             {data.data.map((year) => (
               <div key={year.id}>
@@ -58,6 +58,7 @@ export default function FinancialTabs({ data, locale, dictionary }: Props) {
                       </span>
                       <a
                         target={`_blank`}
+                        download
                         href={api + part.attributes.url}
                         className={`group rounded-[99px] w-[30px] h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 cursor-pointer hover:bg-primary-gold hover:text-white`}
                       >
