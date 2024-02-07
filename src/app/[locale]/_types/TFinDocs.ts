@@ -22,6 +22,7 @@ export type FinDocsAttribute = {
   name_th: string | null
   date_provision: string | null
   period_provision: string | null
+  date: string | null
   file: FinDocsFile
 }
 
@@ -59,6 +60,8 @@ export type FinDocsFile = {
       provider_metadata: any | null
       createdAt: string
       updatedAt: string
+      date_provision: string
+      date: string
     }
   }[]
 }

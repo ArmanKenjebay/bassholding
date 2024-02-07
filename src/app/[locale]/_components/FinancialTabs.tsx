@@ -74,11 +74,13 @@ export default function FinancialTabs({ data, locale, dictionary }: Props) {
                         />
                       </a>
                     </div>
-                    <div>
-                      <span className={`text-[16px] text-[#AFACAC]`}>
-                        {getDate(part.attributes.createdAt)}
-                      </span>
-                    </div>
+                    {part.attributes.date_provision && (
+                      <div>
+                        <span className={`text-[16px] text-[#AFACAC]`}>
+                          {getDate(part.attributes.date_provision)}
+                        </span>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

@@ -12,6 +12,8 @@ type Props = {
 }
 
 export default function CorporateDocs({ data, locale, dictionary }: Props) {
+  console.log('data', data.data[0].attributes)
+
   const api = process.env.NEXT_PUBLIC_BACKEND_API_FILE
 
   const getName = (locale: Locale, data: FinDocsAttribute) => {
@@ -71,11 +73,13 @@ export default function CorporateDocs({ data, locale, dictionary }: Props) {
                     />
                   </a>
                 </div>
-                <div>
-                  <span className={`text-[16px] text-[#AFACAC]`}>
-                    {getDate(part.attributes.createdAt)}
-                  </span>
-                </div>
+                {year.attributes.date && (
+                  <div>
+                    <span className={`text-[16px] text-[#AFACAC]`}>
+                      {year.attributes.date}
+                    </span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
