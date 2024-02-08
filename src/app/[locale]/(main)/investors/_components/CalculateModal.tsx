@@ -1,16 +1,26 @@
 'use client'
 
-type Props = {
-  classNames?: {
-    main?: string
+import { useEffect, useState } from 'react'
+
+export default function CalculateModal() {
+  const [item, setItem] = useState<'US_GLD_' | 'FPSTb2'>('US_GLD_')
+
+  useEffect(() => {
+    fetch(`/api`, {
+      method: 'POST',
+      body: JSON.stringify({ item }),
+    }).then((res) => {
+      console.log('res: ', res)
+    })
+  }, [])
+
+  const changeItem = (value: string) => {
+    if (value === 'US_GLD_' || value === 'FPSTb2') setItem(value)
   }
-}
-export default function CalculateModal({ classNames }: Props) {
+
   return (
     <div
-      className={`w-[520px] py-[23px] xl:flex flex-col gap-y-3 items-center justify-between rounded-xl bg-white hidden ${
-        classNames && classNames?.main ? classNames.main : ''
-      }`}
+      className={`w-[520px] py-[23px] xl:flex flex-col gap-y-3 items-center justify-between rounded-xl bg-white hidden`}
     >
       <div className={`text-black`}>
         <span className={`text-[32px] font-normal`}>Курс золота</span>
@@ -25,9 +35,11 @@ export default function CalculateModal({ classNames }: Props) {
 
         <div className={`flex gap-x-1 text-[14px]`}>
           <select
+            onChange={(change) => changeItem(change.target.value)}
             className={`w-[80px] bg-white text-gray-500 p-2 border-1 border-gray-200 rounded-lg outline-0`}
           >
-            <option>Gold</option>
+            <option value={`US_GLD_`}>Gold</option>
+            <option value={`FPSTb2`}>Silver</option>
           </select>
           <select
             className={`w-[80px] bg-white text-gray-500 p-2 border-1 border-gray-200 rounded-lg outline-0`}

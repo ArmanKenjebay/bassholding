@@ -8,7 +8,7 @@ import wallImage from '@/../public/images/company_profile.webp'
 import DivTransform from '@/app/[locale]/_components/DivTransform'
 import PressRelease from '@/app/[locale]/_components/PressRelease'
 import FinancialTabs from '@/app/[locale]/_components/FinancialTabs'
-import CalculateModal from '@/app/[locale]/_components/CalculateModal'
+import CalculateModal from '@/app/[locale]/(main)/investors/_components/CalculateModal'
 import { AnnualsDocs, FinDocs } from '@/app/[locale]/_types/TFinDocs'
 
 type Props = {
@@ -23,7 +23,6 @@ export default async function Investors({ params: { locale } }: Props) {
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     Authorization: `Bearer ${token}`,
-    'Content-Type': 'application/json',
   }
 
   const dictionary: any = await getDictionary(locale)
