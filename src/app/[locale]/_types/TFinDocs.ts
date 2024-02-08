@@ -38,6 +38,7 @@ export type AnnualsDocsAttribute = {
   period_provision: string | null
   file: FinDocsFile
   href: string
+  date: string | null
 }
 
 export type FinDocsFile = {
