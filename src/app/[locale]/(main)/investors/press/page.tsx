@@ -18,7 +18,7 @@ export default async function Press({
         <span
           className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] mb-5`}
         >
-          СПРАВОЧНИК ДЛЯ ИНВЕСТОРОВ
+          {dictionary.investors.investorGuide}
         </span>
 
         <InvestorDictionaryAccordion dictionary={dictionary} />

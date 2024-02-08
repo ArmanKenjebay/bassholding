@@ -57,7 +57,7 @@ export default async function Financial({
         <span
           className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] font-thin mb-5`}
         >
-          СОВЕТ ДИРЕКТОРОВ
+          {dictionary.investors.boardOfDirectors}
         </span>
 
         <TopsAccordion dictionary={dictionary} />

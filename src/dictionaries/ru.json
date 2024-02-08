@@ -121,7 +121,10 @@
     "ROA": "ROA",
     "ROE": "ROE",
     "financialIndicators": "ФИНАНСОВЫЕ ПОКАЗАТЕЛИ",
-    "pressRelease": "ПРЕСС РЕЛИЗЫ"
+    "pressRelease": "ПРЕСС РЕЛИЗЫ",
+    "annualReports": "ГОДОВЫЕ ОТЧЕТЫ",
+    "investorGuide": "СПРАВОЧНИК ДЛЯ ИНВЕСТОРОВ",
+    "boardOfDirectors": "СОВЕТ ДИРЕКТОРОВ"
   },
   "button": {
     "find-out-more": "Узнать подробнее"

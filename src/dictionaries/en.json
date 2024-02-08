@@ -121,7 +121,10 @@
     "ROA": "ROA",
     "ROE": "ROE",
     "financialIndicators": "FINANCIAL INDICATORS",
-    "pressRelease": "PRESS RELEASE"
+    "pressRelease": "PRESS RELEASE",
+    "annualReports": "ANNUAL REPORTS",
+    "investorGuide": "INVESTOR'S GUIDE",
+    "boardOfDirectors": "BOARD OF DIRECTORS"
 
   },
   "button": {

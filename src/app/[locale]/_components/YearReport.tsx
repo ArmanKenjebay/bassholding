@@ -37,7 +37,7 @@ export default async function YearReport({ data, locale, dictionary }: Props) {
       <span
         className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] mb-5`}
       >
-        ГОДОВЫЕ ОТЧЕТЫ
+        {dictionary.annualReports}
       </span>
 
       <Tabs aria-label="years" variant={`underlined`}>
@@ -56,7 +56,7 @@ export default async function YearReport({ data, locale, dictionary }: Props) {
                   <a
                     target={`_blank`}
                     href={year.attributes.href}
-                    className={`group rounded-[99px] w-[30px] h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 cursor-pointer hover:bg-primary-gold hover:text-white`}
+                    className={`group rounded-[99px] w-[30px] h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 cursor-pointer hover:bg-black hover:text-white`}
                   >
                     <ArrowSvg
                       classNames={`block group-hover:hidden`}

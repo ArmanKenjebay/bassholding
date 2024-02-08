@@ -121,7 +121,10 @@
     "ROA": "ROA",
     "ROE": "ROE",
     "financialIndicators": "ҚАРЖЫ КӨРСЕТКІШТЕРІ",
-    "pressRelease": "ПРЕСС РЕЛИЗЫ"
+    "pressRelease": "ПРЕСС РЕЛИЗЫ",
+    "annualReports": "ЖЫЛДЫҚ ЕСЕПТЕР",
+    "investorGuide": "ИНВЕСТОРЛАРҒА АРНАЛҒАН НҰСҚАУЛЫҚ",
+    "boardOfDirectors": "ДИРЕКТОРЛАР КЕҢЕСІ"
   },
   "button": {
     "find-out-more": "Толығырақ"
