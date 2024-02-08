@@ -124,7 +124,10 @@
     "pressRelease": "ПРЕСС РЕЛИЗЫ",
     "annualReports": "ГОДОВЫЕ ОТЧЕТЫ",
     "investorGuide": "СПРАВОЧНИК ДЛЯ ИНВЕСТОРОВ",
-    "boardOfDirectors": "СОВЕТ ДИРЕКТОРОВ"
+    "boardOfDirectors": "СОВЕТ ДИРЕКТОРОВ",
+    "corporateGovernance": "Корпоративное управление",
+    "collapse": "Свернуть",
+    "expand": "Развернуть"
   },
   "button": {
     "find-out-more": "Узнать подробнее"

@@ -12,8 +12,6 @@ type Props = {
 }
 
 export default function CorporateDocs({ data, locale, dictionary }: Props) {
-  console.log('data', data.data[0].attributes)
-
   const api = process.env.NEXT_PUBLIC_BACKEND_API_FILE
 
   const getName = (locale: Locale, data: FinDocsAttribute) => {
@@ -40,7 +38,7 @@ export default function CorporateDocs({ data, locale, dictionary }: Props) {
       <span
         className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] mb-5`}
       >
-        КОРПОРАТИВНОЕ УПРАВЛЕНИЕ
+        {dictionary.corporateGovernance}
       </span>
 
       <div className={`flex gap-7 overflow-x-auto overflow-y-hidden h-[235px]`}>

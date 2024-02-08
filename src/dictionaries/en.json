@@ -124,7 +124,16 @@
     "pressRelease": "PRESS RELEASE",
     "annualReports": "ANNUAL REPORTS",
     "investorGuide": "INVESTOR'S GUIDE",
-    "boardOfDirectors": "BOARD OF DIRECTORS"
+    "boardOfDirectors": "BOARD OF DIRECTORS",
+    "corporateGovernance": "Corporate Governance",
+    "collapse": "Collapse",
+    "expand": "Expand",
+    "calendar": {
+      "month": {
+        "name": "January",
+        "text_1": ""
+      }
+    }
 
   },
   "button": {

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
-export default function FinancialCalendar() {
+export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
   const [isVisible, setVisible] = useState(false)
 
   const handleVisible = () => {
@@ -229,7 +229,7 @@ export default function FinancialCalendar() {
           onClick={handleVisible}
           className={`text-primary-gold text-[24px] duration-200 ease-in-out underline cursor-pointer hover:opacity-95`}
         >
-          {isVisible ? 'Свернуть' : 'Развернуть'}
+          {isVisible ? dictionary.collapse : dictionary.expand}
         </span>
       </div>
 

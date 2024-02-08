@@ -1,9 +1,11 @@
+'use client'
+
 type Props = {
   classNames?: {
     main?: string
   }
 }
-export default async function CalculateModal({ classNames }: Props) {
+export default function CalculateModal({ classNames }: Props) {
   return (
     <div
       className={`w-[520px] py-[23px] xl:flex flex-col gap-y-3 items-center justify-between rounded-xl bg-white hidden ${

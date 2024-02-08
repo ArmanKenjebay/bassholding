@@ -124,7 +124,10 @@
     "pressRelease": "ПРЕСС РЕЛИЗЫ",
     "annualReports": "ЖЫЛДЫҚ ЕСЕПТЕР",
     "investorGuide": "ИНВЕСТОРЛАРҒА АРНАЛҒАН НҰСҚАУЛЫҚ",
-    "boardOfDirectors": "ДИРЕКТОРЛАР КЕҢЕСІ"
+    "boardOfDirectors": "ДИРЕКТОРЛАР КЕҢЕСІ",
+    "corporateGovernance": "Корпоративтік басқару",
+    "collapse": "Collapse",
+    "expand": "Толығырақ"
   },
   "button": {
     "find-out-more": "Толығырақ"
