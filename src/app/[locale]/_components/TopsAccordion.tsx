@@ -67,7 +67,7 @@ export default function TopsAccordion({ dictionary }: { dictionary: any }) {
           indicator={<IconPlus />}
           key={el.name}
           title={
-            <div className={`flex justify-between`}>
+            <div className={`flex justify-between lg:flex-row flex-col`}>
               <span
                 className={`flex-1 text-primary-gold xl:text-[24px] sm:text-[18px] text-[16px]`}
               >

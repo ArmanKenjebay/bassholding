@@ -15,11 +15,11 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       month: 'ФЕВРАЛЬ',
       content: [
         {
-          date: '',
+          date: [],
           text: 'Утверждение Стратегии развития ТОО «BASS Holding» на 2024 – 2028 годы',
         },
         {
-          date: '',
+          date: [],
           text: 'Запуск золотообогатительной фабрики на месторождении Ушшокы',
         },
       ],
@@ -28,27 +28,27 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       month: 'МАРТ',
       content: [
         {
-          date: '',
+          date: [],
           text: 'Получение ТОО «BASS Gold» займа в Банке второго уровня',
         },
         {
-          date: '',
+          date: [],
           text:
             'Утверждение и публикация аудированной (консолидированной и отдельной) годовой финансовой отчетности ТОО «BASS Gold» за 2023 год на сайтах Депозитария финансовой отчетности и \n' +
             'АО «Казахстанская фондовая биржа»',
         },
         {
-          date: '',
+          date: [],
           text:
             'Утверждение и публикация аудированной годовой финансовой отчетности ТОО «Block One Company» за 2023 год на сайтах Депозитария финансовой отчетности и \n' +
             'АО «Казахстанская фондовая биржа»',
         },
         {
-          date: '',
+          date: [],
           text: 'Распределение чистого дохода ТОО «BASS Gold» за 2023 год и выплата дивидендов его участникам',
         },
         {
-          date: '',
+          date: [],
           text: 'Четвертый выпуск облигаций ТОО «BASS Gold»',
         },
       ],
@@ -57,7 +57,7 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       month: 'АПРЕЛЬ',
       content: [
         {
-          date: '',
+          date: [],
           text: 'Погашение третьего выпуска облигаций ТОО «BASS Gold»',
         },
       ],
@@ -66,11 +66,11 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       month: 'Май',
       content: [
         {
-          date: '',
+          date: [],
           text: 'Погашение первого выпуска облигаций ТОО «BASS Gold»',
         },
         {
-          date: '',
+          date: [],
           text: 'Определение аудиторской организации для проведения аудита полугодовой финансовой отчетности ТОО «BASS Gold»',
         },
       ],
@@ -79,7 +79,7 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       month: 'Июнь',
       content: [
         {
-          date: '',
+          date: [],
           text: 'Избрание членов Ревизионной комиссии ТОО «BASS Gold»',
         },
       ],
@@ -89,7 +89,7 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       dates: [],
       content: [
         {
-          date: '',
+          date: [],
           text: 'Утверждение и публикация годового отчета ТОО «BASS Gold» на сайтах АО «Казахстанская фондовая биржа» и Холдинга ',
         },
       ],
@@ -98,15 +98,15 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       month: 'Август',
       content: [
         {
-          date: '',
+          date: [],
           text: 'Информация о суммарном размере вознаграждения членов исполнительного органа ТОО «BASS Gold» по итогам года на сайте АО «Казахстанская фондовая биржа»',
         },
         {
-          date: '',
+          date: [],
           text: 'Получение ТОО «BASS Gold» лицензии на разработку за контрактной территории месторождения Ушшокы',
         },
         {
-          date: '',
+          date: [],
           text: 'Получение ТОО «Block One Company» лицензии на добычу ТПИ на месторождении Чинасыл-Сай',
         },
       ],
@@ -115,7 +115,7 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       month: 'Сентябрь',
       content: [
         {
-          date: '',
+          date: [],
           text: 'Реорганизация ТОО «BASS Gold» путем присоединения к нему ТОО «Block One Company»',
         },
       ],
@@ -124,7 +124,7 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       month: 'Октябрь',
       content: [
         {
-          date: '',
+          date: [],
           text: 'Погашение второго выпуска облигаций ТОО «BASS Gold»',
         },
       ],
@@ -133,7 +133,7 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       month: 'Ноябрь',
       content: [
         {
-          date: '',
+          date: [],
           text:
             'Определение аудиторской организации для проведения аудита годовой финансовой отчетности ТОО «BASS Gold» \n' +
             'за 2024 год ',
@@ -144,11 +144,11 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       month: 'Декабрь',
       content: [
         {
-          date: '',
+          date: [],
           text: 'Получение международного кредитного рейтинга ',
         },
         {
-          date: '',
+          date: [],
           text: 'Запуск золотообогатительной фабрики на месторождении Чинасыл-Сай',
         },
       ],
@@ -157,25 +157,25 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       month: 'Периодические события',
       content: [
         {
-          date: '',
+          date: ['20.01', '20.04'],
           text: 'Выплаты купонного вознаграждения по первому выпуску облигаций ТОО «BASS Gold»',
         },
         {
-          date: '',
+          date: ['12.01', '12.04', '12.07', '12.10'],
           text: 'Выплаты купонного вознаграждения по второму выпуску облигаций ТОО «BASS Gold»',
         },
         {
-          date: '',
+          date: ['15.05', '15.07', '15.11'],
           text: 'Утверждение и публикация ежеквартальной финансовой отчетности ТОО «BASS Gold» на сайтах Депозитария финансовой отчетности и АО «Казахстанская фондовая биржа» ',
         },
         {
-          date: '',
+          date: ['31.01', '30.04', '31.07', '31.10'],
           text:
             'Раскрытие информации об аффилированных лицах \n' +
             'ТОО «BASS Gold» на сайте АО «Казахстанская фондовая биржа»  ',
         },
         {
-          date: '',
+          date: ['В течение года'],
           text: 'Опубликование решений Общего собрания участников ТОО «BASS Gold» ',
         },
       ],
@@ -203,17 +203,30 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
               transition={{ duration: 0.75 }}
             >
               <div className={`flex flex-1 border-t py-10`}>
-                <span className={`text-[48px]`}>{calendar.month}</span>
+                <span className={`text-[36px] inline-flex w-min`}>
+                  {calendar.month}
+                </span>
               </div>
 
-              <div className={`flex flex-col flex-1 border-t py-10 gap-y-10`}>
+              <div className={`flex flex-col flex-1 border-t py-10 gap-y-20`}>
                 {calendar.content.map((content, index) => (
                   <div key={index} className={`relative`}>
-                    <span
-                      className={`text-[48px] text-primary-gold absolute -left-1/3`}
-                    >
-                      {content.date ? content.date : ''}
-                    </span>
+                    {content.date.length ? (
+                      <div
+                        className={`absolute left-[-35%] text-[24px] text-primary-gold grid grid-cols-2 gap-x-5`}
+                      >
+                        {content.date.map((el, index) => (
+                          <span className={`flex flex-1`}>
+                            {index % 2 !== 0 ||
+                            index === content.date.length - 1
+                              ? el
+                              : el + ','}
+                          </span>
+                        ))}
+                      </div>
+                    ) : (
+                      <></>
+                    )}
                     <span className={`text-[24px]`}>{content.text}</span>
                   </div>
                 ))}
@@ -235,15 +248,26 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
                   </div>
 
                   <div
-                    className={`flex flex-col flex-1 border-t py-10 gap-y-10`}
+                    className={`flex flex-col flex-1 border-t py-10 gap-y-20`}
                   >
                     {calendar.content.map((content, index) => (
                       <div key={index} className={`relative`}>
-                        <span
-                          className={`text-[48px] text-primary-gold absolute -left-1/3`}
-                        >
-                          {content.date ? content.date : ''}
-                        </span>
+                        {content.date.length ? (
+                          <div
+                            className={`absolute left-[-35%] text-[24px] text-primary-gold grid grid-cols-2 gap-x-5`}
+                          >
+                            {content.date.map((el, index) => (
+                              <span className={`flex flex-1`}>
+                                {index % 2 !== 0 ||
+                                index === content.date.length - 1
+                                  ? el
+                                  : el + ','}
+                              </span>
+                            ))}
+                          </div>
+                        ) : (
+                          <></>
+                        )}
                         <span className={`text-[24px]`}>{content.text}</span>
                       </div>
                     ))}
