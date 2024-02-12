@@ -42,7 +42,7 @@ export default async function YearReport({ data, locale, dictionary }: Props) {
 
       <Tabs aria-label="years" variant={`underlined`}>
         {data.data.map((year, index) => (
-          <Tab key={year.id} title={`2023`}>
+          <Tab key={year.id} title={`2022`}>
             <div className={`flex flex-wrap gap-7`}>
               <div
                 className={`xl:w-[300px] lg:w-[270px] md:w-[250px] sm:w-[230px] xl:h-[235px] w-full h-[125px] xl:rounded-2xl rounded-3xl flex flex-col justify-between bg-primary-gold p-5`}
@@ -70,11 +70,6 @@ export default async function YearReport({ data, locale, dictionary }: Props) {
                       height={'24'}
                     />
                   </a>
-                </div>
-                <div>
-                  <span className={`text-[16px] text-black`}>
-                    {getDate(year.attributes.createdAt)}
-                  </span>
                 </div>
               </div>
             </div>
