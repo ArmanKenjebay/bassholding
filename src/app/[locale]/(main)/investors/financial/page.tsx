@@ -72,7 +72,7 @@ export default async function Financial({
           {dictionary.investors.corporate_event_calendar}
         </span>
 
-        <FinancialCalendar dictionary={dictionary.investors} />
+        <FinancialCalendar dictionary={dictionary.investors} locale={locale} />
       </div>
     </div>
   )
