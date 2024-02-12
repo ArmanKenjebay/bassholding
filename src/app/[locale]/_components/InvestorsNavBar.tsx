@@ -12,6 +12,7 @@ type Props = {
     company_profile: string
     financial_count: string
     press_center: string
+    corporate_calendar: string
   }
 }
 
@@ -43,6 +44,17 @@ export default function InvestrorsNavBar({ locale, dictionary }: Props) {
         locale={locale}
       >
         {dictionary.financial_count}
+      </Link>
+      <Link
+        className={`${
+          pathName === '/investors/calendar'
+            ? 'text-primary-gold'
+            : 'hover:text-primary-gold duration-200'
+        } xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm sm:leading-none`}
+        href={`/investors/calendar`}
+        locale={locale}
+      >
+        {dictionary.corporate_calendar}
       </Link>
       <Link
         className={`${

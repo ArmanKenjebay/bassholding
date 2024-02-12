@@ -63,7 +63,7 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       ],
     },
     {
-      month: 'Май',
+      month: 'МАЙ',
       content: [
         {
           date: [],
@@ -76,7 +76,7 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       ],
     },
     {
-      month: 'Июнь',
+      month: 'ИЮНЬ',
       content: [
         {
           date: [],
@@ -85,7 +85,7 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       ],
     },
     {
-      month: 'Июль',
+      month: 'ИЮЛЬ',
       dates: [],
       content: [
         {
@@ -95,7 +95,7 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       ],
     },
     {
-      month: 'Август',
+      month: 'АВГУСТ',
       content: [
         {
           date: [],
@@ -121,7 +121,7 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       ],
     },
     {
-      month: 'Октябрь',
+      month: 'ОКТЯБРЬ',
       content: [
         {
           date: [],
@@ -130,7 +130,7 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       ],
     },
     {
-      month: 'Ноябрь',
+      month: 'НОЯБРЬ',
       content: [
         {
           date: [],
@@ -141,7 +141,7 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       ],
     },
     {
-      month: 'Декабрь',
+      month: 'ДЕКАБРЬ',
       content: [
         {
           date: [],
@@ -154,7 +154,7 @@ export default function FinancialCalendar({ dictionary }: { dictionary: any }) {
       ],
     },
     {
-      month: 'Периодические события',
+      month: 'ПЕРИОДИЧЕСКИЕ СОБЫТИЯ',
       content: [
         {
           date: ['20.01', '20.04'],
