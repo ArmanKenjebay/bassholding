@@ -16,7 +16,7 @@ export default async function Calendar({
         className={`xl:py-[35px] xl:px-[60px] lg:px-[40px] md:px-[32px] px-[20px] flex flex-col sm:mb-10 mb-5`}
       >
         <span
-          className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] font-thin mb-5`}
+          className={`text-primary-gold xl:text-[32px] lg:text-[28px] text-[26px] mb-5`}
         >
           {dictionary.investors.corporate_event_calendar}
         </span>

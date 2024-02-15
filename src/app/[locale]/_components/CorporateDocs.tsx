@@ -36,7 +36,7 @@ export default function CorporateDocs({ data, locale, dictionary }: Props) {
   return (
     <div className={`flex flex-col`}>
       <span
-        className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] mb-5`}
+        className={`text-primary-gold xl:text-[36px] lg:text-[28px] md:text-[24px] sm:text-[21px] text-[16px] mb-5`}
       >
         {dictionary.corporateGovernance}
       </span>

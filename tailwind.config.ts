@@ -11,9 +11,6 @@ const config: Config = {
       colors: {
         ['primary-gold']: '#F2BD54',
       },
-      fontFamily: {
-        gilroy: [`var(--font-gilroy)`, 'sans-serif'],
-      },
       animation: {
         marquee: 'marquee 25s linear infinite',
         marquee2: 'marquee2 25s linear infinite',

@@ -320,7 +320,7 @@ export default function FinancialCalendar({
       <div className={`mb-5 flex justify-end`}>
         <span
           onClick={handleVisible}
-          className={`text-primary-gold text-[24px] duration-200 ease-in-out underline cursor-pointer hover:opacity-95`}
+          className={`text-primary-gold xl:text-[18px] lg:text-[16px] text-[12px] duration-200 ease-in-out underline cursor-pointer hover:opacity-95`}
         >
           {isVisible ? dictionary.collapse : dictionary.expand}
         </span>
@@ -336,7 +336,9 @@ export default function FinancialCalendar({
               transition={{ duration: 0.75 }}
             >
               <div className={`flex flex-1 border-t py-10`}>
-                <span className={`text-[36px] inline-flex w-min`}>
+                <span
+                  className={`xl:text-[28px] lg:text-[24px] text-[16px] inline-flex w-min`}
+                >
                   {getName(index, 'month', locale)}
                 </span>
               </div>
@@ -360,7 +362,9 @@ export default function FinancialCalendar({
                     ) : (
                       <></>
                     )}
-                    <span className={`text-[24px]`}>
+                    <span
+                      className={`xl:text-[20px] lg:text-[18px] text-[14px]`}
+                    >
                       {getName(index, 'text', locale, subIndex)}
                     </span>
                   </div>
@@ -379,7 +383,9 @@ export default function FinancialCalendar({
                   transition={{ duration: 0.75 }}
                 >
                   <div className={`flex flex-1 border-t py-10`}>
-                    <span className={`text-[48px]`}>
+                    <span
+                      className={`xl:text-[28px] lg:text-[24px] text-[16px]`}
+                    >
                       {getName(index, 'month', locale)}
                     </span>
                   </div>
@@ -405,7 +411,9 @@ export default function FinancialCalendar({
                         ) : (
                           <></>
                         )}
-                        <span className={`text-[24px]`}>
+                        <span
+                          className={`xl:text-[20px] lg:text-[18px] text-[14px]`}
+                        >
                           {getName(index, 'text', locale, subIndex)}
                         </span>
                       </div>

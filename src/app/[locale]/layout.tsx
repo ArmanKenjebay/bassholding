@@ -7,7 +7,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-poppins',
+  display: 'swap',
 })
 
 export async function generateStaticParams() {
@@ -23,7 +23,7 @@ export default async function RootLayout({
 }) {
   return (
     <html lang={locale} className="dark">
-      <body className={`${poppins.variable} font-poppins`}>{children}</body>
+      <body className={poppins.className + ' sans-serif'}>{children}</body>
       <GoogleAnalytics gaId="G-2WF7TESEG5" />
     </html>
   )

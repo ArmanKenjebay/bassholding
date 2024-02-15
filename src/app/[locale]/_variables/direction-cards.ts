@@ -23,7 +23,7 @@ const directionCards = [
   {
     link: 'bass-eco',
     image: homeCard3,
-    title: 'SHIPPING',
+    title: 'RIVER PORT',
     desc: 'shipping_desc',
     chips: ['ecology', 'transport'],
   },
