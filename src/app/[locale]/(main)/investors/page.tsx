@@ -55,10 +55,24 @@ export default async function Investors({ params: { locale } }: Props) {
   }
 
   const ebidta = [
-    { label: 'EBIDTA', value: '457 млн ₸' },
+    {
+      label: 'EBIDTA',
+      value: {
+        ru: '457 млн ₸',
+        kk: '457 млн ₸',
+        en: '457 million ₸',
+      },
+    },
     { label: 'ROA', value: '31.4 %' },
     { label: 'ROE', value: '58.5%' },
-    { label: 'developmentContributions', value: '> 2 млрд ₸' },
+    {
+      label: 'developmentContributions',
+      value: {
+        ru: '> 2 млрд ₸',
+        kk: '> 2 млрд ₸',
+        en: '> 2 billion ₸',
+      },
+    },
   ]
 
   const animate = {
@@ -70,6 +84,17 @@ export default async function Investors({ params: { locale } }: Props) {
       x: -50,
       opacity: 1,
     },
+  }
+
+  const getEbidta = (value: any) => {
+    switch (locale) {
+      case 'ru':
+        return value.ru
+      case 'kk':
+        return value.kk
+      case 'en':
+        return value.en
+    }
   }
 
   return (
@@ -108,7 +133,7 @@ export default async function Investors({ params: { locale } }: Props) {
           {ebidta.map((el: any) => (
             <div className={`flex flex-col text-[32px]`}>
               <span className={``}>{dictionary.investors[el.label]}</span>
-              <span className={`text-primary-gold`}>{el.value}</span>
+              <span className={`text-primary-gold`}>{getEbidta(el.value)}</span>
             </div>
           ))}
         </div>

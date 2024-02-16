@@ -12,46 +12,120 @@ export default async function Contact({ params: { locale } }: Props) {
 
   const data = [
     {
-      title: 'Отдел стратегии и аналитики',
-      name: 'Алимжан Абишев',
+      title: {
+        ru: 'Отдел Стратегии и аналитики',
+        en: 'Stratetgy and analysis department',
+        kk: 'Стратегия және талдау бөлімі',
+      },
+      name: {
+        ru: 'Алимжан Абишев',
+        kk: 'Алимжан Абишев',
+        en: 'Alimzhan Abishev',
+      },
       phone: '+7 701 555 01 78',
     },
     {
-      title: 'Bass Gold',
-      name: 'Ермек Ильясов',
+      title: {
+        ru: 'Bass Gold',
+        en: 'Bass Gold',
+        kk: 'Bass Gold',
+      },
+      name: {
+        ru: 'Ермек Ильясов',
+        kk: 'Ермек Ильясов',
+        en: 'Ermek Ilyasov',
+      },
       phone: '+7 707 555 50 74',
     },
     {
-      title: 'Отдел финансов и инвестирования',
-      name: 'Берик Канаев',
+      title: {
+        ru: 'Отдел финансов и инвестирования',
+        en: 'Finance and investment department',
+        kk: 'Қаржы және инвестициялау бөлімі',
+      },
+      name: {
+        ru: 'Берик Канаев',
+        kk: 'Берик Канаев',
+        en: 'Berik Kanayev',
+      },
       phone: '+7 707 223 34 48',
     },
     {
-      title: 'Ili River Port',
-      name: 'Марат Джулаев',
+      title: {
+        ru: 'Ili River Port',
+        en: 'Ili River Port',
+        kk: 'Ili River Port',
+      },
+      name: {
+        ru: 'Марат Джулаев',
+        kk: 'Марат Джулаев',
+        en: 'Marat Julayev',
+      },
       phone: '+7 701 723 70 77',
     },
     {
-      title: 'PR-отдел и Креативное агентство 80/20',
-      name: 'Мольдир Каримова',
+      title: {
+        ru: 'PR-отдел и Креативное агентство 80/20',
+        en: 'PR department and 80/20 creative agency ',
+        kk: 'PR-бөлімі және 80/20 креативтік агенттігі',
+      },
+      name: {
+        ru: 'Мольдир Каримова',
+        kk: 'Мольдир Каримова',
+        en: 'Moldir Karimova',
+      },
       phone: '+7 701 916 11 11',
     },
     {
-      title: 'Проект PINCODE',
-      name: 'Балсулу Тасбулатова',
+      title: {
+        ru: 'Проект PINCODE',
+        en: 'Project PINCODE',
+        kk: 'PINCODE жобасы',
+      },
+      name: {
+        ru: 'Балсулу Тасбулатова',
+        kk: 'Балсулу Тасбулатова',
+        en: 'Balsulu Tasbulatova',
+      },
       phone: '+7 775 442 1221',
     },
     {
-      title: 'Отдел HR',
-      name: 'Асылжан Сыздыкова',
+      title: {
+        ru: 'Отдел HR ',
+        en: 'HR Department',
+        kk: 'HR бөлімі',
+      },
+      name: {
+        ru: 'Асылжан Сыздыкова',
+        kk: 'Асылжан Сыздыкова',
+        en: 'Asylzhan Syzdykova',
+      },
       phone: '+7 702 408 61 60',
     },
     {
-      title: 'По общим вопросам:',
+      title: {
+        ru: 'По общим вопросам:',
+        en: 'General inquiries:',
+        kk: 'Жалпы сұрақтар бойынша:',
+      },
       name: 'bassholding@mail.com',
       phone: '+7 (7172) 278 37 88',
     },
   ]
+
+  const getTranslateField = (
+    item: Record<'title' | 'name', Record<Locale, string>>,
+    field: 'title' | 'name',
+  ) => {
+    switch (locale) {
+      case 'ru':
+        return item[field].ru
+      case 'kk':
+        return item[field].kk
+      case 'en':
+        return item[field].en
+    }
+  }
 
   return (
     <div className={`flex flex-col h-full xl:px-[60px] px-5`}>
@@ -62,14 +136,16 @@ export default async function Contact({ params: { locale } }: Props) {
       <div
         className={`flex flex-wrap xl:flex-row flex-col gap-6 xl:mb-10 mb-2`}
       >
-        {data.map((el) => (
+        {data.map((el: any) => (
           <div
             className={`flex flex-1 flex-col bg-[#262626] p-4 rounded-xl min-w-[659px]`}
           >
             <span className={`xl:text-2xl text-base text-primary-gold`}>
-              {el.title}
+              {getTranslateField(el, 'title')}
             </span>
-            <span className={`xl:text-2xl text-base`}>{el.name}</span>
+            <span className={`xl:text-2xl text-base`}>
+              {getTranslateField(el, 'name')}
+            </span>
             <span className={`xl:text-2xl text-base`}>{el.phone}</span>
           </div>
         ))}
