@@ -108,7 +108,11 @@ export default async function Contact({ params: { locale } }: Props) {
         en: 'General inquiries:',
         kk: 'Жалпы сұрақтар бойынша:',
       },
-      name: 'bassholding@mail.com',
+      name: {
+        ru: 'bassholding@mail.com',
+        kk: 'bassholding@mail.com',
+        en: 'bassholding@mail.com',
+      },
       phone: '+7 (7172) 278 37 88',
     },
   ]
@@ -138,15 +142,15 @@ export default async function Contact({ params: { locale } }: Props) {
       >
         {data.map((el: any) => (
           <div
-            className={`flex flex-1 flex-col bg-[#262626] p-4 rounded-xl min-w-[659px]`}
+            className={`flex flex-1 gap-y-2 flex-col bg-[#262626] p-4 rounded-xl min-w-[659px]`}
           >
-            <span className={`xl:text-2xl text-base text-primary-gold`}>
+            <span className={`xl:text-xl text-base text-primary-gold`}>
               {getTranslateField(el, 'title')}
             </span>
-            <span className={`xl:text-2xl text-base`}>
+            <span className={`xl:text-lg text-base`}>
               {getTranslateField(el, 'name')}
             </span>
-            <span className={`xl:text-2xl text-base`}>{el.phone}</span>
+            <span className={`xl:text-lg text-base`}>{el.phone}</span>
           </div>
         ))}
       </div>
