@@ -46,7 +46,7 @@ export default async function News({
         <MotionDiv>
           <div className="flex justify-between sm:flex-row flex-col-reverse gap-y-5 sm:mb-10 mb-5 relative">
             <div
-              className="uppercase xl:pl-[60px] xl:pr-[90px] sm:static absolute z-20 flex xl:text-[48px] lg:text-2xl sm:text-xl flex-col sm:justify-end px-5 sm:pb-0 pb-5"
+              className="font-thin uppercase xl:pl-[60px] xl:pr-[90px] sm:static absolute z-20 flex xl:text-[48px] lg:text-2xl sm:text-xl flex-col sm:justify-end px-5 sm:pb-0 pb-5"
               style={{
                 lineHeight: '100%',
               }}
