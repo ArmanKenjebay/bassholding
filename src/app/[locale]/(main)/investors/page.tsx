@@ -87,6 +87,10 @@ export default async function Investors({ params: { locale } }: Props) {
   }
 
   const getEbidta = (value: any) => {
+    if (!Object.prototype.hasOwnProperty.call(value, 'ru')) {
+      return value
+    }
+
     switch (locale) {
       case 'ru':
         return value.ru
