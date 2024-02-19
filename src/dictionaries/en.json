@@ -129,13 +129,10 @@
     "corporateGovernance": "Corporate Governance",
     "collapse": "Collapse",
     "expand": "Expand",
-    "calendar": {
-      "month": {
-        "name": "January",
-        "text_1": ""
-      }
-    }
-
+    "chingizInfo": "More than 20 years of experience in state agencies, national companies, financial institutions, manufacturing and service enterprises. Worked in the following industries: oil production, non-ferrous metals mining, construction, energy, telecommunications, grain sector. Previously Chingiz Sadvakassov held senior positions in treasury, budgeting, financial accounting and project management. He has has wide range of experience in managing private equity and public finance projects, experience as an auditor in Big 4 companies (projects of national companies, international financial institutions and multinational corporations).",
+    "chingizInfo_2": "Education: Aldenham School, Hertfordshire (England), Beijing University of Language and Culture (PRC), Moscow Social Humanitarian Institute (branch in Astana), Karaganda Economic University.",
+    "erlanInfo": "More than 20 years of experience in international business development, mergers and acquisitions, establishment of international joint ventures and partnerships, strategic and operational management across various industries: telecommunications, construction and real estate, hospitality business development and management, IT startups, investment and asset management, financial auditing within Big 4. Throughout his career, Yerlan has lived and worked in Kazakhstan, Georgia, Vietnam, Turkey, and the Dominican Republic. ",
+    "erlanInfo_2": "Education: a bachelor's degree in International Economic Relations from Narxoz University (formerly KazGAAU), an MBA degree from the Kazakhstan Institute of Management, Economics, and Strategic Research (KIMEP)."
   },
   "button": {
     "find-out-more": "Find out more"
