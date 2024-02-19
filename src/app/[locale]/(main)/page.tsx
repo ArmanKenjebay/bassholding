@@ -19,7 +19,6 @@ import MotionDiv from '@/app/[locale]/_components/MotionDiv'
 import Reveal from '@/app/[locale]/_components/Reveal'
 import DivTransform from '@/app/[locale]/_components/DivTransform'
 import React from 'react'
-import FinancialCalendar from '@/app/[locale]/_components/FinancialCalendar'
 
 type Props = {
   params: { locale: Locale }
