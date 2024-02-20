@@ -63,17 +63,17 @@ export default async function Financial({
         <TopsAccordion dictionary={dictionary} />
       </div>
 
-      <div
-        className={`xl:py-[35px] xl:px-[60px] lg:px-[40px] md:px-[32px] px-[20px] flex flex-col sm:mb-10 mb-5`}
-      >
-        <span
-          className={`text-primary-gold xl:text-[32px] lg:text-[28px] text-[26px] mb-5`}
-        >
-          {dictionary.investors.corporate_event_calendar}
-        </span>
+      {/*<div*/}
+      {/*  className={`xl:py-[35px] xl:px-[60px] lg:px-[40px] md:px-[32px] px-[20px] flex flex-col sm:mb-10 mb-5`}*/}
+      {/*>*/}
+      {/*  <span*/}
+      {/*    className={`text-primary-gold xl:text-[32px] lg:text-[28px] text-[26px] mb-5`}*/}
+      {/*  >*/}
+      {/*    {dictionary.investors.corporate_event_calendar}*/}
+      {/*  </span>*/}
 
-        <FinancialCalendar dictionary={dictionary.investors} locale={locale} />
-      </div>
+      {/*  <FinancialCalendar dictionary={dictionary.investors} locale={locale} />*/}
+      {/*</div>*/}
     </div>
   )
 }
