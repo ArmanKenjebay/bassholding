@@ -1,22 +1,23 @@
+import { NextResponse } from 'next/server'
+
 export async function POST(request: Request, context: any) {
   const token = process.env.NEXT_PUBLIC_TOKEN
   const api = process.env.NEXT_PUBLIC_BACKEND_API
-  const headers = new Headers({
-    Accept: '*/*',
-    'Access-Control-Allow-Origin': '*',
-    'Content-Type': 'multipart/form-data',
+  const headers = {
     Authorization: `Bearer ${token}`,
-  })
+    'Content-Type': 'application/json',
+  }
 
-  const res = await fetch(`${api}/get-quotes`, {
+  const requestBody = await request.json()
+  console.log('requestBody', requestBody)
+
+  const res = await fetch(`${api}/get-quotes?populate=*&sort=createdAt:desc`, {
     method: 'POST',
     headers,
-    cache: 'no-cache',
+    body: JSON.stringify(requestBody),
   })
-
-  console.log('context: ', context)
 
   const data = await res.json()
 
-  return Response.json(data)
+  return NextResponse.json(data)
 }
