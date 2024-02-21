@@ -9,7 +9,6 @@ export async function POST(request: Request, context: any) {
   }
 
   const requestBody = await request.json()
-  console.log('requestBody', requestBody)
 
   const res = await fetch(`${api}/get-quotes?populate=*&sort=createdAt:desc`, {
     method: 'POST',
