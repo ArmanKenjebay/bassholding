@@ -33,7 +33,7 @@ export default async function BassEco({
             alt="bassecoImage image"
           />
           <div className="pl-10 pb-10 xl:pl-[60px] z-10 sm:w-2/3 w-full absolute h-full flex flex-col justify-end">
-            <span className="xl:text-[48px] font-[400]">BASS ECO</span>
+            <span className="xl:text-[48px] font-[400]">ILI RIVER PORT</span>
             <span className="opacity-95 xl:text-[32px] text-xs leading-tight font-[300]">
               {dictionary['bass-eco'].text_1}
             </span>

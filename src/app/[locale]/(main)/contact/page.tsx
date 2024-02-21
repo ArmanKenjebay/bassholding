@@ -23,6 +23,7 @@ export default async function Contact({ params: { locale } }: Props) {
         en: 'Alimzhan Abishev',
       },
       phone: '+7 701 555 01 78',
+      email: 'abishev.a@bassholding.kz',
     },
     {
       title: {
@@ -35,7 +36,7 @@ export default async function Contact({ params: { locale } }: Props) {
         kk: 'Ермек Ильясов',
         en: 'Ermek Ilyasov',
       },
-      phone: '+7 707 555 50 74',
+      email: 'ilyasov.e@forpostgold.kz',
     },
     {
       title: {
@@ -49,6 +50,7 @@ export default async function Contact({ params: { locale } }: Props) {
         en: 'Berik Kanayev',
       },
       phone: '+7 707 223 34 48',
+      email: 'Kanayev.B@bassholding.kz',
     },
     {
       title: {
@@ -61,7 +63,7 @@ export default async function Contact({ params: { locale } }: Props) {
         kk: 'Марат Джулаев',
         en: 'Marat Julayev',
       },
-      phone: '+7 701 723 70 77',
+      email: 'Julayev.m@bassholding.kz',
     },
     {
       title: {
@@ -74,7 +76,7 @@ export default async function Contact({ params: { locale } }: Props) {
         kk: 'Мольдир Каримова',
         en: 'Moldir Karimova',
       },
-      phone: '+7 701 916 11 11',
+      email: 'karimova.m@bassholding.kz',
     },
     {
       title: {
@@ -87,7 +89,7 @@ export default async function Contact({ params: { locale } }: Props) {
         kk: 'Балсулу Тасбулатова',
         en: 'Balsulu Tasbulatova',
       },
-      phone: '+7 775 442 1221',
+      email: 'tasbulatov.b@bassholding.kz ',
     },
     {
       title: {
@@ -100,7 +102,7 @@ export default async function Contact({ params: { locale } }: Props) {
         kk: 'Асылжан Сыздыкова',
         en: 'Asylzhan Syzdykova',
       },
-      phone: '+7 702 408 61 60',
+      email: 'syzdykova.a@bassholding.kz',
     },
     {
       title: {
@@ -109,11 +111,12 @@ export default async function Contact({ params: { locale } }: Props) {
         kk: 'Жалпы сұрақтар бойынша:',
       },
       name: {
-        ru: 'bassholding@mail.com',
-        kk: 'bassholding@mail.com',
-        en: 'bassholding@mail.com',
+        ru: '',
+        kk: '',
+        en: '',
       },
       phone: '+7 (7172) 278 37 88',
+      email: 'bassholding@mail.com',
     },
   ]
 
@@ -150,7 +153,24 @@ export default async function Contact({ params: { locale } }: Props) {
             <span className={`xl:text-lg text-base`}>
               {getTranslateField(el, 'name')}
             </span>
-            <span className={`xl:text-lg text-base`}>{el.phone}</span>
+
+            {el && el?.phone && (
+              <a
+                href={`tel:${el.phone.replace(/ /g, '')}`}
+                className={`xl:text-lg text-base`}
+              >
+                {el.phone}
+              </a>
+            )}
+            {el && el?.email && (
+              <a
+                target={`_blank`}
+                href={`mailto:${el.email}`}
+                className={`w-fit xl:text-lg text-base cursor-pointer hover:text-primary-gold ease-in-out duration-200`}
+              >
+                {el.email}
+              </a>
+            )}
           </div>
         ))}
       </div>
