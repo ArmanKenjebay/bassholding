@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-export async function POST(request: Request, context: any) {
+export async function GET(request: Request, context: any) {
   const token = process.env.NEXT_PUBLIC_TOKEN
   const api = process.env.NEXT_PUBLIC_BACKEND_API
   const headers = {
@@ -8,15 +8,13 @@ export async function POST(request: Request, context: any) {
     'Content-Type': 'application/json',
   }
 
-  const requestBody = await request.json()
-
-  const res = await fetch(`${api}/get-quotes?populate=*&sort=createdAt:desc`, {
-    method: 'POST',
+  const res = await fetch(`${api}/both-prices?sort=createdAt:desc`, {
     headers,
-    body: JSON.stringify(requestBody),
   })
 
   const data = await res.json()
+
+  console.log(data)
 
   return NextResponse.json(data)
 }

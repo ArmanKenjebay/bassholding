@@ -1,16 +1,25 @@
-export type TQuote = {
-  code: string
-  isin: string
-  sec_type: string
-  clean_price: string
-  yield: string
-  day_to_settled: string
-  unit: string
-  date: string
-  pricetype: string
-  org_name: string
+export type TPrice = {
+  data: TPriceData[]
+  meta: {
+    pagination: {
+      page: number
+      pageCount: number
+      pageSize: number
+      total: number
+    }
+  }
+}
+
+export type TPriceData = {
   id: number
-  createdAt: string
-  updatedAt: string
-  publishedAt: string
+  attributes: {
+    priceUnitGold: string
+    priceUnitSilver: string
+    changesPercentGold: string
+    changesPercentSilver: string
+    changesUsdGold: string
+    changesUsdSilver: string
+    createdAt: string
+    updatedAt: string
+  }
 }
