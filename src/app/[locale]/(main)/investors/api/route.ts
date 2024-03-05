@@ -14,7 +14,5 @@ export async function GET(request: Request, context: any) {
 
   const data = await res.json()
 
-  console.log(data)
-
   return NextResponse.json(data)
 }

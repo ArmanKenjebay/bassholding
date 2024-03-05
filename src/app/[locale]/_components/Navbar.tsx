@@ -50,104 +50,102 @@ export default function CustomNavbar({
         maxWidth="full"
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={handleMenu}
-        className={`ease-in-out duration-200 xl:px-[60px] px-4 top-0 z-50 absolute ${
+        className={`mx-auto max-w-screen-2xl ease-in-out duration-200 top-0 z-50 absolute ${
           isMenuOpen ? 'bg-black' : 'bg-transparent'
         }`}
         classNames={{
-          wrapper: 'px-0',
+          wrapper: 'justify-between items-center sm:px-2 px-3',
         }}
       >
-        <div className="flex 2xl:gap-x-[74px] md:gap-x-5 w-full items-center justify-between">
-          <div className="flex">
-            <Link
-              href="/"
+        <div className="flex">
+          <Link
+            href="/"
+            lang={locale}
+            className="w-[104px] h-[20px] md:w-[120px] md:h-full xl:w-[170px] xl:h-[34px]"
+          >
+            <Image
+              src={bassholdingLogo}
+              alt={''}
+              width={170}
+              height={34}
+              className="pointer-events-none w-full h-full"
+              priority
+            />
+          </Link>
+        </div>
+        <div className="lg:flex hidden flex-1">
+          <div className="flex justify-around w-full items-center">
+            <NavigationLink
+              className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal whitespace-nowrap"
+              href="/about"
               lang={locale}
-              className="w-[104px] h-[20px] md:w-[120px] md:h-full xl:w-[170px] xl:h-[34px]"
             >
-              <Image
-                src={bassholdingLogo}
-                alt={''}
-                width={170}
-                height={34}
-                className="pointer-events-none w-full h-full"
-                priority
-              />
-            </Link>
-          </div>
-          <div className="lg:flex hidden flex-1 justify-start">
-            <div className="flex sm:gap-x-8 md:gap-x-10 lg:gap-x-10 xl:gap-x-16 2xl:gap-x-20 items-center">
-              <NavigationLink
-                className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal whitespace-nowrap"
-                href="/about"
-                lang={locale}
-              >
-                {dictionary.about}
-              </NavigationLink>
-              <NavigationLink
-                className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal"
-                href="/direction"
-                lang={locale}
-              >
-                {dictionary.direction}
-              </NavigationLink>
-              <NavigationLink
-                className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal"
-                href="/career"
-                lang={locale}
-              >
-                {dictionary.career}
-              </NavigationLink>
-              <NavigationLink
-                className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal"
-                href="/news"
-                lang={locale}
-              >
-                {dictionary.news}
-              </NavigationLink>
-              <NavigationLink
-                className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal"
-                href="/investors"
-                lang={locale}
-              >
-                {dictionary.investor}
-              </NavigationLink>
+              {dictionary.about}
+            </NavigationLink>
+            <NavigationLink
+              className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal"
+              href="/direction"
+              lang={locale}
+            >
+              {dictionary.direction}
+            </NavigationLink>
+            <NavigationLink
+              className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal"
+              href="/career"
+              lang={locale}
+            >
+              {dictionary.career}
+            </NavigationLink>
+            <NavigationLink
+              className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal"
+              href="/news"
+              lang={locale}
+            >
+              {dictionary.news}
+            </NavigationLink>
+            <NavigationLink
+              className="xl:text-[22px] lg:text-base md:text-sm text-xs font-normal"
+              href="/investors"
+              lang={locale}
+            >
+              {dictionary.investor}
+            </NavigationLink>
 
-              <div className="flex">
-                <Select
-                  aria-label="Choose language"
-                  onChange={handleSelectionChange}
-                  selectedKeys={[locale]}
-                  className="min-w-[72px]"
-                  classNames={{
-                    mainWrapper: 'h-10',
-                    trigger:
-                      'opacity-80 bg-[#5E5E5E] data-[hover=true]:bg-[#5E5E5E]',
-                    innerWrapper: '',
-                  }}
+            <div className="flex">
+              <Select
+                aria-label="Choose language"
+                onChange={handleSelectionChange}
+                selectedKeys={[locale]}
+                className="min-w-[72px]"
+                classNames={{
+                  mainWrapper: 'h-10',
+                  trigger:
+                    'opacity-80 bg-[#5E5E5E] data-[hover=true]:bg-[#5E5E5E]',
+                  innerWrapper: '',
+                }}
+              >
+                <SelectItem key="en" lang="en" value="en">
+                  EN
+                </SelectItem>
+                <SelectItem key="ru" lang="ru" value="ru">
+                  RU
+                </SelectItem>
+                <SelectItem key="kk" lang="kk" value="kk">
+                  KZ
+                </SelectItem>
+              </Select>
+            </div>
+
+            <div className="hidden lg:flex md:items-center">
+              <Link href={'/contact'} locale={locale}>
+                <Button
+                  className={`p-4 truncate lg:text-base md:text-xs font-normal rounded-xl opacity-80 bg-[#5E5E5E] ease-in-out duration-200 hover:bg-primary-gold hover:border-white hover:text-white ${
+                    pathName === '/contact' && 'bg-primary-gold border-black'
+                  }`}
                 >
-                  <SelectItem key="en" lang="en" value="en">
-                    EN
-                  </SelectItem>
-                  <SelectItem key="ru" lang="ru" value="ru">
-                    RU
-                  </SelectItem>
-                  <SelectItem key="kk" lang="kk" value="kk">
-                    KZ
-                  </SelectItem>
-                </Select>
-              </div>
-
-              <div className="hidden lg:flex md:items-center">
-                <Link href={'/contact'} locale={locale}>
-                  <Button
-                    className={`p-4 truncate lg:text-base md:text-xs font-normal rounded-xl opacity-80 bg-[#5E5E5E] ease-in-out duration-200 hover:bg-primary-gold hover:border-white hover:text-white ${
-                      pathName === '/contact' && 'bg-primary-gold border-black'
-                    }`}
-                  >
-                    {dictionary.contact}
-                  </Button>
-                </Link>
-              </div>
+                  {dictionary.contact}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
