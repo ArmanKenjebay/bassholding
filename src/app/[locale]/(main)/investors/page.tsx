@@ -168,7 +168,7 @@ export default async function Investors({ params: { locale } }: Props) {
       </div>
 
       <div
-        className={`xl:py-[35px] xl:px-[60px] lg:px-[40px] md:px-[32px] px-[20px] flex flex-col sm:mb-10 mb-5`}
+        className={`md:flex hidden xl:py-[35px] xl:px-[60px] lg:px-[40px] md:px-[32px] px-[20px]  flex-col sm:mb-10 mb-5`}
       >
         <span
           className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] sm:mb-10 mb-5`}

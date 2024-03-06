@@ -37,7 +37,7 @@ export default function FinancialTabs({ data, locale, dictionary }: Props) {
   return (
     <div className={`flex flex-col`}>
       <span
-        className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] mb-5`}
+        className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[18px] md:mb-5`}
       >
         {dictionary.financialIndicators}
       </span>
@@ -46,14 +46,14 @@ export default function FinancialTabs({ data, locale, dictionary }: Props) {
         <Tab title={'2023'}>
           <div className={`flex flex-wrap gap-7`}>
             {data.data.map((year) => (
-              <div key={year.id}>
+              <div
+                className={`flex-1 xl:w-[300px] lg:w-[270px] md:w-[250px] sm:w-[230px] w-full xl:h-[235px] h-[125px] xl:rounded-2xl rounded-3xl flex flex-col justify-between bg-[#262626] p-5`}
+                key={year.id}
+              >
                 {year.attributes.file.data.map((part, index) => (
-                  <div
-                    key={index}
-                    className={`xl:w-[300px] lg:w-[270px] md:w-[250px] sm:w-[230px] xl:h-[235px] w-full h-[125px] xl:rounded-2xl rounded-3xl flex flex-col justify-between bg-[#262626] p-5`}
-                  >
+                  <div key={index} className={`w-full h-full`}>
                     <div className={`flex justify-between`}>
-                      <span className={`text-[24px] truncate`}>
+                      <span className={`md:text-[24px] text-[21px] truncate`}>
                         {getName(locale, year.attributes)}
                       </span>
                       <a

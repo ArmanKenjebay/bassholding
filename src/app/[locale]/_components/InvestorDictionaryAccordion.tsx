@@ -270,7 +270,8 @@ export default function InvestorDictionaryAccordion({
           key={el.title + index}
           title={el.title}
           classNames={{
-            title: 'hover:text-primary-gold duration-200 ease-in-out',
+            title:
+              'hover:text-primary-gold duration-200 ease-in-out md:text-xl sm:text-lg text-[16px]',
           }}
         >
           {el.content.map((sub, subIndex) => (
@@ -318,13 +319,13 @@ export default function InvestorDictionaryAccordion({
                 title={sub.subTitle}
                 classNames={{
                   title:
-                    'hover:text-primary-gold duration-200 ease-in-out opacity-90',
+                    'hover:text-primary-gold duration-200 ease-in-out opacity-90 md:text-lg sm:text-sm text-[14px]',
                 }}
               >
                 {sub.text.map((t, tIndex) => (
                   <span
                     key={sub.subTitle + tIndex}
-                    className={`flex flex-col mb-2 last:mb-0 opacity-80`}
+                    className={`flex flex-col mb-2 last:mb-0 opacity-80 sm:text-base text-[12px]`}
                   >
                     {t}
                   </span>

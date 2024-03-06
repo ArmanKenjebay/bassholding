@@ -34,23 +34,23 @@ export default function CorporateDocs({ data, locale, dictionary }: Props) {
   }
 
   return (
-    <div className={`flex flex-col`}>
+    <div className={`flex flex-col mt-5`}>
       <span
         className={`text-primary-gold xl:text-[36px] lg:text-[28px] md:text-[24px] sm:text-[21px] text-[16px] mb-5`}
       >
         {dictionary.corporateGovernance}
       </span>
 
-      <div className={`flex gap-7 overflow-x-auto overflow-y-hidden h-[235px]`}>
+      <div className={`flex gap-7 overflow-x-auto overflow-y-hidden pb-2`}>
         {data.data.map((year) => (
-          <div key={year.id}>
+          <div
+            className={`flex-1 min-w-[280px] xl:w-[300px] lg:w-[270px] md:w-[250px] sm:w-[230px] xl:h-[235px] w-full h-[125px] xl:rounded-2xl rounded-3xl flex flex-col justify-between bg-[#262626] p-5`}
+            key={year.id}
+          >
             {year.attributes.file.data.map((part, index) => (
-              <div
-                key={index}
-                className={`xl:w-[300px] lg:w-[270px] md:w-[250px] sm:w-[230px] xl:h-[235px] w-full h-[125px] xl:rounded-2xl rounded-3xl flex flex-col justify-between bg-[#262626] p-5`}
-              >
+              <div key={index}>
                 <div className={`flex justify-between`}>
-                  <span className={`text-[24px] truncate`}>
+                  <span className={`md:text-[24px] text-[18px] truncate mr-1`}>
                     {getName(locale, year.attributes)}
                   </span>
                   <a

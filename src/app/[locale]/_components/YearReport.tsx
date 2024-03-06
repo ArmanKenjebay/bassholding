@@ -35,7 +35,7 @@ export default async function YearReport({ data, locale, dictionary }: Props) {
   return (
     <div className={`flex flex-col`}>
       <span
-        className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] mb-5`}
+        className={`text-primary-gold xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[21px] md:mb-5`}
       >
         {dictionary.annualReports}
       </span>
