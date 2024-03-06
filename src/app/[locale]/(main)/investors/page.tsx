@@ -116,7 +116,7 @@ export default async function Investors({ params: { locale } }: Props) {
             className={`absolute top-1/3 right-10`}
             animation={animate}
           >
-            <CalculateModal />
+            <CalculateModal locale={locale} dictionary={dictionary} />
           </DivTransform>
         </div>
       </MotionDiv>

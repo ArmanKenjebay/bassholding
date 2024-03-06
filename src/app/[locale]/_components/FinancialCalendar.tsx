@@ -18,32 +18,38 @@ export default function FinancialCalendar({
   }
 
   const corpCalendar = [
+    // {
+    //   month: 'ФЕВРАЛЬ',
+    //   monthEn: 'FEBRUARY',
+    //   monthKK: 'АҚПАН',
+    //   content: [
+    //     // {
+    //     //   date: [],
+    //     //   text: 'Утверждение Стратегии развития ТОО «BASS Holding» на 2024 – 2028 годы',
+    //     //   textEn:
+    //     //     'Approval of the Development Strategy of BASS Holding LLP for 2024-2028 ',
+    //     //   textKK:
+    //     //     '«BASS Holding» ЖШС 2024 – 2028 жылдарға арналған даму стратегиясын бекітуі ',
+    //     // },
+    //     {
+    //       date: [],
+    //       text: 'Запуск золотообогатительной фабрики на месторождении Ушшокы',
+    //       textEn: 'Launch of gold processing plant at Ushshoky deposit ',
+    //       textKK: 'Үшшоқы кен орнында алтын байыту фабрикасын іске қосу',
+    //     },
+    //   ],
+    // },
     {
-      month: 'ФЕВРАЛЬ',
-      monthEn: 'FEBRUARY',
-      monthKK: 'АҚПАН',
+      month: 'МАРТ',
+      monthEn: 'MARCH',
+      monthKK: 'НАУРЫЗ',
       content: [
-        {
-          date: [],
-          text: 'Утверждение Стратегии развития ТОО «BASS Holding» на 2024 – 2028 годы',
-          textEn:
-            'Approval of the Development Strategy of BASS Holding LLP for 2024-2028 ',
-          textKK:
-            '«BASS Holding» ЖШС 2024 – 2028 жылдарға арналған даму стратегиясын бекітуі ',
-        },
         {
           date: [],
           text: 'Запуск золотообогатительной фабрики на месторождении Ушшокы',
           textEn: 'Launch of gold processing plant at Ushshoky deposit ',
           textKK: 'Үшшоқы кен орнында алтын байыту фабрикасын іске қосу',
         },
-      ],
-    },
-    {
-      month: 'МАРТ',
-      monthEn: 'MARCH',
-      monthKK: 'НАУРЫЗ',
-      content: [
         {
           date: [],
           text: 'Получение ТОО «BASS Gold» займа в Банке второго уровня',
@@ -78,12 +84,6 @@ export default function FinancialCalendar({
           textKK:
             '2023 жылғы «BASS Gold» ЖШС таза кірісін бөлу және оның қатысушыларына дивидендтер төлеуі',
         },
-        {
-          date: [],
-          text: 'Четвертый выпуск облигаций ТОО «BASS Gold»',
-          textEn: 'The fourth issue of “BASS Gold” LLP bonds',
-          textKK: '«BASS Gold» ЖШС облигацияларының төртінші шығарылымы',
-        },
       ],
     },
     {
@@ -91,6 +91,12 @@ export default function FinancialCalendar({
       monthEn: 'APRIL',
       monthKK: 'СӘУІР',
       content: [
+        {
+          date: [],
+          text: 'Четвертый выпуск облигаций ТОО «BASS Gold»',
+          textEn: 'The fourth issue of “BASS Gold” LLP bonds',
+          textKK: '«BASS Gold» ЖШС облигацияларының төртінші шығарылымы',
+        },
         {
           date: [],
           text: 'Погашение третьего выпуска облигаций ТОО «BASS Gold»',

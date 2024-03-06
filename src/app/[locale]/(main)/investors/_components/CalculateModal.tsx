@@ -2,8 +2,15 @@
 
 import { useEffect, useState } from 'react'
 import { TPrice } from '@/app/[locale]/_types/TQuote'
+import { Locale } from '@/i18n-config'
 
-export default function CalculateModal() {
+export default function CalculateModal({
+  locale,
+  dictionary,
+}: {
+  locale: Locale
+  dictionary: any
+}) {
   const [item, setItem] = useState<'GOLD' | 'SILVER'>('GOLD')
 
   const [price, setPrice] = useState<TPrice>()
