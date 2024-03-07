@@ -39,7 +39,7 @@ export default function CalculateModal({
     >
       <div className={`text-black`}>
         <span className={`text-[24px] font-normal`}>
-          {item === 'GOLD' ? 'Курс золота' : 'Курс серебра'}
+          {dictionary[item === 'GOLD' ? 'gold_rate' : 'silver_rate']}
         </span>
       </div>
 

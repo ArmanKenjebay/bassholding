@@ -260,5 +260,6 @@
       "subTitle_3_text_3": "ROE (Return on Equity) – a measure of the return on the company's equity capital."
     }
   },
-  "gold_rate": "Gold Rate"
+  "gold_rate": "Price of Gold",
+  "silver_rate": "Price of Silver"
 }
