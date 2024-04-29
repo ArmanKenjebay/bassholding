@@ -56,7 +56,25 @@ export default function FinancialTabs({ data, locale, dictionary }: Props) {
                       <span className={`md:text-[24px] text-[21px] truncate`}>
                         {getName(locale, year.attributes)}
                       </span>
-                      <a
+                      {part.attributes.href ? (
+                        <a
+                          target={'_blank'}
+                          href={part.attributes.href}
+                          className={`group rounded-[99px] w-[30px] h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 cursor-pointer hover:bg-primary-gold hover:text-white`}
+                        >
+                          <ArrowSvg
+                            classNames={`block group-hover:hidden`}
+                            width={'24'}
+                            height={'24'}
+                          />
+                          <ArrowSvg
+                            classNames={`hidden group-hover:block origin-center -rotate-45`}
+                            fillPath={'white'}
+                            width={'24'}
+                            height={'24'}
+                          />
+                        </a>
+                      ) : (<a
                         download
                         target={'_blank'}
                         href={api + part.attributes.url}
@@ -73,7 +91,7 @@ export default function FinancialTabs({ data, locale, dictionary }: Props) {
                           width={'24'}
                           height={'24'}
                         />
-                      </a>
+                      </a>)}
                     </div>
                     {part.attributes.date_provision && (
                       <div>

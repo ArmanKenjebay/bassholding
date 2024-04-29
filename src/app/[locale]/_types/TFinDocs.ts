@@ -24,6 +24,7 @@ export type FinDocsAttribute = {
   period_provision: string | null
   date: string | null
   file: FinDocsFile
+  href: string;
 }
 
 export type AnnualsDocsAttribute = {
@@ -62,7 +63,8 @@ export type FinDocsFile = {
       createdAt: string
       updatedAt: string
       date_provision: string
-      date: string
+      date: string;
+      href:string;
     }
   }[]
 }
