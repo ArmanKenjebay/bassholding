@@ -50,7 +50,7 @@ export default function FinancialTabs({ data, locale, dictionary }: Props) {
                 className={`flex-1 xl:w-[300px] lg:w-[270px] md:w-[250px] sm:w-[230px] w-full xl:h-[235px] h-[125px] xl:rounded-2xl rounded-3xl flex flex-col justify-between bg-[#262626] p-5`}
                 key={year.id}
               >
-                {year.attributes.file.data.map((part, index) => (
+                {year?.attributes?.file?.data && year?.attributes?.file?.data?.map((part, index) => (
                   <div key={index} className={`w-full h-full`}>
                     <div className={`flex justify-between`}>
                       <span className={`md:text-[24px] text-[21px] truncate`}>
