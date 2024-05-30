@@ -102,6 +102,57 @@ export default function FinancialTabs({ data, locale, dictionary }: Props) {
                     )}
                   </div>
                 ))}
+
+                {year?.attributes?.href && (<div key={year?.attributes.createdAt} className={`w-full h-full`}>
+                  <div className={`flex justify-between`}>
+                      <span className={`md:text-[24px] text-[21px] truncate`}>
+                        {getName(locale, year.attributes)}
+                      </span>
+                    {year.attributes.href ? (
+                      <a
+                        target={'_blank'}
+                        href={year.attributes.href}
+                        className={`group rounded-[99px] w-[30px] h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 cursor-pointer hover:bg-primary-gold hover:text-white`}
+                      >
+                        <ArrowSvg
+                          classNames={`block group-hover:hidden`}
+                          width={'24'}
+                          height={'24'}
+                        />
+                        <ArrowSvg
+                          classNames={`hidden group-hover:block origin-center -rotate-45`}
+                          fillPath={'white'}
+                          width={'24'}
+                          height={'24'}
+                        />
+                      </a>
+                    ) : (<a
+                      download
+                      target={'_blank'}
+                      href={api + year.attributes.href}
+                      className={`group rounded-[99px] w-[30px] h-[30px] flex p-1 justify-center text-black bg-white ease-in-out duration-200 cursor-pointer hover:bg-primary-gold hover:text-white`}
+                    >
+                      <ArrowSvg
+                        classNames={`block group-hover:hidden`}
+                        width={'24'}
+                        height={'24'}
+                      />
+                      <ArrowSvg
+                        classNames={`hidden group-hover:block origin-center -rotate-45`}
+                        fillPath={'white'}
+                        width={'24'}
+                        height={'24'}
+                      />
+                    </a>)}
+                  </div>
+                  {year.attributes.date_provision && (
+                    <div>
+                        <span className={`text-[16px] text-[#AFACAC]`}>
+                          {getDate(year.attributes.date_provision)}
+                        </span>
+                    </div>
+                  )}
+                </div>)}
               </div>
             ))}
           </div>

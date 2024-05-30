@@ -58,13 +58,13 @@ export default async function Investors({ params: { locale } }: Props) {
     {
       label: 'EBIDTA',
       value: {
-        ru: '457 млн ₸',
-        kk: '457 млн ₸',
-        en: '457 million ₸',
+        ru: '456 млн ₸',
+        kk: '456 млн ₸',
+        en: '456 million ₸',
       },
     },
-    { label: 'ROA', value: '31.4 %' },
-    { label: 'ROE', value: '58.5%' },
+    { label: 'ROA', value: '4 %' },
+    { label: 'ROE', value: '28%' },
     {
       label: 'developmentContributions',
       value: {
