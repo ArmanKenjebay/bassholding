@@ -56,13 +56,13 @@ export default function Footer({
           >
             {dictionary.navbar.news}
           </Link>
-          <Link
-            className="hover:text-primary-gold duration-200 ease-in-out sm:text-sm text-xs"
-            href="/career"
-            lang={locale}
-          >
-            {dictionary.navbar.career}
-          </Link>
+          {/*<Link*/}
+          {/*  className="hover:text-primary-gold duration-200 ease-in-out sm:text-sm text-xs"*/}
+          {/*  href="/career"*/}
+          {/*  lang={locale}*/}
+          {/*>*/}
+          {/*  {dictionary.navbar.career}*/}
+          {/*</Link>*/}
         </div>
         <div className="flex flex-col gap-y-[53px]">
           {links.map(({ name, link }, index) => (

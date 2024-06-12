@@ -182,15 +182,15 @@ export default function CustomNavbar({
               {dictionary.news}
             </NavigationLink>
           </NavbarMenuItem>
-          <NavbarMenuItem>
-            <NavigationLink
-              onClick={() => handleNavbarMenuItem(isMenuOpen)}
-              href="/career"
-              lang={locale}
-            >
-              {dictionary.career}
-            </NavigationLink>
-          </NavbarMenuItem>
+          {/*<NavbarMenuItem>*/}
+          {/*  <NavigationLink*/}
+          {/*    onClick={() => handleNavbarMenuItem(isMenuOpen)}*/}
+          {/*    href="/career"*/}
+          {/*    lang={locale}*/}
+          {/*  >*/}
+          {/*    {dictionary.career}*/}
+          {/*  </NavigationLink>*/}
+          {/*</NavbarMenuItem>*/}
           <NavbarMenuItem>
             <NavigationLink
               onClick={() => handleNavbarMenuItem(isMenuOpen)}
