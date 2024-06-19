@@ -8,7 +8,13 @@ import Link from 'next/link'
 const getClassName = (text: THtmlBlockChildText) => {
   return `${text.italic ? 'italic' : 'not-italic'} ${
     text.bold ? 'font-bold' : 'font-normal'
-  } ${text.text.at(0) === ' ' ? 'whitespace-pre' : 'whitespace-pre-line'}`
+  } ${
+    text.text.at(0) === ' ' || text.text.at(0) === ''
+      ? 'whitespace-pre'
+      : 'whitespace-pre-line'
+  } ${text.strikethrough ? 'line-through' : 'no-underline'} ${
+    text.underline ? 'underline' : 'no-underline'
+  }`
 }
 
 const ParseText = ({ child }: { child: THtmlBlockChild }) => {

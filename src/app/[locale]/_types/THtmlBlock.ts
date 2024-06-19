@@ -43,4 +43,5 @@ type TTextClasses = {
   bold?: boolean
   italic?: boolean
   strikethrough?: boolean
+  underline?: boolean
 }
