@@ -1,4 +1,5 @@
 import { TResponse } from '@/app/[locale]/_types/TResponse'
+import { THtmlBlock } from '@/app/[locale]/_types/THtmlBlock'
 
 export interface TNewsData {
   id: number
@@ -17,6 +18,8 @@ export interface TNewsData {
     image_main: TNewsImage
     image_content: TNewsImage
     image_sub_content: TNewsImage
+    block: THtmlBlock[]
+    blocks: THtmlBlock[]
     localizations: {
       data: TNewsData[]
     }

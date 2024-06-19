@@ -39,7 +39,6 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
 
   const response = await fetch(`${api}/news/${id}?populate=*`, {
     headers,
-    next: { revalidate: 3600 },
   })
 
   let news: TNewsById | undefined = undefined
@@ -50,11 +49,21 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
 
   const getLangString = (
     locale: Locale,
-    field: 'title' | 'context' | 'date' | 'chips' | 'content',
+    field:
+      | 'title'
+      | 'context'
+      | 'date'
+      | 'chips'
+      | 'content'
+      | 'blocks'
+      | 'block',
   ) => {
     if (!news) return
 
     const item = { ...news }
+
+    if (field === 'block' || field === 'blocks')
+      return <ParserHtml blocks={item.data.attributes[field]} />
 
     if (item && item.data && item.data.attributes.locale === locale) {
       return item.data.attributes[field]
@@ -155,7 +164,17 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
             </div>
           </div>
           <div className={`sm:mb-10`}>
-            {getLangString(locale, 'content') ? (
+            {news?.data.attributes.blocks || news?.data.attributes.block ? (
+              (
+                <div className={`xl:mb-5 mb-2`}>
+                  {getLangString(locale, 'blocks')}
+                </div>
+              ) || (
+                <div className={`xl:mb-5 mb-2`}>
+                  {getLangString(locale, 'block')}
+                </div>
+              )
+            ) : getLangString(locale, 'content') ? (
               <span
                 className={`xl:text-[20px] inline-block whitespace-pre-line leading-normal text-sm lg:text-2xl font-[200] mb-5`}
               >
@@ -190,200 +209,8 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
               </div>
             )}
           </div>
-
-          <ParserHtml blocks={test.data.attributes.blocks} />
         </div>
       </PageWrapper>
     </div>
   )
-}
-
-var test: any = {
-  data: {
-    id: 1,
-    attributes: {
-      blocks: [
-        {
-          type: 'heading',
-          children: [
-            {
-              type: 'text',
-              text: 'Заголовок',
-              bold: true,
-            },
-          ],
-          level: 1,
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              text: '',
-            },
-          ],
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              text: '     Какой то контент.',
-              bold: true,
-            },
-            {
-              type: 'text',
-              text: ' ',
-            },
-            {
-              type: 'text',
-              text: 'Lorem ipsum dolor sit amet,',
-              bold: true,
-            },
-            {
-              type: 'text',
-              text: ' ',
-            },
-            {
-              type: 'text',
-              text: 'consectetur adipisicing elit',
-              italic: true,
-            },
-            {
-              type: 'text',
-              text: '. ',
-            },
-            {
-              type: 'text',
-              text: 'Ab architecto consequuntur culpa ipsum natus nihil reiciendis,',
-              underline: true,
-            },
-            {
-              type: 'text',
-              text: ' tempora. ',
-            },
-            {
-              type: 'text',
-              text: 'Ad alias aperiam assumenda deleniti doloremque eius eligendi et eum ex illum in iure labore libero minus',
-              strikethrough: true,
-            },
-            {
-              type: 'text',
-              text: ', officia omnis pariatur possimus qui ratione reprehenderit, repudiandae rerum soluta unde. ',
-            },
-            {
-              type: 'link',
-              url: 'https://bassholding.com/',
-              children: [
-                {
-                  type: 'text',
-                  text: 'Consequatur eos ex illo similique?',
-                  bold: true,
-                  italic: true,
-                },
-              ],
-            },
-            {
-              text: '',
-              type: 'text',
-            },
-          ],
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              text: '',
-            },
-          ],
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex?',
-            },
-          ],
-        },
-        {
-          type: 'list',
-          format: 'unordered',
-          children: [
-            {
-              type: 'list-item',
-              children: [
-                {
-                  type: 'text',
-                  text: 'Lorem ipsum dolor sit amet.',
-                },
-              ],
-            },
-            {
-              type: 'list-item',
-              children: [
-                {
-                  type: 'text',
-                  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, repellendus.',
-                },
-              ],
-            },
-            {
-              type: 'list-item',
-              children: [
-                {
-                  type: 'text',
-                  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam delectus expedita officiis, perspiciatis quia sed.',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          type: 'list',
-          format: 'ordered',
-          children: [
-            {
-              type: 'list-item',
-              children: [
-                {
-                  type: 'text',
-                  text: 'Lorem ipsum dolor sit amet',
-                },
-              ],
-            },
-            {
-              type: 'list-item',
-              children: [
-                {
-                  type: 'text',
-                  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, repellendus',
-                },
-              ],
-            },
-            {
-              type: 'list-item',
-              children: [
-                {
-                  type: 'text',
-                  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam delectus expedita officiis, perspiciatis quia sed',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              text: '    ',
-            },
-          ],
-        },
-      ],
-    },
-  },
-  meta: {},
 }
