@@ -7,6 +7,7 @@ import Link from 'next/link'
 import PageWrapper from '@/app/[locale]/_components/PageWrapper'
 import { Skeleton } from '@nextui-org/skeleton'
 import { TNewsById } from '@/app/[locale]/_types/TNews'
+import ParserHtml from '@/app/[locale]/_components/ParserHtml'
 
 async function getData(id: string) {
   const data = await getMockNewsById(id)
@@ -189,8 +190,200 @@ export default async function NewsDetail({ params: { locale, id } }: Props) {
               </div>
             )}
           </div>
+
+          <ParserHtml blocks={test.data.attributes.blocks} />
         </div>
       </PageWrapper>
     </div>
   )
+}
+
+var test: any = {
+  data: {
+    id: 1,
+    attributes: {
+      blocks: [
+        {
+          type: 'heading',
+          children: [
+            {
+              type: 'text',
+              text: 'Заголовок',
+              bold: true,
+            },
+          ],
+          level: 1,
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              text: '',
+            },
+          ],
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              text: '     Какой то контент.',
+              bold: true,
+            },
+            {
+              type: 'text',
+              text: ' ',
+            },
+            {
+              type: 'text',
+              text: 'Lorem ipsum dolor sit amet,',
+              bold: true,
+            },
+            {
+              type: 'text',
+              text: ' ',
+            },
+            {
+              type: 'text',
+              text: 'consectetur adipisicing elit',
+              italic: true,
+            },
+            {
+              type: 'text',
+              text: '. ',
+            },
+            {
+              type: 'text',
+              text: 'Ab architecto consequuntur culpa ipsum natus nihil reiciendis,',
+              underline: true,
+            },
+            {
+              type: 'text',
+              text: ' tempora. ',
+            },
+            {
+              type: 'text',
+              text: 'Ad alias aperiam assumenda deleniti doloremque eius eligendi et eum ex illum in iure labore libero minus',
+              strikethrough: true,
+            },
+            {
+              type: 'text',
+              text: ', officia omnis pariatur possimus qui ratione reprehenderit, repudiandae rerum soluta unde. ',
+            },
+            {
+              type: 'link',
+              url: 'https://bassholding.com/',
+              children: [
+                {
+                  type: 'text',
+                  text: 'Consequatur eos ex illo similique?',
+                  bold: true,
+                  italic: true,
+                },
+              ],
+            },
+            {
+              text: '',
+              type: 'text',
+            },
+          ],
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              text: '',
+            },
+          ],
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ex?',
+            },
+          ],
+        },
+        {
+          type: 'list',
+          format: 'unordered',
+          children: [
+            {
+              type: 'list-item',
+              children: [
+                {
+                  type: 'text',
+                  text: 'Lorem ipsum dolor sit amet.',
+                },
+              ],
+            },
+            {
+              type: 'list-item',
+              children: [
+                {
+                  type: 'text',
+                  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, repellendus.',
+                },
+              ],
+            },
+            {
+              type: 'list-item',
+              children: [
+                {
+                  type: 'text',
+                  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam delectus expedita officiis, perspiciatis quia sed.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: 'list',
+          format: 'ordered',
+          children: [
+            {
+              type: 'list-item',
+              children: [
+                {
+                  type: 'text',
+                  text: 'Lorem ipsum dolor sit amet',
+                },
+              ],
+            },
+            {
+              type: 'list-item',
+              children: [
+                {
+                  type: 'text',
+                  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, repellendus',
+                },
+              ],
+            },
+            {
+              type: 'list-item',
+              children: [
+                {
+                  type: 'text',
+                  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam delectus expedita officiis, perspiciatis quia sed',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              text: '    ',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  meta: {},
 }

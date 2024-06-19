@@ -21,7 +21,7 @@ export default async function NewsPreviews({ locale, searchParams }: Props) {
 
   const response = await fetch(
     `${api}/news?locale=${locale}&populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}&sort=createdAt:desc`,
-    { headers, next: { revalidate: 3600 } },
+    { headers },
   )
 
   const newsMock = await getMockNews().then((res) => res)
