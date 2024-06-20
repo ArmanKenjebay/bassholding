@@ -16,6 +16,7 @@ export type THtmlBlock = {
   children: THtmlBlockChild[]
   level?: number
   format?: 'unordered' | 'ordered'
+  image?: TImage
 }
 
 export type THtmlBlockChild =
@@ -36,7 +37,15 @@ export type THtmlBlockChildList = {
   children: THtmlBlockChild[]
 } & TTextClasses
 
-type THtmlBlockType = 'heading' | 'paragraph' | 'list'
+export type TImage = {
+  name: string
+  alternativeText: string
+  url: string
+  width: number
+  height: number
+}
+
+type THtmlBlockType = 'heading' | 'paragraph' | 'list' | 'image'
 
 type TTextClasses = {
   text: string

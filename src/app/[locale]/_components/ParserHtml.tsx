@@ -2,19 +2,30 @@ import {
   THtmlBlock,
   THtmlBlockChild,
   THtmlBlockChildText,
+  TImage,
 } from '@/app/[locale]/_types/THtmlBlock'
 import Link from 'next/link'
+import ImageNext from 'next/image'
 
 const getClassName = (text: THtmlBlockChildText) => {
   return `${text.italic ? 'italic' : 'not-italic'} ${
     text.bold ? 'font-bold' : 'font-normal'
-  } ${
-    text.text.at(0) === ' ' || text.text.at(0) === ''
-      ? 'whitespace-pre'
-      : 'whitespace-pre-line'
   } ${text.strikethrough ? 'line-through' : 'no-underline'} ${
     text.underline ? 'underline' : 'no-underline'
   }`
+}
+
+const ParseImage = ({ image }: { image: TImage }) => {
+  return (
+    <div className={`lg:mx-0 mx-1 lg:my-2 my-1 w-full`}>
+      <ImageNext
+        width={image?.width}
+        height={image?.height}
+        src={image.url}
+        alt={image.alternativeText}
+      />
+    </div>
+  )
 }
 
 const ParseText = ({ child }: { child: THtmlBlockChild }) => {
@@ -53,7 +64,7 @@ const ParseList = ({ block }: { block: THtmlBlock }) => {
       return (
         <ol className={`list-decimal`}>
           {block.children.map((el) => (
-            <li>
+            <li key={el.type}>
               <ParseText child={el} />
             </li>
           ))}
@@ -139,6 +150,10 @@ const SwitchTypeHtmlElement = ({ block }: { block: THtmlBlock }) => {
       return <ParseParagraph block={block} />
     case 'list':
       return <ParseList block={block} />
+    case 'image':
+      if (block.image) {
+        return <ParseImage image={block.image} />
+      }
   }
 }
 
